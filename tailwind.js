@@ -45,7 +45,13 @@ View the full documentation at https://tailwindcss.com.
 let colors = {
   transparent: 'transparent',
 
-  brand: 'hotpink',
+  'brand-darkest': '#21183c',
+  'brand-darker': '#382b5f',
+  'brand-dark': '#794acf',
+  brand: '#9561e2',
+  'brand-light': '#a779e9',
+  'brand-lighter': '#d6bbfc',
+  'brand-lightest': '#f3ebff',
 
   black: '#22292f',
   'grey-darkest': '#3d4852',
