@@ -4,8 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-exports.modifyBabelrc = ({ babelrc }) => {
-  babelrc.plugins.push('babel-plugin-tailwind')
-  return babelrc
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPlugin({
+    name: `babel-plugin-tailwind`
+  })
 }
-

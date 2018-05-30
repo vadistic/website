@@ -1,16 +1,15 @@
-import React from 'react'
+import * as React from 'react'
 
 import Header from '../components/header'
 import '../styles/preflight.build.css'
 
 interface P {
-  data: any
-  children: any
+  children: () => React.ReactNode
 }
 
-const Layout: React.SFC<P> = ({ children, data }) => (
+const Layout: React.SFC<P> = ({ children }) => (
   <div>
-    <Header siteTitle={data.site.siteMetadata.title} />
+    <Header siteTitle="Vadistic" />
     <div
       style={{
         margin: '0 auto',

@@ -1,9 +1,21 @@
-import React from 'react'
+import * as React from 'react'
 import Link from 'gatsby-link'
+
+import styled, { css } from 'react-emotion'
+
+const Title = styled.h1`
+  color: purple;
+`
+
+const Component: React.SFC<any> = ({ children, className }) => (
+  <h3 className={className}>{children}</h3>
+)
+
 
 const IndexPage = () => (
   <div>
-    <h1>Hi people</h1>
+    <Title>Hi</Title>
+    <Component className={css(tw('text text-lg text-brand'))}>ABC</Component>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
     hey
