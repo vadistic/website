@@ -635,36 +635,52 @@ button,
   background-color: transparent;
 }
 
-.bg-brand-darkest {
-  background-color: #21183c;
+.bg-primary-dark {
+  background-color: #532bd1;
 }
 
-.bg-brand-darker {
-  background-color: #382b5f;
+.bg-primary {
+  background-color: #6534ff;
 }
 
-.bg-brand-dark {
-  background-color: #794acf;
+.bg-primary-light {
+  background-color: #8158ff;
 }
 
-.bg-brand {
-  background-color: #9561e2;
+.bg-secondary-dark {
+  background-color: #d11b44;
 }
 
-.bg-brand-light {
-  background-color: #a779e9;
+.bg-secondary {
+  background-color: #ff2052;
 }
 
-.bg-brand-lighter {
-  background-color: #d6bbfc;
+.bg-secondary-light {
+  background-color: #ff4871;
 }
 
-.bg-brand-lightest {
-  background-color: #f3ebff;
+.bg-black-dark {
+  background-color: #000;
 }
 
 .bg-black {
-  background-color: #22292f;
+  background-color: #111;
+}
+
+.bg-black-light {
+  background-color: #222;
+}
+
+.bg-neutral {
+  background-color: 696969;
+}
+
+.bg-white-smoke {
+  background-color: F5F5F5;
+}
+
+.bg-white {
+  background-color: #fffafa;
 }
 
 .bg-grey-darkest {
@@ -693,10 +709,6 @@ button,
 
 .bg-grey-lightest {
   background-color: #f8fafc;
-}
-
-.bg-white {
-  background-color: #fff;
 }
 
 .bg-red-darkest {
@@ -955,36 +967,52 @@ button,
   background-color: transparent;
 }
 
-.hover\:bg-brand-darkest:hover {
-  background-color: #21183c;
+.hover\:bg-primary-dark:hover {
+  background-color: #532bd1;
 }
 
-.hover\:bg-brand-darker:hover {
-  background-color: #382b5f;
+.hover\:bg-primary:hover {
+  background-color: #6534ff;
 }
 
-.hover\:bg-brand-dark:hover {
-  background-color: #794acf;
+.hover\:bg-primary-light:hover {
+  background-color: #8158ff;
 }
 
-.hover\:bg-brand:hover {
-  background-color: #9561e2;
+.hover\:bg-secondary-dark:hover {
+  background-color: #d11b44;
 }
 
-.hover\:bg-brand-light:hover {
-  background-color: #a779e9;
+.hover\:bg-secondary:hover {
+  background-color: #ff2052;
 }
 
-.hover\:bg-brand-lighter:hover {
-  background-color: #d6bbfc;
+.hover\:bg-secondary-light:hover {
+  background-color: #ff4871;
 }
 
-.hover\:bg-brand-lightest:hover {
-  background-color: #f3ebff;
+.hover\:bg-black-dark:hover {
+  background-color: #000;
 }
 
 .hover\:bg-black:hover {
-  background-color: #22292f;
+  background-color: #111;
+}
+
+.hover\:bg-black-light:hover {
+  background-color: #222;
+}
+
+.hover\:bg-neutral:hover {
+  background-color: 696969;
+}
+
+.hover\:bg-white-smoke:hover {
+  background-color: F5F5F5;
+}
+
+.hover\:bg-white:hover {
+  background-color: #fffafa;
 }
 
 .hover\:bg-grey-darkest:hover {
@@ -1013,10 +1041,6 @@ button,
 
 .hover\:bg-grey-lightest:hover {
   background-color: #f8fafc;
-}
-
-.hover\:bg-white:hover {
-  background-color: #fff;
 }
 
 .hover\:bg-red-darkest:hover {
@@ -1339,36 +1363,52 @@ button,
   border-color: transparent;
 }
 
-.border-brand-darkest {
-  border-color: #21183c;
+.border-primary-dark {
+  border-color: #532bd1;
 }
 
-.border-brand-darker {
-  border-color: #382b5f;
+.border-primary {
+  border-color: #6534ff;
 }
 
-.border-brand-dark {
-  border-color: #794acf;
+.border-primary-light {
+  border-color: #8158ff;
 }
 
-.border-brand {
-  border-color: #9561e2;
+.border-secondary-dark {
+  border-color: #d11b44;
 }
 
-.border-brand-light {
-  border-color: #a779e9;
+.border-secondary {
+  border-color: #ff2052;
 }
 
-.border-brand-lighter {
-  border-color: #d6bbfc;
+.border-secondary-light {
+  border-color: #ff4871;
 }
 
-.border-brand-lightest {
-  border-color: #f3ebff;
+.border-black-dark {
+  border-color: #000;
 }
 
 .border-black {
-  border-color: #22292f;
+  border-color: #111;
+}
+
+.border-black-light {
+  border-color: #222;
+}
+
+.border-neutral {
+  border-color: 696969;
+}
+
+.border-white-smoke {
+  border-color: F5F5F5;
+}
+
+.border-white {
+  border-color: #fffafa;
 }
 
 .border-grey-darkest {
@@ -1397,10 +1437,6 @@ button,
 
 .border-grey-lightest {
   border-color: #f8fafc;
-}
-
-.border-white {
-  border-color: #fff;
 }
 
 .border-red-darkest {
@@ -1659,36 +1695,52 @@ button,
   border-color: transparent;
 }
 
-.hover\:border-brand-darkest:hover {
-  border-color: #21183c;
+.hover\:border-primary-dark:hover {
+  border-color: #532bd1;
 }
 
-.hover\:border-brand-darker:hover {
-  border-color: #382b5f;
+.hover\:border-primary:hover {
+  border-color: #6534ff;
 }
 
-.hover\:border-brand-dark:hover {
-  border-color: #794acf;
+.hover\:border-primary-light:hover {
+  border-color: #8158ff;
 }
 
-.hover\:border-brand:hover {
-  border-color: #9561e2;
+.hover\:border-secondary-dark:hover {
+  border-color: #d11b44;
 }
 
-.hover\:border-brand-light:hover {
-  border-color: #a779e9;
+.hover\:border-secondary:hover {
+  border-color: #ff2052;
 }
 
-.hover\:border-brand-lighter:hover {
-  border-color: #d6bbfc;
+.hover\:border-secondary-light:hover {
+  border-color: #ff4871;
 }
 
-.hover\:border-brand-lightest:hover {
-  border-color: #f3ebff;
+.hover\:border-black-dark:hover {
+  border-color: #000;
 }
 
 .hover\:border-black:hover {
-  border-color: #22292f;
+  border-color: #111;
+}
+
+.hover\:border-black-light:hover {
+  border-color: #222;
+}
+
+.hover\:border-neutral:hover {
+  border-color: 696969;
+}
+
+.hover\:border-white-smoke:hover {
+  border-color: F5F5F5;
+}
+
+.hover\:border-white:hover {
+  border-color: #fffafa;
 }
 
 .hover\:border-grey-darkest:hover {
@@ -1717,10 +1769,6 @@ button,
 
 .hover\:border-grey-lightest:hover {
   border-color: #f8fafc;
-}
-
-.hover\:border-white:hover {
-  border-color: #fff;
 }
 
 .hover\:border-red-darkest:hover {
@@ -2510,15 +2558,15 @@ button,
 }
 
 .font-sans {
-  font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Rubik, sans-serif;
 }
 
 .font-serif {
-  font-family: Constantia, Lucida Bright, Lucidabright, Lucida Serif, Lucida, DejaVu Serif, Bitstream Vera Serif, Liberation Serif, Georgia, serif;
+  font-family: Noto Serif, serif;
 }
 
 .font-mono {
-  font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-family: Fira Code, monospace;
 }
 
 .font-hairline {
@@ -3687,36 +3735,52 @@ button,
   color: transparent;
 }
 
-.text-brand-darkest {
-  color: #21183c;
+.text-primary-dark {
+  color: #532bd1;
 }
 
-.text-brand-darker {
-  color: #382b5f;
+.text-primary {
+  color: #6534ff;
 }
 
-.text-brand-dark {
-  color: #794acf;
+.text-primary-light {
+  color: #8158ff;
 }
 
-.text-brand {
-  color: #9561e2;
+.text-secondary-dark {
+  color: #d11b44;
 }
 
-.text-brand-light {
-  color: #a779e9;
+.text-secondary {
+  color: #ff2052;
 }
 
-.text-brand-lighter {
-  color: #d6bbfc;
+.text-secondary-light {
+  color: #ff4871;
 }
 
-.text-brand-lightest {
-  color: #f3ebff;
+.text-black-dark {
+  color: #000;
 }
 
 .text-black {
-  color: #22292f;
+  color: #111;
+}
+
+.text-black-light {
+  color: #222;
+}
+
+.text-neutral {
+  color: 696969;
+}
+
+.text-white-smoke {
+  color: F5F5F5;
+}
+
+.text-white {
+  color: #fffafa;
 }
 
 .text-grey-darkest {
@@ -3745,10 +3809,6 @@ button,
 
 .text-grey-lightest {
   color: #f8fafc;
-}
-
-.text-white {
-  color: #fff;
 }
 
 .text-red-darkest {
@@ -4007,36 +4067,52 @@ button,
   color: transparent;
 }
 
-.hover\:text-brand-darkest:hover {
-  color: #21183c;
+.hover\:text-primary-dark:hover {
+  color: #532bd1;
 }
 
-.hover\:text-brand-darker:hover {
-  color: #382b5f;
+.hover\:text-primary:hover {
+  color: #6534ff;
 }
 
-.hover\:text-brand-dark:hover {
-  color: #794acf;
+.hover\:text-primary-light:hover {
+  color: #8158ff;
 }
 
-.hover\:text-brand:hover {
-  color: #9561e2;
+.hover\:text-secondary-dark:hover {
+  color: #d11b44;
 }
 
-.hover\:text-brand-light:hover {
-  color: #a779e9;
+.hover\:text-secondary:hover {
+  color: #ff2052;
 }
 
-.hover\:text-brand-lighter:hover {
-  color: #d6bbfc;
+.hover\:text-secondary-light:hover {
+  color: #ff4871;
 }
 
-.hover\:text-brand-lightest:hover {
-  color: #f3ebff;
+.hover\:text-black-dark:hover {
+  color: #000;
 }
 
 .hover\:text-black:hover {
-  color: #22292f;
+  color: #111;
+}
+
+.hover\:text-black-light:hover {
+  color: #222;
+}
+
+.hover\:text-neutral:hover {
+  color: 696969;
+}
+
+.hover\:text-white-smoke:hover {
+  color: F5F5F5;
+}
+
+.hover\:text-white:hover {
+  color: #fffafa;
 }
 
 .hover\:text-grey-darkest:hover {
@@ -4065,10 +4141,6 @@ button,
 
 .hover\:text-grey-lightest:hover {
   color: #f8fafc;
-}
-
-.hover\:text-white:hover {
-  color: #fff;
 }
 
 .hover\:text-red-darkest:hover {
@@ -4323,10 +4395,6 @@ button,
   color: #ffebef;
 }
 
-.text-xs {
-  font-size: .75rem;
-}
-
 .text-sm {
   font-size: .875rem;
 }
@@ -4335,28 +4403,20 @@ button,
   font-size: 1rem;
 }
 
+.text-md {
+  font-size: 1.414rem;
+}
+
 .text-lg {
-  font-size: 1.125rem;
+  font-size: 1.999rem;
 }
 
 .text-xl {
-  font-size: 1.25rem;
+  font-size: 2.827rem;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
+.text-xxl {
+  font-size: 3.998rem;
 }
 
 .italic {
@@ -4731,36 +4791,52 @@ button,
     background-color: transparent;
   }
 
-  .sm\:bg-brand-darkest {
-    background-color: #21183c;
+  .sm\:bg-primary-dark {
+    background-color: #532bd1;
   }
 
-  .sm\:bg-brand-darker {
-    background-color: #382b5f;
+  .sm\:bg-primary {
+    background-color: #6534ff;
   }
 
-  .sm\:bg-brand-dark {
-    background-color: #794acf;
+  .sm\:bg-primary-light {
+    background-color: #8158ff;
   }
 
-  .sm\:bg-brand {
-    background-color: #9561e2;
+  .sm\:bg-secondary-dark {
+    background-color: #d11b44;
   }
 
-  .sm\:bg-brand-light {
-    background-color: #a779e9;
+  .sm\:bg-secondary {
+    background-color: #ff2052;
   }
 
-  .sm\:bg-brand-lighter {
-    background-color: #d6bbfc;
+  .sm\:bg-secondary-light {
+    background-color: #ff4871;
   }
 
-  .sm\:bg-brand-lightest {
-    background-color: #f3ebff;
+  .sm\:bg-black-dark {
+    background-color: #000;
   }
 
   .sm\:bg-black {
-    background-color: #22292f;
+    background-color: #111;
+  }
+
+  .sm\:bg-black-light {
+    background-color: #222;
+  }
+
+  .sm\:bg-neutral {
+    background-color: 696969;
+  }
+
+  .sm\:bg-white-smoke {
+    background-color: F5F5F5;
+  }
+
+  .sm\:bg-white {
+    background-color: #fffafa;
   }
 
   .sm\:bg-grey-darkest {
@@ -4789,10 +4865,6 @@ button,
 
   .sm\:bg-grey-lightest {
     background-color: #f8fafc;
-  }
-
-  .sm\:bg-white {
-    background-color: #fff;
   }
 
   .sm\:bg-red-darkest {
@@ -5051,36 +5123,52 @@ button,
     background-color: transparent;
   }
 
-  .sm\:hover\:bg-brand-darkest:hover {
-    background-color: #21183c;
+  .sm\:hover\:bg-primary-dark:hover {
+    background-color: #532bd1;
   }
 
-  .sm\:hover\:bg-brand-darker:hover {
-    background-color: #382b5f;
+  .sm\:hover\:bg-primary:hover {
+    background-color: #6534ff;
   }
 
-  .sm\:hover\:bg-brand-dark:hover {
-    background-color: #794acf;
+  .sm\:hover\:bg-primary-light:hover {
+    background-color: #8158ff;
   }
 
-  .sm\:hover\:bg-brand:hover {
-    background-color: #9561e2;
+  .sm\:hover\:bg-secondary-dark:hover {
+    background-color: #d11b44;
   }
 
-  .sm\:hover\:bg-brand-light:hover {
-    background-color: #a779e9;
+  .sm\:hover\:bg-secondary:hover {
+    background-color: #ff2052;
   }
 
-  .sm\:hover\:bg-brand-lighter:hover {
-    background-color: #d6bbfc;
+  .sm\:hover\:bg-secondary-light:hover {
+    background-color: #ff4871;
   }
 
-  .sm\:hover\:bg-brand-lightest:hover {
-    background-color: #f3ebff;
+  .sm\:hover\:bg-black-dark:hover {
+    background-color: #000;
   }
 
   .sm\:hover\:bg-black:hover {
-    background-color: #22292f;
+    background-color: #111;
+  }
+
+  .sm\:hover\:bg-black-light:hover {
+    background-color: #222;
+  }
+
+  .sm\:hover\:bg-neutral:hover {
+    background-color: 696969;
+  }
+
+  .sm\:hover\:bg-white-smoke:hover {
+    background-color: F5F5F5;
+  }
+
+  .sm\:hover\:bg-white:hover {
+    background-color: #fffafa;
   }
 
   .sm\:hover\:bg-grey-darkest:hover {
@@ -5109,10 +5197,6 @@ button,
 
   .sm\:hover\:bg-grey-lightest:hover {
     background-color: #f8fafc;
-  }
-
-  .sm\:hover\:bg-white:hover {
-    background-color: #fff;
   }
 
   .sm\:hover\:bg-red-darkest:hover {
@@ -5435,36 +5519,52 @@ button,
     border-color: transparent;
   }
 
-  .sm\:border-brand-darkest {
-    border-color: #21183c;
+  .sm\:border-primary-dark {
+    border-color: #532bd1;
   }
 
-  .sm\:border-brand-darker {
-    border-color: #382b5f;
+  .sm\:border-primary {
+    border-color: #6534ff;
   }
 
-  .sm\:border-brand-dark {
-    border-color: #794acf;
+  .sm\:border-primary-light {
+    border-color: #8158ff;
   }
 
-  .sm\:border-brand {
-    border-color: #9561e2;
+  .sm\:border-secondary-dark {
+    border-color: #d11b44;
   }
 
-  .sm\:border-brand-light {
-    border-color: #a779e9;
+  .sm\:border-secondary {
+    border-color: #ff2052;
   }
 
-  .sm\:border-brand-lighter {
-    border-color: #d6bbfc;
+  .sm\:border-secondary-light {
+    border-color: #ff4871;
   }
 
-  .sm\:border-brand-lightest {
-    border-color: #f3ebff;
+  .sm\:border-black-dark {
+    border-color: #000;
   }
 
   .sm\:border-black {
-    border-color: #22292f;
+    border-color: #111;
+  }
+
+  .sm\:border-black-light {
+    border-color: #222;
+  }
+
+  .sm\:border-neutral {
+    border-color: 696969;
+  }
+
+  .sm\:border-white-smoke {
+    border-color: F5F5F5;
+  }
+
+  .sm\:border-white {
+    border-color: #fffafa;
   }
 
   .sm\:border-grey-darkest {
@@ -5493,10 +5593,6 @@ button,
 
   .sm\:border-grey-lightest {
     border-color: #f8fafc;
-  }
-
-  .sm\:border-white {
-    border-color: #fff;
   }
 
   .sm\:border-red-darkest {
@@ -5755,36 +5851,52 @@ button,
     border-color: transparent;
   }
 
-  .sm\:hover\:border-brand-darkest:hover {
-    border-color: #21183c;
+  .sm\:hover\:border-primary-dark:hover {
+    border-color: #532bd1;
   }
 
-  .sm\:hover\:border-brand-darker:hover {
-    border-color: #382b5f;
+  .sm\:hover\:border-primary:hover {
+    border-color: #6534ff;
   }
 
-  .sm\:hover\:border-brand-dark:hover {
-    border-color: #794acf;
+  .sm\:hover\:border-primary-light:hover {
+    border-color: #8158ff;
   }
 
-  .sm\:hover\:border-brand:hover {
-    border-color: #9561e2;
+  .sm\:hover\:border-secondary-dark:hover {
+    border-color: #d11b44;
   }
 
-  .sm\:hover\:border-brand-light:hover {
-    border-color: #a779e9;
+  .sm\:hover\:border-secondary:hover {
+    border-color: #ff2052;
   }
 
-  .sm\:hover\:border-brand-lighter:hover {
-    border-color: #d6bbfc;
+  .sm\:hover\:border-secondary-light:hover {
+    border-color: #ff4871;
   }
 
-  .sm\:hover\:border-brand-lightest:hover {
-    border-color: #f3ebff;
+  .sm\:hover\:border-black-dark:hover {
+    border-color: #000;
   }
 
   .sm\:hover\:border-black:hover {
-    border-color: #22292f;
+    border-color: #111;
+  }
+
+  .sm\:hover\:border-black-light:hover {
+    border-color: #222;
+  }
+
+  .sm\:hover\:border-neutral:hover {
+    border-color: 696969;
+  }
+
+  .sm\:hover\:border-white-smoke:hover {
+    border-color: F5F5F5;
+  }
+
+  .sm\:hover\:border-white:hover {
+    border-color: #fffafa;
   }
 
   .sm\:hover\:border-grey-darkest:hover {
@@ -5813,10 +5925,6 @@ button,
 
   .sm\:hover\:border-grey-lightest:hover {
     border-color: #f8fafc;
-  }
-
-  .sm\:hover\:border-white:hover {
-    border-color: #fff;
   }
 
   .sm\:hover\:border-red-darkest:hover {
@@ -6606,15 +6714,15 @@ button,
   }
 
   .sm\:font-sans {
-    font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: Rubik, sans-serif;
   }
 
   .sm\:font-serif {
-    font-family: Constantia, Lucida Bright, Lucidabright, Lucida Serif, Lucida, DejaVu Serif, Bitstream Vera Serif, Liberation Serif, Georgia, serif;
+    font-family: Noto Serif, serif;
   }
 
   .sm\:font-mono {
-    font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    font-family: Fira Code, monospace;
   }
 
   .sm\:font-hairline {
@@ -7775,36 +7883,52 @@ button,
     color: transparent;
   }
 
-  .sm\:text-brand-darkest {
-    color: #21183c;
+  .sm\:text-primary-dark {
+    color: #532bd1;
   }
 
-  .sm\:text-brand-darker {
-    color: #382b5f;
+  .sm\:text-primary {
+    color: #6534ff;
   }
 
-  .sm\:text-brand-dark {
-    color: #794acf;
+  .sm\:text-primary-light {
+    color: #8158ff;
   }
 
-  .sm\:text-brand {
-    color: #9561e2;
+  .sm\:text-secondary-dark {
+    color: #d11b44;
   }
 
-  .sm\:text-brand-light {
-    color: #a779e9;
+  .sm\:text-secondary {
+    color: #ff2052;
   }
 
-  .sm\:text-brand-lighter {
-    color: #d6bbfc;
+  .sm\:text-secondary-light {
+    color: #ff4871;
   }
 
-  .sm\:text-brand-lightest {
-    color: #f3ebff;
+  .sm\:text-black-dark {
+    color: #000;
   }
 
   .sm\:text-black {
-    color: #22292f;
+    color: #111;
+  }
+
+  .sm\:text-black-light {
+    color: #222;
+  }
+
+  .sm\:text-neutral {
+    color: 696969;
+  }
+
+  .sm\:text-white-smoke {
+    color: F5F5F5;
+  }
+
+  .sm\:text-white {
+    color: #fffafa;
   }
 
   .sm\:text-grey-darkest {
@@ -7833,10 +7957,6 @@ button,
 
   .sm\:text-grey-lightest {
     color: #f8fafc;
-  }
-
-  .sm\:text-white {
-    color: #fff;
   }
 
   .sm\:text-red-darkest {
@@ -8095,36 +8215,52 @@ button,
     color: transparent;
   }
 
-  .sm\:hover\:text-brand-darkest:hover {
-    color: #21183c;
+  .sm\:hover\:text-primary-dark:hover {
+    color: #532bd1;
   }
 
-  .sm\:hover\:text-brand-darker:hover {
-    color: #382b5f;
+  .sm\:hover\:text-primary:hover {
+    color: #6534ff;
   }
 
-  .sm\:hover\:text-brand-dark:hover {
-    color: #794acf;
+  .sm\:hover\:text-primary-light:hover {
+    color: #8158ff;
   }
 
-  .sm\:hover\:text-brand:hover {
-    color: #9561e2;
+  .sm\:hover\:text-secondary-dark:hover {
+    color: #d11b44;
   }
 
-  .sm\:hover\:text-brand-light:hover {
-    color: #a779e9;
+  .sm\:hover\:text-secondary:hover {
+    color: #ff2052;
   }
 
-  .sm\:hover\:text-brand-lighter:hover {
-    color: #d6bbfc;
+  .sm\:hover\:text-secondary-light:hover {
+    color: #ff4871;
   }
 
-  .sm\:hover\:text-brand-lightest:hover {
-    color: #f3ebff;
+  .sm\:hover\:text-black-dark:hover {
+    color: #000;
   }
 
   .sm\:hover\:text-black:hover {
-    color: #22292f;
+    color: #111;
+  }
+
+  .sm\:hover\:text-black-light:hover {
+    color: #222;
+  }
+
+  .sm\:hover\:text-neutral:hover {
+    color: 696969;
+  }
+
+  .sm\:hover\:text-white-smoke:hover {
+    color: F5F5F5;
+  }
+
+  .sm\:hover\:text-white:hover {
+    color: #fffafa;
   }
 
   .sm\:hover\:text-grey-darkest:hover {
@@ -8153,10 +8289,6 @@ button,
 
   .sm\:hover\:text-grey-lightest:hover {
     color: #f8fafc;
-  }
-
-  .sm\:hover\:text-white:hover {
-    color: #fff;
   }
 
   .sm\:hover\:text-red-darkest:hover {
@@ -8411,10 +8543,6 @@ button,
     color: #ffebef;
   }
 
-  .sm\:text-xs {
-    font-size: .75rem;
-  }
-
   .sm\:text-sm {
     font-size: .875rem;
   }
@@ -8423,28 +8551,20 @@ button,
     font-size: 1rem;
   }
 
+  .sm\:text-md {
+    font-size: 1.414rem;
+  }
+
   .sm\:text-lg {
-    font-size: 1.125rem;
+    font-size: 1.999rem;
   }
 
   .sm\:text-xl {
-    font-size: 1.25rem;
+    font-size: 2.827rem;
   }
 
-  .sm\:text-2xl {
-    font-size: 1.5rem;
-  }
-
-  .sm\:text-3xl {
-    font-size: 1.875rem;
-  }
-
-  .sm\:text-4xl {
-    font-size: 2.25rem;
-  }
-
-  .sm\:text-5xl {
-    font-size: 3rem;
+  .sm\:text-xxl {
+    font-size: 3.998rem;
   }
 
   .sm\:italic {
@@ -8792,36 +8912,52 @@ button,
     background-color: transparent;
   }
 
-  .md\:bg-brand-darkest {
-    background-color: #21183c;
+  .md\:bg-primary-dark {
+    background-color: #532bd1;
   }
 
-  .md\:bg-brand-darker {
-    background-color: #382b5f;
+  .md\:bg-primary {
+    background-color: #6534ff;
   }
 
-  .md\:bg-brand-dark {
-    background-color: #794acf;
+  .md\:bg-primary-light {
+    background-color: #8158ff;
   }
 
-  .md\:bg-brand {
-    background-color: #9561e2;
+  .md\:bg-secondary-dark {
+    background-color: #d11b44;
   }
 
-  .md\:bg-brand-light {
-    background-color: #a779e9;
+  .md\:bg-secondary {
+    background-color: #ff2052;
   }
 
-  .md\:bg-brand-lighter {
-    background-color: #d6bbfc;
+  .md\:bg-secondary-light {
+    background-color: #ff4871;
   }
 
-  .md\:bg-brand-lightest {
-    background-color: #f3ebff;
+  .md\:bg-black-dark {
+    background-color: #000;
   }
 
   .md\:bg-black {
-    background-color: #22292f;
+    background-color: #111;
+  }
+
+  .md\:bg-black-light {
+    background-color: #222;
+  }
+
+  .md\:bg-neutral {
+    background-color: 696969;
+  }
+
+  .md\:bg-white-smoke {
+    background-color: F5F5F5;
+  }
+
+  .md\:bg-white {
+    background-color: #fffafa;
   }
 
   .md\:bg-grey-darkest {
@@ -8850,10 +8986,6 @@ button,
 
   .md\:bg-grey-lightest {
     background-color: #f8fafc;
-  }
-
-  .md\:bg-white {
-    background-color: #fff;
   }
 
   .md\:bg-red-darkest {
@@ -9112,36 +9244,52 @@ button,
     background-color: transparent;
   }
 
-  .md\:hover\:bg-brand-darkest:hover {
-    background-color: #21183c;
+  .md\:hover\:bg-primary-dark:hover {
+    background-color: #532bd1;
   }
 
-  .md\:hover\:bg-brand-darker:hover {
-    background-color: #382b5f;
+  .md\:hover\:bg-primary:hover {
+    background-color: #6534ff;
   }
 
-  .md\:hover\:bg-brand-dark:hover {
-    background-color: #794acf;
+  .md\:hover\:bg-primary-light:hover {
+    background-color: #8158ff;
   }
 
-  .md\:hover\:bg-brand:hover {
-    background-color: #9561e2;
+  .md\:hover\:bg-secondary-dark:hover {
+    background-color: #d11b44;
   }
 
-  .md\:hover\:bg-brand-light:hover {
-    background-color: #a779e9;
+  .md\:hover\:bg-secondary:hover {
+    background-color: #ff2052;
   }
 
-  .md\:hover\:bg-brand-lighter:hover {
-    background-color: #d6bbfc;
+  .md\:hover\:bg-secondary-light:hover {
+    background-color: #ff4871;
   }
 
-  .md\:hover\:bg-brand-lightest:hover {
-    background-color: #f3ebff;
+  .md\:hover\:bg-black-dark:hover {
+    background-color: #000;
   }
 
   .md\:hover\:bg-black:hover {
-    background-color: #22292f;
+    background-color: #111;
+  }
+
+  .md\:hover\:bg-black-light:hover {
+    background-color: #222;
+  }
+
+  .md\:hover\:bg-neutral:hover {
+    background-color: 696969;
+  }
+
+  .md\:hover\:bg-white-smoke:hover {
+    background-color: F5F5F5;
+  }
+
+  .md\:hover\:bg-white:hover {
+    background-color: #fffafa;
   }
 
   .md\:hover\:bg-grey-darkest:hover {
@@ -9170,10 +9318,6 @@ button,
 
   .md\:hover\:bg-grey-lightest:hover {
     background-color: #f8fafc;
-  }
-
-  .md\:hover\:bg-white:hover {
-    background-color: #fff;
   }
 
   .md\:hover\:bg-red-darkest:hover {
@@ -9496,36 +9640,52 @@ button,
     border-color: transparent;
   }
 
-  .md\:border-brand-darkest {
-    border-color: #21183c;
+  .md\:border-primary-dark {
+    border-color: #532bd1;
   }
 
-  .md\:border-brand-darker {
-    border-color: #382b5f;
+  .md\:border-primary {
+    border-color: #6534ff;
   }
 
-  .md\:border-brand-dark {
-    border-color: #794acf;
+  .md\:border-primary-light {
+    border-color: #8158ff;
   }
 
-  .md\:border-brand {
-    border-color: #9561e2;
+  .md\:border-secondary-dark {
+    border-color: #d11b44;
   }
 
-  .md\:border-brand-light {
-    border-color: #a779e9;
+  .md\:border-secondary {
+    border-color: #ff2052;
   }
 
-  .md\:border-brand-lighter {
-    border-color: #d6bbfc;
+  .md\:border-secondary-light {
+    border-color: #ff4871;
   }
 
-  .md\:border-brand-lightest {
-    border-color: #f3ebff;
+  .md\:border-black-dark {
+    border-color: #000;
   }
 
   .md\:border-black {
-    border-color: #22292f;
+    border-color: #111;
+  }
+
+  .md\:border-black-light {
+    border-color: #222;
+  }
+
+  .md\:border-neutral {
+    border-color: 696969;
+  }
+
+  .md\:border-white-smoke {
+    border-color: F5F5F5;
+  }
+
+  .md\:border-white {
+    border-color: #fffafa;
   }
 
   .md\:border-grey-darkest {
@@ -9554,10 +9714,6 @@ button,
 
   .md\:border-grey-lightest {
     border-color: #f8fafc;
-  }
-
-  .md\:border-white {
-    border-color: #fff;
   }
 
   .md\:border-red-darkest {
@@ -9816,36 +9972,52 @@ button,
     border-color: transparent;
   }
 
-  .md\:hover\:border-brand-darkest:hover {
-    border-color: #21183c;
+  .md\:hover\:border-primary-dark:hover {
+    border-color: #532bd1;
   }
 
-  .md\:hover\:border-brand-darker:hover {
-    border-color: #382b5f;
+  .md\:hover\:border-primary:hover {
+    border-color: #6534ff;
   }
 
-  .md\:hover\:border-brand-dark:hover {
-    border-color: #794acf;
+  .md\:hover\:border-primary-light:hover {
+    border-color: #8158ff;
   }
 
-  .md\:hover\:border-brand:hover {
-    border-color: #9561e2;
+  .md\:hover\:border-secondary-dark:hover {
+    border-color: #d11b44;
   }
 
-  .md\:hover\:border-brand-light:hover {
-    border-color: #a779e9;
+  .md\:hover\:border-secondary:hover {
+    border-color: #ff2052;
   }
 
-  .md\:hover\:border-brand-lighter:hover {
-    border-color: #d6bbfc;
+  .md\:hover\:border-secondary-light:hover {
+    border-color: #ff4871;
   }
 
-  .md\:hover\:border-brand-lightest:hover {
-    border-color: #f3ebff;
+  .md\:hover\:border-black-dark:hover {
+    border-color: #000;
   }
 
   .md\:hover\:border-black:hover {
-    border-color: #22292f;
+    border-color: #111;
+  }
+
+  .md\:hover\:border-black-light:hover {
+    border-color: #222;
+  }
+
+  .md\:hover\:border-neutral:hover {
+    border-color: 696969;
+  }
+
+  .md\:hover\:border-white-smoke:hover {
+    border-color: F5F5F5;
+  }
+
+  .md\:hover\:border-white:hover {
+    border-color: #fffafa;
   }
 
   .md\:hover\:border-grey-darkest:hover {
@@ -9874,10 +10046,6 @@ button,
 
   .md\:hover\:border-grey-lightest:hover {
     border-color: #f8fafc;
-  }
-
-  .md\:hover\:border-white:hover {
-    border-color: #fff;
   }
 
   .md\:hover\:border-red-darkest:hover {
@@ -10667,15 +10835,15 @@ button,
   }
 
   .md\:font-sans {
-    font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: Rubik, sans-serif;
   }
 
   .md\:font-serif {
-    font-family: Constantia, Lucida Bright, Lucidabright, Lucida Serif, Lucida, DejaVu Serif, Bitstream Vera Serif, Liberation Serif, Georgia, serif;
+    font-family: Noto Serif, serif;
   }
 
   .md\:font-mono {
-    font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    font-family: Fira Code, monospace;
   }
 
   .md\:font-hairline {
@@ -11836,36 +12004,52 @@ button,
     color: transparent;
   }
 
-  .md\:text-brand-darkest {
-    color: #21183c;
+  .md\:text-primary-dark {
+    color: #532bd1;
   }
 
-  .md\:text-brand-darker {
-    color: #382b5f;
+  .md\:text-primary {
+    color: #6534ff;
   }
 
-  .md\:text-brand-dark {
-    color: #794acf;
+  .md\:text-primary-light {
+    color: #8158ff;
   }
 
-  .md\:text-brand {
-    color: #9561e2;
+  .md\:text-secondary-dark {
+    color: #d11b44;
   }
 
-  .md\:text-brand-light {
-    color: #a779e9;
+  .md\:text-secondary {
+    color: #ff2052;
   }
 
-  .md\:text-brand-lighter {
-    color: #d6bbfc;
+  .md\:text-secondary-light {
+    color: #ff4871;
   }
 
-  .md\:text-brand-lightest {
-    color: #f3ebff;
+  .md\:text-black-dark {
+    color: #000;
   }
 
   .md\:text-black {
-    color: #22292f;
+    color: #111;
+  }
+
+  .md\:text-black-light {
+    color: #222;
+  }
+
+  .md\:text-neutral {
+    color: 696969;
+  }
+
+  .md\:text-white-smoke {
+    color: F5F5F5;
+  }
+
+  .md\:text-white {
+    color: #fffafa;
   }
 
   .md\:text-grey-darkest {
@@ -11894,10 +12078,6 @@ button,
 
   .md\:text-grey-lightest {
     color: #f8fafc;
-  }
-
-  .md\:text-white {
-    color: #fff;
   }
 
   .md\:text-red-darkest {
@@ -12156,36 +12336,52 @@ button,
     color: transparent;
   }
 
-  .md\:hover\:text-brand-darkest:hover {
-    color: #21183c;
+  .md\:hover\:text-primary-dark:hover {
+    color: #532bd1;
   }
 
-  .md\:hover\:text-brand-darker:hover {
-    color: #382b5f;
+  .md\:hover\:text-primary:hover {
+    color: #6534ff;
   }
 
-  .md\:hover\:text-brand-dark:hover {
-    color: #794acf;
+  .md\:hover\:text-primary-light:hover {
+    color: #8158ff;
   }
 
-  .md\:hover\:text-brand:hover {
-    color: #9561e2;
+  .md\:hover\:text-secondary-dark:hover {
+    color: #d11b44;
   }
 
-  .md\:hover\:text-brand-light:hover {
-    color: #a779e9;
+  .md\:hover\:text-secondary:hover {
+    color: #ff2052;
   }
 
-  .md\:hover\:text-brand-lighter:hover {
-    color: #d6bbfc;
+  .md\:hover\:text-secondary-light:hover {
+    color: #ff4871;
   }
 
-  .md\:hover\:text-brand-lightest:hover {
-    color: #f3ebff;
+  .md\:hover\:text-black-dark:hover {
+    color: #000;
   }
 
   .md\:hover\:text-black:hover {
-    color: #22292f;
+    color: #111;
+  }
+
+  .md\:hover\:text-black-light:hover {
+    color: #222;
+  }
+
+  .md\:hover\:text-neutral:hover {
+    color: 696969;
+  }
+
+  .md\:hover\:text-white-smoke:hover {
+    color: F5F5F5;
+  }
+
+  .md\:hover\:text-white:hover {
+    color: #fffafa;
   }
 
   .md\:hover\:text-grey-darkest:hover {
@@ -12214,10 +12410,6 @@ button,
 
   .md\:hover\:text-grey-lightest:hover {
     color: #f8fafc;
-  }
-
-  .md\:hover\:text-white:hover {
-    color: #fff;
   }
 
   .md\:hover\:text-red-darkest:hover {
@@ -12472,10 +12664,6 @@ button,
     color: #ffebef;
   }
 
-  .md\:text-xs {
-    font-size: .75rem;
-  }
-
   .md\:text-sm {
     font-size: .875rem;
   }
@@ -12484,28 +12672,20 @@ button,
     font-size: 1rem;
   }
 
+  .md\:text-md {
+    font-size: 1.414rem;
+  }
+
   .md\:text-lg {
-    font-size: 1.125rem;
+    font-size: 1.999rem;
   }
 
   .md\:text-xl {
-    font-size: 1.25rem;
+    font-size: 2.827rem;
   }
 
-  .md\:text-2xl {
-    font-size: 1.5rem;
-  }
-
-  .md\:text-3xl {
-    font-size: 1.875rem;
-  }
-
-  .md\:text-4xl {
-    font-size: 2.25rem;
-  }
-
-  .md\:text-5xl {
-    font-size: 3rem;
+  .md\:text-xxl {
+    font-size: 3.998rem;
   }
 
   .md\:italic {
@@ -12853,36 +13033,52 @@ button,
     background-color: transparent;
   }
 
-  .lg\:bg-brand-darkest {
-    background-color: #21183c;
+  .lg\:bg-primary-dark {
+    background-color: #532bd1;
   }
 
-  .lg\:bg-brand-darker {
-    background-color: #382b5f;
+  .lg\:bg-primary {
+    background-color: #6534ff;
   }
 
-  .lg\:bg-brand-dark {
-    background-color: #794acf;
+  .lg\:bg-primary-light {
+    background-color: #8158ff;
   }
 
-  .lg\:bg-brand {
-    background-color: #9561e2;
+  .lg\:bg-secondary-dark {
+    background-color: #d11b44;
   }
 
-  .lg\:bg-brand-light {
-    background-color: #a779e9;
+  .lg\:bg-secondary {
+    background-color: #ff2052;
   }
 
-  .lg\:bg-brand-lighter {
-    background-color: #d6bbfc;
+  .lg\:bg-secondary-light {
+    background-color: #ff4871;
   }
 
-  .lg\:bg-brand-lightest {
-    background-color: #f3ebff;
+  .lg\:bg-black-dark {
+    background-color: #000;
   }
 
   .lg\:bg-black {
-    background-color: #22292f;
+    background-color: #111;
+  }
+
+  .lg\:bg-black-light {
+    background-color: #222;
+  }
+
+  .lg\:bg-neutral {
+    background-color: 696969;
+  }
+
+  .lg\:bg-white-smoke {
+    background-color: F5F5F5;
+  }
+
+  .lg\:bg-white {
+    background-color: #fffafa;
   }
 
   .lg\:bg-grey-darkest {
@@ -12911,10 +13107,6 @@ button,
 
   .lg\:bg-grey-lightest {
     background-color: #f8fafc;
-  }
-
-  .lg\:bg-white {
-    background-color: #fff;
   }
 
   .lg\:bg-red-darkest {
@@ -13173,36 +13365,52 @@ button,
     background-color: transparent;
   }
 
-  .lg\:hover\:bg-brand-darkest:hover {
-    background-color: #21183c;
+  .lg\:hover\:bg-primary-dark:hover {
+    background-color: #532bd1;
   }
 
-  .lg\:hover\:bg-brand-darker:hover {
-    background-color: #382b5f;
+  .lg\:hover\:bg-primary:hover {
+    background-color: #6534ff;
   }
 
-  .lg\:hover\:bg-brand-dark:hover {
-    background-color: #794acf;
+  .lg\:hover\:bg-primary-light:hover {
+    background-color: #8158ff;
   }
 
-  .lg\:hover\:bg-brand:hover {
-    background-color: #9561e2;
+  .lg\:hover\:bg-secondary-dark:hover {
+    background-color: #d11b44;
   }
 
-  .lg\:hover\:bg-brand-light:hover {
-    background-color: #a779e9;
+  .lg\:hover\:bg-secondary:hover {
+    background-color: #ff2052;
   }
 
-  .lg\:hover\:bg-brand-lighter:hover {
-    background-color: #d6bbfc;
+  .lg\:hover\:bg-secondary-light:hover {
+    background-color: #ff4871;
   }
 
-  .lg\:hover\:bg-brand-lightest:hover {
-    background-color: #f3ebff;
+  .lg\:hover\:bg-black-dark:hover {
+    background-color: #000;
   }
 
   .lg\:hover\:bg-black:hover {
-    background-color: #22292f;
+    background-color: #111;
+  }
+
+  .lg\:hover\:bg-black-light:hover {
+    background-color: #222;
+  }
+
+  .lg\:hover\:bg-neutral:hover {
+    background-color: 696969;
+  }
+
+  .lg\:hover\:bg-white-smoke:hover {
+    background-color: F5F5F5;
+  }
+
+  .lg\:hover\:bg-white:hover {
+    background-color: #fffafa;
   }
 
   .lg\:hover\:bg-grey-darkest:hover {
@@ -13231,10 +13439,6 @@ button,
 
   .lg\:hover\:bg-grey-lightest:hover {
     background-color: #f8fafc;
-  }
-
-  .lg\:hover\:bg-white:hover {
-    background-color: #fff;
   }
 
   .lg\:hover\:bg-red-darkest:hover {
@@ -13557,36 +13761,52 @@ button,
     border-color: transparent;
   }
 
-  .lg\:border-brand-darkest {
-    border-color: #21183c;
+  .lg\:border-primary-dark {
+    border-color: #532bd1;
   }
 
-  .lg\:border-brand-darker {
-    border-color: #382b5f;
+  .lg\:border-primary {
+    border-color: #6534ff;
   }
 
-  .lg\:border-brand-dark {
-    border-color: #794acf;
+  .lg\:border-primary-light {
+    border-color: #8158ff;
   }
 
-  .lg\:border-brand {
-    border-color: #9561e2;
+  .lg\:border-secondary-dark {
+    border-color: #d11b44;
   }
 
-  .lg\:border-brand-light {
-    border-color: #a779e9;
+  .lg\:border-secondary {
+    border-color: #ff2052;
   }
 
-  .lg\:border-brand-lighter {
-    border-color: #d6bbfc;
+  .lg\:border-secondary-light {
+    border-color: #ff4871;
   }
 
-  .lg\:border-brand-lightest {
-    border-color: #f3ebff;
+  .lg\:border-black-dark {
+    border-color: #000;
   }
 
   .lg\:border-black {
-    border-color: #22292f;
+    border-color: #111;
+  }
+
+  .lg\:border-black-light {
+    border-color: #222;
+  }
+
+  .lg\:border-neutral {
+    border-color: 696969;
+  }
+
+  .lg\:border-white-smoke {
+    border-color: F5F5F5;
+  }
+
+  .lg\:border-white {
+    border-color: #fffafa;
   }
 
   .lg\:border-grey-darkest {
@@ -13615,10 +13835,6 @@ button,
 
   .lg\:border-grey-lightest {
     border-color: #f8fafc;
-  }
-
-  .lg\:border-white {
-    border-color: #fff;
   }
 
   .lg\:border-red-darkest {
@@ -13877,36 +14093,52 @@ button,
     border-color: transparent;
   }
 
-  .lg\:hover\:border-brand-darkest:hover {
-    border-color: #21183c;
+  .lg\:hover\:border-primary-dark:hover {
+    border-color: #532bd1;
   }
 
-  .lg\:hover\:border-brand-darker:hover {
-    border-color: #382b5f;
+  .lg\:hover\:border-primary:hover {
+    border-color: #6534ff;
   }
 
-  .lg\:hover\:border-brand-dark:hover {
-    border-color: #794acf;
+  .lg\:hover\:border-primary-light:hover {
+    border-color: #8158ff;
   }
 
-  .lg\:hover\:border-brand:hover {
-    border-color: #9561e2;
+  .lg\:hover\:border-secondary-dark:hover {
+    border-color: #d11b44;
   }
 
-  .lg\:hover\:border-brand-light:hover {
-    border-color: #a779e9;
+  .lg\:hover\:border-secondary:hover {
+    border-color: #ff2052;
   }
 
-  .lg\:hover\:border-brand-lighter:hover {
-    border-color: #d6bbfc;
+  .lg\:hover\:border-secondary-light:hover {
+    border-color: #ff4871;
   }
 
-  .lg\:hover\:border-brand-lightest:hover {
-    border-color: #f3ebff;
+  .lg\:hover\:border-black-dark:hover {
+    border-color: #000;
   }
 
   .lg\:hover\:border-black:hover {
-    border-color: #22292f;
+    border-color: #111;
+  }
+
+  .lg\:hover\:border-black-light:hover {
+    border-color: #222;
+  }
+
+  .lg\:hover\:border-neutral:hover {
+    border-color: 696969;
+  }
+
+  .lg\:hover\:border-white-smoke:hover {
+    border-color: F5F5F5;
+  }
+
+  .lg\:hover\:border-white:hover {
+    border-color: #fffafa;
   }
 
   .lg\:hover\:border-grey-darkest:hover {
@@ -13935,10 +14167,6 @@ button,
 
   .lg\:hover\:border-grey-lightest:hover {
     border-color: #f8fafc;
-  }
-
-  .lg\:hover\:border-white:hover {
-    border-color: #fff;
   }
 
   .lg\:hover\:border-red-darkest:hover {
@@ -14728,15 +14956,15 @@ button,
   }
 
   .lg\:font-sans {
-    font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: Rubik, sans-serif;
   }
 
   .lg\:font-serif {
-    font-family: Constantia, Lucida Bright, Lucidabright, Lucida Serif, Lucida, DejaVu Serif, Bitstream Vera Serif, Liberation Serif, Georgia, serif;
+    font-family: Noto Serif, serif;
   }
 
   .lg\:font-mono {
-    font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    font-family: Fira Code, monospace;
   }
 
   .lg\:font-hairline {
@@ -15897,36 +16125,52 @@ button,
     color: transparent;
   }
 
-  .lg\:text-brand-darkest {
-    color: #21183c;
+  .lg\:text-primary-dark {
+    color: #532bd1;
   }
 
-  .lg\:text-brand-darker {
-    color: #382b5f;
+  .lg\:text-primary {
+    color: #6534ff;
   }
 
-  .lg\:text-brand-dark {
-    color: #794acf;
+  .lg\:text-primary-light {
+    color: #8158ff;
   }
 
-  .lg\:text-brand {
-    color: #9561e2;
+  .lg\:text-secondary-dark {
+    color: #d11b44;
   }
 
-  .lg\:text-brand-light {
-    color: #a779e9;
+  .lg\:text-secondary {
+    color: #ff2052;
   }
 
-  .lg\:text-brand-lighter {
-    color: #d6bbfc;
+  .lg\:text-secondary-light {
+    color: #ff4871;
   }
 
-  .lg\:text-brand-lightest {
-    color: #f3ebff;
+  .lg\:text-black-dark {
+    color: #000;
   }
 
   .lg\:text-black {
-    color: #22292f;
+    color: #111;
+  }
+
+  .lg\:text-black-light {
+    color: #222;
+  }
+
+  .lg\:text-neutral {
+    color: 696969;
+  }
+
+  .lg\:text-white-smoke {
+    color: F5F5F5;
+  }
+
+  .lg\:text-white {
+    color: #fffafa;
   }
 
   .lg\:text-grey-darkest {
@@ -15955,10 +16199,6 @@ button,
 
   .lg\:text-grey-lightest {
     color: #f8fafc;
-  }
-
-  .lg\:text-white {
-    color: #fff;
   }
 
   .lg\:text-red-darkest {
@@ -16217,36 +16457,52 @@ button,
     color: transparent;
   }
 
-  .lg\:hover\:text-brand-darkest:hover {
-    color: #21183c;
+  .lg\:hover\:text-primary-dark:hover {
+    color: #532bd1;
   }
 
-  .lg\:hover\:text-brand-darker:hover {
-    color: #382b5f;
+  .lg\:hover\:text-primary:hover {
+    color: #6534ff;
   }
 
-  .lg\:hover\:text-brand-dark:hover {
-    color: #794acf;
+  .lg\:hover\:text-primary-light:hover {
+    color: #8158ff;
   }
 
-  .lg\:hover\:text-brand:hover {
-    color: #9561e2;
+  .lg\:hover\:text-secondary-dark:hover {
+    color: #d11b44;
   }
 
-  .lg\:hover\:text-brand-light:hover {
-    color: #a779e9;
+  .lg\:hover\:text-secondary:hover {
+    color: #ff2052;
   }
 
-  .lg\:hover\:text-brand-lighter:hover {
-    color: #d6bbfc;
+  .lg\:hover\:text-secondary-light:hover {
+    color: #ff4871;
   }
 
-  .lg\:hover\:text-brand-lightest:hover {
-    color: #f3ebff;
+  .lg\:hover\:text-black-dark:hover {
+    color: #000;
   }
 
   .lg\:hover\:text-black:hover {
-    color: #22292f;
+    color: #111;
+  }
+
+  .lg\:hover\:text-black-light:hover {
+    color: #222;
+  }
+
+  .lg\:hover\:text-neutral:hover {
+    color: 696969;
+  }
+
+  .lg\:hover\:text-white-smoke:hover {
+    color: F5F5F5;
+  }
+
+  .lg\:hover\:text-white:hover {
+    color: #fffafa;
   }
 
   .lg\:hover\:text-grey-darkest:hover {
@@ -16275,10 +16531,6 @@ button,
 
   .lg\:hover\:text-grey-lightest:hover {
     color: #f8fafc;
-  }
-
-  .lg\:hover\:text-white:hover {
-    color: #fff;
   }
 
   .lg\:hover\:text-red-darkest:hover {
@@ -16533,10 +16785,6 @@ button,
     color: #ffebef;
   }
 
-  .lg\:text-xs {
-    font-size: .75rem;
-  }
-
   .lg\:text-sm {
     font-size: .875rem;
   }
@@ -16545,28 +16793,20 @@ button,
     font-size: 1rem;
   }
 
+  .lg\:text-md {
+    font-size: 1.414rem;
+  }
+
   .lg\:text-lg {
-    font-size: 1.125rem;
+    font-size: 1.999rem;
   }
 
   .lg\:text-xl {
-    font-size: 1.25rem;
+    font-size: 2.827rem;
   }
 
-  .lg\:text-2xl {
-    font-size: 1.5rem;
-  }
-
-  .lg\:text-3xl {
-    font-size: 1.875rem;
-  }
-
-  .lg\:text-4xl {
-    font-size: 2.25rem;
-  }
-
-  .lg\:text-5xl {
-    font-size: 3rem;
+  .lg\:text-xxl {
+    font-size: 3.998rem;
   }
 
   .lg\:italic {
@@ -16914,36 +17154,52 @@ button,
     background-color: transparent;
   }
 
-  .xl\:bg-brand-darkest {
-    background-color: #21183c;
+  .xl\:bg-primary-dark {
+    background-color: #532bd1;
   }
 
-  .xl\:bg-brand-darker {
-    background-color: #382b5f;
+  .xl\:bg-primary {
+    background-color: #6534ff;
   }
 
-  .xl\:bg-brand-dark {
-    background-color: #794acf;
+  .xl\:bg-primary-light {
+    background-color: #8158ff;
   }
 
-  .xl\:bg-brand {
-    background-color: #9561e2;
+  .xl\:bg-secondary-dark {
+    background-color: #d11b44;
   }
 
-  .xl\:bg-brand-light {
-    background-color: #a779e9;
+  .xl\:bg-secondary {
+    background-color: #ff2052;
   }
 
-  .xl\:bg-brand-lighter {
-    background-color: #d6bbfc;
+  .xl\:bg-secondary-light {
+    background-color: #ff4871;
   }
 
-  .xl\:bg-brand-lightest {
-    background-color: #f3ebff;
+  .xl\:bg-black-dark {
+    background-color: #000;
   }
 
   .xl\:bg-black {
-    background-color: #22292f;
+    background-color: #111;
+  }
+
+  .xl\:bg-black-light {
+    background-color: #222;
+  }
+
+  .xl\:bg-neutral {
+    background-color: 696969;
+  }
+
+  .xl\:bg-white-smoke {
+    background-color: F5F5F5;
+  }
+
+  .xl\:bg-white {
+    background-color: #fffafa;
   }
 
   .xl\:bg-grey-darkest {
@@ -16972,10 +17228,6 @@ button,
 
   .xl\:bg-grey-lightest {
     background-color: #f8fafc;
-  }
-
-  .xl\:bg-white {
-    background-color: #fff;
   }
 
   .xl\:bg-red-darkest {
@@ -17234,36 +17486,52 @@ button,
     background-color: transparent;
   }
 
-  .xl\:hover\:bg-brand-darkest:hover {
-    background-color: #21183c;
+  .xl\:hover\:bg-primary-dark:hover {
+    background-color: #532bd1;
   }
 
-  .xl\:hover\:bg-brand-darker:hover {
-    background-color: #382b5f;
+  .xl\:hover\:bg-primary:hover {
+    background-color: #6534ff;
   }
 
-  .xl\:hover\:bg-brand-dark:hover {
-    background-color: #794acf;
+  .xl\:hover\:bg-primary-light:hover {
+    background-color: #8158ff;
   }
 
-  .xl\:hover\:bg-brand:hover {
-    background-color: #9561e2;
+  .xl\:hover\:bg-secondary-dark:hover {
+    background-color: #d11b44;
   }
 
-  .xl\:hover\:bg-brand-light:hover {
-    background-color: #a779e9;
+  .xl\:hover\:bg-secondary:hover {
+    background-color: #ff2052;
   }
 
-  .xl\:hover\:bg-brand-lighter:hover {
-    background-color: #d6bbfc;
+  .xl\:hover\:bg-secondary-light:hover {
+    background-color: #ff4871;
   }
 
-  .xl\:hover\:bg-brand-lightest:hover {
-    background-color: #f3ebff;
+  .xl\:hover\:bg-black-dark:hover {
+    background-color: #000;
   }
 
   .xl\:hover\:bg-black:hover {
-    background-color: #22292f;
+    background-color: #111;
+  }
+
+  .xl\:hover\:bg-black-light:hover {
+    background-color: #222;
+  }
+
+  .xl\:hover\:bg-neutral:hover {
+    background-color: 696969;
+  }
+
+  .xl\:hover\:bg-white-smoke:hover {
+    background-color: F5F5F5;
+  }
+
+  .xl\:hover\:bg-white:hover {
+    background-color: #fffafa;
   }
 
   .xl\:hover\:bg-grey-darkest:hover {
@@ -17292,10 +17560,6 @@ button,
 
   .xl\:hover\:bg-grey-lightest:hover {
     background-color: #f8fafc;
-  }
-
-  .xl\:hover\:bg-white:hover {
-    background-color: #fff;
   }
 
   .xl\:hover\:bg-red-darkest:hover {
@@ -17618,36 +17882,52 @@ button,
     border-color: transparent;
   }
 
-  .xl\:border-brand-darkest {
-    border-color: #21183c;
+  .xl\:border-primary-dark {
+    border-color: #532bd1;
   }
 
-  .xl\:border-brand-darker {
-    border-color: #382b5f;
+  .xl\:border-primary {
+    border-color: #6534ff;
   }
 
-  .xl\:border-brand-dark {
-    border-color: #794acf;
+  .xl\:border-primary-light {
+    border-color: #8158ff;
   }
 
-  .xl\:border-brand {
-    border-color: #9561e2;
+  .xl\:border-secondary-dark {
+    border-color: #d11b44;
   }
 
-  .xl\:border-brand-light {
-    border-color: #a779e9;
+  .xl\:border-secondary {
+    border-color: #ff2052;
   }
 
-  .xl\:border-brand-lighter {
-    border-color: #d6bbfc;
+  .xl\:border-secondary-light {
+    border-color: #ff4871;
   }
 
-  .xl\:border-brand-lightest {
-    border-color: #f3ebff;
+  .xl\:border-black-dark {
+    border-color: #000;
   }
 
   .xl\:border-black {
-    border-color: #22292f;
+    border-color: #111;
+  }
+
+  .xl\:border-black-light {
+    border-color: #222;
+  }
+
+  .xl\:border-neutral {
+    border-color: 696969;
+  }
+
+  .xl\:border-white-smoke {
+    border-color: F5F5F5;
+  }
+
+  .xl\:border-white {
+    border-color: #fffafa;
   }
 
   .xl\:border-grey-darkest {
@@ -17676,10 +17956,6 @@ button,
 
   .xl\:border-grey-lightest {
     border-color: #f8fafc;
-  }
-
-  .xl\:border-white {
-    border-color: #fff;
   }
 
   .xl\:border-red-darkest {
@@ -17938,36 +18214,52 @@ button,
     border-color: transparent;
   }
 
-  .xl\:hover\:border-brand-darkest:hover {
-    border-color: #21183c;
+  .xl\:hover\:border-primary-dark:hover {
+    border-color: #532bd1;
   }
 
-  .xl\:hover\:border-brand-darker:hover {
-    border-color: #382b5f;
+  .xl\:hover\:border-primary:hover {
+    border-color: #6534ff;
   }
 
-  .xl\:hover\:border-brand-dark:hover {
-    border-color: #794acf;
+  .xl\:hover\:border-primary-light:hover {
+    border-color: #8158ff;
   }
 
-  .xl\:hover\:border-brand:hover {
-    border-color: #9561e2;
+  .xl\:hover\:border-secondary-dark:hover {
+    border-color: #d11b44;
   }
 
-  .xl\:hover\:border-brand-light:hover {
-    border-color: #a779e9;
+  .xl\:hover\:border-secondary:hover {
+    border-color: #ff2052;
   }
 
-  .xl\:hover\:border-brand-lighter:hover {
-    border-color: #d6bbfc;
+  .xl\:hover\:border-secondary-light:hover {
+    border-color: #ff4871;
   }
 
-  .xl\:hover\:border-brand-lightest:hover {
-    border-color: #f3ebff;
+  .xl\:hover\:border-black-dark:hover {
+    border-color: #000;
   }
 
   .xl\:hover\:border-black:hover {
-    border-color: #22292f;
+    border-color: #111;
+  }
+
+  .xl\:hover\:border-black-light:hover {
+    border-color: #222;
+  }
+
+  .xl\:hover\:border-neutral:hover {
+    border-color: 696969;
+  }
+
+  .xl\:hover\:border-white-smoke:hover {
+    border-color: F5F5F5;
+  }
+
+  .xl\:hover\:border-white:hover {
+    border-color: #fffafa;
   }
 
   .xl\:hover\:border-grey-darkest:hover {
@@ -17996,10 +18288,6 @@ button,
 
   .xl\:hover\:border-grey-lightest:hover {
     border-color: #f8fafc;
-  }
-
-  .xl\:hover\:border-white:hover {
-    border-color: #fff;
   }
 
   .xl\:hover\:border-red-darkest:hover {
@@ -18789,15 +19077,15 @@ button,
   }
 
   .xl\:font-sans {
-    font-family: system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: Rubik, sans-serif;
   }
 
   .xl\:font-serif {
-    font-family: Constantia, Lucida Bright, Lucidabright, Lucida Serif, Lucida, DejaVu Serif, Bitstream Vera Serif, Liberation Serif, Georgia, serif;
+    font-family: Noto Serif, serif;
   }
 
   .xl\:font-mono {
-    font-family: Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    font-family: Fira Code, monospace;
   }
 
   .xl\:font-hairline {
@@ -19958,36 +20246,52 @@ button,
     color: transparent;
   }
 
-  .xl\:text-brand-darkest {
-    color: #21183c;
+  .xl\:text-primary-dark {
+    color: #532bd1;
   }
 
-  .xl\:text-brand-darker {
-    color: #382b5f;
+  .xl\:text-primary {
+    color: #6534ff;
   }
 
-  .xl\:text-brand-dark {
-    color: #794acf;
+  .xl\:text-primary-light {
+    color: #8158ff;
   }
 
-  .xl\:text-brand {
-    color: #9561e2;
+  .xl\:text-secondary-dark {
+    color: #d11b44;
   }
 
-  .xl\:text-brand-light {
-    color: #a779e9;
+  .xl\:text-secondary {
+    color: #ff2052;
   }
 
-  .xl\:text-brand-lighter {
-    color: #d6bbfc;
+  .xl\:text-secondary-light {
+    color: #ff4871;
   }
 
-  .xl\:text-brand-lightest {
-    color: #f3ebff;
+  .xl\:text-black-dark {
+    color: #000;
   }
 
   .xl\:text-black {
-    color: #22292f;
+    color: #111;
+  }
+
+  .xl\:text-black-light {
+    color: #222;
+  }
+
+  .xl\:text-neutral {
+    color: 696969;
+  }
+
+  .xl\:text-white-smoke {
+    color: F5F5F5;
+  }
+
+  .xl\:text-white {
+    color: #fffafa;
   }
 
   .xl\:text-grey-darkest {
@@ -20016,10 +20320,6 @@ button,
 
   .xl\:text-grey-lightest {
     color: #f8fafc;
-  }
-
-  .xl\:text-white {
-    color: #fff;
   }
 
   .xl\:text-red-darkest {
@@ -20278,36 +20578,52 @@ button,
     color: transparent;
   }
 
-  .xl\:hover\:text-brand-darkest:hover {
-    color: #21183c;
+  .xl\:hover\:text-primary-dark:hover {
+    color: #532bd1;
   }
 
-  .xl\:hover\:text-brand-darker:hover {
-    color: #382b5f;
+  .xl\:hover\:text-primary:hover {
+    color: #6534ff;
   }
 
-  .xl\:hover\:text-brand-dark:hover {
-    color: #794acf;
+  .xl\:hover\:text-primary-light:hover {
+    color: #8158ff;
   }
 
-  .xl\:hover\:text-brand:hover {
-    color: #9561e2;
+  .xl\:hover\:text-secondary-dark:hover {
+    color: #d11b44;
   }
 
-  .xl\:hover\:text-brand-light:hover {
-    color: #a779e9;
+  .xl\:hover\:text-secondary:hover {
+    color: #ff2052;
   }
 
-  .xl\:hover\:text-brand-lighter:hover {
-    color: #d6bbfc;
+  .xl\:hover\:text-secondary-light:hover {
+    color: #ff4871;
   }
 
-  .xl\:hover\:text-brand-lightest:hover {
-    color: #f3ebff;
+  .xl\:hover\:text-black-dark:hover {
+    color: #000;
   }
 
   .xl\:hover\:text-black:hover {
-    color: #22292f;
+    color: #111;
+  }
+
+  .xl\:hover\:text-black-light:hover {
+    color: #222;
+  }
+
+  .xl\:hover\:text-neutral:hover {
+    color: 696969;
+  }
+
+  .xl\:hover\:text-white-smoke:hover {
+    color: F5F5F5;
+  }
+
+  .xl\:hover\:text-white:hover {
+    color: #fffafa;
   }
 
   .xl\:hover\:text-grey-darkest:hover {
@@ -20336,10 +20652,6 @@ button,
 
   .xl\:hover\:text-grey-lightest:hover {
     color: #f8fafc;
-  }
-
-  .xl\:hover\:text-white:hover {
-    color: #fff;
   }
 
   .xl\:hover\:text-red-darkest:hover {
@@ -20594,10 +20906,6 @@ button,
     color: #ffebef;
   }
 
-  .xl\:text-xs {
-    font-size: .75rem;
-  }
-
   .xl\:text-sm {
     font-size: .875rem;
   }
@@ -20606,28 +20914,20 @@ button,
     font-size: 1rem;
   }
 
+  .xl\:text-md {
+    font-size: 1.414rem;
+  }
+
   .xl\:text-lg {
-    font-size: 1.125rem;
+    font-size: 1.999rem;
   }
 
   .xl\:text-xl {
-    font-size: 1.25rem;
+    font-size: 2.827rem;
   }
 
-  .xl\:text-2xl {
-    font-size: 1.5rem;
-  }
-
-  .xl\:text-3xl {
-    font-size: 1.875rem;
-  }
-
-  .xl\:text-4xl {
-    font-size: 2.25rem;
-  }
-
-  .xl\:text-5xl {
-    font-size: 3rem;
+  .xl\:text-xxl {
+    font-size: 3.998rem;
   }
 
   .xl\:italic {

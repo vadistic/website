@@ -44,16 +44,23 @@ View the full documentation at https://tailwindcss.com.
 
 let colors = {
   transparent: 'transparent',
+  'primary-dark': '#532BD1',
+  primary: '#6534FF',
+  'primary-light': '#8158FF',
 
-  'brand-darkest': '#21183c',
-  'brand-darker': '#382b5f',
-  'brand-dark': '#794acf',
-  brand: '#9561e2',
-  'brand-light': '#a779e9',
-  'brand-lighter': '#d6bbfc',
-  'brand-lightest': '#f3ebff',
+  'secondary-dark': '#D11B44',
+  secondary: '#FF2052',
+  'secondary-light': '#FF4871',
 
-  black: '#22292f',
+  'black-dark': '#000000',
+  black: '#111111',
+  'black-light': '#222222',
+
+  neutral: '696969',
+
+  'white-smoke': 'F5F5F5',
+  white: '#FFFAFA',
+
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',
   'grey-dark': '#8795a1',
@@ -61,7 +68,6 @@ let colors = {
   'grey-light': '#dae1e7',
   'grey-lighter': '#f1f5f8',
   'grey-lightest': '#f8fafc',
-  white: '#ffffff',
 
   'red-darkest': '#3b0d0c',
   'red-darker': '#621b18',
@@ -197,40 +203,9 @@ module.exports = {
   */
 
   fonts: {
-    sans: [
-      'system-ui',
-      'BlinkMacSystemFont',
-      '-apple-system',
-      'Segoe UI',
-      'Roboto',
-      'Oxygen',
-      'Ubuntu',
-      'Cantarell',
-      'Fira Sans',
-      'Droid Sans',
-      'Helvetica Neue',
-      'sans-serif',
-    ],
-    serif: [
-      'Constantia',
-      'Lucida Bright',
-      'Lucidabright',
-      'Lucida Serif',
-      'Lucida',
-      'DejaVu Serif',
-      'Bitstream Vera Serif',
-      'Liberation Serif',
-      'Georgia',
-      'serif',
-    ],
-    mono: [
-      'Menlo',
-      'Monaco',
-      'Consolas',
-      'Liberation Mono',
-      'Courier New',
-      'monospace',
-    ],
+    sans: ['Rubik', 'sans-serif'],
+    serif: ['Noto Serif', 'serif'],
+    mono: ['Fira Code', 'monospace'],
   },
 
   /*
@@ -253,15 +228,12 @@ module.exports = {
   */
 
   textSizes: {
-    xs: '.75rem', // 12px
     sm: '.875rem', // 14px
     base: '1rem', // 16px
-    lg: '1.125rem', // 18px
-    xl: '1.25rem', // 20px
-    '2xl': '1.5rem', // 24px
-    '3xl': '1.875rem', // 30px
-    '4xl': '2.25rem', // 36px
-    '5xl': '3rem', // 48px
+    md: '1.414rem', // 22.62px
+    lg: '1.999rem', // 39.98pxpx
+    xl: '2.827rem', // 45.23px
+    xxl: '3.998rem', // 63.97px
   },
 
   /*

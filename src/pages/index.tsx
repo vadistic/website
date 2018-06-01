@@ -1,13 +1,12 @@
 import * as React from 'react'
-import Link from 'gatsby-link'
 
-import { Layout, Container } from '../components'
+import { Layout, Container, Typography, Hero } from '../components'
 
-const IndexPage = () => (
+const IndexPage: React.SFC<{}> = () => (
   <Layout>
+    <Hero mode='light'/>
     <Container>
-      <h3>Index Page</h3>
-      <Link to="/page-2/">Go to page 2</Link>
+      <Typography />
     </Container>
   </Layout>
 )
