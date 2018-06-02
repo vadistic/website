@@ -7,7 +7,7 @@ interface BaseProps {
   className?: string
 }
 
-interface ContainerProps extends BaseProps {
+export interface ContainerProps extends BaseProps {
   fluid?: boolean
 }
 

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Container, Display, Heading2 } from '.'
+import { Container, Display, Subtitle } from '.'
 import { styled } from '../styles'
 
 import shape from '../assets/shape.png'
@@ -27,7 +27,7 @@ const Hero: React.SFC<HeroProps> = ({ className, mode }) => (
       <Col className={css(tw('justify-start'))}>
         <div>
           <Display mode={mode}>frontend developement & design</Display>
-          <Heading2 mode={mode} colored>J. Wadas</Heading2>
+          <Subtitle mode={mode} colored>J. Wadas</Subtitle>
         </div>
       </Col>
     </Container>

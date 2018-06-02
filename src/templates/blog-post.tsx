@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Typography } from '../components'
+import { Typography, Container, Measure } from '../components'
 
 export interface BlogPostTemplateProps {
   data: {
@@ -32,9 +32,13 @@ const BlogPostTemplate: React.SFC<BlogPostTemplateProps> = ({ data }) => {
   const post = data.markdownRemark
 
   return (
-    <Typography>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-    </Typography>
+    <Container>
+      <Measure>
+        <Typography>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </Typography>
+      </Measure>
+    </Container>
   )
 }
 

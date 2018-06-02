@@ -2558,15 +2558,15 @@ button,
 }
 
 .font-sans {
-  font-family: Rubik, sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 .font-serif {
-  font-family: Noto Serif, serif;
+  font-family: "Noto Serif", serif;
 }
 
 .font-mono {
-  font-family: Fira Code, monospace;
+  font-family: "Fira Code", monospace;
 }
 
 .font-hairline {
@@ -4396,7 +4396,7 @@ button,
 }
 
 .text-sm {
-  font-size: .875rem;
+  font-size: .707rem;
 }
 
 .text-base {
@@ -6714,15 +6714,15 @@ button,
   }
 
   .sm\:font-sans {
-    font-family: Rubik, sans-serif;
+    font-family: "Rubik", sans-serif;
   }
 
   .sm\:font-serif {
-    font-family: Noto Serif, serif;
+    font-family: "Noto Serif", serif;
   }
 
   .sm\:font-mono {
-    font-family: Fira Code, monospace;
+    font-family: "Fira Code", monospace;
   }
 
   .sm\:font-hairline {
@@ -8544,7 +8544,7 @@ button,
   }
 
   .sm\:text-sm {
-    font-size: .875rem;
+    font-size: .707rem;
   }
 
   .sm\:text-base {
@@ -10835,15 +10835,15 @@ button,
   }
 
   .md\:font-sans {
-    font-family: Rubik, sans-serif;
+    font-family: "Rubik", sans-serif;
   }
 
   .md\:font-serif {
-    font-family: Noto Serif, serif;
+    font-family: "Noto Serif", serif;
   }
 
   .md\:font-mono {
-    font-family: Fira Code, monospace;
+    font-family: "Fira Code", monospace;
   }
 
   .md\:font-hairline {
@@ -12665,7 +12665,7 @@ button,
   }
 
   .md\:text-sm {
-    font-size: .875rem;
+    font-size: .707rem;
   }
 
   .md\:text-base {
@@ -14956,15 +14956,15 @@ button,
   }
 
   .lg\:font-sans {
-    font-family: Rubik, sans-serif;
+    font-family: "Rubik", sans-serif;
   }
 
   .lg\:font-serif {
-    font-family: Noto Serif, serif;
+    font-family: "Noto Serif", serif;
   }
 
   .lg\:font-mono {
-    font-family: Fira Code, monospace;
+    font-family: "Fira Code", monospace;
   }
 
   .lg\:font-hairline {
@@ -16786,7 +16786,7 @@ button,
   }
 
   .lg\:text-sm {
-    font-size: .875rem;
+    font-size: .707rem;
   }
 
   .lg\:text-base {
@@ -19077,15 +19077,15 @@ button,
   }
 
   .xl\:font-sans {
-    font-family: Rubik, sans-serif;
+    font-family: "Rubik", sans-serif;
   }
 
   .xl\:font-serif {
-    font-family: Noto Serif, serif;
+    font-family: "Noto Serif", serif;
   }
 
   .xl\:font-mono {
-    font-family: Fira Code, monospace;
+    font-family: "Fira Code", monospace;
   }
 
   .xl\:font-hairline {
@@ -20907,7 +20907,7 @@ button,
   }
 
   .xl\:text-sm {
-    font-size: .875rem;
+    font-size: .707rem;
   }
 
   .xl\:text-base {

@@ -203,9 +203,9 @@ module.exports = {
   */
 
   fonts: {
-    sans: ['Rubik', 'sans-serif'],
-    serif: ['Noto Serif', 'serif'],
-    mono: ['Fira Code', 'monospace'],
+    sans: ['"Rubik"', 'sans-serif'],
+    serif: ['"Noto Serif"', 'serif'],
+    mono: ['"Fira Code"', 'monospace'],
   },
 
   /*
