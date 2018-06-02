@@ -15,16 +15,16 @@ interface HeroProps extends Base {
 }
 
 const Col = styled('div')`
-  ${tw('w-1/2 px-8')};
+  ${tw('w-1/2 px-8 flex items-center')};
 `
 
 const Hero: React.SFC<HeroProps> = ({ className, mode }) => (
   <Container fluid className={className}>
     <Container className={css(tw('flex'))}>
-      <Col className={css(tw('flex justify-end'))}>
-        <img src={shape} />
+      <Col className={css(tw('justify-end '))}>
+        <img src={shape} className={css(tw('h-64 w-64'))}/>
       </Col>
-      <Col className={css(tw('flex justify-start items-center'))}>
+      <Col className={css(tw('justify-start'))}>
         <div>
           <Display mode={mode}>frontend developement & design</Display>
           <Heading2 mode={mode} colored>J. Wadas</Heading2>
