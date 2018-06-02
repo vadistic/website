@@ -56,10 +56,10 @@ let colors = {
   black: '#111111',
   'black-light': '#222222',
 
-  neutral: '696969',
-
-  'white-smoke': 'F5F5F5',
+  'white-smoke': '#F5F5F5',
   white: '#FFFAFA',
+
+  'grey-neutral': '#696969',
 
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',
@@ -608,6 +608,10 @@ module.exports = {
     '4': '1rem',
     '6': '1.5rem',
     '8': '2rem',
+    '12': '3rem',
+    '16': '4rem',
+    '24': '6rem',
+
   },
 
   /*
@@ -635,6 +639,9 @@ module.exports = {
     '4': '1rem',
     '6': '1.5rem',
     '8': '2rem',
+    '12': '3rem',
+    '16': '4rem',
+    '24': '6rem',
   },
 
   /*

@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { Typography, Container, Measure } from '../components'
+import { css } from 'react-emotion';
 
 export interface BlogPostTemplateProps {
   data: {
@@ -34,7 +35,7 @@ const BlogPostTemplate: React.SFC<BlogPostTemplateProps> = ({ data }) => {
   return (
     <Container>
       <Measure>
-        <Typography>
+        <Typography mode='light'>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </Typography>
       </Measure>
