@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { ThemeProvider } from 'emotion-theming'
 
-import '../styles/preflight.build.css'
+import '../styles/main.css'
+
 import { theme } from '../styles'
 
 export const Layout: React.SFC<{}> = ({ children }) => (

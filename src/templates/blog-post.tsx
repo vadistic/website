@@ -1,7 +1,10 @@
 import * as React from 'react'
 
+/* PrimsJS Theme */
+import '../styles/prism.build.css'
+
+
 import { Typography, Container, Measure } from '../components'
-import { css } from 'react-emotion';
 
 export interface BlogPostTemplateProps {
   data: {

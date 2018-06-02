@@ -1,17 +1,12 @@
 import * as React from 'react'
 
-import { Container, Display, Subtitle } from '.'
-import { styled } from '../styles'
+import { Container, Display, Subtitle, BaseProps } from '../'
+import { styled } from '../../styles'
 
-import shape from '../assets/shape.png'
+import shape from '../../assets/shape.png'
 import { css } from 'react-emotion'
 
-interface Base {
-  mode?: 'light' | 'dark' | 'color'
-}
-
-interface HeroProps extends Base {
-  className?: string
+interface HeroProps extends BaseProps {
 }
 
 const Col = styled('div')`

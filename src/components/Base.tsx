@@ -6,4 +6,5 @@ export interface BaseProps {
   className?: string
   theme?: Theme
   children?: React.ReactNode
+  mode?: 'light' | 'color' | 'dark'
 }

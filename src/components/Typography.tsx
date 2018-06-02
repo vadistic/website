@@ -94,6 +94,12 @@ export const List = styled('ul')`
   ${listStyles};
 `
 
+const codeStyles = css`
+ ${tw('font-base font-mono')}
+`
+
+export const Code = styled('code')``
+
 export interface HeadingBaseProps {
   colored?: boolean
 }

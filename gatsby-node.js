@@ -1,16 +1,14 @@
-
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-
 exports.onCreateBabelConfig = ({ actions }) => {
   actions.setBabelPlugin({
-    name: `babel-plugin-tailwind`
+    name: `babel-plugin-tailwind`,
   })
 }
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
 
   return new Promise((resolve, reject) => {
     const blogPost = path.resolve('./src/templates/blog-post.tsx')
@@ -18,7 +16,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       graphql(
         `
           {
-            allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
+            allMarkdownRemark(
+              sort: { fields: [frontmatter___date], order: DESC }
+              limit: 1000
+            ) {
               edges {
                 node {
                   fields {
@@ -39,11 +40,12 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
 
         // Create blog posts pages.
-        const posts = result.data.allMarkdownRemark.edges;
+        const posts = result.data.allMarkdownRemark.edges
 
         posts.forEach((post, index, posts) => {
-          const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-          const next = index === 0 ? null : posts[index - 1].node;
+          const previous =
+            index === posts.length - 1 ? null : posts[index + 1].node
+          const next = index === 0 ? null : posts[index - 1].node
 
           createPage({
             path: post.node.fields.slug,
@@ -60,11 +62,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   })
 }
 
-exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
-  const { createNodeField } = boundActionCreators
-
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  let slug
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    const fileNode = getNode(node.parent)
+    const instanceName = fileNode.sourceInstanceName
+    const value = `/${instanceName}${createFilePath({ node, getNode })}`
     createNodeField({
       name: `slug`,
       node,

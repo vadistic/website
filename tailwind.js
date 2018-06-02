@@ -55,6 +55,7 @@ let colors = {
   'black-dark': '#000000',
   black: '#111111',
   'black-light': '#222222',
+  'black-lighter': '#333333',
 
   'white-smoke': '#F5F5F5',
   white: '#FFFAFA',
@@ -228,7 +229,7 @@ module.exports = {
   */
 
   textSizes: {
-    sm: '.0.707rem', // 11,31px
+    sm: '0.875rem', // 14px
     base: '1rem', // 16px
     md: '1.414rem', // 22.62px
     lg: '1.999rem', // 39.98pxpx
@@ -611,7 +612,6 @@ module.exports = {
     '12': '3rem',
     '16': '4rem',
     '24': '6rem',
-
   },
 
   /*

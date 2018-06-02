@@ -6,12 +6,19 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
+        path: `${__dirname}/src/content/blog`,
+        name: 'blog',
       },
     },
     {
       resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+          },
+        ],
+      },
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
