@@ -32,20 +32,24 @@ const textStyles = ({ mode }: TextProps) => css`
   ${mode === 'color' && tw('text-white-smoke')};
 `
 
-export const Text = styled('span')`
+export const Text = styled<TextProps, 'span'>('span')`
   ${textStyles};
 `
 
-export interface ParagraphProps {}
+Text.defaultProps = { mode: 'light' }
+
+export interface ParagraphProps extends TypographyBaseProps {}
 
 const paragraphStyles = css`
   ${tw('text-justify mb-8')};
 `
 
-export const Paragraph = styled('p')`
+export const Paragraph = styled<TextProps, 'p'>('p')`
   ${textStyles};
   ${paragraphStyles};
 `
+
+Paragraph.defaultProps = { mode: 'light' }
 
 export interface BlockquoteProps extends TypographyBaseProps {}
 
@@ -53,18 +57,22 @@ const blockquoteStyles = ({ mode }: BlockquoteProps) => css`
   ${tw([
     'text-base',
     'italic',
-    'px-4',
+    'px-6',
     'py-4',
     'my-8',
     'font-serif',
     'leading-loose',
     'text-grey-neutral',
     'border-l-4',
-    'border-primary'
+    'border-primary',
   ])};
-  ${mode === 'light' && tw('bg-grey-lighter')};
-  ${mode === 'color' && tw('text-white-smoke')};
 
+  p {
+    ${tw('m-0')};
+  }
+
+  ${mode === 'color' && tw('text-white-smoke')};
+  ${mode === 'light' && tw('bg-grey-lighter')};
 `
 
 export const Blockquote = styled('blockquote')`
@@ -73,7 +81,8 @@ export const Blockquote = styled('blockquote')`
 export interface ListProps extends TypographyBaseProps {}
 
 const listStyles = css`
-  ${tw('my-8')};
+  ${tw('mb-8')};
+
   ul,
   ol {
     ${tw('my-0')};
@@ -95,10 +104,21 @@ export const List = styled('ul')`
 `
 
 const codeStyles = css`
- ${tw('font-base font-mono')}
+  ${tw([
+    'font-base',
+    'font-mono',
+    'text-base',
+    'text-primary',
+    'bg-grey-lighter',
+    'p-1',
+    'shadow-inner',
+    'rounded',
+  ])};
 `
 
-export const Code = styled('code')``
+export const Code = styled('code')`
+  ${codeStyles};
+`
 
 export interface HeadingBaseProps {
   colored?: boolean
@@ -121,12 +141,9 @@ const HeadingBase = styled<TypographyBaseProps & HeadingBaseProps, 'span'>(
   ${headingBaseStyles};
 `
 
-HeadingBase.defaultProps = { mode: 'light' }
-
 const displayStyles = css`
-  ${tw('text-xxl')};
+  ${tw('text-xxl leading-tight')};
 `
-
 export const Display = styled(HeadingBase)`
   ${displayStyles};
 `.withComponent('h1')
@@ -138,12 +155,16 @@ export const Title = styled(HeadingBase)`
   ${titleStyles};
 `.withComponent('h1')
 
+Title.defaultProps = { mode: 'light' }
+
 const subtitleStyles = css`
   ${tw('text-md uppercase tracking-wide')};
 `
 export const Subtitle = styled(HeadingBase)`
   ${subtitleStyles};
 `.withComponent('h2')
+
+Subtitle.defaultProps = { mode: 'light' }
 
 const headingStyles = css`
   ${tw('text-lg font-light mt-16 mb-8')};
@@ -152,7 +173,7 @@ export const Heading = styled(HeadingBase)`
   ${headingStyles};
 `.withComponent('h3')
 
-Heading.defaultProps = { colored: true }
+Heading.defaultProps = { mode: 'light', colored: true }
 
 const subheadingStyles = css`
   ${tw('text-md font-medium mt-12 mb-4')};
@@ -160,6 +181,8 @@ const subheadingStyles = css`
 export const Subheading = styled(HeadingBase)`
   ${subheadingStyles};
 `.withComponent('h4')
+
+Subheading.defaultProps = { mode: 'light', colored: true }
 
 export interface TypographyProps {
   mode?: TypographyBaseProps['mode']
@@ -170,6 +193,10 @@ export const Typography = styled<TypographyProps, 'div'>('div')`
 
   p {
     ${paragraphStyles};
+  }
+
+  pre {
+    ${tw('my-8')};
   }
 
   blockquote {
@@ -196,6 +223,7 @@ export const Typography = styled<TypographyProps, 'div'>('div')`
 
   h2 {
     ${headingStyles};
+    /* fix for lack of default props */
     ${({ mode }) => mode !== 'color' && tw('text-primary')};
   }
 
@@ -203,7 +231,7 @@ export const Typography = styled<TypographyProps, 'div'>('div')`
     ${subheadingStyles};
   }
 
-  /* Minor headings will all look the same*/
+  /* Minor headings will all look the same */
   h4,
   h5,
   h6 {

@@ -1,7 +1,9 @@
 export * from './Layout'
 
 export * from './Base'
-export * from './Container'
+export * from './Section'
+export * from './Grid'
+
 export * from './Typography'
 export * from './Measure'
 

@@ -1,44 +1,23 @@
 import * as React from 'react'
 
-import { Container, Display, Subtitle, BaseProps } from '../'
-import { styled } from '../../styles'
+import { Display, Subtitle, Text, BaseProps, Section, Row, Col, Heading } from '../'
 
-import shape from '../../assets/shape.png'
 import { css } from 'react-emotion'
 
-interface HeroProps extends BaseProps {
-}
+interface HeroProps extends BaseProps {}
 
-const Col = styled('div')`
-  ${tw('w-1/2 px-8 flex items-center')};
-`
-
-const Hero: React.SFC<HeroProps> = ({ className, mode }) => (
-  <Container fluid className={className}>
-    <Container className={css(tw('flex'))}>
-      <Col className={css(tw('justify-end '))}>
-        <img src={shape} className={css(tw('h-64 w-64'))}/>
+export const Hero: React.SFC<HeroProps> = ({ className, mode }) => (
+  <Section>
+    <Row>
+      <Col className={css(tw('md:w-1/3 max-w-50'))}>
+        <Text>Key visual goes here</Text>
       </Col>
-      <Col className={css(tw('justify-start'))}>
-        <div>
-          <Display mode={mode}>frontend developement & design</Display>
-          <Subtitle mode={mode} colored>J. Wadas</Subtitle>
-        </div>
+      <Col className={css(tw('md:w-2/3'))}>
+        <Display mode={mode}>frontend developement & design</Display>
+        <Subtitle mode={mode} colored>
+          J. Wadas
+        </Subtitle>
       </Col>
-    </Container>
-  </Container>
+    </Row>
+  </Section>
 )
-
-const heroStyles = ({ mode }: HeroProps) => css`
-  ${tw('bg-white')};
-  ${mode === 'dark' && tw('bg-black')}
-  ${mode === 'color' && tw('bg-primary')}
-`
-
-const StyledHero = styled(Hero)`
-  ${tw('flex items-center')};
-  ${tw('h-screen')};
-  ${heroStyles};
-`
-
-export { StyledHero as Hero }
