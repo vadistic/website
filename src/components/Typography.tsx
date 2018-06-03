@@ -3,7 +3,9 @@ import { css } from 'react-emotion'
 import { styled } from '../styles'
 import { BaseProps } from './Base'
 
-export interface TypographyBaseProps extends BaseProps {
+/* stylelint-disable */
+
+interface TypographyBaseProps extends BaseProps {
   color?:
     | 'primary'
     | 'secondary'
@@ -38,20 +40,19 @@ const Text = styled<TextProps, 'span'>('span')`
 
 Text.defaultProps = { mode: 'light' }
 
-export interface ParagraphProps extends TypographyBaseProps {}
 
 const paragraphStyles = css`
   ${tw('text-justify mb-8')};
 `
 
-export const Paragraph = styled<TextProps, 'p'>('p')`
+const Paragraph = styled<TextProps, 'p'>('p')`
   ${textStyles};
   ${paragraphStyles};
 `
 
 Paragraph.defaultProps = { mode: 'light' }
 
-export interface BlockquoteProps extends TypographyBaseProps {}
+interface BlockquoteProps extends TypographyBaseProps {}
 
 const blockquoteStyles = ({ mode }: BlockquoteProps) => css`
   ${tw([
@@ -75,10 +76,9 @@ const blockquoteStyles = ({ mode }: BlockquoteProps) => css`
   ${mode === 'light' && tw('bg-grey-lighter')};
 `
 
-export const Blockquote = styled('blockquote')`
+const Blockquote = styled('blockquote')`
   ${blockquoteStyles};
 `
-export interface ListProps extends TypographyBaseProps {}
 
 const listStyles = css`
   ${tw('mb-8')};
@@ -98,7 +98,7 @@ const listStyles = css`
   }
 `
 
-export const List = styled('ul')`
+const List = styled('ul')`
   ${textStyles};
   ${listStyles};
 `
@@ -116,11 +116,11 @@ const codeStyles = css`
   ])};
 `
 
-export const Code = styled('code')`
+const Code = styled('code')`
   ${codeStyles};
 `
 
-export interface HeadingBaseProps {
+interface HeadingBaseProps {
   colored?: boolean
 }
 
@@ -144,14 +144,14 @@ const HeadingBase = styled<TypographyBaseProps & HeadingBaseProps, 'span'>(
 const displayStyles = css`
   ${tw('text-xxl leading-tight')};
 `
-export const Display = styled(HeadingBase)`
+const Display = styled(HeadingBase)`
   ${displayStyles};
 `.withComponent('h1')
 
 const titleStyles = css`
   ${tw('text-xl my-16')};
 `
-export const Title = styled(HeadingBase)`
+const Title = styled(HeadingBase)`
   ${titleStyles};
 `.withComponent('h1')
 
@@ -160,7 +160,7 @@ Title.defaultProps = { mode: 'light' }
 const subtitleStyles = css`
   ${tw('text-md uppercase tracking-wide')};
 `
-export const Subtitle = styled(HeadingBase)`
+const Subtitle = styled(HeadingBase)`
   ${subtitleStyles};
 `.withComponent('h2')
 
@@ -169,7 +169,7 @@ Subtitle.defaultProps = { mode: 'light' }
 const headingStyles = css`
   ${tw('text-lg font-light mt-16 mb-8')};
 `
-export const Heading = styled(HeadingBase)`
+const Heading = styled(HeadingBase)`
   ${headingStyles};
 `.withComponent('h3')
 
@@ -178,13 +178,13 @@ Heading.defaultProps = { mode: 'light', colored: true }
 const subheadingStyles = css`
   ${tw('text-md font-medium mt-12 mb-4')};
 `
-export const Subheading = styled(HeadingBase)`
+const Subheading = styled(HeadingBase)`
   ${subheadingStyles};
 `.withComponent('h4')
 
 Subheading.defaultProps = { mode: 'light', colored: true }
 
-export interface TypographyProps {
+interface TypographyProps {
   mode?: TypographyBaseProps['mode']
 }
 

@@ -20,6 +20,7 @@ const textStyles = ({ theme, paragraph }: TextProps & ThemeProps) => {
 
   return css`
     margin-bottom: ${paragraph ? theme.space['8'] : '0'};
+    line-height: ${theme.leading.loose};
     font-family: ${theme.fonts.serif};
     font-size: ${theme.fontSizes.base};
     color: ${textColor};

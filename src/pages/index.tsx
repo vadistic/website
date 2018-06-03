@@ -1,17 +1,15 @@
-import * as React from 'react'
 import Link from 'gatsby-link'
+import * as React from 'react'
 
-import { Layout, Container, HeroSection, IntroSection } from '../components'
+import { Container, HeroSection, IntroSection, Layout } from '../components'
 
 const IndexPage: React.SFC<{}> = () => (
   <Layout>
     <HeroSection />
-    <IntroSection/>
-    <Link to='/blog'>Blog</Link>
-    <Link to='/styled'>Styled</Link>
-    <Container>
-      Content
-    </Container>
+    <IntroSection />
+    <Link to="/blog">Blog</Link>
+    <Link to="/typography">Styled</Link>
+    <Container>Content</Container>
   </Layout>
 )
 

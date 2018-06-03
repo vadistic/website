@@ -1,10 +1,10 @@
 
-import * as React from 'react'
 import * as cx from 'classnames'
+import * as React from 'react'
 import { css } from 'react-emotion'
 
-import { styled } from '../styles'
 import { BaseProps } from '.';
+import { styled } from '../styles'
 
 export interface ContainerProps extends BaseProps {
   fluid?: boolean

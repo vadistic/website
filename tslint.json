@@ -9,7 +9,7 @@
     "object-literal-sort-keys": false,
     "only-arrow-functions": true,
     "ordered-imports": true,
-    "quotemark": [true, "single"],
+    "quotemark": [true, "single", "jsx-double"],
     "trailing-comma": true
   }
 }
