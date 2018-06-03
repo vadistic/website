@@ -1,14 +1,14 @@
 import * as React from 'react'
 import Link from 'gatsby-link'
 
-import { Layout, Container, Hero, Intro } from '../components'
+import { Layout, Container, HeroSection, IntroSection } from '../components'
 
 const IndexPage: React.SFC<{}> = () => (
   <Layout>
-    <Hero />
-    <Intro/>
+    <HeroSection />
+    <IntroSection/>
     <Link to='/blog'>Blog</Link>
-    <Link to='/typography'>Typography</Link>
+    <Link to='/styled'>Styled</Link>
     <Container>
       Content
     </Container>

@@ -3,7 +3,7 @@ import { css } from 'react-emotion'
 
 import { Subtitle, Heading, Text, BaseProps, Section, Row, Col } from '../'
 
-export const IntroSection: React.SFC<BaseProps> = ({ mode = 'light' }) => (
+export const SpectrumSection: React.SFC<BaseProps> = ({ mode = 'light' }) => (
   <Section mode={mode}>
     <Row className={css(tw('w-full'))}>
       <Col className={css(tw('md:w-1/3'))}>Noop</Col>

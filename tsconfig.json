@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "public",
-    "rootDir":"src",
+    "rootDir": "src",
     "module": "es2015",
     "target": "esnext",
     "lib": ["es2015", "es2016", "dom"],
@@ -19,10 +19,5 @@
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true
   },
-  "exclude": [
-    "node_modules",
-    "build",
-    "public",
-    ".cache"
-  ]
+  "exclude": ["node_modules", "build", "public", ".cache"]
 }

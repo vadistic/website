@@ -23,7 +23,7 @@ const typographyBaseStyles = ({ color }: TypographyBaseProps) => css`
   ${color === 'white' && tw('text-white')};
 `
 
-export interface TextProps extends TypographyBaseProps {}
+interface TextProps extends TypographyBaseProps {}
 
 const textStyles = ({ mode }: TextProps) => css`
   ${tw(['font-serif', 'font-base', 'leading-loose'])};
@@ -32,7 +32,7 @@ const textStyles = ({ mode }: TextProps) => css`
   ${mode === 'color' && tw('text-white-smoke')};
 `
 
-export const Text = styled<TextProps, 'span'>('span')`
+const Text = styled<TextProps, 'span'>('span')`
   ${textStyles};
 `
 

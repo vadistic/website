@@ -4,9 +4,7 @@ import { Display, Subtitle, Text, BaseProps, Section, Row, Col, Heading } from '
 
 import { css } from 'react-emotion'
 
-interface HeroProps extends BaseProps {}
-
-export const Hero: React.SFC<HeroProps> = ({ className, mode }) => (
+export const HeroSection: React.SFC<BaseProps> = ({ className, mode }) => (
   <Section>
     <Row>
       <Col className={css(tw('md:w-1/3 max-w-50'))}>
