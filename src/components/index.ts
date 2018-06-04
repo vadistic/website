@@ -8,11 +8,8 @@ export * from './Base'
 // Components
 export * from './Section'
 export * from './Grid'
-export * from './Typography'
-export * from './Text'
-export * from './Heading'
-
 
 export * from './Measure'
 
+export * from './typography'
 export * from './sections'

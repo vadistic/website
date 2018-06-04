@@ -1,7 +1,7 @@
-import * as React from 'react'
 import Link from 'gatsby-link'
+import * as React from 'react'
 
-import { Container } from '../components'
+import { Heading, Layout, Section } from '../components'
 
 export interface Post {
   node: {
@@ -58,22 +58,24 @@ const BlogPage: React.SFC<BlogPageProps> = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <Container>
-      <p>siteTitle: {siteTitle}</p>
-      {posts.map(({ node }) => {
-        const title =
-          (node.frontmatter && node.frontmatter.title) || node.fields.slug
-        return (
-          <div key={node.fields.slug}>
-            <h3>
-              <Link to={node.fields.slug}>{title}</Link>
-            </h3>
-            <small>{node.frontmatter.date}</small>
-            <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-          </div>
-        )
-      })}
-    </Container>
+    <Layout>
+      <Section>
+        <Heading variant="title">{siteTitle}</Heading>
+        {posts.map(({ node }) => {
+          const title =
+            (node.frontmatter && node.frontmatter.title) || node.fields.slug
+          return (
+            <div key={node.fields.slug}>
+              <h3>
+                <Link to={node.fields.slug}>{title}</Link>
+              </h3>
+              <small>{node.frontmatter.date}</small>
+              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+            </div>
+          )
+        })}
+      </Section>
+    </Layout>
   )
 }
 

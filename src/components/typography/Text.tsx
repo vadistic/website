@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { css } from 'react-emotion'
 
-import { styled, ThemeProps } from '../styles'
+import { styled, ThemeProps, verticalMarginStylesFn } from '../../styles'
 
 export interface TextProps {
   paragraph?: boolean
@@ -12,18 +12,17 @@ const Text: React.SFC<TextProps> = ({ paragraph, children, ...rest }) => {
   return <Tag {...rest}>{children}</Tag>
 }
 
-const textStyles = ({
+export const textStyles = ({
   theme: { mode, fontColors, leading, fonts, fontSizes },
-  paragraph,
-}: TextProps & ThemeProps) => {
+}: ThemeProps) => {
   const _textColor = {
     light: fontColors.body,
-    dark: fontColors['body-inverted'],
-    color: fontColors['body-inverted'],
+    dark: fontColors.bodyInverted,
+    color: fontColors.bodyInverted,
   }[mode.color]
 
   return css`
-    margin-bottom: ${paragraph ? fontSizes.m6 : '0'};
+    margin: 0;
     line-height: ${leading.loose};
     font-family: ${fonts.serif};
     font-size: ${fontSizes.m4};
@@ -31,8 +30,15 @@ const textStyles = ({
   `
 }
 
+export const textParagraphStyles = ({
+  theme: { fontSizes },
+}: ThemeProps) => css`
+  text-align: justify;
+  ${verticalMarginStylesFn('0', fontSizes.m5)};
+`
+
 const StyledText = styled(Text)`
-  grid-area: Text;
   ${textStyles};
+  ${({ paragraph }) => paragraph && textParagraphStyles};
 `
 export { StyledText as Text }

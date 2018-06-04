@@ -1,33 +1,15 @@
-import { responsiveStyle, style } from 'styled-system'
+import { css } from 'react-emotion'
 
-import { Theme } from './theme';
+/**
+ * Adds vertical spacing (margins) between stuff.
+ * Skips `mt` for first child and `mb` for last child
+ */
+export const verticalMarginStylesFn = (top: string, bottom?: string) => css`
+  :not(:first-child) {
+    margin-top: ${top};
+  }
 
-export interface ColorProps {
-  color?: keyof Theme['colors']
-}
-
-export const color = style({
-  prop: 'color',
-  cssProperty: 'color',
-  key: 'colors',
-})
-
-export interface FontWeightProps {
-  weight?: keyof Theme['fontWeights']
-}
-
-export const fontWeight = style({
-  prop: 'weight',
-  cssProperty: 'fontWeight',
-  key: 'fontWeights',
-})
-
-export interface WidthProps {
-  width?: keyof Theme['widths']
-}
-
-export const width = responsiveStyle({
-  prop: 'width',
-  cssProperty: 'width',
-  key: 'widths',
-})
+  :not(:last-child) {
+    margin-bottom: ${bottom || top};
+  }
+`

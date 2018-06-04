@@ -3,8 +3,7 @@ import * as React from 'react'
 /* PrimsJS Theme */
 import '../styles/prism.build.css'
 
-
-import { Typography, Container, Measure } from '../components'
+import { Layout, Measure, Mode, Section, Typography } from '../components'
 
 export interface BlogPostTemplateProps {
   data: {
@@ -36,13 +35,17 @@ const BlogPostTemplate: React.SFC<BlogPostTemplateProps> = ({ data }) => {
   const post = data.markdownRemark
 
   return (
-    <Container>
-      <Measure>
-        <Typography mode='light'>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        </Typography>
-      </Measure>
-    </Container>
+    <Layout>
+      <Mode mode={{color: 'light'}}>
+        <Section>
+          <Measure>
+            <Typography>
+              <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            </Typography>
+          </Measure>
+        </Section>
+      </Mode>
+    </Layout>
   )
 }
 

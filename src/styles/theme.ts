@@ -17,7 +17,7 @@ const colors = {
   'grey-dark': '#555555',
   grey: '#777777',
   'grey-light': '#999999',
-  'grey-lighter': '#CCCCCC',
+  'grey-lighter': '#DDDDDD',
 
   'near-white': '#F5F5F5',
   white: '#FFFFFF',
@@ -236,6 +236,8 @@ export const theme = {
     current: 'currentColor',
   },
 }
+
+// TODO infer somehow key signatures
 
 export type Theme = typeof theme
 
