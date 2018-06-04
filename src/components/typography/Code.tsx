@@ -9,12 +9,11 @@ export const codeStyles = ({
     colors,
     fontColors,
     fontWeights,
-    space,
-    leading,
     borderRadius,
     shadows,
   },
 }: ThemeProps) => css`
+  color: ${fontColors.accent};
   font-family: ${fonts.mono};
   font-size: ${fontSizes.m3};
   font-weight: ${fontWeights.medium};

@@ -3,6 +3,7 @@ import * as React from 'react'
 
 import {
   Blockquote,
+  Code,
   Heading,
   Layout,
   Mode,
@@ -10,10 +11,9 @@ import {
   Section,
   Text,
   Ul,
-  Code,
 } from '../components'
 
-const Typography: React.SFC = () => (
+const Typography: React.SFC<{}> = () => (
   <Layout>
     <Mode mode={{ color: 'light' }}>
       <Section>
