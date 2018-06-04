@@ -1,6 +1,13 @@
 import { styled } from '../../styles'
 import { blockquoteStyles } from './Blockquote'
 import {
+  codeHighlightStyles,
+  codeInlineStyles,
+  codePreStyles,
+  codeStyles,
+  resetCodeInlineStyles,
+} from './Code'
+import {
   headingColorStyles,
   headingStyles,
   headingVariantStyles,
@@ -12,13 +19,16 @@ export const Typography = styled('div')`
   /* to notice any unsuported markup and fix them */
   color: red;
 
-  div > p {
+  p {
     ${textStyles};
+  }
+
+  div > p {
     ${textParagraphStyles};
   }
 
-  div > ul,
-  div > ol {
+  ul,
+  ol {
     ${listStyles};
 
     li {
@@ -26,7 +36,22 @@ export const Typography = styled('div')`
     }
   }
 
+  code {
+    ${codeStyles};
+    ${codeInlineStyles};
+  }
+
   pre {
+    ${codeStyles};
+    ${codePreStyles};
+
+    code {
+      ${resetCodeInlineStyles}
+    }
+  }
+
+  .gatsby-highlight {
+    ${codeHighlightStyles};
   }
 
   blockquote {

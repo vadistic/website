@@ -7,6 +7,12 @@ export const listStyles = ({
   theme: { fonts, fontSizes, fontColors, fontWeights, space, leading },
 }: ThemeProps) => css`
   ${verticalMarginStylesFn(fontSizes.m5)};
+
+  ul,
+  ol {
+    /* Keeps cohesion of nested lists */
+    margin: 0 !important;
+  }
 `
 // Eventually add itemStyles
 

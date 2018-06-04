@@ -1,7 +1,6 @@
 import * as React from 'react'
 
 /* PrimsJS Theme */
-import '../styles/prism.build.css'
 
 import { Layout, Measure, Mode, Section, Typography } from '../components'
 

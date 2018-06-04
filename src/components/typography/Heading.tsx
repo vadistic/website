@@ -28,9 +28,9 @@ const Heading: React.SFC<HeadingProps> = ({ variant, children, ...rest }) => {
 }
 
 export const headingStyles = ({
-  theme: { leading, fonts, fontWeights },
+  theme: { fonts, fontWeights, leading },
 }: ThemeProps) => css`
-  line-height: ${leading.tight};
+  line-height: ${leading.normal};
   font-family: ${fonts.sans};
   font-weight: ${fontWeights.medium};
 `
@@ -61,13 +61,14 @@ export const headingColorStyles = ({ color, variant }: HeadingProps) => ({
 }
 
 export const headingVariantStyles = ({ variant }: HeadingProps) => ({
-  theme: { fontSizes, tracking, fontWeights },
+  theme: { fontSizes, tracking, fontWeights, leading },
 }: ThemeProps) =>
   ({
     display: css`
       font-size: ${fontSizes.m8};
     `,
     title: css`
+      line-height: ${leading.tight};
       font-size: ${fontSizes.m7};
       ${verticalMarginStylesFn(fontSizes.m8, fontSizes.m6)};
     `,
@@ -88,7 +89,8 @@ export const headingVariantStyles = ({ variant }: HeadingProps) => ({
     `,
     subsubheading: css`
       font-size: ${fontSizes.m4};
-      ${verticalMarginStylesFn(fontSizes.m5, fontSizes.m2)};
+      line-height: ${leading.loose};
+      ${verticalMarginStylesFn(fontSizes.m5, '0')};
     `,
   }[variant])
 
