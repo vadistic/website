@@ -10,6 +10,13 @@
     "only-arrow-functions": true,
     "ordered-imports": true,
     "quotemark": [true, "single", "jsx-double"],
-    "trailing-comma": true
+    "trailing-comma": true,
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-pascal-case",
+      "allow-leading-underscore"
+    ]
   }
 }

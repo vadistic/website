@@ -1,13 +1,18 @@
-import {ThemeProvider} from 'emotion-theming'
+import { ThemeProvider } from 'emotion-theming'
 import * as React from 'react'
+import { Theme } from '../styles'
 
 interface ModeProps {
-  colorMode: 'light' | 'dark' | 'color'
+  mode: {
+    color: 'light' | 'dark' | 'color'
+  }
 }
 
-export const Mode: React.SFC<ModeProps> = ({ colorMode, children }) => (
-  // tslint:disable-next-line:jsx-no-lambda
-  <ThemeProvider theme={theme => ({ ...theme, colorMode })}>
+export const Mode: React.SFC<ModeProps> = ({ mode, children }) => (
+  <ThemeProvider
+    // tslint:disable-next-line:jsx-no-lambda
+    theme={(theme: Theme) => ({ ...theme, mode: { ...theme.mode, ...mode } })}
+  >
     {/* Fragment because Theme Provider breaks with multiple children */}
     <>{children}</>
   </ThemeProvider>

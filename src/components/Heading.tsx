@@ -4,35 +4,50 @@ import { css } from 'react-emotion'
 import { styled, ThemeProps } from '../styles'
 
 export interface HeadingProps {
-  type:
+  variant:
     | 'display'
     | 'title'
     | 'annotation'
     | 'heading'
     | 'subheading'
     | 'subsubheading'
+  colored?: boolean
 }
 
-const Heading: React.SFC<HeadingProps> = ({ type, children, ...rest }) => {
-  const headingTagsMap = {
+const Heading: React.SFC<HeadingProps> = ({ variant, children, ...rest }) => {
+  const Tag = {
     display: 'h1',
     title: 'h1',
     annotation: 'h2',
     heading: 'h3',
     subheading: 'h4',
     subsubheading: 'h5',
-  }
-
-  const Tag = headingTagsMap[type]
+  }[variant]
 
   return <Tag {...rest}>{children}</Tag>
 }
 
-const headingStyles = ({ theme }: HeadingProps & ThemeProps) => {
-  const headingColor =
-    theme.colorMode === 'light'
-      ? theme.fontColors.headings
-      : theme.fontColors['headings-inverted']
+const headingStyles = ({
+  theme: { fontColors, mode },
+  theme,
+  colored,
+  variant,
+}: HeadingProps & ThemeProps) => {
+  const coloredSelector = colored || variant === 'heading' ? 'colored' : 'base'
+  const headingColor = {
+    light: {
+      base: fontColors.headings,
+      colored: fontColors.accent,
+    },
+    dark: {
+      base: fontColors['headings-inverted'],
+      colored: fontColors['accent-inverted'],
+    },
+    color: {
+      base: fontColors['headings-inverted'],
+      colored: fontColors.headings,
+    },
+  }[mode.color][coloredSelector]
 
   return css`
     margin: 0;
@@ -43,45 +58,39 @@ const headingStyles = ({ theme }: HeadingProps & ThemeProps) => {
   `
 }
 
-const headingTypeStyles = {
-  display: ({ theme }: ThemeProps) =>
-    css`
-      font-size: ${theme.fontSizes.xxl};
+const headingVariantStyles = ({
+  theme: { fontSizes, tracking, space, fontWeights },
+  variant,
+}: ThemeProps & HeadingProps) =>
+  ({
+    display: css`
+      font-size: ${fontSizes.m8};
     `,
-  title: ({ theme }: ThemeProps) =>
-    css`
-      font-size: ${theme.fontSizes.xl};
+    title: css`
+      font-size: ${fontSizes.m7};
+      margin-top: ${space.s24};
+      margin-bottom: ${space.s16};
     `,
-  annotation: ({ theme }: ThemeProps) =>
-    css`
-      font-size: ${theme.fontSizes.md};
+    annotation: css`
+      font-size: ${fontSizes.m5};
       text-transform: uppercase;
-      letter-spacing: ${theme.tracking.wide};
+      letter-spacing: ${tracking.wide};
     `,
-  heading: ({ theme }: ThemeProps) => {
-    const headingColor =
-      theme.colorMode === 'color'
-        ? theme.fontColors['headings-inverted']
-        : theme.fontColors.accent
-    return css`
-      font-weight: ${theme.fontWeights.light};
-      font-size: ${theme.fontSizes.lg};
-      color: ${headingColor};
-    `
-  },
-  subheading: ({ theme }: ThemeProps) =>
-    css`
-      font-size: ${theme.fontSizes.md};
+    heading: css`
+      font-weight: ${fontWeights.light};
+      font-size: ${fontSizes.m6};
     `,
-  subsubheading: ({ theme }: ThemeProps) =>
-    css`
-      font-size: ${theme.fontSizes.base};
+    subheading: css`
+      font-size: ${fontSizes.m5};
     `,
-}
+    subsubheading: css`
+      font-size: ${fontSizes.m4};
+    `,
+  }[variant])
 
 const StyledHeading = styled(Heading)`
   grid-area: Heading;
   ${headingStyles};
-  ${({ type }) => headingTypeStyles[type]};
+  ${headingVariantStyles};
 `
 export { StyledHeading as Heading }

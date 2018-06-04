@@ -2,7 +2,7 @@ import { responsiveStyle, style } from 'styled-system'
 
 import { Theme } from './theme';
 
-export type ColorProps = {
+export interface ColorProps {
   color?: keyof Theme['colors']
 }
 
@@ -12,7 +12,7 @@ export const color = style({
   key: 'colors',
 })
 
-export type FontWeightProps = {
+export interface FontWeightProps {
   weight?: keyof Theme['fontWeights']
 }
 
@@ -22,7 +22,7 @@ export const fontWeight = style({
   key: 'fontWeights',
 })
 
-export type WidthProps = {
+export interface WidthProps {
   width?: keyof Theme['widths']
 }
 

@@ -1,19 +1,27 @@
 import { css } from 'react-emotion'
 
-import { BaseProps } from '.'
-import { styled } from '../styles'
+import { styled, ThemeProps } from '../styles'
 
+interface SectionProps {
+  alternativeBg?: boolean
+}
 
-interface SectionProps extends BaseProps {}
+// Idea: fixed width container with max-width set to current breakpoint
+const sectionStyles = ({
+  theme: { mode, space, colors },
+  alternativeBg,
+}: ThemeProps & SectionProps) => {
+  const _backgroundColor = {
+    light: alternativeBg ? colors.white : colors['near-white'],
+    dark: alternativeBg ? colors.black : colors['near-black'],
+    color: alternativeBg ? colors['primary-dark'] : colors.primary,
+  }[mode.color]
+  return css`
+    background-color: ${_backgroundColor};
+    padding: ${space.s16};
+  `
+}
 
-const sectionStyles = ({ mode }: SectionProps) => css`
-  ${mode === 'light' && tw('bg-white')};
-  ${mode === 'color' && tw('bg-primary')};
-  ${mode === 'dark' && tw('bg-black')};
-`
-
-export const Section = styled<SectionProps, 'section'>('section')`
-  ${tw('flex flex-col justify-center min-h-screen')};
+export const Section = styled<SectionProps, 'div'>('div')`
   ${sectionStyles};
 `
-Section.defaultProps = { mode: 'light' }

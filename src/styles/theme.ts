@@ -2,6 +2,7 @@ const colors = {
   transparent: 'transparent',
 
   'primary-dark': '#532BD1',
+  /** #6534FF */
   primary: '#6534FF',
   'primary-light': '#8158FF',
 
@@ -24,20 +25,33 @@ const colors = {
 
 const space = {
   auto: 'auto',
-  '0': 0,
-  '1': '0.25rem',
-  '2': '0.5rem',
-  '3': '0.75rem',
-  '4': '1rem',
-  '6': '1.5rem',
-  '8': '2rem',
-  '10': '2.5rem',
-  '12': '3rem',
-  '16': '4rem',
-  '24': '6rem',
-  '32': '8rem',
-  '48': '12rem',
-  '64': '16rem',
+  s0: '0',
+  /** 0.25rem */
+  s1: '0.25rem',
+  /** 0.5rem */
+  s2: '0.5rem',
+  /** 0.75rem */
+  s3: '0.75rem',
+  /** 1rem */
+  s4: '1rem',
+  /** 1.5rem */
+  s6: '1.5rem',
+  /** 2rem */
+  s8: '2rem',
+  /** 2.5rem */
+  s10: '2.5rem',
+  /** 3rem */
+  s12: '3rem',
+  /** 4rem */
+  s16: '4rem',
+  /** 6rem */
+  s24: '6rem',
+  /** 8rem */
+  s32: '8rem',
+  /** 12rem */
+  s48: '12rem',
+  /** 16rem */
+  s64: '16rem',
 }
 
 const fractions = {
@@ -53,12 +67,26 @@ const fractions = {
   '1/6': '16.66667%',
   '5/6': '83.33333%',
 }
+
+const toEm = (pxVal: number) => `${pxVal / 16}em`
+
+const screens = {
+  sm: toEm(576),
+  md: toEm(768),
+  lg: toEm(992),
+  hd: toEm(1200),
+}
+
 export const theme = {
   /* Theme mode */
-  colorMode: 'light',
+  mode: {
+    color: 'light',
+  },
   /* Repsonsive */
-  breakpoints: ['576px', '768px', '992px', '1200px'],
+  // Array for styled-system
+  breakpoints: Object.values(screens),
 
+  screens,
   /* Spacing */
   space,
 
@@ -104,19 +132,30 @@ export const theme = {
     body: colors['grey-darker'],
     grey: colors.grey,
     accent: colors.primary,
-    'headings-inverted': colors['near-white'],
-    'body-inverted': colors['grey-lighter'],
-    'grey-inverted': colors.grey,
-    'accent-inverted': colors.primary,
+    headingsInverted: colors['near-white'],
+    bodyInverted: colors['grey-lighter'],
+    greyInverted: colors.grey,
+    accentInverted: colors.primary,
   },
 
+  /** modular scale */
   fontSizes: {
-    sm: '0.875rem', // 14px
-    base: '1rem', // 16px
-    md: '1.414rem', // 22.62px
-    lg: '1.999rem', // 39.98pxpx
-    xl: '2.827rem', // 45.23px
-    xxl: '3.998rem', // 63.97px
+    /** 0.354rem ~5.7 px */
+    m1: '0.354rem',
+    /** 0.5rem ~ 8px */
+    m2: '0.5rem',
+    /** 0.707rem ~ 11.3px */
+    m3: '0.707rem',
+    /** 1rem - bame */
+    m4: '1rem',
+    /** 1.414rem ~s22.6px */
+    m5: '1.414rem',
+    /** 2rem ~32px */
+    m6: '2rem',
+    /** 2.827rem ~45.2px */
+    m7: '2.827rem',
+    /** 5.653rem ~64px */
+    m8: '5.653rem',
   },
 
   fontWeights: {
