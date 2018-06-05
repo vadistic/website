@@ -1,58 +1,48 @@
 const colors = {
   transparent: 'transparent',
 
-  'primary-dark': '#532BD1',
+  primaryDark: '#532BD1',
   /** #6534FF */
   primary: '#6534FF',
-  'primary-light': '#8158FF',
+  primaryLight: '#8158FF',
 
-  'secondary-dark': '#D11B44',
+  secondaryDark: '#D11B44',
   secondary: '#FF2052',
-  'secondary-light': '#FF4871',
+  secondaryLight: '#FF4871',
 
   black: '#000000',
-  'near-black': '#111111',
+  nearBlack: '#111111',
 
-  'grey-darker': '#333333',
-  'grey-dark': '#555555',
+  greyDarker: '#333333',
+  greyDark: '#555555',
   grey: '#777777',
-  'grey-light': '#999999',
-  'grey-lighter': '#DDDDDD',
+  greyLight: '#999999',
+  greyLighter: '#DDDDDD',
 
-  'near-white': '#F5F5F5',
+  nearWhite: '#F5F5F5',
   white: '#FFFFFF',
 }
 
-const space = {
+const spacing = {
   auto: 'auto',
   s0: '0',
   /** 0.25rem */
   s1: '0.25rem',
   /** 0.5rem */
   s2: '0.5rem',
-  /** 0.75rem */
-  s3: '0.75rem',
   /** 1rem */
   s4: '1rem',
-  /** 1.5rem */
-  s6: '1.5rem',
   /** 2rem */
   s8: '2rem',
-  /** 2.5rem */
-  s10: '2.5rem',
-  /** 3rem */
-  s12: '3rem',
   /** 4rem */
   s16: '4rem',
-  /** 6rem */
-  s24: '6rem',
   /** 8rem */
   s32: '8rem',
-  /** 12rem */
-  s48: '12rem',
   /** 16rem */
   s64: '16rem',
 }
+
+const space = [ 0, 4, 8, 16, 32, 64, 128, 256, 512 ];
 
 const fractions = {
   '1/2': '50%',
@@ -82,23 +72,24 @@ export const theme = {
   mode: {
     color: 'light',
   },
-  /* Repsonsive */
+  /* Responsive */
   // Array for styled-system
   breakpoints: Object.values(screens),
+  space,
 
   screens,
   /* Spacing */
-  space,
+  spacing,
 
   widths: {
-    ...space,
+    ...spacing,
     ...fractions,
     screen: '100vw',
     full: '100%',
   },
 
   heights: {
-    ...space,
+    ...spacing,
     ...fractions,
     screen: '100vh',
     full: '100%',
@@ -128,12 +119,12 @@ export const theme = {
   },
 
   fontColors: {
-    headings: colors['near-black'],
-    body: colors['grey-darker'],
+    headings: colors.nearBlack,
+    body: colors.greyDarker,
     grey: colors.grey,
     accent: colors.primary,
-    headingsInverted: colors['near-white'],
-    bodyInverted: colors['grey-lighter'],
+    headingsInverted: colors.nearWhite,
+    bodyInverted: colors.greyLighter,
     greyInverted: colors.grey,
     accentInverted: colors.primary,
   },

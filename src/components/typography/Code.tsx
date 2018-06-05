@@ -32,7 +32,7 @@ export const codeInlineStyles = ({
 }: ThemeProps) => css`
   /* Inline code  */
   color: ${fontColors.accent};
-  background: ${colors['grey-lighter']};
+  background: ${colors.greyLighter};
   font-weight: ${fontWeights.medium};
   box-shadow: ${shadows.inner};
   padding: ${space.s1};
@@ -54,7 +54,7 @@ export const codePreStyles = ({
   /* Code blocks */
   font-weight: ${fontWeights.normal};
   color: ${fontColors.bodyInverted};
-  background: ${colors['grey-darker']};
+  background: ${colors.greyDarker};
   padding: ${space.s4};
   margin: ${space.s6} 0;
   white-space: pre;

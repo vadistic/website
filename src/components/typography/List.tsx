@@ -3,9 +3,7 @@ import { css } from 'react-emotion'
 import { styled, ThemeProps, verticalMarginStylesFn } from '../../styles'
 import { textStyles } from './Text'
 
-export const listStyles = ({
-  theme: { fonts, fontSizes, fontColors, fontWeights, space, leading },
-}: ThemeProps) => css`
+export const listStyles = ({ theme: { fontSizes } }: ThemeProps) => css`
   ${verticalMarginStylesFn(fontSizes.m5)};
 
   ul,

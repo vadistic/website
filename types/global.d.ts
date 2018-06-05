@@ -8,7 +8,6 @@ declare module '*.json' {
   export default value
 }
 
-
 declare module '*.svg' {
   const value: any
   export default value
@@ -29,3 +28,15 @@ declare const graphql: (query: TemplateStringsArray) => void
 
 // Tailwind babel plugin
 declare function tw(classname: string | string[]): string
+
+declare module 'facepaint' {
+  export interface MqObjStyles {
+    [name: string]: string | number | string[] | number[] | MqObjStyles
+  }
+
+  export type Mq = (objStyles: MqObjStyles) => string
+
+  const facepaint: (mqs: string[]) => Mq
+
+  export default facepaint
+}

@@ -46,7 +46,7 @@ export const Typography = styled('div')`
     ${codePreStyles};
 
     code {
-      ${resetCodeInlineStyles}
+      ${resetCodeInlineStyles};
     }
   }
 

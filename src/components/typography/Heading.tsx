@@ -1,7 +1,12 @@
 import * as React from 'react'
 import { css } from 'react-emotion'
 
-import { styled, ThemeProps, verticalMarginStylesFn } from '../../styles'
+import {
+  media,
+  styled,
+  ThemeProps,
+  verticalMarginStylesFn,
+} from '../../styles'
 
 export interface HeadingProps {
   variant:
@@ -65,7 +70,9 @@ export const headingVariantStyles = ({ variant }: HeadingProps) => ({
 }: ThemeProps) =>
   ({
     display: css`
-      font-size: ${fontSizes.m8};
+      line-height: ${leading.none};
+      font-size: ${fontSizes.m7};
+      ${media.hd` font-size: ${fontSizes.m8}`};
     `,
     title: css`
       line-height: ${leading.tight};

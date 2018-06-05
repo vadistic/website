@@ -1,5 +1,12 @@
-import { styled } from '../styles';
+import { css } from 'react-emotion'
+
+import { styled, ThemeProps } from '../styles'
+
+const measureStyles = ({ theme: { maxWidth } }: ThemeProps) => css`
+  max-width: ${maxWidth.md};
+`
 
 export const Measure = styled('div')`
-  ${tw('mx-auto px-3 md:px-0 max-w-md')}
+  ${measureStyles};
+  margin: auto;
 `
