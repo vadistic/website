@@ -2,13 +2,11 @@ import * as React from 'react'
 
 import { Cell, Grid, Heading, Section, Text } from '../'
 
-
 export const IntroSection: React.SFC<{}> = () => (
   <Section screenVh alternativeBg>
-    <Grid>
-      <Cell />
-
-      <Cell>
+    <Grid columns={[1, 1, 3, 2]} alignItems="center">
+      <Cell width={1}>Placeholder</Cell>
+      <Cell width={[1, 1, 2, 1]}>
         <Heading variant="annotation">Hello, I'm Jakub</Heading>
         <Heading variant="heading">
           I'm front-end developer and designer based in Tricity, Poland

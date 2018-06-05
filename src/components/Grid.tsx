@@ -6,16 +6,31 @@ import { mq, styled, ThemeProps } from '../styles'
 
 const toPx = (n: number | string) => (typeof n === 'number' ? `${n}px` : n)
 
-const arr = (n: number | number[] | string | string[]) =>
+type BasicTypes = number | string | undefined
+
+export type Arrayable<T> = T | T[]
+
+const arr = (n: Arrayable<BasicTypes>): BasicTypes[] =>
   Array.isArray(n) ? n : [n]
 
 interface GridProps {
-  columns?: string | number | number[]
-  rows?: string | number | number[]
-  gap?: number | number[] | string | string[]
+  /** number of even columns in layout;
+   *  when passed a string - hatchback for `grid-column-template` css property
+   * @default 12
+   */
+  columns?: Arrayable<string | number>
+  /** number of even rows in layout
+   *  when passed a string - hatchback for `grid-column-template` css property
+   * @default 12
+   */
+  rows?: Arrayable<string | number>
+  gap?: Arrayable<string | number>
+  /** grid-flow @default `row` */
   flow?: CSS.GridAutoFlowProperty
-  justifyItems?: CSS.JustifyItemsProperty | CSS.JustifyItemsProperty[]
-  alignItems?: CSS.AlignItemsProperty | CSS.AlignItemsProperty[]
+  justifyItems?: Arrayable<CSS.JustifyItemsProperty>
+  alignItems?: Arrayable<CSS.AlignItemsProperty>
+  height?: Arrayable<CSS.HeightProperty<string | number>>
+  minHeight?: Arrayable<CSS.MinHeightProperty<string | number>>
 }
 
 const gridStyles = ({
@@ -26,6 +41,8 @@ const gridStyles = ({
   flow = 'row',
   justifyItems,
   alignItems,
+  height,
+  minHeight,
 }: ThemeProps & GridProps) => {
   const gridTemplateColumns =
     typeof columns === 'string'
@@ -39,18 +56,20 @@ const gridStyles = ({
       ? rows
       : arr(rows).map(row => `repeat(${row}, 1fr)`))
 
-  const gridGap = arr(gap).map(toPx)
   return css(
     {
       display: 'grid',
       gridAutoFlow: flow,
+      overflow: 'hidden',
     },
     mq({
       gridTemplateColumns,
       gridTemplateRows,
-      gridGap,
+      gridGap: arr(gap).map(toPx),
       justifyItems,
       alignItems,
+      height: arr(height).map(toPx),
+      minHeight: arr(minHeight).map(toPx),
     })
   )
 }
@@ -60,20 +79,28 @@ export const Grid = styled<GridProps, 'div'>('div')`
 `
 
 interface CellProps {
+  /** hatchback for `grid-column` css property */
   column?: CSS.GridColumnProperty
-  left?: string | number | number[]
-  width?: string | number | number[]
+  /** horizontal grid item position in cell units, alias for `grid-column-start` css property */
+  left?: Arrayable<CSS.GridColumnStartProperty>
+  /** column span length in cell units */
+  width?: Arrayable<string | number>
+  /** row span length in cell units */
   row?: CSS.GridRowProperty
-  top?: string | number | number[]
-  height?: string | number | number[]
-
-  justifySelf?: CSS.JustifySelfProperty | CSS.JustifySelfProperty[]
-  alignSelf?: CSS.AlignSelfProperty | CSS.AlignSelfProperty[]
-
-  justifyContent?: CSS.JustifyContentProperty | CSS.JustifyContentProperty[]
-  alignContent?: CSS.JustifyContentProperty | CSS.JustifyContentProperty[]
-
-  textAlign?: CSS.TextAlignProperty | CSS.TextAlignProperty[]
+  /** vertical grid item position in cell units, alias for `grid-row-start` css property */
+  top?: Arrayable<CSS.GridColumnEndProperty>
+  /** grid-row span length in cell units */
+  height?: Arrayable<string | number>
+  /** `justify-self` css property */
+  justifySelf?: Arrayable<CSS.JustifySelfProperty>
+  /** `align-self` css property */
+  alignSelf?: Arrayable<CSS.AlignSelfProperty>
+  /** `justify-content` css property */
+  justifyContent?: Arrayable<CSS.JustifyContentProperty>
+  /** `align-content` css property */
+  alignContent?: Arrayable<CSS.JustifyContentProperty>
+  /** `text-align` css property */
+  textAlign?: Arrayable<CSS.TextAlignProperty>
 }
 
 const cellStyles = ({
@@ -96,6 +123,11 @@ const cellStyles = ({
   const gridRowEnd = height && arr(height).map(span => `span ${span}`)
 
   return css(
+    {
+      overflow: 'hidden',
+      display: 'flex',
+      flexFlow: ' column wrap',
+    },
     mq({
       gridColumnStart,
       gridColumnEnd,
@@ -114,7 +146,4 @@ const cellStyles = ({
 
 export const Cell = styled<CellProps, 'div'>('div')`
   ${cellStyles};
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
 `

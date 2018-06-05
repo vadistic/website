@@ -13,8 +13,9 @@ const GridPage: React.SFC<{}> = () => (
   <Layout>
     <Mode mode={{ color: 'light' }}>
       <Section>
-        <Grid columns={[4, 8, 12]} rows="100px 100px 100px 100px" flow="row">
-          <Cell top="2" alignSelf="">
+        <Grid columns={[4, 8, 12]} rows={1} flow="row">
+          <Cell alignSelf="">
+            <Placeholder>1</Placeholder>
             <Placeholder>1</Placeholder>
           </Cell>
           <Cell width="2">
@@ -30,7 +31,16 @@ const GridPage: React.SFC<{}> = () => (
             <Placeholder>5</Placeholder>
           </Cell>
           <Cell>
-          <Placeholder>6</Placeholder>
+            <Placeholder>6</Placeholder>
+          </Cell>
+          <Cell>
+            <Placeholder>6</Placeholder>
+          </Cell>
+          <Cell>
+            <Placeholder>6</Placeholder>
+          </Cell>
+          <Cell>
+            <Placeholder>6</Placeholder>
           </Cell>
         </Grid>
       </Section>
