@@ -3,6 +3,8 @@ export * from './Layout'
 
 // Utils
 export * from './Mode'
+export * from './Grid'
+
 
 // Components
 export * from './Section'

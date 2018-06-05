@@ -30,11 +30,12 @@ declare const graphql: (query: TemplateStringsArray) => void
 declare function tw(classname: string | string[]): string
 
 declare module 'facepaint' {
-  export interface MqObjStyles {
-    [name: string]: string | number | string[] | number[] | MqObjStyles
-  }
+  import * as CSS from 'csstype'
 
-  export type Mq = (objStyles: MqObjStyles) => string
+  export type ArrayCSSProperties ={
+    [K in keyof CSS.Properties]?: CSS.Properties[K] | CSS.Properties[K] [] | undefined | undefined[]
+  }
+  export type Mq = (objStyles: ArrayCSSProperties) => string
 
   const facepaint: (mqs: string[]) => Mq
 

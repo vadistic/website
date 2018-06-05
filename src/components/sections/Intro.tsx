@@ -1,15 +1,14 @@
 import * as React from 'react'
 
-import { Heading, Section, Text } from '../'
+import { Cell, Grid, Heading, Section, Text } from '../'
 
-import { Grid, Item } from './Hero'
 
 export const IntroSection: React.SFC<{}> = () => (
   <Section screenVh alternativeBg>
     <Grid>
-      <Item />
+      <Cell />
 
-      <Item>
+      <Cell>
         <Heading variant="annotation">Hello, I'm Jakub</Heading>
         <Heading variant="heading">
           I'm front-end developer and designer based in Tricity, Poland
@@ -20,7 +19,7 @@ export const IntroSection: React.SFC<{}> = () => (
           Mountains, she had a last view back on the skyline of her hometown
           Bookmarksgrove.
         </Text>
-      </Item>
+      </Cell>
     </Grid>
   </Section>
 )
