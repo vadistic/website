@@ -4,24 +4,24 @@ import * as CSS from 'csstype'
 
 import { mq, styled, ThemeProps } from '../styles'
 
-const toPx = (n: number | string) => (typeof n === 'number' ? `${n}px` : n)
 
 type BasicTypes = number | string | undefined
 
 export type Arrayable<T> = T | T[]
 
+const toPx = (n: number | string) => (typeof n === 'number' ? `${n}px` : n)
 const arr = (n: Arrayable<BasicTypes>): BasicTypes[] =>
   Array.isArray(n) ? n : [n]
 
-interface GridProps {
-  /** number of even columns in layout;
-   *  when passed a string - hatchback for `grid-column-template` css property
-   * @default 12
+  // TOTO add auto-fit and auto-fill
+  // repeat(auto-fill, minmax(16rem, 1fr))
+interface GridContainerProps {
+  /** <number> number of even columns in layout;
+   *  <string> hatchback for `grid-column-template` css property
    */
   columns?: Arrayable<string | number>
   /** number of even rows in layout
    *  when passed a string - hatchback for `grid-column-template` css property
-   * @default 12
    */
   rows?: Arrayable<string | number>
   gap?: Arrayable<string | number>
@@ -33,17 +33,17 @@ interface GridProps {
   minHeight?: Arrayable<CSS.MinHeightProperty<string | number>>
 }
 
-const gridStyles = ({
+const gridContainerStyles = ({
   theme,
   columns = 12,
   rows,
-  gap = 16,
+  gap = theme.gap || 16,
   flow = 'row',
   justifyItems,
   alignItems,
   height,
   minHeight,
-}: ThemeProps & GridProps) => {
+}: ThemeProps & GridContainerProps) => {
   const gridTemplateColumns =
     typeof columns === 'string'
       ? columns
@@ -74,11 +74,11 @@ const gridStyles = ({
   )
 }
 
-export const Grid = styled<GridProps, 'div'>('div')`
-  ${gridStyles};
+export const Container = styled<GridContainerProps, 'div'>('div')`
+  ${gridContainerStyles};
 `
 
-interface CellProps {
+interface GridItemProps {
   /** hatchback for `grid-column` css property */
   column?: CSS.GridColumnProperty
   /** horizontal grid item position in cell units, alias for `grid-column-start` css property */
@@ -103,7 +103,7 @@ interface CellProps {
   textAlign?: Arrayable<CSS.TextAlignProperty>
 }
 
-const cellStyles = ({
+const gridItemStyles = ({
   theme,
   column,
   left,
@@ -116,7 +116,7 @@ const cellStyles = ({
   justifyContent,
   alignContent,
   textAlign,
-}: ThemeProps & CellProps) => {
+}: ThemeProps & GridItemProps) => {
   const gridColumnStart = left && arr(left).map(start => `${start}`)
   const gridColumnEnd = arr(width).map(span => `span ${span}`)
   const gridRowStart = top && arr(top).map(start => `${start}`)
@@ -144,6 +144,6 @@ const cellStyles = ({
   )
 }
 
-export const Cell = styled<CellProps, 'div'>('div')`
-  ${cellStyles};
+export const Item = styled<GridItemProps, 'div'>('div')`
+  ${gridItemStyles};
 `

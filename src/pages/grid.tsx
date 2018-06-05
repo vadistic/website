@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Cell, Grid, Layout, Mode, Section } from '../components'
+import { Grid, Layout, Mode, Section } from '../components'
 import { styled } from '../styles'
 
 const Placeholder = styled('div')`
@@ -13,36 +13,36 @@ const GridPage: React.SFC<{}> = () => (
   <Layout>
     <Mode mode={{ color: 'light' }}>
       <Section>
-        <Grid columns={[4, 8, 12]} rows={1} flow="row">
-          <Cell alignSelf="">
+        <Grid.Container columns={[4, 8, 12]} rows={1} flow="row">
+          <Grid.Item alignSelf="">
             <Placeholder>1</Placeholder>
             <Placeholder>1</Placeholder>
-          </Cell>
-          <Cell width="2">
+          </Grid.Item>
+          <Grid.Item width="2">
             <Placeholder>2</Placeholder>
-          </Cell>
-          <Cell width="2">
+          </Grid.Item>
+          <Grid.Item width="2">
             <Placeholder>3</Placeholder>
-          </Cell>
-          <Cell>
+          </Grid.Item>
+          <Grid.Item>
             <Placeholder>4</Placeholder>
-          </Cell>
-          <Cell>
+          </Grid.Item>
+          <Grid.Item>
             <Placeholder>5</Placeholder>
-          </Cell>
-          <Cell>
+          </Grid.Item>
+          <Grid.Item>
             <Placeholder>6</Placeholder>
-          </Cell>
-          <Cell>
+          </Grid.Item>
+          <Grid.Item>
             <Placeholder>6</Placeholder>
-          </Cell>
-          <Cell>
+          </Grid.Item>
+          <Grid.Item>
             <Placeholder>6</Placeholder>
-          </Cell>
-          <Cell>
+          </Grid.Item>
+          <Grid.Item>
             <Placeholder>6</Placeholder>
-          </Cell>
-        </Grid>
+          </Grid.Item>
+        </Grid.Container>
       </Section>
     </Mode>
   </Layout>

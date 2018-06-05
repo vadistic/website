@@ -1,7 +1,14 @@
 import Link from 'gatsby-link'
 import * as React from 'react'
 
-import { HeroSection, IntroSection, Layout, Mode } from '../components'
+import {
+  HeroSection,
+  IntroSection,
+  Layout,
+  Mode,
+  ProcessSection,
+  ServicesSection,
+} from '../components'
 
 const IndexPage: React.SFC<{}> = () => (
   <Layout>
@@ -13,6 +20,8 @@ const IndexPage: React.SFC<{}> = () => (
     <Mode mode={{ color: 'light' }}>
       <HeroSection />
       <IntroSection />
+      <ServicesSection />
+      <ProcessSection />
     </Mode>
   </Layout>
 )

@@ -1,12 +1,7 @@
 import * as React from 'react'
 import { css } from 'react-emotion'
 
-import {
-  media,
-  styled,
-  ThemeProps,
-  verticalMarginStylesFn,
-} from '../../styles'
+import { media, styled, ThemeProps, verticalMarginStylesFn } from '../../styles'
 
 export interface HeadingProps {
   variant:
@@ -17,6 +12,8 @@ export interface HeadingProps {
     | 'subheading'
     | 'subsubheading'
   color?: boolean
+  noMargin?: boolean
+  noDecoration?: boolean
 }
 
 const Heading: React.SFC<HeadingProps> = ({ variant, children, ...rest }) => {
@@ -32,7 +29,7 @@ const Heading: React.SFC<HeadingProps> = ({ variant, children, ...rest }) => {
   return <Tag {...rest}>{children}</Tag>
 }
 
-export const headingStyles = ({
+export const headingBaseStyles = ({
   theme: { fonts, fontWeights, leading },
 }: ThemeProps) => css`
   line-height: ${leading.normal};
@@ -65,8 +62,34 @@ export const headingColorStyles = ({ color, variant }: HeadingProps) => ({
   `
 }
 
+export const headingDecorationStyles = ({
+  theme: { colors, mode },
+  variant,
+  noDecoration,
+}: ThemeProps & HeadingProps) => {
+  const _gradient = {
+    light: `${colors.primaryDark}, ${colors.primaryLight}`,
+    dark: `${colors.primaryDark}, ${colors.primaryLight}`,
+    color: `${colors.secondaryDark}, ${colors.secondaryLight}`,
+  }[mode.color]
+
+  return (
+    !noDecoration &&
+    variant === 'annotation' &&
+    css`
+      background-image: linear-gradient(to right, ${_gradient});
+      background-size: 8rem 15%;
+      background-repeat: no-repeat;
+      background-position: bottom left;
+
+      /* fix for flexbox */
+      width: max-content;
+    `
+  )
+}
+
 export const headingVariantStyles = ({ variant }: HeadingProps) => ({
-  theme: { fontSizes, tracking, fontWeights, leading },
+  theme: { fontSizes, tracking, fontWeights, colors, leading },
 }: ThemeProps) =>
   ({
     display: css`
@@ -81,6 +104,7 @@ export const headingVariantStyles = ({ variant }: HeadingProps) => ({
     `,
     annotation: css`
       font-size: ${fontSizes.m5};
+      line-height: ${leading.loose};
       text-transform: uppercase;
       letter-spacing: ${tracking.wide};
       ${verticalMarginStylesFn('0', fontSizes.m7)};
@@ -101,10 +125,18 @@ export const headingVariantStyles = ({ variant }: HeadingProps) => ({
     `,
   }[variant])
 
+export const headingOverrideStyles = ({ noMargin }: HeadingProps) =>
+  noMargin &&
+  css`
+    margin: 0 !important;
+  `
+
 const StyledHeading = styled(Heading)`
   grid-area: Heading;
-  ${headingStyles};
+  ${headingBaseStyles};
   ${headingColorStyles};
+  ${headingDecorationStyles};
   ${headingVariantStyles};
+  ${headingOverrideStyles};
 `
 export { StyledHeading as Heading }

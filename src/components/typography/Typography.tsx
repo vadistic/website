@@ -8,8 +8,8 @@ import {
   resetCodeInlineStyles,
 } from './Code'
 import {
+  headingBaseStyles,
   headingColorStyles,
-  headingStyles,
   headingVariantStyles,
 } from './Heading'
 import { listStyles } from './List'
@@ -64,7 +64,7 @@ export const Typography = styled('div')`
   h4,
   h5,
   h6 {
-    ${headingStyles};
+    ${headingBaseStyles};
   }
 
   h1 {

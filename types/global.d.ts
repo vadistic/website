@@ -41,3 +41,8 @@ declare module 'facepaint' {
 
   export default facepaint
 }
+
+declare module 'emotion-normalize' {
+  const emotionNormalize: string
+  export default emotionNormalize
+}

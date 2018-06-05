@@ -1,23 +1,18 @@
 import * as React from 'react'
 
-import { Cell, Grid, Heading, Section, Text } from '../'
+import { Grid, Heading, Section, Text } from '../'
+
+import data from './data'
 
 export const IntroSection: React.SFC<{}> = () => (
-  <Section screenVh alternativeBg>
-    <Grid columns={[1, 1, 3, 2]} alignItems="center">
-      <Cell width={1}>Placeholder</Cell>
-      <Cell width={[1, 1, 2, 1]}>
-        <Heading variant="annotation">Hello, I'm Jakub</Heading>
-        <Heading variant="heading">
-          I'm front-end developer and designer based in Tricity, Poland
-        </Heading>
-        <Text>
-          he packed her seven versalia, put her initial into the belt and made
-          herself on the way. When she reached the first hills of the Italic
-          Mountains, she had a last view back on the skyline of her hometown
-          Bookmarksgrove.
-        </Text>
-      </Cell>
-    </Grid>
+  <Section>
+    <Grid.Container columns={[1, 1, 3, 2]} alignItems="center">
+      <Grid.Item width={1}>Placeholder</Grid.Item>
+      <Grid.Item width={[1, 1, 2, 1]}>
+        <Heading variant="annotation">{data.intro.annotation}</Heading>
+        <Heading variant="heading">{data.intro.headline}</Heading>
+        <Text>{data.intro.text}</Text>
+      </Grid.Item>
+    </Grid.Container>
   </Section>
 )

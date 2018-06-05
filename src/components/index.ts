@@ -3,8 +3,9 @@ export * from './Layout'
 
 // Utils
 export * from './Mode'
-export * from './Grid'
 
+import * as Grid from './Grid'
+export { Grid }
 
 // Components
 export * from './Section'

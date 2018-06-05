@@ -81,6 +81,8 @@ export const theme = {
   /* Spacing */
   spacing,
 
+  gap: [16,16,16,32,32].map(toEm),
+
   widths: {
     ...spacing,
     ...fractions,
