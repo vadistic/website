@@ -4,17 +4,15 @@ import * as CSS from 'csstype'
 
 import { mq, styled, ThemeProps } from '../styles'
 
-
 type BasicTypes = number | string | undefined
 
 export type Arrayable<T> = T | T[]
 
 const toPx = (n: number | string) => (typeof n === 'number' ? `${n}px` : n)
-const arr = (n: Arrayable<BasicTypes>): BasicTypes[] =>
-  Array.isArray(n) ? n : [n]
+const arr = (n: Arrayable<BasicTypes>): BasicTypes[] => (Array.isArray(n) ? n : [n])
 
-  // TOTO add auto-fit and auto-fill
-  // repeat(auto-fill, minmax(16rem, 1fr))
+// TOTO add auto-fit and auto-fill
+// repeat(auto-fill, minmax(16rem, 1fr))
 interface GridContainerProps {
   /** <number> number of even columns in layout;
    *  <string> hatchback for `grid-column-template` css property
@@ -45,16 +43,11 @@ const gridContainerStyles = ({
   minHeight,
 }: ThemeProps & GridContainerProps) => {
   const gridTemplateColumns =
-    typeof columns === 'string'
-      ? columns
-      : arr(columns).map(col => `repeat(${col}, 1fr)`)
+    typeof columns === 'string' ? columns : arr(columns).map(col => `repeat(${col}, 1fr)`)
 
   // Possibly undefined, but that's ignored by emotion
   const gridTemplateRows =
-    rows &&
-    (typeof rows === 'string'
-      ? rows
-      : arr(rows).map(row => `repeat(${row}, 1fr)`))
+    rows && (typeof rows === 'string' ? rows : arr(rows).map(row => `repeat(${row}, 1fr)`))
 
   return css(
     {
@@ -78,7 +71,7 @@ export const Container = styled<GridContainerProps, 'div'>('div')`
   ${gridContainerStyles};
 `
 
-interface GridItemProps {
+export interface GridItemProps {
   /** hatchback for `grid-column` css property */
   column?: CSS.GridColumnProperty
   /** horizontal grid item position in cell units, alias for `grid-column-start` css property */
@@ -99,6 +92,10 @@ interface GridItemProps {
   justifyContent?: Arrayable<CSS.JustifyContentProperty>
   /** `align-content` css property */
   alignContent?: Arrayable<CSS.JustifyContentProperty>
+  /** `justify-items` css property */
+  justifyItems?: Arrayable<CSS.JustifyItemsProperty>
+  /** `align-items` css property */
+  alignItems?: Arrayable<CSS.AlignItemsProperty>
   /** `text-align` css property */
   textAlign?: Arrayable<CSS.TextAlignProperty>
 }
@@ -115,6 +112,8 @@ const gridItemStyles = ({
   alignSelf,
   justifyContent,
   alignContent,
+  justifyItems,
+  alignItems,
   textAlign,
 }: ThemeProps & GridItemProps) => {
   const gridColumnStart = left && arr(left).map(start => `${start}`)
@@ -139,6 +138,8 @@ const gridItemStyles = ({
       alignSelf,
       justifyContent,
       alignContent,
+      justifyItems,
+      alignItems,
       textAlign,
     })
   )

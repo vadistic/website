@@ -4,14 +4,9 @@ import { css } from 'react-emotion'
 import { media, styled, ThemeProps, verticalMarginStylesFn } from '../../styles'
 
 export interface HeadingProps {
-  variant:
-    | 'display'
-    | 'title'
-    | 'annotation'
-    | 'heading'
-    | 'subheading'
-    | 'subsubheading'
+  variant: 'display' | 'title' | 'annotation' | 'heading' | 'subheading' | 'subsubheading'
   color?: boolean
+  noColor?: boolean
   noMargin?: boolean
   noDecoration?: boolean
 }
@@ -29,19 +24,18 @@ const Heading: React.SFC<HeadingProps> = ({ variant, children, ...rest }) => {
   return <Tag {...rest}>{children}</Tag>
 }
 
-export const headingBaseStyles = ({
-  theme: { fonts, fontWeights, leading },
-}: ThemeProps) => css`
+export const headingBaseStyles = ({ theme: { fonts, fontWeights, leading } }: ThemeProps) => css`
   line-height: ${leading.normal};
   font-family: ${fonts.sans};
-  font-weight: ${fontWeights.medium};
+  font-weight: ${fontWeights.semibold};
 `
 
-export const headingColorStyles = ({ color, variant }: HeadingProps) => ({
+export const headingColorStyles = ({ color, noColor, variant }: HeadingProps) => ({
   theme: { mode, fontColors },
 }: ThemeProps) => {
   // converts boolean to string selector & adds "defaultProp" `colored` for variant="heading"
-  const _coloredSelector = color || variant === 'heading' ? 'color' : 'base'
+  const _coloredSelector =
+    !noColor && color ? 'color' : variant === 'heading' && !noColor ? 'color' : 'base'
   const _headingColor = {
     light: {
       base: fontColors.headings,
@@ -99,7 +93,7 @@ export const headingVariantStyles = ({ variant }: HeadingProps) => ({
     `,
     title: css`
       line-height: ${leading.tight};
-      font-size: ${fontSizes.m7};
+      font-size: ${fontSizes.m6};
       ${verticalMarginStylesFn(fontSizes.m8, fontSizes.m6)};
     `,
     annotation: css`
@@ -111,7 +105,7 @@ export const headingVariantStyles = ({ variant }: HeadingProps) => ({
     `,
     heading: css`
       font-weight: ${fontWeights.light};
-      font-size: ${fontSizes.m6};
+      font-size: ${fontSizes.m5};
       ${verticalMarginStylesFn(fontSizes.m7, fontSizes.m5)};
     `,
     subheading: css`

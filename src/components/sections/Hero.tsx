@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Grid, Heading, Section } from '../'
+import { Grid, Heading, Mode, Section } from '../'
 import { styled } from '../../styles'
 
 import visual from '../../assets/shape.svg'
@@ -11,31 +11,30 @@ const Placeholder = styled('div')`
 `
 
 const Visual = styled('div')`
-  background-image: url(${visual});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: rgba(255, 255, 255, 0.1);
   width: 12rem;
   height: 12rem;
 `
 
 export const HeroSection: React.SFC<{}> = () => (
-  <Section>
-    <Grid.Container
-      columns={[1, 1, 3, 2]}
-      height="100%"
-      alignItems="center"
-      gap={[32, 32, 32, 32, 48]}
-    >
-      <Grid.Item width={[1, 1, 1, 1]} justifySelf={['start', 'start', 'end']}>
-        <Visual />
-      </Grid.Item>
-      <Grid.Item width={[1, 1, 2, 1]} justifySelf={'start'}>
-        <Heading variant="title">{data.hero.slogan}</Heading>
-        <Heading color variant="annotation" noDecoration>
-          {data.hero.signature}
-        </Heading>
-      </Grid.Item>
-    </Grid.Container>
-  </Section>
+  <Mode mode={{ color: 'dark' }}>
+    <Section minHeight="100vh" flex>
+      <Grid.Container
+        columns={[4, 4, 8, 10]}
+        minHeight="100%"
+        alignItems="center"
+        gap={[32, 32, 32, 32, 48]}
+      >
+        <Grid.Item left={[1, 2, 1, 2]} width={[4, 2, 4, 4]} alignItems={['left', 'left', 'center']}>
+          <Visual />
+        </Grid.Item>
+        <Grid.Item left={[1, 2, 5, 6]} width={[4, 2, 4, 3, 4]}>
+          <Heading variant="title">{data.hero.title}</Heading>
+          <Heading noColor variant="heading" noDecoration>
+            {data.hero.heading}
+          </Heading>
+        </Grid.Item>
+      </Grid.Container>
+    </Section>
+  </Mode>
 )

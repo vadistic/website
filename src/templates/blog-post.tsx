@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-/* PrimsJS Theme */
+import '../styles/blog.css'
 
 import { Layout, Measure, Mode, Section, Typography } from '../components'
 

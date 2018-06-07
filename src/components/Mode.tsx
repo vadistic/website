@@ -2,7 +2,7 @@ import { ThemeProvider } from 'emotion-theming'
 import * as React from 'react'
 import { Theme } from '../styles'
 
-interface ModeProps {
+export interface ModeProps {
   mode: {
     color: 'light' | 'dark' | 'color'
   }

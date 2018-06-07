@@ -24,7 +24,7 @@ export const textStyles = ({
   return css`
     margin: 0;
     line-height: ${leading.loose};
-    font-family: ${fonts.serif};
+    font-family: ${fonts.sans};
     font-size: ${fontSizes.m4};
     color: ${_textColor};
   `

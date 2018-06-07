@@ -115,7 +115,7 @@ export const theme = {
 
   /* Fonts */
   fonts: {
-    sans: 'Rubik, sans-serif',
+    sans: 'Signika, sans-serif',
     serif: '"Noto Serif", serif',
     mono: '"Fira Code", monospace',
   },
@@ -154,8 +154,8 @@ export const theme = {
   fontWeights: {
     light: 300,
     normal: 400,
-    medium: 500,
-    bold: 700,
+    semibold: 600,
+    // bold: 700, //not in use
   },
 
   leading: {

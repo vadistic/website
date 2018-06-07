@@ -1,6 +1,8 @@
 import Link from 'gatsby-link'
 import * as React from 'react'
 
+import '../styles/blog.css'
+
 import { Heading, Layout, Section } from '../components'
 
 export interface Post {

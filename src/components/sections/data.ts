@@ -1,7 +1,7 @@
 const data = {
   hero: {
-    slogan: 'fron-end development & design',
-    signature: 'J. Wadas',
+    title: 'I’m Jakub Wadas',
+    heading: 'Front-end developer & designer with passion for bleeding-edge digital products',
   },
   intro: {
     annotation: `Hello, I'm Jakub`,
