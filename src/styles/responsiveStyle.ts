@@ -1,38 +1,12 @@
 import * as CSS from 'csstype'
-import facepaint from 'facepaint'
 
-import { Theme, theme as _theme } from './theme'
+import { createMq } from './media';
+import { Theme } from './theme'
+import { arr, getProp, themeGet, toUnit } from './utils';
 
-/* Facepaint config */
-const mqTemplate = (bp: string | number) => `@media (min-width: ${bp})`
 
-type Breakpoints =
-  | Array<string | number>
-  | {
-      [key: string]: string | number
-    }
-
-export const createMq = (breakpoints: Breakpoints) =>
-  facepaint(Object.values(breakpoints).map(mqTemplate))
-
-export const mq = createMq(_theme.breakpoints)
 
 /* ResponsiveStyle */
-type BasicTypes = number | string | undefined
-
-export type Arrayable<T> = T | T[]
-
-const toUnit = (unit: string) => (val: number | string) =>
-  typeof val === 'number' ? `${val}${unit}` : val
-
-const arr = (n: Arrayable<BasicTypes>): BasicTypes[] =>
-  Array.isArray(n) ? n : [n]
-
-const ifHas = (key: string | number | symbol) => (obj: object) =>
-  obj.hasOwnProperty(key) ? obj[key] : undefined
-
-const themeGet = (key: string, theme: {}) => (val: any) =>
-  (theme[key] && theme[key][val]) || val
 
 export interface ResponsiveStyleOptions {
   prop: string
@@ -51,7 +25,7 @@ export const responsiveStyle = <Props extends { theme: Theme }>({
   addUnit,
   alias,
 }: ResponsiveStyleOptions) => (p: Props) => {
-  const propVal = (ifHas(prop) || (alias && ifHas(alias)))(p)
+  const propVal = (getProp(prop) || (alias && getProp(alias)))(p)
   if (propVal) {
     const val = arr(propVal)
       .map(key && p.theme ? themeGet(key, p.theme) : n => n)

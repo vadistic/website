@@ -1,5 +1,5 @@
 export * from './theme'
-export * from './styles'
+export * from './utils'
 export * from './media'
 export * from './responsiveStyle'
 

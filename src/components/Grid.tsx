@@ -2,18 +2,8 @@ import { css } from 'react-emotion'
 
 import * as CSS from 'csstype'
 
-import { mq, styled, ThemeProps } from '../styles'
+import { arr, Arrayable, mq, styled, toUnit } from '../styles'
 
-type BasicTypes = number | string | undefined
-
-export type Arrayable<T> = T | T[]
-
-const toPx = (n: number | string) => (typeof n === 'number' ? `${n}px` : n)
-const arr = (n: Arrayable<BasicTypes>): BasicTypes[] =>
-  Array.isArray(n) ? n : [n]
-
-// TOTO add auto-fit and auto-fill
-// repeat(auto-fill, minmax(16rem, 1fr))
 interface GridContainerProps {
   /** <number> number of even columns in layout;
    *  <string> hatchback for `grid-column-template` css property
@@ -24,7 +14,7 @@ interface GridContainerProps {
    */
   rows?: Arrayable<string | number>
   gap?: Arrayable<string | number>
-  /** grid-flow @default `row` */
+  /** grid-flow */
   flow?: CSS.GridAutoFlowProperty
   justifyItems?: Arrayable<CSS.JustifyItemsProperty>
   alignItems?: Arrayable<CSS.AlignItemsProperty>
@@ -34,7 +24,7 @@ interface GridContainerProps {
 
 export const Container = styled('div')<GridContainerProps>(
   ({
-    t,
+    theme: t,
     columns = 12,
     rows,
     gap = t.gap || 16,
@@ -65,11 +55,11 @@ export const Container = styled('div')<GridContainerProps>(
       mq({
         gridTemplateColumns,
         gridTemplateRows,
-        gridGap: arr(gap).map(toPx),
+        gridGap: arr(gap).map(toUnit('px')),
         justifyItems,
         alignItems,
-        height: arr(height).map(toPx),
-        minHeight: arr(minHeight).map(toPx),
+        height: arr(height).map(toUnit('px')),
+        minHeight: arr(minHeight).map(toUnit('px')),
       })
     )
   }
@@ -106,7 +96,7 @@ export interface GridItemProps {
 
 export const Item = styled('div')<GridItemProps>(
   ({
-    t,
+    theme,
     column,
     left,
     width = 1,

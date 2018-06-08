@@ -51,7 +51,6 @@ export const theme = {
     color: 'light',
   },
   /* Responsive */
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512].map(toRem),
 
   breakpoints: {
     sm: toEm(576),
@@ -61,6 +60,8 @@ export const theme = {
   },
   /* Spacing */
   spacing,
+
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512].map(toRem),
 
   gap: [16, 16, 16, 32, 32].map(toEm),
 
@@ -148,7 +149,6 @@ export const theme = {
     inner: 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
   },
 }
-
 
 export type Theme = typeof theme
 

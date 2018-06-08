@@ -1,8 +1,9 @@
+import facepaint from 'facepaint';
 import { css } from 'react-emotion'
 
 import { theme } from './theme'
 
-/** Media Queries map values map with units */
+/* Media Queries */
 export interface MediaMap {
   [mqName: string]: string
 }
@@ -17,7 +18,7 @@ const mediaTemplate = (bp: string | number, val: string) => `
   }
 `
 
-// Idea: additional mq properties for reverse and only mq e.g. `mq.min.phone`
+// idea: additional mq props for reverse mqs and specific mq e.g. `mq.min.phone`
 export const createMedia: CreateMedia = mqMap =>
   Object.keys(mqMap).reduce((acc, label) => {
     // use em in breakpoints to work properly cross-browser and support users
@@ -25,9 +26,22 @@ export const createMedia: CreateMedia = mqMap =>
     acc[label] = (...args: any[]) => css`
       ${mediaTemplate(mqMap[label], css(...args))};
     `
-
     return acc
   }, {})
 
 export const media = createMedia(theme.breakpoints)
 
+/* Facepaint */
+const mqTemplate = (bp: string | number) => `@media (min-width: ${bp})`
+
+type Breakpoints =
+  | Array<string | number>
+  | {
+      [key: string]: string | number
+    }
+
+/** create facepaint mq from breakpoints map/array */
+export const createMq = (breakpoints: Breakpoints) =>
+  facepaint(Object.values(breakpoints).map(mqTemplate))
+
+export const mq = createMq(theme.breakpoints)

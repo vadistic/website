@@ -1,21 +1,23 @@
 import * as React from 'react'
 
-import { Layout, Text } from '../components'
+import { Layout, Section, Text } from '../components'
 
 const StyledPage = () => (
   <Layout>
-    <Text variant="display">Display</Text>
-    <Text variant="title">Title</Text>
+    <Section>
+      <Text variant="display">Display</Text>
+      <Text variant="title">Title</Text>
+      <Text variant="annotation">Annotation</Text>
 
-    <Text variant="heading">Heading</Text>
+      <Text variant="heading">Heading</Text>
 
-    <Text variant="subheading">Subheading</Text>
+      <Text variant="subheading">Subheading</Text>
 
-    <Text variant="subsubheading">Subsubheading</Text>
+      <Text variant="subsubheading">Subsubheading</Text>
 
-    <Text variant="body">Body</Text>
-
-    <Text variant="small">Small</Text>
+      <Text variant="body">Body</Text>
+      <Text variant="small">Small</Text>
+    </Section>
   </Layout>
 )
 
