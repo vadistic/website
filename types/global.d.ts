@@ -23,24 +23,23 @@ declare module '*.jpg' {
   export default value
 }
 
-// Gatsby graphql queries
-declare const graphql: (query: TemplateStringsArray) => void
-
-// Tailwind babel plugin
-declare function tw(classname: string | string[]): string
-
 declare module 'facepaint' {
   import * as CSS from 'csstype'
 
-  export type ArrayCSSProperties ={
-    [K in keyof CSS.Properties]?: CSS.Properties[K] | CSS.Properties[K] [] | undefined | undefined[]
+  type Arrayable<T> = T | T[]
+
+  export type ArrayCSSProperties = {
+    [K in keyof CSS.Properties]?: Arrayable<number | string | undefined>
   }
-  export type Mq = (objStyles: ArrayCSSProperties) => string
+  export type Mq = (...objStyles: Arrayable<ArrayCSSProperties>[]) => string
 
   const facepaint: (mqs: string[]) => Mq
 
   export default facepaint
 }
+
+// Gatsby graphql queries
+declare const graphql: (query: TemplateStringsArray) => void
 
 declare module 'emotion-normalize' {
   const emotionNormalize: string

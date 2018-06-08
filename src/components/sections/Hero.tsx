@@ -1,14 +1,9 @@
 import * as React from 'react'
 
-import { Grid, Heading, Mode, Section } from '../'
+import { Grid, Mode, Section, Text } from '../'
 import { styled } from '../../styles'
 
-import visual from '../../assets/shape.svg'
 import data from './data'
-
-const Placeholder = styled('div')`
-  background: #ccc;
-`
 
 const Visual = styled('div')`
   background-color: rgba(255, 255, 255, 0.1);
@@ -29,12 +24,13 @@ export const HeroSection: React.SFC<{}> = () => (
           <Visual />
         </Grid.Item>
         <Grid.Item left={[1, 2, 5, 6]} width={[4, 2, 4, 3, 4]}>
-          <Heading variant="title">{data.hero.title}</Heading>
-          <Heading noColor variant="heading" noDecoration>
+          <Text variant="title">{data.hero.title}</Text>
+          <Text noColor variant="heading" noDecoration>
             {data.hero.heading}
-          </Heading>
+          </Text>
         </Grid.Item>
       </Grid.Container>
     </Section>
   </Mode>
 )
+

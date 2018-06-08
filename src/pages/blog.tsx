@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import '../styles/blog.css'
 
-import { Heading, Layout, Section } from '../components'
+import { Layout, Section, Text } from '../components'
 
 export interface Post {
   node: {
@@ -62,7 +62,7 @@ const BlogPage: React.SFC<BlogPageProps> = ({ data }) => {
   return (
     <Layout>
       <Section>
-        <Heading variant="title">{siteTitle}</Heading>
+        <Text variant="title">{siteTitle}</Text>
         {posts.map(({ node }) => {
           const title =
             (node.frontmatter && node.frontmatter.title) || node.fields.slug

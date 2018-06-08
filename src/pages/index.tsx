@@ -14,7 +14,7 @@ const IndexPage: React.SFC<{}> = () => (
   <Layout>
     <nav>
       <Link to="/blog">Blog</Link>
-      <Link to="/typography">Typography</Link>
+      <Link to="/styled">Styled</Link>
       <Link to="/grid">Grid</Link>
     </nav>
     <Mode mode={{ color: 'light' }}>

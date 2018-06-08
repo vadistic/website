@@ -1,7 +1,5 @@
-import _styled, { ThemedReactEmotionInterface } from 'react-emotion'
+import styled, { CreateStyled } from 'react-emotion'
 
-import { Theme } from './theme';
+import { Theme } from './theme'
 
-const styled = _styled as ThemedReactEmotionInterface<Theme>
-
-export {styled}
+export default styled as CreateStyled<Theme>

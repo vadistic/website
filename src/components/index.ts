@@ -10,7 +10,6 @@ export { Grid }
 // Components
 export * from './Section'
 
-export * from './Measure'
-
-export * from './typography'
 export * from './sections'
+
+export * from './Text'

@@ -1,12 +1,6 @@
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-exports.onCreateBabelConfig = ({ actions }) => {
-  actions.setBabelPlugin({
-    name: `babel-plugin-tailwind`,
-  })
-}
-
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 

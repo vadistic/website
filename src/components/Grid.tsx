@@ -9,7 +9,8 @@ type BasicTypes = number | string | undefined
 export type Arrayable<T> = T | T[]
 
 const toPx = (n: number | string) => (typeof n === 'number' ? `${n}px` : n)
-const arr = (n: Arrayable<BasicTypes>): BasicTypes[] => (Array.isArray(n) ? n : [n])
+const arr = (n: Arrayable<BasicTypes>): BasicTypes[] =>
+  Array.isArray(n) ? n : [n]
 
 // TOTO add auto-fit and auto-fill
 // repeat(auto-fill, minmax(16rem, 1fr))
@@ -31,45 +32,48 @@ interface GridContainerProps {
   minHeight?: Arrayable<CSS.MinHeightProperty<string | number>>
 }
 
-const gridContainerStyles = ({
-  theme,
-  columns = 12,
-  rows,
-  gap = theme.gap || 16,
-  flow = 'row',
-  justifyItems,
-  alignItems,
-  height,
-  minHeight,
-}: ThemeProps & GridContainerProps) => {
-  const gridTemplateColumns =
-    typeof columns === 'string' ? columns : arr(columns).map(col => `repeat(${col}, 1fr)`)
+export const Container = styled('div')<GridContainerProps>(
+  ({
+    t,
+    columns = 12,
+    rows,
+    gap = t.gap || 16,
+    flow = 'row',
+    justifyItems,
+    alignItems,
+    height,
+    minHeight,
+  }) => {
+    const gridTemplateColumns =
+      typeof columns === 'string'
+        ? columns
+        : arr(columns).map(col => `repeat(${col}, 1fr)`)
 
-  // Possibly undefined, but that's ignored by emotion
-  const gridTemplateRows =
-    rows && (typeof rows === 'string' ? rows : arr(rows).map(row => `repeat(${row}, 1fr)`))
+    // Possibly undefined, but that's ignored by emotion
+    const gridTemplateRows =
+      rows &&
+      (typeof rows === 'string'
+        ? rows
+        : arr(rows).map(row => `repeat(${row}, 1fr)`))
 
-  return css(
-    {
-      display: 'grid',
-      gridAutoFlow: flow,
-      overflow: 'hidden',
-    },
-    mq({
-      gridTemplateColumns,
-      gridTemplateRows,
-      gridGap: arr(gap).map(toPx),
-      justifyItems,
-      alignItems,
-      height: arr(height).map(toPx),
-      minHeight: arr(minHeight).map(toPx),
-    })
-  )
-}
-
-export const Container = styled<GridContainerProps, 'div'>('div')`
-  ${gridContainerStyles};
-`
+    return css(
+      {
+        display: 'grid',
+        gridAutoFlow: flow,
+        overflow: 'hidden',
+      },
+      mq({
+        gridTemplateColumns,
+        gridTemplateRows,
+        gridGap: arr(gap).map(toPx),
+        justifyItems,
+        alignItems,
+        height: arr(height).map(toPx),
+        minHeight: arr(minHeight).map(toPx),
+      })
+    )
+  }
+)
 
 export interface GridItemProps {
   /** hatchback for `grid-column` css property */
@@ -100,34 +104,32 @@ export interface GridItemProps {
   textAlign?: Arrayable<CSS.TextAlignProperty>
 }
 
-const gridItemStyles = ({
-  theme,
-  column,
-  left,
-  width = 1,
-  row,
-  top,
-  height,
-  justifySelf,
-  alignSelf,
-  justifyContent,
-  alignContent,
-  justifyItems,
-  alignItems,
-  textAlign,
-}: ThemeProps & GridItemProps) => {
-  const gridColumnStart = left && arr(left).map(start => `${start}`)
-  const gridColumnEnd = arr(width).map(span => `span ${span}`)
-  const gridRowStart = top && arr(top).map(start => `${start}`)
-  const gridRowEnd = height && arr(height).map(span => `span ${span}`)
+export const Item = styled('div')<GridItemProps>(
+  ({
+    t,
+    column,
+    left,
+    width = 1,
+    row,
+    top,
+    height,
+    justifySelf,
+    alignSelf,
+    justifyContent,
+    alignContent,
+    justifyItems,
+    alignItems,
+    textAlign,
+  }) => {
+    const gridColumnStart = left && arr(left).map(start => `${start}`)
+    const gridColumnEnd = arr(width).map(span => `span ${span}`)
+    const gridRowStart = top && arr(top).map(start => `${start}`)
+    const gridRowEnd = height && arr(height).map(span => `span ${span}`)
 
-  return css(
-    {
+    return mq({
       overflow: 'hidden',
       display: 'flex',
       flexFlow: ' column wrap',
-    },
-    mq({
       gridColumnStart,
       gridColumnEnd,
       gridColumn: column,
@@ -142,9 +144,5 @@ const gridItemStyles = ({
       alignItems,
       textAlign,
     })
-  )
-}
-
-export const Item = styled<GridItemProps, 'div'>('div')`
-  ${gridItemStyles};
-`
+  }
+)

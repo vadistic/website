@@ -1,4 +1,3 @@
-import facepaint from 'facepaint'
 import { css } from 'react-emotion'
 
 import { theme } from './theme'
@@ -30,7 +29,5 @@ export const createMedia: CreateMedia = mqMap =>
     return acc
   }, {})
 
-export const media = createMedia(theme.screens)
+export const media = createMedia(theme.breakpoints)
 
-const facepaintTemplate = (bp: string | number) => `@media (min-width: ${bp})`
-export const mq = facepaint(Object.values(theme.screens).map(facepaintTemplate))
