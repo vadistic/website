@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { Grid, Mode, Section, Text } from '../'
-import { styled } from '../../styles'
+import { Grid, Mode, NoColor, Section, Text } from '../components'
+import { styled } from '../styles'
 
 import data from './data'
 
@@ -13,24 +13,22 @@ const Visual = styled('div')`
 
 export const HeroSection: React.SFC<{}> = () => (
   <Mode mode={{ color: 'dark' }}>
-    <Section minHeight="100vh" flex>
+    <Section annotation="Hello">
       <Grid.Container
-        columns={[4, 4, 8, 10]}
-        minHeight="100%"
-        alignItems="center"
+        columns={[2]}
+        alignContent="center"
         gap={[32, 32, 32, 32, 48]}
       >
-        <Grid.Item left={[1, 2, 1, 2]} width={[4, 2, 4, 4]} alignItems={['left', 'left', 'center']}>
+        <Grid.Item width={[2, 2, 1, 1]} alignItems={['left', 'left', 'center']}>
           <Visual />
         </Grid.Item>
-        <Grid.Item left={[1, 2, 5, 6]} width={[4, 2, 4, 3, 4]}>
+        <Grid.Item width={[2, 2, 1, 1]}>
           <Text variant="title">{data.hero.title}</Text>
-          <Text noColor variant="heading" noDecoration>
-            {data.hero.heading}
+          <Text variant="heading">
+            <NoColor>{data.hero.heading}</NoColor>
           </Text>
         </Grid.Item>
       </Grid.Container>
     </Section>
   </Mode>
 )
-

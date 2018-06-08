@@ -1,19 +1,16 @@
 import * as React from 'react'
 
-import { Grid, Heading, Section, Text } from '../'
+import { Grid, Section, Text } from '../components'
 
 export const ProcessSection: React.SFC<{}> = () => (
-  <Section alternativeBg>
+  <Section annotation="Process">
     <Grid.Container
       columns={3}
-      height="100%"
-      alignItems="center"
       gap={[32, 32, 32, 32, 48]}
     >
       <Grid.Item width={[1, 1, 1, 1]} justifySelf={['start', 'start', 'end']}>
-        Item
+        <Text variant="body"> Item</Text>
       </Grid.Item>
-
     </Grid.Container>
   </Section>
 )

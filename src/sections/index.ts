@@ -1,4 +1,4 @@
 export * from './Hero'
-export * from './Intro'
+export * from './About'
 export * from './Services'
 export * from './Process'

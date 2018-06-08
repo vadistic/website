@@ -1,3 +1,5 @@
+import { toUnit } from './utils'
+
 const colors = {
   transparent: 'transparent',
 
@@ -42,9 +44,6 @@ const spacing = {
   s64: '16rem',
 }
 
-const toEm = (pxVal: number) => `${pxVal / 16}em`
-const toRem = (pxVal: number) => `${pxVal / 16}rem`
-
 export const theme = {
   /* Theme mode */
   mode: {
@@ -53,17 +52,18 @@ export const theme = {
   /* Responsive */
 
   breakpoints: {
-    sm: toEm(576),
-    md: toEm(768),
-    lg: toEm(992),
-    hd: toEm(1200),
+    sm: toUnit('em')(576),
+    md: toUnit('em')(768),
+    lg: toUnit('em')(992),
+    hd: toUnit('em')(1200),
   },
+
   /* Spacing */
   spacing,
 
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512].map(toRem),
+  space: [0, 4, 8, 16, 32, 64, 128, 256, 512].map(toUnit('rem')),
 
-  gap: [16, 16, 16, 32, 32].map(toEm),
+  gap: [16, 16, 32, 32, 32].map(toUnit('em')),
 
   /* Colors */
   colors,
@@ -90,12 +90,10 @@ export const theme = {
   fontSizes: [
     '0.875rem',
     '1rem',
-    '1.426rem',
-    '1.618rem',
-    '2.291rem',
-    '2.618rem',
-    '3.706rem',
-    '4.236rem',
+    '1.414rem',
+    '2rem',
+    '2.827rem',
+    '4rem'
   ],
 
   fontWeights: {

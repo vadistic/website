@@ -13,8 +13,6 @@ const StyledPage = () => (
 
       <Text variant="subheading">Subheading</Text>
 
-      <Text variant="subsubheading">Subsubheading</Text>
-
       <Text variant="body">Body</Text>
       <Text variant="small">Small</Text>
     </Section>

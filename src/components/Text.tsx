@@ -10,7 +10,6 @@ export interface TextBaseProps {
     | 'annotation'
     | 'heading'
     | 'subheading'
-    | 'subsubheading'
     | 'body'
     | 'small'
   tag?: string
@@ -30,8 +29,7 @@ export const TextBase = ({
       title: 'h2',
       annotation: 'h2',
       heading: 'h3',
-      subheading: 'h4',
-      subsubheading: 'h5',
+      subheading: 'h5',
       body: 'p',
       small: 'small',
     }[variant]
@@ -63,6 +61,7 @@ export const Text = styled(TextBase)<TextProps>(
       title: css`
         ${verticalMargin(t.fontSizes[3])};
         font-size: ${t.fontSizes[4]};
+        font-weight: ${t.fontWeights.normal};
         line-height: ${t.lineHeights.tight};
         color: ${{
           light: t.fontColors.heading,
@@ -85,7 +84,7 @@ export const Text = styled(TextBase)<TextProps>(
       `,
       heading: css`
         ${verticalMargin(t.fontSizes[2])};
-        font-size: ${t.fontSizes[3]};
+        font-size: ${t.fontSizes[2]};
         font-weight: ${t.fontWeights.light};
         line-height: ${t.lineHeights.tight};
         color: ${{
@@ -96,18 +95,9 @@ export const Text = styled(TextBase)<TextProps>(
       `,
       subheading: css`
         ${verticalMargin(t.fontSizes[1])};
-        font-size: ${t.fontSizes[2]};
-        line-height: ${t.lineHeights.tight};
-        color: ${{
-          light: t.fontColors.heading,
-          color: t.fontColors.headingInverted,
-          dark: t.fontColors.headingInverted,
-        }[t.mode.color]};
-      `,
-      subsubheading: css`
-        ${verticalMargin(0)};
         font-size: ${t.fontSizes[1]};
-        line-height: ${t.lineHeights.normal};
+        font-weight: ${t.fontWeights.semibold};
+        line-height: ${t.lineHeights.tight};
         color: ${{
           light: t.fontColors.heading,
           color: t.fontColors.headingInverted,
@@ -116,6 +106,7 @@ export const Text = styled(TextBase)<TextProps>(
       `,
       body: css`
         font-size: ${t.fontSizes[1]};
+        font-weight: ${t.fontWeights.light};
         line-height: ${t.lineHeights.normal};
         color: ${{
           light: t.fontColors.body,
@@ -125,6 +116,7 @@ export const Text = styled(TextBase)<TextProps>(
       `,
       small: css`
         font-size: ${t.fontSizes[0]};
+        font-weight: ${t.fontWeights.light};
         line-height: ${t.lineHeights.tight};
         color: ${{
           light: t.fontColors.grey,
@@ -133,4 +125,35 @@ export const Text = styled(TextBase)<TextProps>(
         }[t.mode.color]};
       `,
     }[variant])
+)
+
+
+export const Color = styled.span(
+  ({ theme: t }) =>
+    ({
+      light: {
+        color: t.fontColors.accent,
+      },
+      color: {
+        color: t.fontColors.headingInverted,
+      },
+      dark: {
+        color: t.fontColors.accentInverted,
+      },
+    }[t.mode.color])
+)
+
+export const NoColor = styled.span(
+  ({ theme: t }) =>
+    ({
+      light: {
+        color: t.fontColors.heading,
+      },
+      color: {
+        color:  t.fontColors.headingInverted,
+      },
+      dark: {
+        color: t.fontColors.headingInverted,
+      },
+    }[t.mode.color])
 )

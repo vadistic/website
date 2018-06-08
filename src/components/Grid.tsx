@@ -14,10 +14,14 @@ interface GridContainerProps {
    */
   rows?: Arrayable<string | number>
   gap?: Arrayable<string | number>
+  columnGap?: Arrayable<string | number>
+  rowGap?: Arrayable<string | number>
   /** grid-flow */
   flow?: CSS.GridAutoFlowProperty
   justifyItems?: Arrayable<CSS.JustifyItemsProperty>
   alignItems?: Arrayable<CSS.AlignItemsProperty>
+  justifyContent?: Arrayable<CSS.JustifyContentProperty>
+  alignContent?: Arrayable<CSS.AlignContentProperty>
   height?: Arrayable<CSS.HeightProperty<string | number>>
   minHeight?: Arrayable<CSS.MinHeightProperty<string | number>>
 }
@@ -28,9 +32,13 @@ export const Container = styled('div')<GridContainerProps>(
     columns = 12,
     rows,
     gap = t.gap || 16,
+    columnGap,
+    rowGap,
     flow = 'row',
     justifyItems,
     alignItems,
+    justifyContent,
+    alignContent,
     height,
     minHeight,
   }) => {
@@ -55,9 +63,12 @@ export const Container = styled('div')<GridContainerProps>(
       mq({
         gridTemplateColumns,
         gridTemplateRows,
-        gridGap: arr(gap).map(toUnit('px')),
+        columnGap: arr(columnGap).map(toUnit('px')),
+        rowGap: arr(rowGap).map(toUnit('px')),
         justifyItems,
         alignItems,
+        alignContent,
+        justifyContent,
         height: arr(height).map(toUnit('px')),
         minHeight: arr(minHeight).map(toUnit('px')),
       })

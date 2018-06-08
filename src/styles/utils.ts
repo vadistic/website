@@ -14,7 +14,6 @@ export const verticalMargin = (top: string | 0, bottom?: string | 0) =>
     },
   })
 
-
 export type BasicCSSValues = number | string | undefined
 
 /** type that also accept array of values */
@@ -26,7 +25,11 @@ export const arr = (n: Arrayable<BasicCSSValues>): BasicCSSValues[] =>
 
 /** convert num values to unit */
 export const toUnit = (unit: 'px' | 'em' | 'rem') => (val: number | string) =>
-  typeof val === 'number' ? `${val}${unit}` : val
+  typeof val === 'number' && val !== 0
+    ? unit.includes('em')
+      ? `${val / 16}${unit}`
+      : `${val}${unit}`
+    : val
 
 /** return object prop val if it exists  */
 export const getProp = (prop: string | number | symbol) => (obj: object) =>

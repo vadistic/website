@@ -12,7 +12,7 @@ const data = {
   services: {
     servicesItems: [
       {
-        title: `Front-end developement`,
+        title: `Front-end`,
         variety: ['Web Application', 'Static Websites', 'Design Systems'],
         text: ['What I can do here'],
       },

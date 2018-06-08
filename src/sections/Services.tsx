@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Grid, Section, Text } from '../'
+import { Grid, Section, Text } from '../components'
 
 import data from './data'
 
@@ -23,19 +23,13 @@ const ServiceItem: React.SFC<ServiceItemProps> = ({
         </li>
       ))}
     </ul>
-    <Text paragraph>{children}</Text>
+    <Text variant="body">{children}</Text>
   </Grid.Item>
 )
 
 export const ServicesSection: React.SFC<{}> = () => (
-  <Section alternativeBg>
-    <Text variant="annotation">Skill spectrum</Text>
-    <Grid.Container
-      columns={`repeat(auto-fill, minmax(min-content, 1fr))`}
-      height="100%"
-      alignItems="center"
-      gap={[32, 32, 32, 32, 48]}
-    >
+  <Section altBg annotation="Skill spectrum">
+    <Grid.Container columns={3}>
       {data.services.servicesItems.map(service => (
         <Grid.Item width={1}>
           <ServiceItem title={service.title} variety={service.variety}>
