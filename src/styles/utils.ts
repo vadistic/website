@@ -1,4 +1,5 @@
 import { css } from 'react-emotion'
+import { isUndefined } from 'util'
 
 /**
  * Adds vertical spacing (margins) between stuff.
@@ -10,7 +11,7 @@ export const verticalMargin = (top: string | 0, bottom?: string | 0) =>
       marginTop: top,
     },
     ':not(:last-child)': {
-      marginBottom: bottom || top,
+      marginBottom: isUndefined(bottom) ? top : bottom,
     },
   })
 

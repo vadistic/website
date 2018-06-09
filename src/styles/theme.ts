@@ -12,17 +12,17 @@ const colors = {
   secondary: '#FF2052',
   secondaryLight: '#FF4871',
 
-  black: '#000000',
-  nearBlack: '#111111',
+  black: '#000',
+  nearBlack: '#222',
 
-  greyDarker: '#333333',
-  greyDark: '#555555',
-  grey: '#777777',
-  greyLight: '#999999',
-  greyLighter: '#DDDDDD',
+  greyDarker: '#444',
+  greyDark: '#555',
+  grey: '#777',
+  greyLight: '#999',
+  greyLighter: '#DDD',
 
   nearWhite: '#F5F5F5',
-  white: '#FFFFFF',
+  white: '#FFF',
 }
 
 const spacing = {
@@ -70,8 +70,8 @@ export const theme = {
 
   /* Fonts */
   fontFamilies: {
-    sans: 'Signika, sans-serif',
-    serif: '"Noto Serif", serif',
+    sans: 'rubik, sans-serif',
+    serif: '"Merriweather", serif',
     mono: '"Fira Code", monospace',
   },
 
@@ -88,12 +88,12 @@ export const theme = {
 
   /** modular scale */
   fontSizes: [
-    '0.875rem',
+    '0.75rem',
     '1rem',
-    '1.414rem',
-    '2rem',
-    '2.827rem',
-    '4rem'
+    '1.3125rem',
+    '1.75rem',
+    '2.375rem',
+    '3.1875rem',
   ],
 
   fontWeights: {
@@ -105,10 +105,9 @@ export const theme = {
   },
 
   lineHeights: {
-    none: 1,
-    tight: 1.25,
-    normal: 1.5,
-    loose: 2,
+    none: '1rem',
+    normal: '1.75rem',
+    double: '3.5rem',
   },
 
   letterSpacings: {

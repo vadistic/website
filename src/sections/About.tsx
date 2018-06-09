@@ -9,7 +9,7 @@ export const AboutSection: React.SFC<{}> = () => (
     <Grid.Container columns={[1, 1, 3, 2]} alignItems="center">
       <Grid.Item width={1}>Placeholder</Grid.Item>
       <Grid.Item width={[1, 1, 2, 1]}>
-        <Text variant="heading">{data.intro.headline}</Text>
+        <Text variant="h3">{data.intro.headline}</Text>
         <Text variant="body">{data.intro.text}</Text>
       </Grid.Item>
     </Grid.Container>

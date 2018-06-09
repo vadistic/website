@@ -23,8 +23,8 @@ export const HeroSection: React.SFC<{}> = () => (
           <Visual />
         </Grid.Item>
         <Grid.Item width={[2, 2, 1, 1]}>
-          <Text variant="title">{data.hero.title}</Text>
-          <Text variant="heading">
+          <Text variant="h3">{data.hero.title}</Text>
+          <Text variant="body">
             <NoColor>{data.hero.heading}</NoColor>
           </Text>
         </Grid.Item>

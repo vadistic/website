@@ -1,7 +1,7 @@
 import * as React from 'react'
+import { css } from 'react-emotion'
 
-import { Grid, Section, Text } from '../components'
-
+import { Grid, Section, Text, Typography } from '../components'
 import data from './data'
 
 interface ServiceItemProps {
@@ -9,21 +9,26 @@ interface ServiceItemProps {
   variety: string[]
 }
 
+const listStyle = css`
+  list-style: none;
+  padding: 0;
+`
+
 const ServiceItem: React.SFC<ServiceItemProps> = ({
   children,
   title,
   variety,
 }) => (
   <Grid.Item width={[3, 3, 1]} justifySelf={['start', 'start', 'center']}>
-    <Text variant="heading">{title}</Text>
-    <ul>
-      {variety.map(service => (
-        <li>
-          <Text variant="subheading">{service}</Text>
+    <h3>{title}</h3>
+    <ul className={listStyle}>
+      {variety.map((service, i) => (
+        <li key={i}>
+          <h5>{service}</h5>
         </li>
       ))}
     </ul>
-    <Text variant="body">{children}</Text>
+    <p>{children}</p>
   </Grid.Item>
 )
 
@@ -31,10 +36,12 @@ export const ServicesSection: React.SFC<{}> = () => (
   <Section altBg annotation="Skill spectrum">
     <Grid.Container columns={3}>
       {data.services.servicesItems.map(service => (
-        <Grid.Item width={1}>
-          <ServiceItem title={service.title} variety={service.variety}>
-            {service.text}
-          </ServiceItem>
+        <Grid.Item width={[3, 3, 1]}>
+          <Typography>
+            <ServiceItem title={service.title} variety={service.variety}>
+              {service.text}
+            </ServiceItem>
+          </Typography>
         </Grid.Item>
       ))}
     </Grid.Container>

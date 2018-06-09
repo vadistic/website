@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import '../styles/blog.css'
 
-import { Layout, Section, Text } from '../components'
+import { Layout, Section, Text, Typography } from '../components'
 
 export interface Post {
   node: {
@@ -62,20 +62,23 @@ const BlogPage: React.SFC<BlogPageProps> = ({ data }) => {
   return (
     <Layout>
       <Section>
-        <Text variant="title">{siteTitle}</Text>
-        {posts.map(({ node }) => {
-          const title =
-            (node.frontmatter && node.frontmatter.title) || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3>
-                <Link to={node.fields.slug}>{title}</Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
-          )
-        })}
+        <Typography>
+          <h2>{siteTitle}</h2>
+          {posts.map(({ node }) => {
+            const title =
+              (node.frontmatter && node.frontmatter.title) || node.fields.slug
+            return (
+              <div key={node.fields.slug}>
+                <h5>
+                  <Link to={node.fields.slug}>{title}</Link>
+                </h5>
+                <small>{node.frontmatter.date}</small>
+                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+              </div>
+            )
+          })}
+          <Text variant="button">Button</Text>
+        </Typography>
       </Section>
     </Layout>
   )
