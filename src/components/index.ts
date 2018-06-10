@@ -8,3 +8,5 @@ export { Grid }
 
 export * from './Section'
 export * from './Text'
+export * from './Card'
+

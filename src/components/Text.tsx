@@ -15,6 +15,7 @@ export interface TextProps {
     | 'small'
     | 'button'
     | 'annotation'
+  noMargin?: boolean
 }
 
 export const TextBase: React.SFC<TextProps> = ({
@@ -138,7 +139,11 @@ export const Text = styled(TextBase)<TextProps>(
       heading: textHeadingStyles,
     }[variant.includes('h') ? 'heading' : 'body']),
   // variant styles
-  ({ theme: t }) => textVariantStyles
+  ({ theme: t }) => textVariantStyles,
+  // overrides
+  ({ noMargin }) => noMargin && css`
+    margin: 0 !important;
+  `
 )
 
 export const Typography = styled.div(

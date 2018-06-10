@@ -12,36 +12,17 @@ const colors = {
   secondary: '#FF2052',
   secondaryLight: '#FF4871',
 
-  black: '#000',
+  black: '#111',
   nearBlack: '#222',
 
-  greyDarker: '#444',
+  greyDarker: '#333',
   greyDark: '#555',
   grey: '#777',
-  greyLight: '#999',
+  greyLight: '#AAA',
   greyLighter: '#DDD',
 
   nearWhite: '#F5F5F5',
-  white: '#FFF',
-}
-
-const spacing = {
-  auto: 'auto',
-  s0: '0',
-  /** 0.25rem */
-  s1: '0.25rem',
-  /** 0.5rem */
-  s2: '0.5rem',
-  /** 1rem */
-  s4: '1rem',
-  /** 2rem */
-  s8: '2rem',
-  /** 4rem */
-  s16: '4rem',
-  /** 8rem */
-  s32: '8rem',
-  /** 16rem */
-  s64: '16rem',
+  white: '#FFFAFA',
 }
 
 export const theme = {
@@ -59,7 +40,6 @@ export const theme = {
   },
 
   /* Spacing */
-  spacing,
 
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512].map(toUnit('rem')),
 
@@ -77,11 +57,11 @@ export const theme = {
 
   fontColors: {
     heading: colors.nearBlack,
-    body: colors.greyDarker,
+    body: colors.greyDark,
     grey: colors.grey,
     accent: colors.primary,
     headingInverted: colors.nearWhite,
-    bodyInverted: colors.greyLighter,
+    bodyInverted: colors.greyLight,
     greyInverted: colors.grey,
     accentInverted: colors.primary,
   },
@@ -140,9 +120,7 @@ export const theme = {
   /* TODO Define */
   shadows: {
     none: 'none',
-    sm: '0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08)',
-    base: '0 2px 4px 0 rgba(0,0,0,0.10)',
-    lg: '0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)',
+    base: '0 4px 10px 0 rgba(0,0,0,0.06)',
     inner: 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
   },
 }

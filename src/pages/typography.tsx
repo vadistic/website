@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { Layout, Section, Text } from '../components'
 
-const StyledPage = () => (
+const TypographyPage = () => (
   <Layout>
     <Section>
       <div>
@@ -21,4 +21,4 @@ const StyledPage = () => (
   </Layout>
 )
 
-export default StyledPage
+export default TypographyPage

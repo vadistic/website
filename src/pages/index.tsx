@@ -12,9 +12,10 @@ import { Layout } from '../components'
 
 const IndexPage: React.SFC<{}> = () => (
   <Layout>
-    <nav>
+    <nav id="dev-nav">
       <Link to="/blog">Blog</Link>
-      <Link to="/styled">Styled</Link>
+      <Link to="/typography">Typography</Link>
+      <Link to="/cards">Typography</Link>
       <Link to="/grid">Grid</Link>
     </nav>
     <HeroSection />
