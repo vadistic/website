@@ -13,7 +13,7 @@ const Visual = styled('div')`
 
 export const HeroSection: React.SFC<{}> = () => (
   <Mode mode={{ color: 'dark' }}>
-    <Section annotation="Hello">
+    <Section id="start">
       <Grid.Container
         columns={[2]}
         alignContent="center"
@@ -24,9 +24,7 @@ export const HeroSection: React.SFC<{}> = () => (
         </Grid.Item>
         <Grid.Item width={[2, 2, 1, 1]}>
           <Text variant="h3">{data.hero.title}</Text>
-          <Text variant="body">
-            <NoColor>{data.hero.heading}</NoColor>
-          </Text>
+          <Text variant="p">{data.hero.heading}</Text>
         </Grid.Item>
       </Grid.Container>
     </Section>

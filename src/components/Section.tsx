@@ -4,6 +4,7 @@ import { mq, styled } from '../styles'
 
 interface SectionProps {
   altBg?: boolean
+  id: string
 }
 
 export const Section = styled.section<SectionProps>(

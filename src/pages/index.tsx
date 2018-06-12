@@ -8,20 +8,20 @@ import {
   ServicesSection,
 } from '../sections'
 
-import { Layout } from '../components'
+import { FixedBrand, FixedNav, Layout } from '../components'
 
-const IndexPage: React.SFC<{}> = () => (
-  <Layout>
-    <nav id="dev-nav">
-      <Link to="/blog">Blog</Link>
-      <Link to="/typography">Typography</Link>
-      <Link to="/cards">Typography</Link>
-      <Link to="/grid">Grid</Link>
-    </nav>
+const IndexPage: React.SFC<{}> = ({location}: any) => (
+  <Layout location={location}>
     <HeroSection />
     <AboutSection />
     <ServicesSection />
     <ProcessSection />
+    <nav id="dev-nav">
+      <Link to="/blog">Blog</Link>
+      <Link to="/typography">Typography</Link>
+      <Link to="/cards">Cards</Link>
+      <Link to="/grid">Grid</Link>
+    </nav>
   </Layout>
 )
 

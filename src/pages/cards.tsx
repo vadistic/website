@@ -5,24 +5,41 @@ import { Card, Layout, Mode, Section, Text } from '../components'
 const CardsPage = () => (
   <Layout>
     <Section>
-      <div>
-        <Card>
-          <Text variant="h3">Card header</Text>
-          <Text variant="h5">Card subheader</Text>
-          <Text variant="p">Card body paragraph text and stuff like that.</Text>
-        </Card>
-        <Card>
-          <Text variant="h3">Card header</Text>
-          <Text variant="h5">Card subheader</Text>
-          <Text variant="p">Card body paragraph text and stuff like that.</Text>
-        </Card>
-      </div>
+      <Text variant="h2">Cards demo</Text>
+      <Text variant="h3">Components content</Text>
+
+      <Card>
+        <Text variant="h3">Card header</Text>
+        <Text variant="h5">Card subheader</Text>
+        <Text variant="p">Card body paragraph text and stuff like that.</Text>
+      </Card>
+      <Card>
+        <Text variant="h3">Card header</Text>
+        <Text variant="h5">Card subheader</Text>
+        <Text variant="p">Card body paragraph text and stuff like that.</Text>
+      </Card>
     </Section>
     <Mode mode={{ color: 'dark' }}>
       <Section altBg>
-        <div>
+      <Text variant="h2">Dark + Color mode</Text>
+        <Card>
+          <h3>Content as html</h3>
+          <ul>
+            <li>
+              <h5>This</h5>
+            </li>
+            <li>
+              <h5>That</h5>
+            </li>
+            <li>
+              <h5>And those?</h5>
+            </li>
+          </ul>
+          <p> Let's talk more about this</p>
+        </Card>
+        <Mode mode={{ color: 'color' }}>
           <Card>
-            <h3>Few important things</h3>
+            <Text variant="h3">Lorem ipsum</Text>
             <ul>
               <li>
                 <h5>This</h5>
@@ -36,24 +53,7 @@ const CardsPage = () => (
             </ul>
             <p> Let's talk more about this</p>
           </Card>
-          <Mode mode={{ color: 'color' }}>
-            <Card>
-              <Text variant="h3">Few important things</Text>
-              <ul>
-                <li>
-                  <h5>This</h5>
-                </li>
-                <li>
-                  <h5>That</h5>
-                </li>
-                <li>
-                  <h5>And those?</h5>
-                </li>
-              </ul>
-              <p> Let's talk more about this</p>
-            </Card>
-          </Mode>
-        </div>
+        </Mode>
       </Section>
     </Mode>
   </Layout>

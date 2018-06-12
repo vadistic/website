@@ -32,7 +32,7 @@ export const TextBase: React.SFC<TextProps> = ({
   return <Tag {...rest}>{children}</Tag>
 }
 
-const textBodyStyles = ({ theme: t }: ThemeProps) => css`
+export const textBodyStyles = ({ theme: t }: ThemeProps) => css`
   font-family: ${t.fontFamilies.serif};
   font-size: ${t.fontSizes[1]};
   font-weight: ${t.fontWeights.normal};
@@ -44,7 +44,7 @@ const textBodyStyles = ({ theme: t }: ThemeProps) => css`
   }[t.mode.color]};
 `
 
-const textHeadingStyles = ({ theme: t }: ThemeProps) => css`
+export const textHeadingStyles = ({ theme: t }: ThemeProps) => css`
   font-family: ${t.fontFamilies.sans};
   font-weight: ${t.fontWeights.bold};
   line-height: ${t.lineHeights.normal};
@@ -55,7 +55,7 @@ const textHeadingStyles = ({ theme: t }: ThemeProps) => css`
   }[t.mode.color]};
 `
 
-const textUiStyles = ({ theme: t }: ThemeProps) => css`
+export const textUiStyles = ({ theme: t }: ThemeProps) => css`
   font-family: ${t.fontFamilies.sans};
   font-size: ${t.fontSizes[1]};
   font-weight: ${t.fontWeights.light};
@@ -67,7 +67,7 @@ const textUiStyles = ({ theme: t }: ThemeProps) => css`
   }[t.mode.color]};
 `
 
-const textVariantStyles = ({
+export const textVariantStyles = ({
   variant,
   theme,
   theme: t,
@@ -130,7 +130,12 @@ const textVariantStyles = ({
       text-transform: uppercase;
       letter-spacing: ${t.letterSpacings.wide};
     `,
-  }[variant])
+  }[
+    {
+      p: 'body',
+      span: 'body',
+    }[variant] || variant
+  ])
 
 export const Text = styled(TextBase)<TextProps>(
   ({ theme, variant }) =>
@@ -141,14 +146,16 @@ export const Text = styled(TextBase)<TextProps>(
   // variant styles
   ({ theme: t }) => textVariantStyles,
   // overrides
-  ({ noMargin }) => noMargin && css`
-    margin: 0 !important;
-  `
+  ({ noMargin }) =>
+    noMargin &&
+    css`
+      margin: 0 !important;
+    `
 )
 
 export const Typography = styled.div(
   ({ theme }) => css`
-    ${textBodyStyles({ theme })};
+    ${textVariantStyles({ theme, variant: 'p' })};
 
     h1 {
       ${textVariantStyles({ theme, variant: 'h1' })};

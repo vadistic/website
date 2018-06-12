@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { css } from 'react-emotion'
 
-import { Grid, Section, Text, Typography } from '../components'
+import { Grid, Section, Typography } from '../components'
 import data from './data'
 
 interface ServiceItemProps {
@@ -33,7 +33,7 @@ const ServiceItem: React.SFC<ServiceItemProps> = ({
 )
 
 export const ServicesSection: React.SFC<{}> = () => (
-  <Section altBg annotation="Skill spectrum">
+  <Section altBg id="services">
     <Grid.Container columns={3}>
       {data.services.servicesItems.map(service => (
         <Grid.Item width={[3, 3, 1]}>

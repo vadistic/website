@@ -1,10 +1,12 @@
+import { injectGlobal } from 'emotion'
+import emotionNormalize from 'emotion-normalize'
 import { ThemeProvider } from 'emotion-theming'
 import * as React from 'react'
 
-import { injectGlobal } from 'emotion'
-import emotionNormalize from 'emotion-normalize'
+import { theme } from '../styles'
 
 import '../styles/main.css'
+import { FixedBrand, FixedNav } from './Navigation';
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`
   ${emotionNormalize};
@@ -21,10 +23,12 @@ injectGlobal`
 }
 `
 
-import { theme } from '../styles'
-
-export const Layout: React.SFC<{}> = ({ children }) => (
+export const Layout: React.SFC<any> = ({ children, location }) => (
   <ThemeProvider theme={theme}>
-    <>{children}</>
+    <div>
+      <FixedBrand />
+      <FixedNav location={location}/>
+      {children}
+    </div>
   </ThemeProvider>
 )
