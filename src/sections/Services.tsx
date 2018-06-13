@@ -33,7 +33,7 @@ const ServiceItem: React.SFC<ServiceItemProps> = ({
 )
 
 export const ServicesSection: React.SFC<{}> = () => (
-  <Section altBg id="services">
+  <Section altBackground id="services">
     <Grid.Container columns={3}>
       {data.services.servicesItems.map(service => (
         <Grid.Item width={[3, 3, 1]}>

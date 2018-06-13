@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Vadistic - Front-end developement & Design by Jakub Wadas',
   },
   plugins: [
     {
@@ -22,6 +22,11 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
-    'gatsby-plugin-emotion',
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        // Accepts all options defined by `babel-plugin-emotion` plugin.
+      },
+    },
   ],
 }

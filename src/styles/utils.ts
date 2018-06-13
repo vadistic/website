@@ -26,10 +26,12 @@ export const arr = (n: Arrayable<BasicCSSValues>): BasicCSSValues[] =>
 
 /** convert num values to unit */
 export const toUnit = (unit: 'px' | 'em' | 'rem') => (val: number | string) =>
-  typeof val === 'number' && val !== 0
-    ? unit.includes('em')
-      ? `${val / 16}${unit}`
-      : `${val}${unit}`
+  typeof val === 'number'
+    ? val === 0
+      ? '0'
+      : unit.includes('em')
+        ? `${val / 16}${unit}`
+        : `${val}${unit}`
     : val
 
 /** return object prop val if it exists  */

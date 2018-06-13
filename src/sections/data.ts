@@ -1,7 +1,8 @@
 const data = {
   hero: {
     title: 'I’m Jakub Wadas',
-    heading: 'Front-end developer & designer with passion for bleeding-edge digital products',
+    heading:
+      'Front-end developer & designer with passion for bleeding-edge digital products',
   },
   intro: {
     annotation: `Hello, I'm Jakub`,
@@ -27,6 +28,10 @@ const data = {
         text: ['What I can do here'],
       },
     ],
+  },
+  lorem: {
+    headline: `Sint pitchfork ramps nostrud normcore snackwave ut, meggings selfies`,
+    paragraph: `Ex activated charcoal banjo selfies, deserunt four loko vice narwhal polaroid. Aliquip listicle you probably haven't heard of them everyday carry, hoodie sint 3 wolf moon magna austin deserunt dolore labore. Four dollar toast before they sold out quis, crucifix drinking vinegar kogi green juice ullamco asymmetrical. Id mixtape taxidermy flannel pariatur, nulla biodiesel shabby chic ugh craft beer street art et helvetica listicle aliquip.`,
   },
 }
 

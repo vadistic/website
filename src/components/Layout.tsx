@@ -6,7 +6,7 @@ import * as React from 'react'
 import { theme } from '../styles'
 
 import '../styles/main.css'
-import { FixedBrand, FixedNav } from './Navigation';
+import { FixedBrand } from './Navigation'
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`
   ${emotionNormalize};
@@ -23,11 +23,10 @@ injectGlobal`
 }
 `
 
-export const Layout: React.SFC<any> = ({ children, location }) => (
+export const Layout: React.SFC<any> = ({ children }) => (
   <ThemeProvider theme={theme}>
     <div>
       <FixedBrand />
-      <FixedNav location={location}/>
       {children}
     </div>
   </ThemeProvider>

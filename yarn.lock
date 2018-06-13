@@ -379,6 +379,12 @@
   dependencies:
     "@babel/helper-plugin-utils" "7.0.0-beta.47"
 
+"@babel/plugin-syntax-typescript@7.0.0-beta.47":
+  version "7.0.0-beta.47"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-typescript/-/plugin-syntax-typescript-7.0.0-beta.47.tgz#108d4c83ff48ddcb8f0532252a9892e805ddc64c"
+  dependencies:
+    "@babel/helper-plugin-utils" "7.0.0-beta.47"
+
 "@babel/plugin-transform-arrow-functions@7.0.0-beta.47":
   version "7.0.0-beta.47"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-arrow-functions/-/plugin-transform-arrow-functions-7.0.0-beta.47.tgz#d6eecda4c652b909e3088f0983ebaf8ec292984b"
@@ -601,6 +607,13 @@
   dependencies:
     "@babel/helper-plugin-utils" "7.0.0-beta.47"
 
+"@babel/plugin-transform-typescript@7.0.0-beta.47":
+  version "7.0.0-beta.47"
+  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.0.0-beta.47.tgz#f6f46bd4dd22edef4ae42d9d3770044eddb84dfa"
+  dependencies:
+    "@babel/helper-plugin-utils" "7.0.0-beta.47"
+    "@babel/plugin-syntax-typescript" "7.0.0-beta.47"
+
 "@babel/plugin-transform-unicode-regex@7.0.0-beta.47":
   version "7.0.0-beta.47"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-unicode-regex/-/plugin-transform-unicode-regex-7.0.0-beta.47.tgz#efed0b2f1dfbf28283502234a95b4be88f7fdcb6"
@@ -677,6 +690,13 @@
     "@babel/plugin-transform-react-jsx" "7.0.0-beta.47"
     "@babel/plugin-transform-react-jsx-self" "7.0.0-beta.47"
     "@babel/plugin-transform-react-jsx-source" "7.0.0-beta.47"
+
+"@babel/preset-typescript@7.0.0-beta.47":
+  version "7.0.0-beta.47"
+  resolved "https://registry.yarnpkg.com/@babel/preset-typescript/-/preset-typescript-7.0.0-beta.47.tgz#d81fc37dca3bea1213f2818f9df79ea0ffadd6cb"
+  dependencies:
+    "@babel/helper-plugin-utils" "7.0.0-beta.47"
+    "@babel/plugin-transform-typescript" "7.0.0-beta.47"
 
 "@babel/runtime@7.0.0-beta.47":
   version "7.0.0-beta.47"
@@ -1552,13 +1572,9 @@ babel-plugin-macros@^2.0.0:
   dependencies:
     cosmiconfig "^4.0.0"
 
-babel-plugin-remove-graphql-queries@^2.0.1-7:
-  version "2.0.1-7"
-  resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-2.0.1-7.tgz#bc0a62aa5759d40302ca6f6fbc8bc1c9079b6455"
-
-babel-plugin-remove-graphql-queries@^2.0.1-9:
-  version "2.0.1-9"
-  resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-2.0.1-9.tgz#44c7a7714ce5bed4d8b2044721bf5a63991fb11d"
+babel-plugin-remove-graphql-queries@^2.0.1-12:
+  version "2.0.1-12"
+  resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-2.0.1-12.tgz#01278d7c7dc4360821742de171dd8ea782f643d3"
 
 babel-plugin-syntax-class-properties@^6.8.0:
   version "6.13.0"
@@ -3448,6 +3464,10 @@ entities@^1.1.1, entities@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.1.tgz#6e5c2d0a5621b5dadaecef80b90edfb5cd7772f0"
 
+envinfo@^5.8.1:
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/envinfo/-/envinfo-5.10.0.tgz#503a9774ae15b93ea68bdfae2ccd6306624ea6df"
+
 eol@^0.8.1:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/eol/-/eol-0.8.1.tgz#defc3224990c7eca73bb34461a56cf9dc24761d0"
@@ -4184,9 +4204,9 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
 
-gatsby-cli@^1.1.41-11:
-  version "1.1.57"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.57.tgz#0a17684006f879775f5a0aa5173985a035b38d45"
+gatsby-cli@^1.1.41-13:
+  version "1.1.58"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-1.1.58.tgz#5dda246b9877ab925f6a512f723c20557af22d57"
   dependencies:
     babel-code-frame "^6.26.0"
     babel-runtime "^6.26.0"
@@ -4194,6 +4214,7 @@ gatsby-cli@^1.1.41-11:
     common-tags "^1.4.0"
     convert-hrtime "^2.0.0"
     core-js "^2.5.0"
+    envinfo "^5.8.1"
     execa "^0.8.0"
     fs-extra "^4.0.1"
     hosted-git-info "^2.5.0"
@@ -4206,7 +4227,7 @@ gatsby-cli@^1.1.41-11:
     yargs "^11.1.0"
     yurnalist "^0.2.1"
 
-gatsby-link@^1.6.38-13, gatsby-link@^1.6.44:
+gatsby-link@^1.6.38-15, gatsby-link@^1.6.44:
   version "1.6.44"
   resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-1.6.44.tgz#31912e66d3b21632ce27e5b7310ec88d9a75eac3"
   dependencies:
@@ -4216,9 +4237,9 @@ gatsby-link@^1.6.38-13, gatsby-link@^1.6.44:
     prop-types "^15.5.8"
     ric "^1.3.0"
 
-gatsby-plugin-emotion@^2.0.0-alpha.10:
-  version "2.0.0-alpha.10"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-2.0.0-alpha.10.tgz#2d82df18a754a68856f53aa106325f4f93dd9e00"
+gatsby-plugin-emotion@^2.0.0-alpha.12:
+  version "2.0.0-alpha.12"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-2.0.0-alpha.12.tgz#ac662dbef90ad2d2e69f99e65e96312daabd97a1"
   dependencies:
     "@babel/runtime" "7.0.0-beta.47"
 
@@ -4228,16 +4249,15 @@ gatsby-plugin-react-helmet@^2.0.10:
   dependencies:
     babel-runtime "^6.26.0"
 
-gatsby-plugin-typescript@vadistic/gatsby-plugin-typescript:
-  version "1.4.17-9"
-  resolved "https://codeload.github.com/vadistic/gatsby-plugin-typescript/tar.gz/7cf743f9185f9053c13f925dd21ac74e8813421b"
+gatsby-plugin-typescript@^2.0.0-alpha.5:
+  version "2.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-2.0.0-alpha.5.tgz#1324ae403f8ec28529ad61bc3f334602ffdaa06f"
   dependencies:
+    "@babel/preset-typescript" "7.0.0-beta.47"
     "@babel/runtime" "7.0.0-beta.47"
-    babel-plugin-remove-graphql-queries "^2.0.1-7"
-    ts-loader "^4.3.0"
-    typescript "^2.7.2"
+    babel-plugin-remove-graphql-queries "^2.0.1-12"
 
-gatsby-react-router-scroll@^1.0.12-10:
+gatsby-react-router-scroll@^1.0.12-12:
   version "1.0.17"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-1.0.17.tgz#16b9c67da7f4a997ebb8c784f4feba2b23af4f98"
   dependencies:
@@ -4295,9 +4315,9 @@ gatsby-transformer-remark@^2.0.1-13:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.3.0"
 
-gatsby@^2.0.0-alpha.51:
-  version "2.0.0-alpha.51"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-alpha.51.tgz#e6bb17331b3f264d87e3489131db645455998256"
+gatsby@^2.0.0-alpha.55:
+  version "2.0.0-alpha.55"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-alpha.55.tgz#d9f45801255005c9eac237074f10af64d9bfaae4"
   dependencies:
     "@babel/code-frame" "7.0.0-beta.47"
     "@babel/core" "7.0.0-beta.47"
@@ -4317,7 +4337,7 @@ gatsby@^2.0.0-alpha.51:
     babel-loader "8.0.0-beta.0"
     babel-plugin-add-module-exports "^0.2.1"
     babel-plugin-dynamic-import-node "^1.2.0"
-    babel-plugin-remove-graphql-queries "^2.0.1-9"
+    babel-plugin-remove-graphql-queries "^2.0.1-12"
     babylon "7.0.0-beta.47"
     better-queue "^3.8.6"
     bluebird "^3.5.0"
@@ -4350,13 +4370,14 @@ gatsby@^2.0.0-alpha.51:
     friendly-errors-webpack-plugin "^1.6.1"
     front-matter "^2.1.0"
     fs-extra "^5.0.0"
-    gatsby-cli "^1.1.41-11"
-    gatsby-link "^1.6.38-13"
-    gatsby-react-router-scroll "^1.0.12-10"
+    gatsby-cli "^1.1.41-13"
+    gatsby-link "^1.6.38-15"
+    gatsby-react-router-scroll "^1.0.12-12"
     glob "^7.1.1"
     graphql "^0.13.2"
     graphql-relay "^0.5.5"
-    graphql-skip-limit "^2.0.0-alpha.7"
+    graphql-skip-limit "^2.0.0-alpha.9"
+    graphql-type-json "^0.2.1"
     history "^4.6.2"
     invariant "^2.2.4"
     is-relative "^1.0.0"
@@ -4365,6 +4386,7 @@ gatsby@^2.0.0-alpha.51:
     json-loader "^0.5.7"
     json-stringify-safe "^5.0.1"
     json5 "^0.5.0"
+    kebab-hash "^0.1.2"
     lodash "^4.17.4"
     lodash-id "^0.14.0"
     lowdb "0.16.2"
@@ -4658,15 +4680,19 @@ graphql-request@^1.5.0:
   dependencies:
     cross-fetch "2.0.0"
 
-graphql-skip-limit@^2.0.0-alpha.7:
-  version "2.0.0-alpha.7"
-  resolved "https://registry.yarnpkg.com/graphql-skip-limit/-/graphql-skip-limit-2.0.0-alpha.7.tgz#0c933ef92700abb93a2372bbfff87b0a4591eeae"
+graphql-skip-limit@^2.0.0-alpha.9:
+  version "2.0.0-alpha.9"
+  resolved "https://registry.yarnpkg.com/graphql-skip-limit/-/graphql-skip-limit-2.0.0-alpha.9.tgz#8ef268d24efb2f9bf1958f92303516be6c889abe"
   dependencies:
     "@babel/runtime" "7.0.0-beta.47"
 
 graphql-type-json@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/graphql-type-json/-/graphql-type-json-0.1.4.tgz#89f13f5d32ce08c9a76c79fdf9c1968384d81a4e"
+
+graphql-type-json@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/graphql-type-json/-/graphql-type-json-0.2.1.tgz#d2c177e2f1b17d87f81072cd05311c0754baa420"
 
 graphql@^0.13.0, graphql@^0.13.2:
   version "0.13.2"
@@ -5692,6 +5718,12 @@ kebab-case@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/kebab-case/-/kebab-case-1.0.0.tgz#3f9e4990adcad0c686c0e701f7645868f75f91eb"
 
+kebab-hash@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/kebab-hash/-/kebab-hash-0.1.2.tgz#dfb7949ba34d8e70114ea7d83e266e5e2a4abaac"
+  dependencies:
+    lodash.kebabcase "^4.1.1"
+
 killable@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/killable/-/killable-1.0.0.tgz#da8b84bd47de5395878f95d64d02f2449fe05e6b"
@@ -5842,6 +5874,10 @@ lodash.isplainobject@^4.0.6:
 lodash.isstring@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/lodash.isstring/-/lodash.isstring-4.0.1.tgz#d527dfb5456eca7cc9bb95d5daeaf88ba54a5451"
+
+lodash.kebabcase@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
 
 lodash.memoize@^4.1.2:
   version "4.1.2"
@@ -8355,7 +8391,7 @@ semver-diff@^2.0.0:
   dependencies:
     semver "^5.0.3"
 
-"semver@2 || 3 || 4 || 5", semver@^5.0.1, semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1:
+"semver@2 || 3 || 4 || 5", semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
@@ -9228,16 +9264,6 @@ trough@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/trough/-/trough-1.0.2.tgz#7f1663ec55c480139e2de5e486c6aef6cc24a535"
 
-ts-loader@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-4.3.0.tgz#4e3ba172783d1256d3a23bdfadde011a795fae9e"
-  dependencies:
-    chalk "^2.3.0"
-    enhanced-resolve "^4.0.0"
-    loader-utils "^1.0.2"
-    micromatch "^3.1.4"
-    semver "^5.0.1"
-
 tslib@^1.6.0, tslib@^1.8.0, tslib@^1.8.1:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.9.1.tgz#a5d1f0532a49221c87755cfcc89ca37197242ba7"
@@ -9322,10 +9348,6 @@ typescript-styled-plugin@^0.6.3:
 typescript-template-language-service-decorator@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/typescript-template-language-service-decorator/-/typescript-template-language-service-decorator-1.2.0.tgz#6d5b20b2b0f394a055390d901a4c5f273e3754ab"
-
-typescript@^2.7.2:
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.8.3.tgz#5d817f9b6f31bb871835f4edf0089f21abe6c170"
 
 typescript@^2.9.1:
   version "2.9.1"

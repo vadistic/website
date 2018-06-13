@@ -1,5 +1,3 @@
-import { css } from 'react-emotion'
-
 import * as CSS from 'csstype'
 
 import { arr, Arrayable, mq, styled, toUnit } from '../styles'
@@ -24,16 +22,17 @@ interface GridContainerProps {
   alignContent?: Arrayable<CSS.AlignContentProperty>
   height?: Arrayable<CSS.HeightProperty<string | number>>
   minHeight?: Arrayable<CSS.MinHeightProperty<string | number>>
+  background?: Arrayable<CSS.BackgroundProperty<string>>
 }
 
 export const Container = styled('div')<GridContainerProps>(
   ({
     theme: t,
-    columns = 12,
+    columns = t.grid.columns || 12,
     rows,
-    gap = t.gap || 16,
-    columnGap,
-    rowGap,
+    gap,
+    columnGap = t.grid.gap || 16,
+    rowGap = 32,
     flow = 'row',
     justifyItems,
     alignItems,
@@ -41,6 +40,7 @@ export const Container = styled('div')<GridContainerProps>(
     alignContent,
     height,
     minHeight,
+    background,
   }) => {
     const gridTemplateColumns =
       typeof columns === 'string'
@@ -54,25 +54,25 @@ export const Container = styled('div')<GridContainerProps>(
         ? rows
         : arr(rows).map(row => `repeat(${row}, 1fr)`))
 
-    return css(
-      {
-        display: 'grid',
-        gridAutoFlow: flow,
-        overflow: 'hidden',
-      },
-      mq({
-        gridTemplateColumns,
-        gridTemplateRows,
-        columnGap: arr(columnGap).map(toUnit('px')),
-        rowGap: arr(rowGap).map(toUnit('px')),
-        justifyItems,
-        alignItems,
-        alignContent,
-        justifyContent,
-        height: arr(height).map(toUnit('px')),
-        minHeight: arr(minHeight).map(toUnit('px')),
-      })
-    )
+    return mq({
+      display: 'grid',
+      gridAutoFlow: 'flow',
+      overflow: 'hidden',
+      maxWidth: '1920px',
+      margin: 'atuo',
+      gridTemplateColumns,
+      gridTemplateRows,
+      columnGap: arr(columnGap).map(toUnit('px')),
+      rowGap: arr(rowGap).map(toUnit('px')),
+      gap,
+      justifyItems,
+      alignItems,
+      alignContent,
+      justifyContent,
+      height: arr(height).map(toUnit('px')),
+      minHeight: arr(minHeight).map(toUnit('px')),
+      background: arr(background).map(bg => (bg && t.colors[bg]) || bg),
+    })
   }
 )
 
@@ -130,7 +130,7 @@ export const Item = styled('div')<GridItemProps>(
     return mq({
       overflow: 'hidden',
       display: 'flex',
-      flexFlow: ' column wrap',
+      flexFlow: 'row wrap',
       gridColumnStart,
       gridColumnEnd,
       gridColumn: column,

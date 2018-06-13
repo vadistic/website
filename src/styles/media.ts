@@ -1,7 +1,8 @@
-import facepaint from 'facepaint';
+import facepaint from 'facepaint'
 import { css } from 'react-emotion'
 
 import { theme } from './theme'
+import { toUnit } from './utils'
 
 /* Media Queries */
 export interface MediaMap {
@@ -12,7 +13,7 @@ export type CreateMedia = (
   mediaMap: MediaMap
 ) => { [K in keyof typeof mediaMap]: (...args: any[]) => string }
 
-const mediaTemplate = (bp: string | number, val: string) => `
+const mediaTemplate = (bp: string, val: string) => `
   @media (min-width: ${bp}) {
     ${val};
   }
@@ -24,7 +25,7 @@ export const createMedia: CreateMedia = mqMap =>
     // use em in breakpoints to work properly cross-browser and support users
     // changing their browsers font-size: https://zellwk.com/blog/media-query-units/
     acc[label] = (...args: any[]) => css`
-      ${mediaTemplate(mqMap[label], css(...args))};
+      ${mediaTemplate(toUnit('em')(mqMap[label]), css(...args))};
     `
     return acc
   }, {})
@@ -32,7 +33,7 @@ export const createMedia: CreateMedia = mqMap =>
 export const media = createMedia(theme.breakpoints)
 
 /* Facepaint */
-const mqTemplate = (bp: string | number) => `@media (min-width: ${bp})`
+const mqTemplate = (bp: string) => `@media (min-width: ${bp})`
 
 type Breakpoints =
   | Array<string | number>
@@ -42,6 +43,10 @@ type Breakpoints =
 
 /** create facepaint mq from breakpoints map/array */
 export const createMq = (breakpoints: Breakpoints) =>
-  facepaint(Object.values(breakpoints).map(mqTemplate))
+  facepaint(
+    Object.values(breakpoints)
+      .map(toUnit('em'))
+      .map(mqTemplate)
+  )
 
 export const mq = createMq(theme.breakpoints)

@@ -114,7 +114,11 @@ export const textVariantStyles = ({
       font-weight: ${t.fontWeights.light};
       letter-spacing: ${t.letterSpacings.wide};
     `,
-    body: css`
+    p: css`
+      ${verticalMargin(t.lineHeights.normal, 0)};
+      ${textBodyStyles({ theme })};
+    `,
+    span: css`
       ${textBodyStyles({ theme })};
     `,
     small: css`
@@ -130,12 +134,7 @@ export const textVariantStyles = ({
       text-transform: uppercase;
       letter-spacing: ${t.letterSpacings.wide};
     `,
-  }[
-    {
-      p: 'body',
-      span: 'body',
-    }[variant] || variant
-  ])
+  }[variant])
 
 export const Text = styled(TextBase)<TextProps>(
   ({ theme, variant }) =>

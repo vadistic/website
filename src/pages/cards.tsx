@@ -20,7 +20,7 @@ const CardsPage = () => (
       </Card>
     </Section>
     <Mode mode={{ color: 'dark' }}>
-      <Section altBg>
+      <Section altBackground>
       <Text variant="h2">Dark + Color mode</Text>
         <Card>
           <h3>Content as html</h3>

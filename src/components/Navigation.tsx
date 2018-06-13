@@ -3,7 +3,7 @@ import React from 'react'
 import { css } from 'react-emotion'
 import { styled } from '../styles'
 import { Logo } from './Logo'
-import { textUiStyles, textVariantStyles } from './Text'
+import { textUiStyles } from './Text'
 
 interface NavProps {
   className?: string

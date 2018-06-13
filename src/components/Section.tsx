@@ -3,18 +3,26 @@ import { css } from 'react-emotion'
 import { mq, styled } from '../styles'
 
 interface SectionProps {
-  altBg?: boolean
-  id: string
+  altBackground?: boolean
+  background?: string
+  id?: string
+  className?: string
 }
 
 export const Section = styled.section<SectionProps>(
-  ({ theme: t, altBg }) => css`
-    ${mq({ padding: [5].map(n => t.space[n])})};
-    min-height: 100vh;
-    background-color: ${{
-      light: altBg ? t.colors.white : t.colors.nearWhite,
-      dark: altBg ? t.colors.black : t.colors.nearBlack,
-      color: altBg ? t.colors.primary : t.colors.primary,
-    }[t.mode.color]};
+  ({ theme: t, altBackground, background }) => css`
+    ${mq({
+      padding: t.grid.margin.map(margin => `${t.space[5]} ${margin}px`),
+    })};
+    display: flex;
+    justify-content: center;
+
+    /* min-height: 100vh; */
+    background: ${background ||
+      {
+        light: altBackground ? t.colors.white : t.colors.nearWhite,
+        dark: altBackground ? t.colors.black : t.colors.nearBlack,
+        color: altBackground ? t.colors.primary : t.colors.primary,
+      }[t.mode.color]};
   `
 )

@@ -39,11 +39,15 @@ export const theme = {
     hd: toUnit('em')(1200),
   },
 
+  grid: {
+    gap: [8, 16, 16, 16, 32].map(toUnit('px')),
+    columns: [4, 6, 8, 10, 12],
+    margin: [8, 8, 8, 24, 24, 24],
+  },
+
   /* Spacing */
 
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512].map(toUnit('rem')),
-
-  gap: [16, 16, 32, 32, 32].map(toUnit('em')),
 
   /* Colors */
   colors,
@@ -125,7 +129,11 @@ export const theme = {
   },
 }
 
-export type Theme = typeof theme
+export type Theme = typeof theme & {
+  mode: {
+    color: 'light' | 'dark' | 'color'
+  }
+}
 
 export interface ThemeProps {
   theme: Theme
