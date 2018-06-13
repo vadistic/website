@@ -40,9 +40,10 @@ export const theme = {
   },
 
   grid: {
-    gap: [8, 16, 16, 16, 32].map(toUnit('px')),
-    columns: [4, 6, 8, 10, 12],
-    margin: [8, 8, 8, 24, 24, 24],
+    gap: [8, 8, 16, 16, 16].map(toUnit('px')),
+    columns: 12,
+    margin: ['3%', '3%', '5%', '5%', '5%'],
+    spacer: ['4rem', '4rem', '4rem', '4rem'],
   },
 
   /* Spacing */

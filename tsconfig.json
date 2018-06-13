@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "outDir": "public",
     "rootDir": "src",
-    "module": "es2015",
+    "module": "esnext",
     "target": "esnext",
     "lib": ["es2015", "es2016", "es2017", "dom"],
     "sourceMap": true,

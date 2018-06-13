@@ -19,6 +19,7 @@ const IndexPage: React.SFC<{}> = ({ location }: any) => (
       <Link to="/typography">Typography</Link>
       <Link to="/cards">Cards</Link>
       <Link to="/grid">Grid</Link>
+      <Link to="/grid2">Grid2</Link>
       <Link to="/layouts">Layouts</Link>
     </nav>
   </Layout>

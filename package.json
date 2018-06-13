@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "babel-plugin-emotion": "^9.2.0",
     "emotion": "^9.2.3",
     "emotion-normalize": "^7.0.1",
     "emotion-server": "^9.2.3",

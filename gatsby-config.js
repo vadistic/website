@@ -21,12 +21,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-emotion`,
     'gatsby-plugin-typescript',
-    {
-      resolve: `gatsby-plugin-emotion`,
-      options: {
-        // Accepts all options defined by `babel-plugin-emotion` plugin.
-      },
-    },
   ],
 }
