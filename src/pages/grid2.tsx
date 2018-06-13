@@ -9,32 +9,10 @@ const Placeholder = styled('div')`
   width: 100%;
 `
 
-const Section = styled.section`
-  position: relative;
-  padding: 64px 0;
-`
-
 const Grid2Page: React.SFC<{}> = () => (
   <Layout>
     <Mode mode={{ color: 'light' }}>
-      <Grid.Container columns={12}>
-        <Grid.Item>
-          <Placeholder>1</Placeholder>
-        </Grid.Item>
-        <Grid.Item>
-          <Placeholder>2</Placeholder>
-        </Grid.Item>
-        <Grid.Item>
-          <Placeholder>3</Placeholder>
-        </Grid.Item>
-        <Grid.Item>
-          <Placeholder>4</Placeholder>
-        </Grid.Item>
-        <Grid.Item>
-          <Placeholder>5</Placeholder>
-        </Grid.Item>
-      </Grid.Container>
-      <Section>
+      <Grid.Section>
         <Grid.BackgroundContainer>
           <Grid.Item style={{ gridColumnEnd: 'span 14', background: 'pink' }}>
             Bg top margin
@@ -44,7 +22,9 @@ const Grid2Page: React.SFC<{}> = () => (
           >
             Bg left margin
           </Grid.Item>
-          <Grid.Item style={{ gridColumnEnd: 'span 12', background: 'hotpink' }}>
+          <Grid.Item
+            style={{ gridColumnEnd: 'span 12', background: 'hotpink' }}
+          >
             Bg content
           </Grid.Item>
 
@@ -83,29 +63,7 @@ const Grid2Page: React.SFC<{}> = () => (
             <Placeholder>8</Placeholder>
           </Grid.Item>
         </Grid.Container>
-      </Section>
-      <Section>
-        <Grid.BackgroundContainer>
-          <Grid.Item>secondbg</Grid.Item>
-        </Grid.BackgroundContainer>
-        <Grid.Container columns={12}>
-          <Grid.Item>
-            <Placeholder>1</Placeholder>
-          </Grid.Item>
-          <Grid.Item>
-            <Placeholder>2</Placeholder>
-          </Grid.Item>
-          <Grid.Item>
-            <Placeholder>3</Placeholder>
-          </Grid.Item>
-          <Grid.Item>
-            <Placeholder>4</Placeholder>
-          </Grid.Item>
-          <Grid.Item>
-            <Placeholder>5</Placeholder>
-          </Grid.Item>
-        </Grid.Container>
-      </Section>
+      </Grid.Section>
     </Mode>
   </Layout>
 )

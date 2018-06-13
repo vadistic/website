@@ -96,10 +96,12 @@ const Item = styled.div<GridItemProps>(
   `
 )
 
-const Section = styled.section`
-  position: relative;
-  padding: 64px 0;
-`
+const Section = styled.section(({ theme: t }) =>
+  mq({
+    position: 'relative',
+    padding: t.grid.spacer.map(n => `${n} 0`),
+  })
+)
 export const Grid = {
   Section,
   Container,
