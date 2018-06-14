@@ -1,8 +1,9 @@
-import Link from 'gatsby-link'
 import * as React from 'react'
 
 import {
+  DualBackgroundSectionLayout,
   FlexCardsSectionLayout,
+  FocusedCardsSectionLayout,
   GridCardsSectionLayout,
   HeroSection,
   OneColSectionLayout,
@@ -18,6 +19,9 @@ const LayoutsPage: React.SFC<{}> = ({ location }: any) => (
     <OneColSectionLayout />
     <FlexCardsSectionLayout />
     <GridCardsSectionLayout />
+    <DualBackgroundSectionLayout />
+    <FocusedCardsSectionLayout />
+
   </Layout>
 )
 

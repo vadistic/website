@@ -1,13 +1,13 @@
 import { css } from 'react-emotion'
 
 import { styled } from '../styles'
-import { Typography } from './Text'
+import { Box } from './Box';
 
-export interface CardProps {
+export interface TileProps {
 }
 
 
-export const Card = styled(Typography)<CardProps>(
+export const Tile = styled(Box)<TileProps>(
   ({ theme: t }) => css`
     padding: ${t.space[4]};
     box-shadow: ${t.shadows.base};

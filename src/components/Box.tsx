@@ -1,14 +1,4 @@
-import * as React from 'react'
-import { css } from 'react-emotion'
-import {
-  Arrayable,
-  mq,
-  responsiveStyle,
-  RSPV,
-  styled,
-  ThemeProps,
-  toUnit,
-} from '../styles'
+import { mq, responsiveStyle, RSPV, styled, toUnit } from '../styles'
 
 const mt = responsiveStyle({
   prop: 'marginTop',
@@ -27,23 +17,32 @@ const width = responsiveStyle({
   key: 'space',
   alias: 'w',
   getter: n =>
-    typeof n === 'number' ? (n <= 1 ? `${n * 100}%` : toUnit('px')(n)) : n,
+    typeof n === 'number' ? (n <= 1 ? `${n * 100}%` : toUnit('rem')(n)) : n,
+})
+
+const height = responsiveStyle({
+  prop: 'height',
+  key: 'space',
+  alias: 'h',
+  getter: n =>
+    typeof n === 'number' ? (n <= 1 ? `${n * 100}%` : toUnit('rem')(n)) : n,
 })
 
 interface BoxProps {
   mt?: RSPV<'marginTop', 'space'>
   mb?: RSPV<'marginBottom', 'space'>
   w?: RSPV<'width', 'space'> | number
+  h?: RSPV<'height', 'space'> | number
   gap?: boolean
 }
 
 export const Box = styled.div<BoxProps>(
-  css``,
   ({ theme: t, gap }) =>
     mq({
       margin: gap && t.grid.gap.map(n => `calc(${n} / 2)`),
     }),
   mb,
   mt,
-  width
+  width,
+  height
 )

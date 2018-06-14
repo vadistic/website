@@ -1,7 +1,6 @@
 import * as R from 'ramda'
-import * as React from 'react'
 import { css } from 'react-emotion'
-import { Arrayable, mq, responsiveStyle, RSPV, styled, toUnit } from '../styles'
+import { Arrayable, mq, responsiveStyle, RSPV, styled } from '../styles'
 
 import * as CSS from 'csstype'
 
@@ -150,24 +149,32 @@ const Item = styled.div<GridItemProps>(
   `
 )
 
+const minHeight = responsiveStyle({
+  prop: 'minHeight',
+  alias: 'mh',
+})
+
 export interface GridSectionProps {
   altBackground?: boolean
+  noBackground?: boolean
 }
 
 const Section = styled.section<GridSectionProps>(
-  ({ theme: t, altBackground }) => css`
+  ({ theme: t, altBackground, noBackground }) => css`
     position: relative;
     display: flex;
     justify-content: center;
-    background-color: ${{
-      light: altBackground ? t.colors.white : t.colors.nearWhite,
-      dark: altBackground ? t.colors.black : t.colors.nearBlack,
-    }[t.mode.color]};
+    background-color: ${!noBackground &&
+      {
+        light: altBackground ? t.colors.white : t.colors.nearWhite,
+        dark: altBackground ? t.colors.black : t.colors.nearBlack,
+      }[t.mode.color]};
   `,
   ({ theme: t }) =>
     mq({
       padding: t.grid.spacer.map(n => `${n} 0`),
-    })
+    }),
+  minHeight
 )
 
 export const Grid = {

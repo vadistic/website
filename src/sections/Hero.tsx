@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Grid, Mode, NoColor, Section, Text } from '../components'
+import { Box, Grid, Mode, NoColor, Section, Text } from '../components'
 import { mq, styled } from '../styles'
 
 import { css } from 'react-emotion'
@@ -12,44 +12,29 @@ const Visual = styled('div')`
   height: 12rem;
 `
 
-const HeroBg = styled.div(
-  ({ theme: t }) => css`
-    display: flex;
-    background-color: ${t.colors.nearBlack};
-    ${mq({
-      minHeight: [8, 8, 8, 24, 24, 24].map(x => `calc(100vh - 4rem - ${x}px)`),
-    })};
-  `
-)
-
-const HeroText = styled.div(
-  mq({
-    margin: ['2rem auto', 'auto'],
-    maxWidth: ['75%', '75%', '100%'],
-    textAlign: ['center', 'left'],
-  })
-)
-
 export const HeroSection: React.SFC<{}> = () => (
-  <Section id="start">
-    <Mode mode={{ color: 'dark' }}>
-      <HeroBg>
-        <Grid.Container alignContent="center">
-          <Grid.Item
-            width={[4, 3, 3]}
-            left={[1, 1, 2, 3, 4]}
-            justifySelf={['center', 'end']}
-          >
-            <Visual />
-          </Grid.Item>
-          <Grid.Item width={[4, 3]}>
-            <HeroText>
-              <Text variant="h3">{data.hero.title}</Text>
-              <Text variant="p">{data.hero.heading}</Text>
-            </HeroText>
-          </Grid.Item>
-        </Grid.Container>
-      </HeroBg>
-    </Mode>
-  </Section>
+  <Mode mode={{ color: 'dark' }}>
+    <Grid.Section id="start" minHeight="100vh">
+      <Grid.Container>
+        <Grid.Item
+          left={[2, 3]}
+          width={[10, 4]}
+          alignItems={['flex-end', 'center']}
+          justifySelf={['start', 'end']}
+        >
+          <Visual />
+        </Grid.Item>
+        <Grid.Item
+          left={[2, 7]}
+          width={[10, 4]}
+          alignItems={['flex-start', 'center']}
+        >
+          <Box mt={[4, 0]}>
+            <Text variant="h3">{data.hero.title}</Text>
+            <Text variant="p">{data.hero.heading}</Text>
+          </Box>
+        </Grid.Item>
+      </Grid.Container>
+    </Grid.Section>
+  </Mode>
 )
