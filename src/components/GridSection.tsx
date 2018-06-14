@@ -20,29 +20,34 @@ const gridTemplateRows = responsiveStyle({
 export interface GridContainerProps {
   columns?: Arrayable<CSS.GridTemplateColumnsProperty<string> | number>
   rows?: Arrayable<CSS.GridTemplateRowsProperty<string> | number>
+
+  noGap?: boolean
+  noMargin?: boolean
 }
 
 const Container = styled.div<GridContainerProps>(
   ({ theme: t }) => css`
     display: grid;
+    width: 100%;
     grid-auto-flow: row;
     min-height: fit-content;
     overflow: hidden;
     grid-template-columns: repeat(${t.grid.columns}, 1fr);
     max-width: 1600px;
   `,
-  ({ theme: t }) =>
+  ({ theme: t, noMargin, noGap }) =>
     mq({
-      margin: t.grid.margin.map(n => `0 ${n}`),
-      gridGap: t.grid.gap,
+      margin: !noMargin && t.grid.margin.map(n => `0 ${n}`),
+      gridGap: !noGap && t.grid.gap,
     }),
-  ({ theme: t }) => gridTemplateColumns(t),
+  gridTemplateColumns,
   gridTemplateRows
 )
 
 const BackgroundContainer = styled.div<GridContainerProps>(
   ({ theme }) => css`
     display: grid;
+    width: 100%;
     grid-auto-flow: row;
     position: absolute;
     left: 0;
@@ -109,7 +114,8 @@ interface GridItemProps {
 
   background?: Arrayable<CSS.BackgroundProperty<string>>
 
-  hasGap?: boolean
+  itemsGap?: boolean
+  itemsGrow?: RSPV<'flexGrow', never>
 }
 
 const Item = styled.div<GridItemProps>(
@@ -120,12 +126,20 @@ const Item = styled.div<GridItemProps>(
   alignItems,
   justifyItems,
   background,
-  ({ theme: t, hasGap }) => css`
+  ({ theme: t, itemsGap, itemsGrow }) => css`
     overflow: hidden;
     display: flex;
     flex-flow: row wrap;
 
-    ${hasGap &&
+    ${itemsGrow &&
+      mq({
+        '& > *': {
+          // Gutter is via padding so it does not mess up with widths %
+          flexGrow: itemsGrow,
+        },
+      })};
+
+    ${itemsGap &&
       mq({
         margin: t.grid.gap.map(n => `calc(-${n} / 2)`),
         '& > *': {

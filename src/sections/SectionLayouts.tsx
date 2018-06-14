@@ -57,69 +57,71 @@ export const OneColSectionLayout: React.SFC<{}> = () => (
   </Grid.Section>
 )
 
-export const SmallItemsSectionLayout: React.SFC<{}> = () => (
+export const FlexCardsSectionLayout: React.SFC<{}> = () => (
   <Grid.Section>
     <Grid.Container>
-      <Grid.Item left={[2, , , 3, 4]} width={[10, 10, 8, 6, 6]}>
+      <Grid.Item left={[2, , 3, 2]} width={[10, , 9, 6]}>
         <Box mb={4}>
-          <Text variant="h3">{data.lorem.headline}</Text>
+          <Text variant="h3">Flexbox based card grid.</Text>
         </Box>
       </Grid.Item>
-      <Grid.Item left={[2, , , 3, 4]} width={[10, 5, , 3, 2]}>
-        <Card>
-          <Text variant="h3">Small Heading</Text>
-          <Text variant="p">And some content. bit more. Not too much.</Text>
-        </Card>
-      </Grid.Item>
-      <Grid.Item left={[2, 'auto']} width={[10, 5, , 3, 2]}>
-        <Card>
-          <Text variant="h3">Small Heading</Text>
-          <Text variant="p">And some content. bit more. Not too much.</Text>
-        </Card>
-      </Grid.Item>
-      <Grid.Item left={[2, , , 'auto']} width={[10, 5, , 3, 2]}>
-        <Card>
-          <Text variant="h3">Small Heading</Text>
-          <Text variant="p">And some content. bit more. Not too much.</Text>
-        </Card>
+      <Grid.Item left={[2, , 3, 2]} width={[10, , 9, 10, 10]} itemsGap>
+        <Box w={['100%', 2 / 3, 1 / 2, 1 / 3, 1 / 4]}>
+          <Card>
+            <Text variant="h4">Small Heading</Text>
+            <Text variant="p">And some content. bit more. Not too much.</Text>
+          </Card>
+        </Box>
+        <Box w={['100%', 2 / 3, 1 / 2, 1 / 3, 1 / 4]}>
+          <Card>
+            <Text variant="h4">Small Heading</Text>
+            <Text variant="p">And some content. bit more. Not too much.</Text>
+          </Card>
+        </Box>
+        <Box w={['100%', 2 / 3, 1 / 2, 1 / 3, 1 / 4]}>
+          <Card>
+            <Text variant="h4">Small Heading</Text>
+            <Text variant="p">And some content. bit more. Not too much.</Text>
+          </Card>
+        </Box>
+        <Box w={['100%', 2 / 3, 1 / 2, 1 / 3, 1 / 4]}>
+          <Card>
+            <Text variant="h4">Small Heading</Text>
+            <Text variant="p">And some content. bit more. Not too much.</Text>
+          </Card>
+        </Box>
       </Grid.Item>
     </Grid.Container>
   </Grid.Section>
 )
 
-export const FlexItemsSectionLayout: React.SFC<{}> = () => (
+export const GridCardsSectionLayout: React.SFC<{}> = () => (
   <Grid.Section>
     <Grid.Container>
-      <Grid.Item left={[2, , , 3, 4]} width={[10, 10, 8, 6, 6]}>
+      <Grid.Item left={[2, , 3, 2]} width={[10, , 9, 6]}>
         <Box mb={4}>
-          <Text variant="h3">{data.lorem.headline}</Text>
+          <Text variant="h3">CSS grid based card grid.</Text>
         </Box>
       </Grid.Item>
-      <Grid.Item left={[2, , , 3, 4]} width={[10, 10, 10, 10, 10]} hasGap>
-        <Box w={300}>
+      <Grid.Item left={[2, , 3, 2]} width={[10, , 9, 10, 10]}>
+        <Grid.Container columns={[1, '66%', 2, 3, 4]} noMargin>
           <Card>
-            <Text variant="h3">Small Heading</Text>
+            <Text variant="h4">Small Heading</Text>
             <Text variant="p">And some content. bit more. Not too much.</Text>
           </Card>
-        </Box>
-        <Box w={300}>
           <Card>
-            <Text variant="h3">Small Heading</Text>
+            <Text variant="h4">Small Heading</Text>
             <Text variant="p">And some content. bit more. Not too much.</Text>
           </Card>
-        </Box>
-        <Box w={300}>
           <Card>
-            <Text variant="h3">Small Heading</Text>
+            <Text variant="h4">Small Heading</Text>
             <Text variant="p">And some content. bit more. Not too much.</Text>
           </Card>
-        </Box>
-        <Box w={300}>
           <Card>
-            <Text variant="h3">Small Heading</Text>
+            <Text variant="h4">Small Heading</Text>
             <Text variant="p">And some content. bit more. Not too much.</Text>
           </Card>
-        </Box>
+        </Grid.Container>
       </Grid.Item>
     </Grid.Container>
   </Grid.Section>

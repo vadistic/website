@@ -154,8 +154,6 @@ export const Text = styled(TextBase)<TextProps>(
 
 export const Typography = styled.div(
   ({ theme }) => css`
-    ${textVariantStyles({ theme, variant: 'p' })};
-
     h1 {
       ${textVariantStyles({ theme, variant: 'h1' })};
     }
@@ -177,7 +175,10 @@ export const Typography = styled.div(
       ${textVariantStyles({ theme, variant: 'h5' })};
     }
 
-    p,
+    p {
+      ${textVariantStyles({ theme, variant: 'p' })};
+    }
+
     ul,
     ol,
     pre,

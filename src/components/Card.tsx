@@ -4,16 +4,11 @@ import { styled, verticalMargin } from '../styles'
 import { Typography } from './Text'
 
 export interface CardProps {
-  className?: string
 }
 
-const CardBase: React.SFC<CardProps> = ({ children, className }) => (
-  <Typography className={className}>{children}</Typography>
-)
 
-export const Card = styled(CardBase)(
+export const Card = styled(Typography)<CardProps>(
   ({ theme: t }) => css`
-    ${verticalMargin(t.space[4])};
     padding: ${t.space[4]};
     box-shadow: ${t.shadows.base};
     border-radius: ${t.borderRadius.sm};
