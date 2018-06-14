@@ -28,10 +28,20 @@ declare module 'facepaint' {
 
   type Arrayable<T> = T | T[]
 
-  export type ArrayCSSProperties = {
-    [K in keyof CSS.Properties]?: Arrayable<number | string | undefined>
+  export type ArrayableCSSProperties = {
+    [K in keyof CSS.Properties]?:
+      | Arrayable<CSS.Properties[K] | undefined>
+      | boolean
   }
-  export type Mq = (...objStyles: Arrayable<ArrayCSSProperties>[]) => string
+
+  interface NestedObjStyles {
+    [selector: string]: NestedObjStyles | ArrayableCSSProperties
+  }
+
+  // TODO: How the hell this union allows to mix selectors & prop in one style object?
+  type ObjStyles = ArrayableCSSProperties | NestedObjStyles
+
+  export type Mq = (...objStyles: Array<ObjStyles>) => string
 
   const facepaint: (mqs: string[]) => Mq
 

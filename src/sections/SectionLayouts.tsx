@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { Card, Grid, Mode, NoColor, Section, Text } from '../components'
-import { mq, styled } from '../styles'
+import { Box, Card, Grid, Mode, NoColor, Text } from '../components'
+import { styled } from '../styles'
 
 import { css } from 'react-emotion'
 import data from './data'
@@ -13,73 +13,114 @@ const Image = styled.img`
 `
 
 export const TwoColSectionLayout: React.SFC<{}> = () => (
-  <Section id="start" altBackground>
+  <Grid.Section altBackground>
     <Grid.Container>
       <Grid.Item
-        left={[1, 2, 2, 1, 2]}
-        width={[4, 4, 6, 6]}
+        left={[1, 2, 3, 1, 2]}
+        width={[12, 9, 8, 7, 6]}
         alignItems="center"
       >
         <Image src="/placeholder-photo.png" />
       </Grid.Item>
-
       <Grid.Item
-        left={[1, 2, 2, 7, 8]}
-        width={[4, 4, 6, 4]}
+        left={[2, 2, 3, 8]}
+        width={[10, 9, 8, 5, 4]}
         alignItems="center"
       >
-        <div>
+        <Box mt={[4, 4, 4, 0]}>
           <Text variant="h3">{data.lorem.headline}</Text>
           <Text variant="p">{data.lorem.paragraph}</Text>
-        </div>
+        </Box>
       </Grid.Item>
     </Grid.Container>
-  </Section>
+  </Grid.Section>
 )
 
 export const OneColSectionLayout: React.SFC<{}> = () => (
-  <Section id="start">
+  <Grid.Section>
     <Grid.Container>
       <Grid.Item
-        left={[1, 2, 2, 3, 4]}
-        width={[4, 4, 6, 6, 6]}
+        left={[2, 2, 3, , 4]}
+        width={[10, 9, 8, 7, 6]}
         alignItems="center"
       >
-        <div>
+        <Box>
+          <Text variant="h2">{data.lorem.title}</Text>
           <Text variant="h3">{data.lorem.headline}</Text>
           <Text variant="p">{data.lorem.paragraph}</Text>
           <Text variant="p">{data.lorem.paragraph}</Text>
           <Text variant="p">{data.lorem.paragraph}</Text>
-        </div>
+          <Text variant="p">{data.lorem.paragraph}</Text>
+        </Box>
       </Grid.Item>
     </Grid.Container>
-  </Section>
+  </Grid.Section>
 )
 
 export const SmallItemsSectionLayout: React.SFC<{}> = () => (
-  <Section id="start">
-    <Grid.Container justifyItems="center">
-      <Grid.Item width={[4, 6, 8, 10, 12]}>
-        <Text variant="h3">{data.lorem.headline}</Text>
+  <Grid.Section>
+    <Grid.Container>
+      <Grid.Item left={[2, , , 3, 4]} width={[10, 10, 8, 6, 6]}>
+        <Box mb={4}>
+          <Text variant="h3">{data.lorem.headline}</Text>
+        </Box>
       </Grid.Item>
-      <Grid.Item width={[4, 3, 3]} left={[1, 2, 2, 3, 4]}>
+      <Grid.Item left={[2, , , 3, 4]} width={[10, 5, , 3, 2]}>
         <Card>
           <Text variant="h3">Small Heading</Text>
           <Text variant="p">And some content. bit more. Not too much.</Text>
         </Card>
       </Grid.Item>
-      <Grid.Item width={[4, 3, 3]} left={[1, 2, 5, 3, 4]}>
+      <Grid.Item left={[2, 'auto']} width={[10, 5, , 3, 2]}>
         <Card>
           <Text variant="h3">Small Heading</Text>
           <Text variant="p">And some content. bit more. Not too much.</Text>
         </Card>
       </Grid.Item>
-      <Grid.Item width={[4, 3, 3]} left={[1, 2, 3, 3, 4]}>
+      <Grid.Item left={[2, , , 'auto']} width={[10, 5, , 3, 2]}>
         <Card>
           <Text variant="h3">Small Heading</Text>
           <Text variant="p">And some content. bit more. Not too much.</Text>
         </Card>
       </Grid.Item>
     </Grid.Container>
-  </Section>
+  </Grid.Section>
+)
+
+export const FlexItemsSectionLayout: React.SFC<{}> = () => (
+  <Grid.Section>
+    <Grid.Container>
+      <Grid.Item left={[2, , , 3, 4]} width={[10, 10, 8, 6, 6]}>
+        <Box mb={4}>
+          <Text variant="h3">{data.lorem.headline}</Text>
+        </Box>
+      </Grid.Item>
+      <Grid.Item left={[2, , , 3, 4]} width={[10, 10, 10, 10, 10]} hasGap>
+        <Box w={300}>
+          <Card>
+            <Text variant="h3">Small Heading</Text>
+            <Text variant="p">And some content. bit more. Not too much.</Text>
+          </Card>
+        </Box>
+        <Box w={300}>
+          <Card>
+            <Text variant="h3">Small Heading</Text>
+            <Text variant="p">And some content. bit more. Not too much.</Text>
+          </Card>
+        </Box>
+        <Box w={300}>
+          <Card>
+            <Text variant="h3">Small Heading</Text>
+            <Text variant="p">And some content. bit more. Not too much.</Text>
+          </Card>
+        </Box>
+        <Box w={300}>
+          <Card>
+            <Text variant="h3">Small Heading</Text>
+            <Text variant="p">And some content. bit more. Not too much.</Text>
+          </Card>
+        </Box>
+      </Grid.Item>
+    </Grid.Container>
+  </Grid.Section>
 )

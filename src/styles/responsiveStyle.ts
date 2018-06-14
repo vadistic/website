@@ -1,36 +1,47 @@
 import * as CSS from 'csstype'
 
-import { css } from 'emotion'
 import { createMq } from './media'
 import { Theme } from './theme'
-import { arr, getProp, themeGet, toUnit } from './utils'
+import { arr, Arrayable, getProp, themeGet, toUnit } from './utils'
 
-/* ResponsiveStyle */
-
-export interface ResponsiveStyleOptions {
+// Types for fake overload of cssProperty
+interface DefinedCSSProperty {
   prop: string
-  cssProperty?: keyof CSS.Properties<string>
-  key?: string
+  cssProperty: keyof CSS.Properties<string>
+}
+
+interface UndefinedCSSProperty {
+  prop: keyof CSS.Properties<string>
+  cssProperty?: undefined
+}
+
+export type ResponsiveStyleOptions = {
+  key?: keyof Theme
   getter?: (n: any) => any
   addUnit?: 'px' | 'em' | 'rem'
   alias?: string
-}
+} & (DefinedCSSProperty | UndefinedCSSProperty)
+
+// Helper function to quickly create interfaces
+/** ResponsiveStylePropValue */
+export type RSPV<
+  CSSProperty extends keyof CSS.Properties<string | number>,
+  Key extends keyof Theme | never
+> = Arrayable<
+  CSS.Properties<string | number>[CSSProperty] | Theme[Key] | undefined
+> | undefined
 
 const bpFallback = [576, 768, 992, 1200]
 
-interface ResponsiveStyleProps {
-  theme?: Theme
-}
-
 export const responsiveStyle = ({
   prop,
-  cssProperty = prop,
+  cssProperty,
   key,
   getter,
   addUnit,
   alias,
-}: ResponsiveStyleOptions) => (p: ResponsiveStyleProps) => {
-  const propVal = (getProp(prop) || (alias && getProp(alias)))(p)
+}: ResponsiveStyleOptions) => (p: { theme?: Theme }) => {
+  const propVal = getProp(prop)(p) || (alias && getProp(alias)(p))
   if (propVal) {
     const val = arr(propVal)
       .map(key && p.theme ? themeGet(key, p.theme) : n => n)

@@ -1,6 +1,9 @@
 import * as React from 'react'
 
-import { Grid, Layout, Mode, Section } from '../components'
+import * as Grid from '../components/Grid'
+
+import { Layout, Mode, Section } from '../components'
+
 import { styled } from '../styles'
 
 const Placeholder = styled('div')`

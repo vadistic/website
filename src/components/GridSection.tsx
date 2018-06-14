@@ -1,13 +1,9 @@
 import * as R from 'ramda'
 import * as React from 'react'
 import { css } from 'react-emotion'
-import { Arrayable, mq, responsiveStyle, styled } from '../styles'
+import { Arrayable, mq, responsiveStyle, RSPV, styled, toUnit } from '../styles'
 
 import * as CSS from 'csstype'
-
-const gridGap = responsiveStyle({
-  prop: 'gridGap',
-})
 
 const gridTemplateColumns = responsiveStyle({
   prop: 'columns',
@@ -22,29 +18,27 @@ const gridTemplateRows = responsiveStyle({
 })
 
 export interface GridContainerProps {
-  gridGap?: Arrayable<CSS.GridGapProperty<string>>
   columns?: Arrayable<CSS.GridTemplateColumnsProperty<string> | number>
   rows?: Arrayable<CSS.GridTemplateRowsProperty<string> | number>
 }
 
 const Container = styled.div<GridContainerProps>(
-  gridGap,
-  gridTemplateColumns,
-  gridTemplateRows,
-  ({ theme }) => css`
+  ({ theme: t }) => css`
     display: grid;
     grid-auto-flow: row;
     min-height: fit-content;
     overflow: hidden;
+    grid-template-columns: repeat(${t.grid.columns}, 1fr);
+    max-width: 1600px;
   `,
-  mq({
-    margin: [`0 3%`, `0 3%`, '0 5%'],
-  })
+  ({ theme: t }) =>
+    mq({
+      margin: t.grid.margin.map(n => `0 ${n}`),
+      gridGap: t.grid.gap,
+    }),
+  ({ theme: t }) => gridTemplateColumns(t),
+  gridTemplateRows
 )
-
-Container.defaultProps = {
-  gridGap: ['16px'],
-}
 
 const BackgroundContainer = styled.div<GridContainerProps>(
   ({ theme }) => css`
@@ -77,31 +71,91 @@ const width = responsiveStyle({
   getter: n => `span ${n}`,
 })
 
+const height = responsiveStyle({
+  prop: 'height',
+  cssProperty: 'gridRowEnd',
+  getter: n => `span ${n}`,
+})
+
+const left = responsiveStyle({
+  prop: 'left',
+  cssProperty: 'gridColumnStart',
+})
+
 const justifySelf = responsiveStyle({
   prop: 'justifySelf',
 })
 
+const alignItems = responsiveStyle({
+  prop: 'alignItems',
+})
+
+const justifyItems = responsiveStyle({
+  prop: 'justifyItems',
+})
+
+const background = responsiveStyle({
+  prop: 'background',
+  key: 'colors',
+})
+
 interface GridItemProps {
-  width?: Arrayable<CSS.GridTemplateColumnsProperty<string | number>>
+  width?: RSPV<'gridColumnEnd', never>
+  height?: RSPV<'gridRowEnd', never>
+  left?: RSPV<'gridColumnStart', never>
   justifySelf?: Arrayable<CSS.JustifySelfProperty>
+  alignItems?: Arrayable<CSS.AlignItemsProperty>
+  justifyItems?: Arrayable<CSS.JustifyItemsProperty>
+
+  background?: Arrayable<CSS.BackgroundProperty<string>>
+
+  hasGap?: boolean
 }
 
 const Item = styled.div<GridItemProps>(
   width,
+  height,
+  left,
   justifySelf,
-  ({ theme }) => css`
+  alignItems,
+  justifyItems,
+  background,
+  ({ theme: t, hasGap }) => css`
     overflow: hidden;
     display: flex;
     flex-flow: row wrap;
+
+    ${hasGap &&
+      mq({
+        margin: t.grid.gap.map(n => `calc(-${n} / 2)`),
+        '& > *': {
+          // Gutter is via padding so it does not mess up with widths %
+          padding: t.grid.gap.map(n => `calc(${n} / 2)`),
+        },
+      })};
   `
 )
 
-const Section = styled.section(({ theme: t }) =>
-  mq({
-    position: 'relative',
-    padding: t.grid.spacer.map(n => `${n} 0`),
-  })
+export interface GridSectionProps {
+  altBackground?: boolean
+}
+
+const Section = styled.section<GridSectionProps>(
+  ({ theme: t, altBackground }) => css`
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: ${{
+      light: altBackground ? t.colors.white : t.colors.nearWhite,
+      dark: altBackground ? t.colors.black : t.colors.nearBlack,
+    }[t.mode.color]};
+  `,
+  ({ theme: t }) =>
+    mq({
+      padding: t.grid.spacer.map(n => `${n} 0`),
+    })
 )
+
 export const Grid = {
   Section,
   Container,

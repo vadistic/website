@@ -1,3 +1,4 @@
+import * as R from 'ramda'
 import * as React from 'react'
 
 import { Grid, Layout, Mode } from '../components'
@@ -38,30 +39,11 @@ const Grid2Page: React.SFC<{}> = () => (
           </Grid.Item>
         </Grid.BackgroundContainer>
         <Grid.Container columns={12}>
-          <Grid.Item width="3">
-            <Placeholder>1</Placeholder>
-          </Grid.Item>
-          <Grid.Item>
-            <Placeholder>2</Placeholder>
-          </Grid.Item>
-          <Grid.Item>
-            <Placeholder>3</Placeholder>
-          </Grid.Item>
-          <Grid.Item>
-            <Placeholder>4</Placeholder>
-          </Grid.Item>
-          <Grid.Item>
-            <Placeholder>5</Placeholder>
-          </Grid.Item>
-          <Grid.Item>
-            <Placeholder>6</Placeholder>
-          </Grid.Item>
-          <Grid.Item>
-            <Placeholder>7</Placeholder>
-          </Grid.Item>
-          <Grid.Item>
-            <Placeholder>8</Placeholder>
-          </Grid.Item>
+          {R.times(R.identity, 12).map(n => (
+            <Grid.Item>
+              <Placeholder>{n + 1}</Placeholder>
+            </Grid.Item>
+          ))}
         </Grid.Container>
       </Grid.Section>
     </Mode>

@@ -7,7 +7,8 @@ export * from './GridSection'
 
 export * from './Section'
 export * from './Text'
+export * from './Box'
+
 export * from './Card'
 export * from './Navigation'
 export * from './Logo'
-
