@@ -12,8 +12,8 @@ import {
 
 import { Layout } from '../components'
 
-const LayoutsPage: React.SFC<{}> = ({ location }: any) => (
-  <Layout location={location}>
+const LayoutsPage: React.SFC<{}> = () => (
+  <Layout>
     <HeroSection />
     <TwoColSectionLayout />
     <OneColSectionLayout />
@@ -21,7 +21,6 @@ const LayoutsPage: React.SFC<{}> = ({ location }: any) => (
     <GridCardsSectionLayout />
     <DualBackgroundSectionLayout />
     <FocusedCardsSectionLayout />
-
   </Layout>
 )
 

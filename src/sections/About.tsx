@@ -6,7 +6,7 @@ import data from './data'
 
 export const AboutSection: React.SFC<{}> = () => (
   <Section>
-    <Grid.Container columns={[1, 1, 3, 2]} alignItems="center">
+    <Grid.Container columns={[1, 1, 3, 2]}>
       <Grid.Item width={1}>Placeholder</Grid.Item>
       <Grid.Item width={[1, 1, 2, 1]}>
         <Text variant="h3">{data.intro.headline}</Text>

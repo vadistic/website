@@ -1,9 +1,8 @@
 import * as React from 'react'
 
-import { Box, Grid, Mode, NoColor, Section, Text } from '../components'
-import { mq, styled } from '../styles'
+import { Box, Grid, Mode, Text } from '../components'
+import {styled } from '../styles'
 
-import { css } from 'react-emotion'
 import data from './data'
 
 const Visual = styled('div')`

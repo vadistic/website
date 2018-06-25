@@ -3,42 +3,24 @@ import * as React from 'react'
 
 import '../styles/blog.css'
 
+import {
+  MarkdownRemark,
+  MarkdownRemarkConnection,
+  Site,
+} from 'types/graphql-types'
 import { Layout, Section, Text, Typography } from '../components'
-
-export interface Post {
-  node: {
-    excerpt: string
-    fields: {
-      slug: string
-    }
-    frontmatter: {
-      date: string
-      title: string
-    }
-  }
-}
-
-export interface BlogPageProps {
-  data: {
-    site: {
-      siteMetadata: {
-        title: string
-      }
-    }
-    allMarkdownRemark: {
-      edges: Post[]
-    }
-  }
-}
 
 export const pageQuery = graphql`
   query IndexQuery {
-    site {
+    site: site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+
+    posts: allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           excerpt
@@ -55,28 +37,37 @@ export const pageQuery = graphql`
   }
 `
 
+interface BlogPageProps {
+  data: {
+    site: Site
+    posts: MarkdownRemarkConnection
+  }
+}
+
 const BlogPage: React.SFC<BlogPageProps> = ({ data }) => {
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+  const siteTitle = data.site.siteMetadata && data.site.siteMetadata.title
+  const posts = data.posts.edges
 
   return (
     <Layout>
       <Section>
         <Typography>
           <h2>{siteTitle}</h2>
-          {posts.map(({ node }) => {
-            const title =
-              (node.frontmatter && node.frontmatter.title) || node.fields.slug
-            return (
-              <div key={node.fields.slug}>
-                <h5>
-                  <Link to={node.fields.slug}>{title}</Link>
-                </h5>
-                <small>{node.frontmatter.date}</small>
-                <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-              </div>
-            )
-          })}
+          {posts &&
+            posts.map(({ node }: { node: MarkdownRemark }) => {
+              const title = node.frontmatter!.title || node.fields!.slug
+              return (
+                <div key={node.fields!.slug as string}>
+                  <h5>
+                    <Link to={node.fields!.slug as string}>{title}</Link>
+                  </h5>
+                  <small>{node.frontmatter!.date}</small>
+                  <p
+                    dangerouslySetInnerHTML={{ __html: node.excerpt as string }}
+                  />
+                </div>
+              )
+            })}
           <Text variant="button">Button</Text>
         </Typography>
       </Section>

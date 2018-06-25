@@ -1,149 +1,246 @@
-import * as CSS from 'csstype'
+import * as R from 'ramda'
+import { css } from 'react-emotion'
+import { mq, responsiveStyle, ResponsiveStyle, ResponsiveStyleValue, styled } from '../styles'
 
-import { arr, Arrayable, mq, styled, toUnit } from '../styles'
+type GridTemplateColumns = ResponsiveStyle<
+  'gridTemplateColumns',
+  'gridTemplateColumns',
+  never,
+  'columns',
+  number
+>
 
-interface GridContainerProps {
-  /** <number> number of even columns in layout;
-   *  <string> hatchback for `grid-column-template` css property
-   */
-  columns?: Arrayable<string | number>
-  /** number of even rows in layout
-   *  when passed a string - hatchback for `grid-column-template` css property
-   */
-  rows?: Arrayable<string | number>
-  gap?: Arrayable<string | number>
-  columnGap?: Arrayable<string | number>
-  rowGap?: Arrayable<string | number>
-  /** grid-flow */
-  flow?: CSS.GridAutoFlowProperty
-  justifyItems?: Arrayable<CSS.JustifyItemsProperty>
-  alignItems?: Arrayable<CSS.AlignItemsProperty>
-  justifyContent?: Arrayable<CSS.JustifyContentProperty>
-  alignContent?: Arrayable<CSS.AlignContentProperty>
-  height?: Arrayable<CSS.HeightProperty<string | number>>
-  minHeight?: Arrayable<CSS.MinHeightProperty<string | number>>
-  background?: Arrayable<CSS.BackgroundProperty<string>>
+const gridTemplateColumns = responsiveStyle({
+  prop: 'gridTemplateColumns',
+  cssProperty: 'gridTemplateColumns',
+  getter: n => (typeof n === 'number' ? `repeat(${n}, 1fr)` : n),
+  alias: 'columns',
+})
+
+type GridTemplateRows = ResponsiveStyle<
+  'gridTemplateRows',
+  'gridTemplateRows',
+  never,
+  'rows',
+  number
+>
+
+const gridTemplateRows = responsiveStyle({
+  prop: 'gridTemplateRows',
+  cssProperty: 'gridTemplateRows',
+  getter: n => (typeof n === 'number' ? `repeat(${n}, 1fr)` : n),
+  alias: 'rows',
+})
+
+export interface GridContainerProps
+  extends GridTemplateColumns,
+    GridTemplateRows {
+  noGap?: boolean
+  noMargin?: boolean
 }
 
-export const Container = styled('div')<GridContainerProps>(
-  ({
-    theme: t,
-    columns = t.grid.columns || 12,
-    rows,
-    gap,
-    columnGap = t.grid.gap || 16,
-    rowGap = 32,
-    flow = 'row',
-    justifyItems,
-    alignItems,
-    justifyContent,
-    alignContent,
-    height,
-    minHeight,
-    background,
-  }) => {
-    const gridTemplateColumns =
-      typeof columns === 'string'
-        ? columns
-        : arr(columns).map(col => `repeat(${col}, 1fr)`)
-
-    // Possibly undefined, but that's ignored by emotion
-    const gridTemplateRows =
-      rows &&
-      (typeof rows === 'string'
-        ? rows
-        : arr(rows).map(row => `repeat(${row}, 1fr)`))
-
-    return mq({
-      display: 'grid',
-      gridAutoFlow: 'flow',
-      overflow: 'hidden',
-      maxWidth: '1920px',
-      margin: 'atuo',
-      gridTemplateColumns,
-      gridTemplateRows,
-      columnGap: arr(columnGap).map(toUnit('px')),
-      rowGap: arr(rowGap).map(toUnit('px')),
-      gap,
-      justifyItems,
-      alignItems,
-      alignContent,
-      justifyContent,
-      height: arr(height).map(toUnit('px')),
-      minHeight: arr(minHeight).map(toUnit('px')),
-      background: arr(background).map(bg => (bg && t.colors[bg]) || bg),
-    })
-  }
+export const Container = styled.div<GridContainerProps>(
+  ({ theme: t }) => css`
+    display: grid;
+    width: 100%;
+    grid-auto-flow: row;
+    min-height: fit-content;
+    overflow: hidden;
+    grid-template-columns: repeat(${t.grid.columns}, 1fr);
+    max-width: 1600px;
+  `,
+  ({ theme: t, noMargin, noGap }) =>
+    mq({
+      margin: !noMargin && t.grid.margin.map(n => `0 ${n}`),
+      gridGap: !noGap && t.grid.gap,
+    }),
+  gridTemplateColumns,
+  gridTemplateRows
 )
 
-export interface GridItemProps {
-  /** hatchback for `grid-column` css property */
-  column?: CSS.GridColumnProperty
-  /** horizontal grid item position in cell units, alias for `grid-column-start` css property */
-  left?: Arrayable<CSS.GridColumnStartProperty>
-  /** column span length in cell units */
-  width?: Arrayable<string | number>
-  /** row span length in cell units */
-  row?: CSS.GridRowProperty
-  /** vertical grid item position in cell units, alias for `grid-row-start` css property */
-  top?: Arrayable<CSS.GridColumnEndProperty>
-  /** grid-row span length in cell units */
-  height?: Arrayable<string | number>
-  /** `justify-self` css property */
-  justifySelf?: Arrayable<CSS.JustifySelfProperty>
-  /** `align-self` css property */
-  alignSelf?: Arrayable<CSS.AlignSelfProperty>
-  /** `justify-content` css property */
-  justifyContent?: Arrayable<CSS.JustifyContentProperty>
-  /** `align-content` css property */
-  alignContent?: Arrayable<CSS.JustifyContentProperty>
-  /** `justify-items` css property */
-  justifyItems?: Arrayable<CSS.JustifyItemsProperty>
-  /** `align-items` css property */
-  alignItems?: Arrayable<CSS.AlignItemsProperty>
-  /** `text-align` css property */
-  textAlign?: Arrayable<CSS.TextAlignProperty>
+export const BackgroundContainer = styled.div<GridContainerProps>(
+  ({ theme }) => css`
+    display: grid;
+    width: 100%;
+    grid-auto-flow: row;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+    z-index: -1;
+  `,
+  ({ theme: t }) =>
+    mq({
+      gridTemplateColumns: R.zip(t.grid.margin, t.grid.gap).map(
+        ([m, g]) => `calc(${m} - ${g}) repeat(12, 1fr) calc(${m} - ${g})`
+      ),
+      gridTemplateRows: R.zip(t.grid.spacer, t.grid.gap).map(
+        ([s, g]) => `calc(${s} - ${g}) auto calc(${s} - ${g})`
+      ),
+    }),
+  gridTemplateColumns,
+  gridTemplateRows
+)
+
+type GridColumnEnd = ResponsiveStyle<
+  'gridColumnEnd',
+  'gridColumnEnd',
+  never,
+  'width',
+  number
+>
+
+const gridColumnEnd = responsiveStyle({
+  prop: 'gridColumnEnd',
+  getter: n => (typeof n === 'number' ? `span ${n}` : n),
+  alias: 'width',
+})
+
+type GridRowEnd = ResponsiveStyle<
+  'gridRowEnd',
+  'gridRowEnd',
+  never,
+  'height',
+  number
+>
+
+const gridRowEnd = responsiveStyle({
+  prop: 'gridRowEnd',
+  getter: n => (typeof n === 'number' ? `span ${n}` : n),
+  alias: 'height',
+})
+
+type GridColumnStart = ResponsiveStyle<
+  'gridColumnStart',
+  'gridColumnStart',
+  never,
+  'left'
+>
+
+const gridColumnStart = responsiveStyle({
+  prop: 'gridColumnStart',
+  alias: 'left',
+})
+
+type GridRowStart = ResponsiveStyle<
+  'gridRowStart',
+  'gridRowStart',
+  never,
+  'top'
+>
+
+const gridRowStart = responsiveStyle({
+  prop: 'gridRowStart',
+  alias: 'top',
+})
+
+type JustifySelf = ResponsiveStyle<'justifySelf'>
+
+const justifySelf = responsiveStyle({
+  prop: 'justifySelf',
+})
+
+type AlignSelf = ResponsiveStyle<'alignSelf'>
+
+const alignSelf = responsiveStyle({
+  prop: 'alignSelf',
+})
+
+type JustifyItems = ResponsiveStyle<'justifyItems'>
+
+const justifyItems = responsiveStyle({
+  prop: 'justifyItems',
+})
+
+type AlignItems = ResponsiveStyle<'alignItems'>
+
+const alignItems = responsiveStyle({
+  prop: 'alignItems',
+})
+
+type Background = ResponsiveStyle<'background', 'background', 'colors', 'bg'>
+
+const background = responsiveStyle({
+  prop: 'background',
+  key: 'colors',
+})
+
+interface GridItemProps
+  extends Background,
+    GridColumnStart,
+    GridRowStart,
+    GridColumnEnd,
+    GridRowEnd,
+    JustifySelf,
+    AlignSelf,
+    JustifyItems,
+    AlignItems {
+  itemsGap?: boolean
+  itemsGrow?: ResponsiveStyleValue<'flexGrow', never>
 }
 
-export const Item = styled('div')<GridItemProps>(
-  ({
-    theme,
-    column,
-    left,
-    width = 1,
-    row,
-    top,
-    height,
-    justifySelf,
-    alignSelf,
-    justifyContent,
-    alignContent,
-    justifyItems,
-    alignItems,
-    textAlign,
-  }) => {
-    const gridColumnStart = left && arr(left).map(start => `${start}`)
-    const gridColumnEnd = arr(width).map(span => `span ${span}`)
-    const gridRowStart = top && arr(top).map(start => `${start}`)
-    const gridRowEnd = height && arr(height).map(span => `span ${span}`)
+export const Item = styled.div<GridItemProps>(
+  gridColumnStart,
+  gridRowStart,
+  gridColumnEnd,
+  gridRowEnd,
+  justifySelf,
+  alignSelf,
+  justifyItems,
+  alignItems,
+  background,
+  ({ theme: t, itemsGap, itemsGrow }) => css`
+    overflow: hidden;
+    display: flex;
+    flex-flow: row wrap;
 
-    return mq({
-      overflow: 'hidden',
-      display: 'flex',
-      flexFlow: 'row wrap',
-      gridColumnStart,
-      gridColumnEnd,
-      gridColumn: column,
-      gridRowStart,
-      gridRowEnd,
-      gridRow: row,
-      justifySelf,
-      alignSelf,
-      justifyContent,
-      alignContent,
-      justifyItems,
-      alignItems,
-      textAlign,
-    })
-  }
+    ${itemsGrow &&
+      mq({
+        '& > *': {
+          // Gutter is via padding so it does not mess up with widths %
+          flexGrow: itemsGrow,
+        },
+      })};
+
+    ${itemsGap &&
+      mq({
+        margin: t.grid.gap.map(n => `calc(-${n} / 2)`),
+        '& > *': {
+          // Gutter is via padding so it does not mess up with widths %
+          padding: t.grid.gap.map(n => `calc(${n} / 2)`),
+        },
+      })};
+  `
+)
+
+type MinHeight = ResponsiveStyle<'minHeight', 'minHeight', 'space', 'mh'>
+
+const minHeight = responsiveStyle({
+  prop: 'minHeight',
+  alias: 'mh',
+})
+
+export interface GridSectionProps extends MinHeight {
+  altBackground?: boolean
+  noBackground?: boolean
+}
+
+export const Section = styled.section<GridSectionProps>(
+  ({ theme: t, altBackground, noBackground }) => css`
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: ${!noBackground &&
+      {
+        light: altBackground ? t.colors.white : t.colors.nearWhite,
+        dark: altBackground ? t.colors.black : t.colors.nearBlack,
+      }[t.mode.color]};
+  `,
+  ({ theme: t }) =>
+    mq({
+      padding: t.grid.spacer.map(n => `${n} 0`),
+    }),
+  minHeight
 )

@@ -29,14 +29,15 @@ exports.createPages = ({ graphql, actions }) => {
         `
       ).then(result => {
         if (result.errors) {
+          // tslint:disable-next-line no-console
           console.log(result.errors)
           reject(result.errors)
         }
 
         // Create blog posts pages.
-        const posts = result.data.allMarkdownRemark.edges
+        const allPosts = result.data.allMarkdownRemark.edges
 
-        posts.forEach((post, index, posts) => {
+        allPosts.forEach((post, index, posts) => {
           const previous =
             index === posts.length - 1 ? null : posts[index + 1].node
           const next = index === 0 ? null : posts[index - 1].node

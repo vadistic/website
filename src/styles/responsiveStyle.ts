@@ -22,16 +22,28 @@ export type ResponsiveStyleOptions = {
   alias?: string
 } & (DefinedCSSProperty | UndefinedCSSProperty)
 
-// Helper function to quickly create interfaces
-/** ResponsiveStylePropValue */
-export type RSPV<
-  CSSProperty extends keyof CSS.Properties<string | number>,
-  Key extends keyof Theme | never
-> = Arrayable<
-  CSS.Properties<string | number>[CSSProperty] | Theme[Key] | undefined
-> | undefined
+// Helper generic types to quickly create interfaces
+type AllCSSPropNames = keyof CSS.Properties<string | number>
 
-const bpFallback = [576, 768, 992, 1200]
+export type ResponsiveStyleValue<
+  CSSProperty extends AllCSSPropNames,
+  Key extends keyof Theme = never,
+  Custom extends any = never
+> = Arrayable<
+  CSS.Properties<string | number>[CSSProperty] | Theme[Key] | Custom | undefined
+>
+
+export type ResponsiveStyle<
+  Prop extends string,
+  CSSProperty extends AllCSSPropNames = Prop extends AllCSSPropNames
+    ? Prop
+    : never,
+  Key extends keyof Theme = never,
+  Alias extends string = never,
+  Custom extends any = never
+> = { [K in Prop | Alias]?: ResponsiveStyleValue<CSSProperty, Key, Custom> }
+
+const defaultBreakpoints = [576, 768, 992, 1200]
 
 export const responsiveStyle = ({
   prop,
@@ -47,7 +59,7 @@ export const responsiveStyle = ({
       .map(key && p.theme ? themeGet(key, p.theme) : n => n)
       .map(getter ? getter : n => n)
       .map(addUnit ? toUnit(addUnit) : n => n)
-    return createMq((p && p.theme && p.theme.breakpoints) || bpFallback)({
+    return createMq((p.theme && p.theme.breakpoints) || defaultBreakpoints)({
       [cssProperty || prop]: val,
     })
   } else {

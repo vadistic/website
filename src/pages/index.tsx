@@ -1,17 +1,12 @@
 import Link from 'gatsby-link'
 import * as React from 'react'
 
-import {
-  AboutSection,
-  HeroSection,
-  ProcessSection,
-  ServicesSection,
-} from '../sections'
+import { Layout } from '../components'
+import { HeroSection } from '../sections'
 
-import { FixedBrand, FixedNav, Layout } from '../components'
 
-const IndexPage: React.SFC<{}> = ({ location }: any) => (
-  <Layout location={location}>
+const IndexPage: React.SFC<{}> = () => (
+  <Layout>
     <HeroSection />
 
     <nav id="dev-nav">
@@ -26,3 +21,4 @@ const IndexPage: React.SFC<{}> = ({ location }: any) => (
 )
 
 export default IndexPage
+

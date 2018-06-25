@@ -164,11 +164,7 @@ export const FocusedCardsSectionLayout: React.SFC<{}> = () => (
       <Grid.Item background="nearWhite" height={3} width={8} />
     </Grid.BackgroundContainer>
     <Grid.Container>
-      <Grid.Item
-        left={[2, ,]}
-        width={[10, , 9, 10]}
-        itemsGap
-w      >
+      <Grid.Item left={[2, ,]} width={[10, , 9, 10]} itemsGap>
         <Box w={['100%', 2 / 3, , '30%']} mt={[0, , , 4]} mb={[0, , , 4]}>
           <Card>
             <Text variant="h4">Small Heading</Text>

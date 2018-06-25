@@ -54,7 +54,7 @@ export const theme = {
   colors,
 
   /* Fonts */
-  fontFamilies: {
+  Families: {
     sans: 'rubik, sans-serif',
     serif: '"Merriweather", serif',
     mono: '"Fira Code", monospace',

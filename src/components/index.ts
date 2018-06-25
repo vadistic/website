@@ -3,9 +3,9 @@ export * from './Layout'
 
 export * from './Mode'
 
-export * from './GridSection'
+import * as Grid from './Grid'
+export { Grid }
 
-export * from './Section'
 export * from './Text'
 export * from './Box'
 export * from './Tile'
@@ -13,3 +13,4 @@ export * from './Tile'
 export * from './Card'
 export * from './Navigation'
 export * from './Logo'
+export * from './Image'

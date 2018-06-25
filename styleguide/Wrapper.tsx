@@ -3,9 +3,8 @@ import emotionNormalize from 'emotion-normalize'
 import { ThemeProvider } from 'emotion-theming'
 import * as React from 'react'
 
-import { theme } from '../styles'
-import '../styles/main.css'
-import { FixedBrand } from './Navigation'
+import { theme } from '../src/styles'
+import '../src/styles/main.css'
 
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`
@@ -20,16 +19,11 @@ injectGlobal`
     margin: 0;
     font-size: 16px;
     line-height: 28px;
-}
+  }
 `
 
-interface LayoutProps {}
-
-export const Layout: React.SFC<LayoutProps> = ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <div>
-      <FixedBrand />
-      {children}
-    </div>
-  </ThemeProvider>
-)
+export default class Wrapper extends React.Component<any> {
+  public render() {
+    return <ThemeProvider theme={theme}>{this.props.children}</ThemeProvider>
+  }
+}
