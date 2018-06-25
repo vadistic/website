@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import '../styles/blog.css'
 
-import { Layout, Mode, Section, Typography } from '../components'
+import { Grid, Layout, Mode, Typography } from '../components'
 
 export interface BlogPostTemplateProps {
   data: {
@@ -36,11 +36,11 @@ const BlogPostTemplate: React.SFC<BlogPostTemplateProps> = ({ data }) => {
   return (
     <Layout>
       <Mode mode={{ color: 'light' }}>
-        <Section>
+        <Grid.Section>
           <Typography>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
           </Typography>
-        </Section>
+        </Grid.Section>
       </Mode>
     </Layout>
   )

@@ -1,10 +1,10 @@
 import * as React from 'react'
 
-import { Layout, Section, Text } from '../components'
+import { Grid, Layout, Text } from '../components'
 
 const TypographyPage = () => (
   <Layout>
-    <Section>
+    <Grid.Section>
       <div>
         <Text variant="h1">H1 Heading</Text>
         <Text variant="h2">H2 Heading</Text>
@@ -17,7 +17,7 @@ const TypographyPage = () => (
         <Text variant="button">Button</Text>
         <Text variant="small">Small</Text>
       </div>
-    </Section>
+    </Grid.Section>
   </Layout>
 )
 

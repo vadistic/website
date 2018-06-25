@@ -7,8 +7,9 @@ import {
   MarkdownRemark,
   MarkdownRemarkConnection,
   Site,
-} from 'types/graphql-types'
-import { Layout, Section, Text, Typography } from '../components'
+} from '../types'
+
+import { Grid, Layout, Text, Typography } from '../components'
 
 export const pageQuery = graphql`
   query IndexQuery {
@@ -50,7 +51,7 @@ const BlogPage: React.SFC<BlogPageProps> = ({ data }) => {
 
   return (
     <Layout>
-      <Section>
+      <Grid.Section>
         <Typography>
           <h2>{siteTitle}</h2>
           {posts &&
@@ -70,7 +71,7 @@ const BlogPage: React.SFC<BlogPageProps> = ({ data }) => {
             })}
           <Text variant="button">Button</Text>
         </Typography>
-      </Section>
+      </Grid.Section>
     </Layout>
   )
 }

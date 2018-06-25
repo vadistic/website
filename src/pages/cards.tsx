@@ -1,10 +1,10 @@
 import * as React from 'react'
 
-import { Card, Layout, Mode, Section, Text } from '../components'
+import { Card, Grid, Layout, Mode, Text } from '../components'
 
 const CardsPage = () => (
   <Layout>
-    <Section>
+    <Grid.Section>
       <Text variant="h2">Cards demo</Text>
       <Text variant="h3">Components content</Text>
 
@@ -18,9 +18,9 @@ const CardsPage = () => (
         <Text variant="h5">Card subheader</Text>
         <Text variant="p">Card body paragraph text and stuff like that.</Text>
       </Card>
-    </Section>
+    </Grid.Section>
     <Mode mode={{ color: 'dark' }}>
-      <Section altBackground>
+      <Grid.Section altBackground>
       <Text variant="h2">Dark + Color mode</Text>
         <Card>
           <h3>Content as html</h3>
@@ -54,7 +54,7 @@ const CardsPage = () => (
             <p> Let's talk more about this</p>
           </Card>
         </Mode>
-      </Section>
+      </Grid.Section>
     </Mode>
   </Layout>
 )

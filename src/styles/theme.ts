@@ -54,7 +54,7 @@ export const theme = {
   colors,
 
   /* Fonts */
-  Families: {
+  fontFamilies: {
     sans: 'rubik, sans-serif',
     serif: '"Merriweather", serif',
     mono: '"Fira Code", monospace',
@@ -126,7 +126,7 @@ export const theme = {
   shadows: {
     none: 'none',
     base: '0 4px 10px 0 rgba(0,0,0,0.06)',
-    inner: 'inset 0 2px 4px 0 rgba(0,0,0,0.06)',
+    inner: 'inset 0 4px 10px 0 rgba(0,0,0,0.06)',
   },
 }
 
