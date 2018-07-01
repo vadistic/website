@@ -1,12 +1,11 @@
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import * as React from 'react'
 
-import { Layout } from '../components'
+import { PageLayout } from '../components'
 import { HeroSection } from '../sections'
 
-
 const IndexPage: React.SFC<{}> = () => (
-  <Layout>
+  <PageLayout>
     <HeroSection />
 
     <nav id="dev-nav">
@@ -16,9 +15,9 @@ const IndexPage: React.SFC<{}> = () => (
       <Link to="/grid">Grid</Link>
       <Link to="/grid2">Grid2</Link>
       <Link to="/layouts">Layouts</Link>
+      <Link to="/section-layouts">Section Layouts</Link>
     </nav>
-  </Layout>
+  </PageLayout>
 )
 
 export default IndexPage
-

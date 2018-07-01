@@ -23,9 +23,9 @@ injectGlobal`
 }
 `
 
-interface LayoutProps {}
+interface PageLayoutProps {}
 
-export const Layout: React.SFC<LayoutProps> = ({ children }) => (
+export const PageLayout: React.SFC<PageLayoutProps> = ({ children }) => (
   <ThemeProvider theme={theme}>
     <div>
       <FixedBrand />

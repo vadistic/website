@@ -1,5 +1,5 @@
 // Base layout
-export * from './Layout'
+export * from './PageLayout'
 
 export * from './Mode'
 
@@ -14,3 +14,5 @@ export * from './Card'
 export * from './Navigation'
 export * from './Logo'
 export * from './Image'
+
+export * from './layouts'

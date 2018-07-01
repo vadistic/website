@@ -48,8 +48,8 @@ declare module 'facepaint' {
   export default facepaint
 }
 
-// Gatsby graphql queries
-declare const graphql: (query: TemplateStringsArray) => void
+// // Gatsby graphql queries
+// declare const graphql: (query: TemplateStringsArray) => void
 
 declare module 'emotion-normalize' {
   const emotionNormalize: string

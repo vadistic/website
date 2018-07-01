@@ -1,13 +1,12 @@
 import { css } from 'react-emotion'
 
 import { styled } from '../styles'
-import { Typography } from './Text'
+import { Box } from './Box'
 
 export interface CardProps {
 }
 
-
-export const Card = styled(Typography)<CardProps>(
+export const Card = styled(Box)<CardProps>(
   ({ theme: t }) => css`
     padding: ${t.space[4]};
     box-shadow: ${t.shadows.base};

@@ -1,10 +1,16 @@
 import * as React from 'react'
 
-import { Box, Grid, Image, Text } from '..'
+import { Box, Grid } from '..'
 
-import { data } from './data'
+interface TwoColLayoutProps {
+  contentLeft: React.ReactNode
+  contentRight: React.ReactNode
+}
 
-export const TwoColSectionLayout: React.SFC<{}> = () => (
+export const TwoColLayout: React.SFC<TwoColLayoutProps> = ({
+  contentLeft,
+  contentRight,
+}) => (
   <Grid.Section altBackground>
     <Grid.Container>
       <Grid.Item
@@ -12,17 +18,14 @@ export const TwoColSectionLayout: React.SFC<{}> = () => (
         width={[12, 9, 8, 7, 6]}
         alignItems="center"
       >
-        <Image src="/placeholder-photo.png" />
+        <Box>{contentLeft}</Box>
       </Grid.Item>
       <Grid.Item
         left={[2, 2, 3, 8]}
         width={[10, 9, 8, 5, 4]}
         alignItems="center"
       >
-        <Box mt={[4, 4, 4, 0]}>
-          <Text variant="h3">{data.lorem.headline}</Text>
-          <Text variant="p">{data.lorem.paragraph}</Text>
-        </Box>
+        <Box mt={[4, 4, 4, 0]}>{contentRight}</Box>
       </Grid.Item>
     </Grid.Container>
   </Grid.Section>

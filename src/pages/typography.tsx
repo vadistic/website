@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import { Grid, Layout, Text } from '../components'
+import { Grid, PageLayout, Text } from '../components'
 
 const TypographyPage = () => (
-  <Layout>
+  <PageLayout>
     <Grid.Section>
       <div>
         <Text variant="h1">H1 Heading</Text>
@@ -18,7 +18,7 @@ const TypographyPage = () => (
         <Text variant="small">Small</Text>
       </div>
     </Grid.Section>
-  </Layout>
+  </PageLayout>
 )
 
 export default TypographyPage

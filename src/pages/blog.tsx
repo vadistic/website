@@ -1,24 +1,45 @@
+import { graphql } from 'gatsby';
 import Link from 'gatsby-link'
 import * as React from 'react'
 
 import '../styles/blog.css'
 
-import {
-  MarkdownRemark,
-  MarkdownRemarkConnection,
-  Site,
-} from '../types'
+import { Grid, PageLayout, Text, Typography } from '../components'
+import { MarkdownRemark, MarkdownRemarkConnection, Site } from '../types'
 
-import { Grid, Layout, Text, Typography } from '../components'
+const BlogPage: React.SFC<any> = ({ data }) => {
+  const posts = data.posts.edges
+
+  return (
+    <PageLayout>
+      <Grid.Section>
+        <Typography>
+          {posts &&
+            posts.map(({ node }: { node: MarkdownRemark }) => {
+              const title = node.frontmatter.title
+              return (
+                <div key={node.fields.slug}>
+                  <h5>
+                    <Link to={node.fields.slug}>{title}</Link>
+                  </h5>
+                  <small>{node.frontmatter.date}</small>
+                  <p
+                    dangerouslySetInnerHTML={{ __html: node.excerpt as string }}
+                  />
+                </div>
+              )
+            })}
+          <Text variant="button">Button</Text>
+        </Typography>
+      </Grid.Section>
+    </PageLayout>
+  )
+}
+
+export default BlogPage
 
 export const pageQuery = graphql`
   query IndexQuery {
-    site: site {
-      siteMetadata {
-        title
-      }
-    }
-
     posts: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
@@ -37,43 +58,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-interface BlogPageProps {
-  data: {
-    site: Site
-    posts: MarkdownRemarkConnection
-  }
-}
-
-const BlogPage: React.SFC<BlogPageProps> = ({ data }) => {
-  const siteTitle = data.site.siteMetadata && data.site.siteMetadata.title
-  const posts = data.posts.edges
-
-  return (
-    <Layout>
-      <Grid.Section>
-        <Typography>
-          <h2>{siteTitle}</h2>
-          {posts &&
-            posts.map(({ node }: { node: MarkdownRemark }) => {
-              const title = node.frontmatter!.title || node.fields!.slug
-              return (
-                <div key={node.fields!.slug as string}>
-                  <h5>
-                    <Link to={node.fields!.slug as string}>{title}</Link>
-                  </h5>
-                  <small>{node.frontmatter!.date}</small>
-                  <p
-                    dangerouslySetInnerHTML={{ __html: node.excerpt as string }}
-                  />
-                </div>
-              )
-            })}
-          <Text variant="button">Button</Text>
-        </Typography>
-      </Grid.Section>
-    </Layout>
-  )
-}
-
-export default BlogPage

@@ -1,24 +1,35 @@
+import {graphql} from 'gatsby'
 import * as React from 'react'
 
 import '../styles/blog.css'
 
-import { Grid, Layout, Mode, Typography } from '../components'
+import { Grid, Mode, PageLayout, Typography } from '../components'
 
-export interface BlogPostTemplateProps {
-  data: {
-    markdownRemark: {
-      id: string
-      html: string
-      frontmatter: {
-        title: string
-        date: string
-      }
-    }
-  }
+const BlogPostTemplate: React.SFC<any> = ({ data }) => {
+  const post = data.markdownRemark
+
+  return (
+    <PageLayout>
+      <Mode mode={{ color: 'light' }}>
+        <Grid.Section>
+          <Typography>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          </Typography>
+        </Grid.Section>
+      </Mode>
+    </PageLayout>
+  )
 }
+
+export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
@@ -29,21 +40,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-const BlogPostTemplate: React.SFC<BlogPostTemplateProps> = ({ data }) => {
-  const post = data.markdownRemark
-
-  return (
-    <Layout>
-      <Mode mode={{ color: 'light' }}>
-        <Grid.Section>
-          <Typography>
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          </Typography>
-        </Grid.Section>
-      </Mode>
-    </Layout>
-  )
-}
-
-export default BlogPostTemplate

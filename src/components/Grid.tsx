@@ -1,6 +1,12 @@
 import * as R from 'ramda'
 import { css } from 'react-emotion'
-import { mq, responsiveStyle, ResponsiveStyle, ResponsiveStyleValue, styled } from '../styles'
+import {
+  mq,
+  responsiveStyle,
+  ResponsiveStyle,
+  ResponsiveStyleValue,
+  styled,
+} from '../styles'
 
 type GridTemplateColumns = ResponsiveStyle<
   'gridTemplateColumns',
@@ -191,27 +197,10 @@ export const Item = styled.div<GridItemProps>(
   justifyItems,
   alignItems,
   background,
-  ({ theme: t, itemsGap, itemsGrow }) => css`
+  ({ theme: t }) => css`
     overflow: hidden;
     display: flex;
     flex-flow: row wrap;
-
-    ${itemsGrow &&
-      mq({
-        '& > *': {
-          // Gutter is via padding so it does not mess up with widths %
-          flexGrow: itemsGrow,
-        },
-      })};
-
-    ${itemsGap &&
-      mq({
-        margin: t.grid.gap.map(n => `calc(-${n} / 2)`),
-        '& > *': {
-          // Gutter is via padding so it does not mess up with widths %
-          padding: t.grid.gap.map(n => `calc(${n} / 2)`),
-        },
-      })};
   `
 )
 

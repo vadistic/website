@@ -10,10 +10,10 @@ import {
   TwoColSectionLayout,
 } from '../sections'
 
-import { Layout } from '../components'
+import { PageLayout } from '../components'
 
 const LayoutsPage: React.SFC<{}> = () => (
-  <Layout>
+  <PageLayout>
     <HeroSection />
     <TwoColSectionLayout />
     <OneColSectionLayout />
@@ -21,7 +21,7 @@ const LayoutsPage: React.SFC<{}> = () => (
     <GridCardsSectionLayout />
     <DualBackgroundSectionLayout />
     <FocusedCardsSectionLayout />
-  </Layout>
+  </PageLayout>
 )
 
 export default LayoutsPage

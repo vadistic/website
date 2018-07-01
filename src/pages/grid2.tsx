@@ -1,7 +1,7 @@
 import * as R from 'ramda'
 import * as React from 'react'
 
-import { Grid, Layout, Mode } from '../components'
+import { Grid, Mode, PageLayout } from '../components'
 import { styled } from '../styles'
 
 const Placeholder = styled('div')`
@@ -11,7 +11,7 @@ const Placeholder = styled('div')`
 `
 
 const Grid2Page: React.SFC<{}> = () => (
-  <Layout>
+  <PageLayout>
     <Mode mode={{ color: 'light' }}>
       <Grid.Section>
         <Grid.BackgroundContainer>
@@ -47,7 +47,7 @@ const Grid2Page: React.SFC<{}> = () => (
         </Grid.Container>
       </Grid.Section>
     </Mode>
-  </Layout>
+  </PageLayout>
 )
 
 export default Grid2Page
