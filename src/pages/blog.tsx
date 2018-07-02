@@ -5,17 +5,15 @@ import * as React from 'react'
 import '../styles/blog.css'
 
 import { Grid, PageLayout, Text, Typography } from '../components'
-import { MarkdownRemark, MarkdownRemarkConnection, Site } from '../types'
 
-const BlogPage: React.SFC<any> = ({ data }) => {
+const BlogPage = ({ data }) => {
   const posts = data.posts.edges
-
   return (
     <PageLayout>
       <Grid.Section>
         <Typography>
           {posts &&
-            posts.map(({ node }: { node: MarkdownRemark }) => {
+            posts.map(({ node }) => {
               const title = node.frontmatter.title
               return (
                 <div key={node.fields.slug}>
@@ -39,7 +37,7 @@ const BlogPage: React.SFC<any> = ({ data }) => {
 export default BlogPage
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query BlogQuery {
     posts: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
