@@ -1,64 +1,7 @@
 import * as React from 'react'
-import { css } from 'react-emotion'
 
-import { Box, Card, Grid, Text } from '../components'
-import { styled } from '../styles'
+import { Box, Card, Grid, Text } from '../../components'
 
-import data from './data'
-
-const Image = styled.img(
-  ({ theme: t }) => css`
-    object-fit: cover;
-    width: 100%;
-    max-height: 32rem;
-    border-radius: ${t.borderRadius.sm};
-  `
-)
-
-export const TwoColSectionLayout: React.SFC<{}> = () => (
-  <Grid.Section altBackground>
-    <Grid.Container>
-      <Grid.Item
-        left={[1, 2, 3, 1, 2]}
-        width={[12, 9, 8, 7, 6]}
-        alignItems="center"
-      >
-        <Image src="/placeholder-photo.png" />
-      </Grid.Item>
-      <Grid.Item
-        left={[2, 2, 3, 8]}
-        width={[10, 9, 8, 5, 4]}
-        alignItems="center"
-      >
-        <Box mt={[4, 4, 4, 0]}>
-          <Text variant="h3">{data.lorem.headline}</Text>
-          <Text variant="p">{data.lorem.paragraph}</Text>
-        </Box>
-      </Grid.Item>
-    </Grid.Container>
-  </Grid.Section>
-)
-
-export const OneColSectionLayout: React.SFC<{}> = () => (
-  <Grid.Section>
-    <Grid.Container>
-      <Grid.Item
-        left={[2, 2, 3, , 4]}
-        width={[10, 9, 8, 7, 6]}
-        alignItems="center"
-      >
-        <Box>
-          <Text variant="h2">{data.lorem.title}</Text>
-          <Text variant="h3">{data.lorem.headline}</Text>
-          <Text variant="p">{data.lorem.paragraph}</Text>
-          <Text variant="p">{data.lorem.paragraph}</Text>
-          <Text variant="p">{data.lorem.paragraph}</Text>
-          <Text variant="p">{data.lorem.paragraph}</Text>
-        </Box>
-      </Grid.Item>
-    </Grid.Container>
-  </Grid.Section>
-)
 
 export const FlexCardsSectionLayout: React.SFC<{}> = () => (
   <Grid.Section>

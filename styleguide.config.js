@@ -8,7 +8,7 @@ module.exports = {
     propFilter: props =>
       !props.name.includes('aria') && props.description !== '',
   }).parse,
-  webpackConfig: require('styleguide/webpack.config.js'),
+  webpackConfig: require('styleguide/webpack.config'),
   previewDelay: 500,
   showCode: true,
   showUsage: false,

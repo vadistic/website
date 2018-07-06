@@ -44,7 +44,8 @@
     "react-dom": "^16.4.1",
     "react-emotion": "latest",
     "react-helmet": "^5.2.0",
-    "recompose": "^0.27.1"
+    "recompose": "^0.27.1",
+    "vivid-icons": "^1.0.8"
   },
   "devDependencies": {
     "@types/ramda": "^0.25.34",

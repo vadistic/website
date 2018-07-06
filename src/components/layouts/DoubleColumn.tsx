@@ -2,12 +2,12 @@ import * as React from 'react'
 
 import { Box, Grid } from '..'
 
-interface TwoColLayoutProps {
+interface DoubleColumnLayoutProps {
   contentLeft: React.ReactNode
   contentRight: React.ReactNode
 }
 
-export const TwoColLayout: React.SFC<TwoColLayoutProps> = ({
+export const DoubleColumnLayout: React.SFC<DoubleColumnLayoutProps> = ({
   contentLeft,
   contentRight,
 }) => (
@@ -18,7 +18,7 @@ export const TwoColLayout: React.SFC<TwoColLayoutProps> = ({
         width={[12, 9, 8, 7, 6]}
         alignItems="center"
       >
-        <Box>{contentLeft}</Box>
+        <Box width="100%">{contentLeft}</Box>
       </Grid.Item>
       <Grid.Item
         left={[2, 2, 3, 8]}

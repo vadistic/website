@@ -115,7 +115,7 @@ export const textVariantStyles = ({
       letter-spacing: ${t.letterSpacings.wide};
     `,
     p: css`
-      ${verticalMargin(t.lineHeights.normal, 0)};
+      ${verticalMargin(t.lineHeights.normal)};
       ${textBodyStyles({ theme })};
     `,
     span: css`

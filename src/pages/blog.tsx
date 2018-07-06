@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby';
+import { graphql } from 'gatsby'
 import Link from 'gatsby-link'
 import * as React from 'react'
 
@@ -6,7 +6,15 @@ import '../styles/blog.css'
 
 import { Grid, PageLayout, Text, Typography } from '../components'
 
-const BlogPage = ({ data }) => {
+export interface BlogPageProps {
+  data: {
+    posts: {
+      edges: Array<{ node: any }>
+    }
+  }
+}
+
+const BlogPage: React.SFC<BlogPageProps> = ({ data }) => {
   const posts = data.posts.edges
   return (
     <PageLayout>

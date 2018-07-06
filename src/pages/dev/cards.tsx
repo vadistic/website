@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Box, Card, Grid, Mode, PageLayout, Text, Typography } from '../components'
+import { Box, Card, Grid, Mode, PageLayout, Text, Typography } from '../../components'
 
 const CardsPage = () => (
   <PageLayout>

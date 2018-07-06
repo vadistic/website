@@ -1,9 +1,8 @@
 import * as React from 'react'
 
-import { Box, Grid, Mode, Text } from '../components'
-import {styled } from '../styles'
+import { Box, Grid, Mode, Text } from '..'
+import {styled } from '../../styles'
 
-import data from './data'
 
 const Visual = styled('div')`
   background-color: rgba(255, 255, 255, 0.1);
@@ -11,7 +10,7 @@ const Visual = styled('div')`
   height: 12rem;
 `
 
-export const HeroSection: React.SFC<{}> = () => (
+export const HeroLayout: React.SFC<{}> = () => (
   <Mode mode={{ color: 'dark' }}>
     <Grid.Section id="start" minHeight="100vh">
       <Grid.Container>
@@ -29,8 +28,8 @@ export const HeroSection: React.SFC<{}> = () => (
           alignItems={['flex-start', 'center']}
         >
           <Box mt={[4, 0]}>
-            <Text variant="h3">{data.hero.title}</Text>
-            <Text variant="p">{data.hero.heading}</Text>
+            <Text variant="h3">Title</Text>
+            <Text variant="p">Heading</Text>
           </Box>
         </Grid.Item>
       </Grid.Container>
