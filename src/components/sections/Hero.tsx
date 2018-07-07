@@ -2,6 +2,9 @@ import * as React from 'react'
 
 import { Box, Grid, Mode, Text } from '..'
 
+// TODO: Prepare Hero Img.
+// TODO: Add social Icons
+
 export const HeroSection: React.SFC<{}> = () => (
   <Mode mode={{ color: 'light' }}>
     <Grid.Section id="start" minHeight="100vh" noBackground>
@@ -17,13 +20,17 @@ export const HeroSection: React.SFC<{}> = () => (
       <Grid.Container>
         <Mode mode={{ color: 'color' }}>
           <Grid.Item
-            left={[2, 7]}
+            left={[2]}
             width={[10, 4]}
             alignItems={['flex-start', 'center']}
           >
             <Box>
-              <Text variant="h1">Design & Developement</Text>
-              <Text variant="h4">by Jakub Wadas</Text>
+              <Text variant="h1" noMargin>
+                Design & Developement
+              </Text>
+              <Text variant="h4" noMargin>
+                by Jakub Wadas
+              </Text>
             </Box>
           </Grid.Item>
         </Mode>

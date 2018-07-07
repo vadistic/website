@@ -1,6 +1,17 @@
 import * as R from 'ramda'
 import { css } from 'react-emotion'
 import {
+  AlignItems,
+  alignItems,
+  alignSelf,
+  AlignSelf,
+  Background,
+  background,
+  GradientBackground,
+  JustifyItems,
+  justifyItems,
+  JustifySelf,
+  justifySelf,
   mq,
   responsiveStyle,
   ResponsiveStyle,
@@ -40,7 +51,9 @@ const gridTemplateRows = responsiveStyle({
 
 export interface GridContainerProps
   extends GridTemplateColumns,
-    GridTemplateRows {
+    GridTemplateRows,
+    AlignItems,
+    JustifyItems {
   noGap?: boolean
   noMargin?: boolean
 }
@@ -61,7 +74,9 @@ export const Container = styled.div<GridContainerProps>(
       gridGap: !noGap && t.grid.gap,
     }),
   gridTemplateColumns,
-  gridTemplateRows
+  gridTemplateRows,
+  alignItems,
+  justifyItems
 )
 
 export const BackgroundContainer = styled.div<GridContainerProps>(
@@ -141,44 +156,6 @@ const gridRowStart = responsiveStyle({
   prop: 'gridRowStart',
   alias: 'top',
 })
-
-type JustifySelf = ResponsiveStyle<'justifySelf'>
-
-const justifySelf = responsiveStyle({
-  prop: 'justifySelf',
-})
-
-type AlignSelf = ResponsiveStyle<'alignSelf'>
-
-const alignSelf = responsiveStyle({
-  prop: 'alignSelf',
-})
-
-type JustifyItems = ResponsiveStyle<'justifyItems'>
-
-const justifyItems = responsiveStyle({
-  prop: 'justifyItems',
-})
-
-type AlignItems = ResponsiveStyle<'alignItems'>
-
-const alignItems = responsiveStyle({
-  prop: 'alignItems',
-})
-
-type Background = ResponsiveStyle<'background', 'background', 'colors', 'bg'>
-
-const background = responsiveStyle({
-  prop: 'background',
-  key: 'colors',
-  alias: 'bg',
-})
-
-type GradientBackground = ResponsiveStyle<
-  'gradientBg',
-  'backgroundImage',
-  'gradients'
->
 
 const gradientBackground = responsiveStyle({
   prop: 'gradientBg',

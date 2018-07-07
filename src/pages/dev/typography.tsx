@@ -13,7 +13,7 @@ const TypographyPage = () => (
         <Text variant="h5">H5 Heading</Text>
         <Text variant="p">Paragraph</Text>
         <Text variant="span">Span</Text>
-        <Text variant="annotation">Annotation</Text>
+        <Text variant="blockquote">Blockquote</Text>
         <Text variant="button">Button</Text>
         <Text variant="small">Small</Text>
       </div>

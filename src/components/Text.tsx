@@ -11,6 +11,7 @@ export interface TextProps {
     | 'h4'
     | 'h5'
     | 'p'
+    | 'blockquote'
     | 'span'
     | 'small'
     | 'button'
@@ -107,8 +108,26 @@ export const textVariantStyles = ({
       font-size: ${t.fontSizes[1]};
     `,
     p: css`
-      ${verticalMargin(t.lineHeights.normal)};
       ${textBodyStyles({ theme })};
+      ${verticalMargin(t.lineHeights.normal)};
+    `,
+    blockquote: css`
+      ${textBodyStyles({ theme })};
+      ${verticalMargin(t.lineHeights.normal)};
+      font-style: italic;
+      color: ${{
+        light: t.fontColors.grey,
+        color: t.fontColors.bodyInverted,
+        dark: t.fontColors.greyInverted,
+      }[t.mode.color]};
+      border-left: ${t.borderWidths.lg} solid;
+      border-color: ${{
+        light: t.colors.primary,
+        color: t.colors.nearWhite,
+        dark: t.colors.primary,
+      }[t.mode.color]};
+      padding-left: ${t.space[2]};
+      margin-left: ${t.space[3]};
     `,
     span: css`
       ${textBodyStyles({ theme })};
@@ -172,8 +191,7 @@ export const Typography = styled.div(
     pre,
     table,
     blockquote {
-      margin-top: 0;
-      margin-bottom: ${theme.lineHeights.normal};
+      ${textVariantStyles({ theme, variant: 'blockquote' })};
     }
 
     small,
