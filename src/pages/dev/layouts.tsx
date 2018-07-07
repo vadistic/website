@@ -8,7 +8,7 @@ import {
   FlexCardsSectionLayout,
   FocusedCardsSectionLayout,
   GridCardsSectionLayout,
-  HeroLayout,
+  HeroSection,
   PageLayout,
   SingleColumnLayout,
   Text,
@@ -50,7 +50,7 @@ const LayoutsPage: React.SFC<LayoutsPageProps> = ({ data }) => (
         </>
       }
     />
-    <HeroLayout />
+    <HeroSection />
 
     <FlexCardsSectionLayout />
     <GridCardsSectionLayout />

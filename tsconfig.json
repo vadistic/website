@@ -18,6 +18,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
+    "plugins": []
   },
   "exclude": ["node_modules", "build", "public", ".cache"]
 }

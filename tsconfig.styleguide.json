@@ -3,5 +3,5 @@
   "compilerOptions": {
     "rootDirs": ["src", "styleguide", "types"],
     "skipLibCheck": true
-  }
+  },
 }

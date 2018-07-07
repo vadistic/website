@@ -171,10 +171,24 @@ type Background = ResponsiveStyle<'background', 'background', 'colors', 'bg'>
 const background = responsiveStyle({
   prop: 'background',
   key: 'colors',
+  alias: 'bg',
+})
+
+type GradientBackground = ResponsiveStyle<
+  'gradientBg',
+  'backgroundImage',
+  'gradients'
+>
+
+const gradientBackground = responsiveStyle({
+  prop: 'gradientBg',
+  cssProperty: 'backgroundImage',
+  key: 'gradients',
 })
 
 interface GridItemProps
   extends Background,
+    GradientBackground,
     GridColumnStart,
     GridRowStart,
     GridColumnEnd,
@@ -197,6 +211,7 @@ export const Item = styled.div<GridItemProps>(
   justifyItems,
   alignItems,
   background,
+  gradientBackground,
   ({ theme: t }) => css`
     overflow: hidden;
     display: flex;

@@ -1,14 +1,13 @@
-import { Link } from 'gatsby'
 import * as React from 'react'
 
-import { PageLayout } from '../components'
+import { AboutSection, FooterSection, HeroSection, PageLayout, ServicesSection } from '../components'
 
 const IndexPage: React.SFC<{}> = () => (
   <PageLayout>
-
-    <nav id="dev-nav">
-      <Link to="/blog">Blog</Link>
-    </nav>
+    <HeroSection />
+    <AboutSection />
+    <ServicesSection/>
+    <FooterSection />
   </PageLayout>
 )
 

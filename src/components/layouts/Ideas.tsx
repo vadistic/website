@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Box, Card, Grid, Text } from '../../components'
+import { Box, Card, Grid, Text } from '..'
 
 
 export const FlexCardsSectionLayout: React.SFC<{}> = () => (

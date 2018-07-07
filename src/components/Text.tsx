@@ -33,9 +33,9 @@ export const TextBase: React.SFC<TextProps> = ({
 }
 
 export const textBodyStyles = ({ theme: t }: ThemeProps) => css`
-  font-family: ${t.fontFamilies.serif};
+  font-family: ${t.fontFamilies.sans};
   font-size: ${t.fontSizes[1]};
-  font-weight: ${t.fontWeights.normal};
+  font-weight: ${t.fontWeights.light};
   line-height: ${t.lineHeights.normal};
   color: ${{
     light: t.fontColors.body,
@@ -46,7 +46,7 @@ export const textBodyStyles = ({ theme: t }: ThemeProps) => css`
 
 export const textHeadingStyles = ({ theme: t }: ThemeProps) => css`
   font-family: ${t.fontFamilies.sans};
-  font-weight: ${t.fontWeights.bold};
+  font-weight: ${t.fontWeights.medium};
   line-height: ${t.lineHeights.normal};
   color: ${{
     light: t.fontColors.heading,
@@ -57,13 +57,13 @@ export const textHeadingStyles = ({ theme: t }: ThemeProps) => css`
 
 export const textUiStyles = ({ theme: t }: ThemeProps) => css`
   font-family: ${t.fontFamilies.sans};
-  font-size: ${t.fontSizes[1]};
-  font-weight: ${t.fontWeights.light};
+  font-size: ${t.fontSizes[0]};
+  font-weight: ${t.fontWeights.normal};
   line-height: ${t.lineHeights.normal};
   color: ${{
-    light: t.fontColors.body,
-    color: t.fontColors.bodyInverted,
-    dark: t.fontColors.bodyInverted,
+    light: t.fontColors.heading,
+    color: t.fontColors.headingInverted,
+    dark: t.fontColors.headingInverted,
   }[t.mode.color]};
 `
 
@@ -89,6 +89,11 @@ export const textVariantStyles = ({
       ${textHeadingStyles({ theme })};
       ${verticalMargin(t.lineHeights.normal)};
       font-size: ${t.fontSizes[3]};
+    `,
+    h4: css`
+      ${textHeadingStyles({ theme })};
+      ${verticalMargin(t.lineHeights.normal)};
+      font-size: ${t.fontSizes[2]};
       font-weight: ${t.fontWeights.light};
       color: ${{
         light: t.fontColors.accent,
@@ -96,23 +101,10 @@ export const textVariantStyles = ({
         dark: t.fontColors.accentInverted,
       }[t.mode.color]};
     `,
-    h4: css`
-      ${textHeadingStyles({ theme })};
-      ${verticalMargin(t.lineHeights.normal)};
-      font-size: ${t.fontSizes[2]};
-    `,
     h5: css`
       ${textHeadingStyles({ theme })};
       ${verticalMargin(t.lineHeights.normal, 0)};
       font-size: ${t.fontSizes[1]};
-    `,
-    annotation: css`
-      ${textUiStyles({ theme })};
-      ${verticalMargin(0)};
-      font-size: ${t.fontSizes[2]};
-      text-transform: uppercase;
-      font-weight: ${t.fontWeights.light};
-      letter-spacing: ${t.letterSpacings.wide};
     `,
     p: css`
       ${verticalMargin(t.lineHeights.normal)};
@@ -122,7 +114,8 @@ export const textVariantStyles = ({
       ${textBodyStyles({ theme })};
     `,
     small: css`
-      ${textUiStyles({ theme })};
+      ${textBodyStyles({ theme })};
+      font-size: ${t.fontSizes[0]};
       color: ${{
         light: t.fontColors.grey,
         color: t.fontColors.bodyInverted,
@@ -137,13 +130,8 @@ export const textVariantStyles = ({
   }[variant])
 
 export const Text = styled(TextBase)<TextProps>(
-  ({ theme, variant }) =>
-    ({
-      body: textBodyStyles,
-      heading: textHeadingStyles,
-    }[variant.includes('h') ? 'heading' : 'body']),
   // variant styles
-  ({ theme: t }) => textVariantStyles,
+  ({ theme }) => textVariantStyles,
   // overrides
   ({ noMargin }) =>
     noMargin &&

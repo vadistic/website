@@ -5,7 +5,6 @@ import * as React from 'react'
 
 import { theme } from '../styles'
 import '../styles/main.css'
-import { FixedBrand } from './Navigation'
 
 // tslint:disable-next-line:no-unused-expression
 injectGlobal`
@@ -27,9 +26,6 @@ interface PageLayoutProps {}
 
 export const PageLayout: React.SFC<PageLayoutProps> = ({ children }) => (
   <ThemeProvider theme={theme}>
-    <div>
-      <FixedBrand />
-      {children}
-    </div>
+    <>{children}</>
   </ThemeProvider>
 )

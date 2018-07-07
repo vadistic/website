@@ -43,7 +43,7 @@ export const theme = {
     gap: [8, 8, 16, 16, 16].map(toUnit('px')),
     columns: 12,
     margin: ['3%', '3%', '5%', '5%', '5%'],
-    spacer: ['4rem', '4rem', '4rem', '4rem'],
+    spacer: ['5rem', '5rem', '5rem', '5rem'],
   },
 
   /* Spacing */
@@ -52,6 +52,16 @@ export const theme = {
 
   /* Colors */
   colors,
+
+  gradients: {
+    white: `linear-gradient(to bottom, ${colors.white}, ${colors.nearWhite})`,
+    primary: `linear-gradient(to right, ${colors.primaryDark}, ${
+      colors.primaryLight
+    })`,
+    primaryDark: `linear-gradient(to right, ${colors.primary}, ${
+      colors.primaryDark
+    })`,
+  },
 
   /* Fonts */
   fontFamilies: {
@@ -73,7 +83,7 @@ export const theme = {
 
   /** modular scale */
   fontSizes: [
-    '0.75rem',
+    '0.875rem',
     '1rem',
     '1.3125rem',
     '1.75rem',
@@ -102,22 +112,17 @@ export const theme = {
   },
 
   /* Borders */
-  borderWidths: [
-    0,
-    '1px solid',
-    '2px solid',
-    '4px solid',
-    '6px solid',
-    '8px solid',
-  ],
+  borderWidths: {
+    none: '0',
+    base: '1.5px',
+    lg: '3px',
+  },
 
   borderColors: colors,
 
   borderRadius: {
     none: '0',
-    sm: '.125rem',
-    base: '.25rem',
-    lg: '.5rem',
+    base: '.125rem',
     full: '9999px',
   },
 
@@ -126,6 +131,7 @@ export const theme = {
   shadows: {
     none: 'none',
     base: '0 4px 10px 0 rgba(0,0,0,0.06)',
+    lg: '0 8px 10px 0 rgba(0,0,0,0.12)',
     inner: 'inset 0 4px 10px 0 rgba(0,0,0,0.06)',
   },
 }
