@@ -13,24 +13,20 @@ export const AboutSection: React.SFC<AboutSectionProps> = ({
   profileImage,
 }) => (
   <Mode mode={{ color: 'light' }}>
-    <Grid.Section altBackground>
-      <Grid.Container alignItems={'center'}>
-        <Grid.Item left={[3]} width={[4]}>
-          <Box w={'100%'} flex alignItems={'center'}>
+    <Grid.Section background="nearWhite">
+      <Grid.Container alignItems="center">
+        <Grid.Item left={[3]} spanColumns={[4]}>
+          <Box w="100%" flex alignItems="center">
             <Box width={6}>
               <Img fluid={profileImage} />
             </Box>
             <Box width={2 / 3} ml={2}>
-              <Text variant="h4" noMargin>
-                Jakub Wadas
-              </Text>
-              <Text variant="p" noMargin>
-                Front-end Developer & Designer
-              </Text>
+              <Text variant="h4">Jakub Wadas</Text>
+              <Text variant="p">Front-end Developer & Designer</Text>
             </Box>
           </Box>
         </Grid.Item>
-        <Grid.Item left={[8]} width={[4]}>
+        <Grid.Item left={[8]} spanColumns={[4]}>
           <Box>
             <Text variant="blockquote">
               I focus on bridging the gap between design and implementation -

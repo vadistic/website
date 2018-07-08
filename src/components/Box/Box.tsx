@@ -3,12 +3,16 @@ import { css } from 'react-emotion'
 import {
   alignItems,
   AlignItems,
-  AlignSelf,
   alignSelf,
+  AlignSelf,
+  background,
+  Background,
+  gradientBackground,
+  GradientBackground,
   Height,
   height,
-  justifyItems,
   JustifyItems,
+  justifyItems,
   JustifySelf,
   justifySelf,
   MarginBottom,
@@ -17,14 +21,16 @@ import {
   marginLeft,
   marginRight,
   MarginRigth,
-  marginTop,
   MarginTop,
+  marginTop,
   styled,
+  TextAlign,
+  textAlign,
   Width,
   width,
 } from '../../styles'
 
-interface BoxProps
+export interface BoxProps
   extends MarginTop,
     MarginBottom,
     MarginLeft,
@@ -34,11 +40,23 @@ interface BoxProps
     AlignSelf,
     JustifySelf,
     AlignItems,
-    JustifyItems {
+    JustifyItems,
+    TextAlign,
+    Background,
+    GradientBackground {
   flex?: boolean
 }
 
 export const Box = styled.div<BoxProps>(
+  ({ flex }) =>
+    flex &&
+    css`
+      display: flex;
+      flex-wrap: wrap;
+
+      /* risky but handy default */
+      width: 100%;
+    `,
   marginTop,
   marginBottom,
   marginLeft,
@@ -49,9 +67,7 @@ export const Box = styled.div<BoxProps>(
   justifySelf,
   alignItems,
   justifyItems,
-  ({ flex }) =>
-    flex &&
-    css`
-      display: flex;
-    `
+  textAlign,
+  background,
+  gradientBackground
 )

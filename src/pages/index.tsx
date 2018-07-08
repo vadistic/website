@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import * as React from 'react'
 
-import { AboutSection, FooterSection, HeroSection, PageLayout, ServicesSection } from '../components'
+import { AboutSection, ContactSection, FooterSection, HeroSection, PageLayout, ProcessSection, ServicesSection } from '../components'
 
 export const pageQuery = graphql`
   query indexQuery {
@@ -20,6 +20,8 @@ const IndexPage: React.SFC<any> = ({data}) => (
     <HeroSection />
     <AboutSection profileImage={data.file.childImageSharp.fluid}/>
     <ServicesSection/>
+    <ProcessSection/>
+    <ContactSection/>
     <FooterSection />
   </PageLayout>
 )

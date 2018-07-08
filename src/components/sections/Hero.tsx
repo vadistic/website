@@ -7,21 +7,21 @@ import { Box, Grid, Mode, Text } from '..'
 
 export const HeroSection: React.SFC<{}> = () => (
   <Mode mode={{ color: 'light' }}>
-    <Grid.Section id="start" minHeight="100vh" noBackground>
-      <Grid.BackgroundContainer>
+    <Grid.Section id="start" minHeight="100vh">
+      <Grid.BackgroundContainer gradientBg="white">
         <Grid.Item
           gradientBg="primary"
           top={2}
-          height={1}
+          spanRows={1}
           left={2}
-          width={12}
+          spanColumns={12}
         />
       </Grid.BackgroundContainer>
       <Grid.Container>
         <Mode mode={{ color: 'color' }}>
           <Grid.Item
             left={[2]}
-            width={[10, 4]}
+            spanColumns={[10, 4]}
             alignItems={['flex-start', 'center']}
           >
             <Box>

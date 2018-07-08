@@ -24,10 +24,11 @@ export const TextBase: React.SFC<TextProps> = ({
   children,
   ...rest
 }) => {
+  // Set tag for non-html variants
   const Tag =
     {
       button: 'span',
-      annotation: 'h2',
+      annotation: 'h3',
     }[variant] || variant
 
   return <Tag {...rest}>{children}</Tag>
@@ -43,6 +44,21 @@ export const textBodyStyles = ({ theme: t }: ThemeProps) => css`
     color: t.fontColors.bodyInverted,
     dark: t.fontColors.bodyInverted,
   }[t.mode.color]};
+
+  a {
+    color: inherit;
+    font-size: inherit;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+      color: ${{
+        light: t.fontColors.heading,
+        color: t.fontColors.headingInverted,
+        dark: t.fontColors.headingInverted,
+      }[t.mode.color]};
+    }
+  }
 `
 
 export const textHeadingStyles = ({ theme: t }: ThemeProps) => css`
@@ -93,7 +109,7 @@ export const textVariantStyles = ({
     `,
     h4: css`
       ${textHeadingStyles({ theme })};
-      ${verticalMargin(t.lineHeights.normal)};
+      ${verticalMargin(t.lineHeights.normal, 0)};
       font-size: ${t.fontSizes[2]};
       font-weight: ${t.fontWeights.light};
       color: ${{
@@ -107,9 +123,21 @@ export const textVariantStyles = ({
       ${verticalMargin(t.lineHeights.normal, 0)};
       font-size: ${t.fontSizes[1]};
     `,
+    annotation: css`
+      ${textHeadingStyles({ theme })};
+      margin-bottom: ${t.lineHeights.normal};
+      font-size: ${t.fontSizes[3]};
+
+      /* underline */
+      background: ${t.gradients.primary};
+      padding-bottom: ${t.borderWidths.lg};
+      background-size: ${t.space[4]} ${t.borderWidths.lg};
+      background-repeat: no-repeat;
+      background-position: bottom left;
+    `,
     p: css`
       ${textBodyStyles({ theme })};
-      ${verticalMargin(t.lineHeights.normal)};
+      ${verticalMargin(0, t.lineHeights.normal)};
     `,
     blockquote: css`
       ${textBodyStyles({ theme })};
@@ -140,6 +168,14 @@ export const textVariantStyles = ({
         color: t.fontColors.bodyInverted,
         dark: t.fontColors.greyInverted,
       }[t.mode.color]};
+
+      a {
+        color: ${{
+          light: t.fontColors.body,
+          color: t.fontColors.bodyInverted,
+          dark: t.fontColors.bodyInverted,
+        }[t.mode.color]};
+      }
     `,
     button: css`
       ${textUiStyles({ theme })};

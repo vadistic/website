@@ -114,8 +114,8 @@ export const theme = {
   /* Borders */
   borderWidths: {
     none: '0',
-    base: '1.5px',
-    lg: '3px',
+    base: '2px',
+    lg: '4px',
   },
 
   borderColors: colors,
@@ -127,12 +127,18 @@ export const theme = {
   },
 
   /* Shadows */
-  /* TODO Define */
   shadows: {
     none: 'none',
     base: '0 4px 10px 0 rgba(0,0,0,0.06)',
     lg: '0 8px 10px 0 rgba(0,0,0,0.12)',
     inner: 'inset 0 4px 10px 0 rgba(0,0,0,0.06)',
+  },
+
+  /* Aniamtion */
+  tranitions: {
+    fast: '0.25s ease',
+    normal: '0.5s ease',
+    slow: '1s ease',
   },
 }
 

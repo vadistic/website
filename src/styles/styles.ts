@@ -73,6 +73,20 @@ export interface Height {
   h?: ResponsiveStyleValue<'height', 'space', number>
 }
 
+export type MinWidth = ResponsiveStyle<'minWidth', 'minWidth', 'space', 'mw'>
+
+export const minWidth = responsiveStyle({
+  prop: 'minWidth',
+  alias: 'mw',
+})
+
+export type MinHeight = ResponsiveStyle<'minHeight', 'minHeight', 'space', 'mh'>
+
+export const minHeight = responsiveStyle({
+  prop: 'minHeight',
+  alias: 'mh',
+})
+
 export const height = responsiveStyle({
   prop: 'height',
   key: 'space',
@@ -105,6 +119,12 @@ export const alignItems = responsiveStyle({
   prop: 'alignItems',
 })
 
+export type TextAlign = ResponsiveStyle<'textAlign'>
+
+export const textAlign = responsiveStyle({
+  prop: 'textAlign',
+})
+
 export type Background = ResponsiveStyle<
   'background',
   'background',
@@ -123,3 +143,9 @@ export type GradientBackground = ResponsiveStyle<
   'backgroundImage',
   'gradients'
 >
+
+export const gradientBackground = responsiveStyle({
+  prop: 'gradientBg',
+  cssProperty: 'backgroundImage',
+  key: 'gradients',
+})

@@ -6,12 +6,12 @@ import { Box, Grid, Logo, Mode, Text } from '..'
 
 export const ContactSection: React.SFC = () => (
   <Mode mode={{ color: 'light' }}>
-    <Grid.Section altBackground>
+    <Grid.Section background="nearWhite">
       <Grid.Container >
-        <Grid.Item left={[2]} width={[12]}>
+        <Grid.Item left={[2]} spanColumns={[12]}>
           <Logo />
         </Grid.Item>
-        <Grid.Item left={[2]} width={[12]}>
+        <Grid.Item left={[2]} spanColumns={[12]}>
         <Box mt={5}>
           <Text variant="small">
             contact Section

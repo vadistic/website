@@ -8,10 +8,13 @@ import {
   Background,
   background,
   GradientBackground,
-  JustifyItems,
+  gradientBackground,
   justifyItems,
-  JustifySelf,
+  JustifyItems,
   justifySelf,
+  JustifySelf,
+  minHeight,
+  MinHeight,
   mq,
   responsiveStyle,
   ResponsiveStyle,
@@ -50,7 +53,9 @@ const gridTemplateRows = responsiveStyle({
 })
 
 export interface GridContainerProps
-  extends GridTemplateColumns,
+  extends Background,
+    GradientBackground,
+    GridTemplateColumns,
     GridTemplateRows,
     AlignItems,
     JustifyItems {
@@ -64,7 +69,6 @@ export const Container = styled.div<GridContainerProps>(
     width: 100%;
     grid-auto-flow: row;
     min-height: fit-content;
-    overflow: hidden;
     grid-template-columns: repeat(${t.grid.columns}, 1fr);
     max-width: 1600px;
   `,
@@ -73,6 +77,8 @@ export const Container = styled.div<GridContainerProps>(
       margin: !noMargin && t.grid.margin.map(n => `0 ${n}`),
       gridGap: !noGap && t.grid.gap,
     }),
+  background,
+  gradientBackground,
   gridTemplateColumns,
   gridTemplateRows,
   alignItems,
@@ -101,6 +107,8 @@ export const BackgroundContainer = styled.div<GridContainerProps>(
         ([s, g]) => `calc(${s} - ${g}) auto calc(${s} - ${g})`
       ),
     }),
+  background,
+  gradientBackground,
   gridTemplateColumns,
   gridTemplateRows
 )
@@ -109,28 +117,28 @@ type GridColumnEnd = ResponsiveStyle<
   'gridColumnEnd',
   'gridColumnEnd',
   never,
-  'width',
+  'spanColumns',
   number
 >
 
 const gridColumnEnd = responsiveStyle({
   prop: 'gridColumnEnd',
   getter: n => (typeof n === 'number' ? `span ${n}` : n),
-  alias: 'width',
+  alias: 'spanColumns',
 })
 
 type GridRowEnd = ResponsiveStyle<
   'gridRowEnd',
   'gridRowEnd',
   never,
-  'height',
+  'spanRows',
   number
 >
 
 const gridRowEnd = responsiveStyle({
   prop: 'gridRowEnd',
   getter: n => (typeof n === 'number' ? `span ${n}` : n),
-  alias: 'height',
+  alias: 'spanRows',
 })
 
 type GridColumnStart = ResponsiveStyle<
@@ -155,12 +163,6 @@ type GridRowStart = ResponsiveStyle<
 const gridRowStart = responsiveStyle({
   prop: 'gridRowStart',
   alias: 'top',
-})
-
-const gradientBackground = responsiveStyle({
-  prop: 'gradientBg',
-  cssProperty: 'backgroundImage',
-  key: 'gradients',
 })
 
 interface GridItemProps
@@ -190,38 +192,30 @@ export const Item = styled.div<GridItemProps>(
   background,
   gradientBackground,
   ({ theme: t }) => css`
-    overflow: hidden;
     display: flex;
     flex-flow: row wrap;
   `
 )
 
-type MinHeight = ResponsiveStyle<'minHeight', 'minHeight', 'space', 'mh'>
+export interface GridSectionProps
+  extends Background,
+    GradientBackground,
+    MinHeight {}
 
-const minHeight = responsiveStyle({
-  prop: 'minHeight',
-  alias: 'mh',
-})
-
-export interface GridSectionProps extends MinHeight {
-  altBackground?: boolean
-  noBackground?: boolean
-}
+// TODO: add smth like `flatBg` props and use gradient bg as default
 
 export const Section = styled.section<GridSectionProps>(
-  ({ theme: t, altBackground, noBackground }) => css`
+  ({ theme: t }) => css`
     position: relative;
     display: flex;
     justify-content: center;
-    background-color: ${!noBackground &&
-      {
-        light: altBackground ? t.colors.white : t.colors.nearWhite,
-        dark: altBackground ? t.colors.black : t.colors.nearBlack,
-      }[t.mode.color]};
+    overflow: hidden;
   `,
   ({ theme: t }) =>
     mq({
       padding: t.grid.spacer.map(n => `${n} 0`),
     }),
+  background,
+  gradientBackground,
   minHeight
 )

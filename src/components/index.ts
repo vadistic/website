@@ -9,6 +9,7 @@ export { Grid }
 export * from './Text'
 export * from './Box'
 export * from './Tile'
+export * from './Tooltip'
 
 export * from './Card'
 export * from './Button'

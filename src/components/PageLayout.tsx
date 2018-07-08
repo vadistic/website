@@ -19,7 +19,11 @@ injectGlobal`
     margin: 0;
     font-size: 16px;
     line-height: 28px;
-}
+  }
+
+  a {
+    text-decoration: none;
+  }
 `
 
 interface PageLayoutProps {}
