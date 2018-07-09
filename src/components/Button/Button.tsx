@@ -1,7 +1,7 @@
 import { css } from 'react-emotion'
 
 import { textVariantStyles } from '..'
-import { styled } from '../../styles'
+import { styled, verticalMargin } from '../../styles'
 
 interface ButtonProps {
   variant?: 'primary' | 'ghost' | 'text'
@@ -9,10 +9,12 @@ interface ButtonProps {
 
 export const Button = styled.button<ButtonProps>(
   ({ theme: t }) => css`
+    margin-left: ${t.space[2]};
+    margin-right: ${t.space[2]};
+    ${verticalMargin(t.space[3])};
     padding: ${t.space[1]} ${t.space[3]} ${t.space[0]} ${t.space[3]};
     transition: 0.25s ease;
     border-radius: ${t.borderRadius.base};
-
     &:focus {
       outline: 0;
     }

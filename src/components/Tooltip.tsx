@@ -7,6 +7,7 @@ import { styled } from '../styles'
 export interface TooltipProps {
   className?: string
   content: string
+  short?: boolean
 }
 
 const TooltipBase: React.SFC<TooltipProps> = ({
@@ -26,19 +27,23 @@ const TooltipBase: React.SFC<TooltipProps> = ({
   </div>
 )
 
-export const Tooltip = styled(TooltipBase)(
-  ({ theme: t }) => css`
+export const Tooltip = styled(TooltipBase)<TooltipProps>(
+  ({ theme: t, short }) => css`
     position: relative;
 
     .tooltip {
       z-index: 100;
-      width: ${t.space[6]};
+      min-width: ${short ? 0 : t.space[6]};
+      max-width: ${t.space[7]};
       background: ${t.colors.nearBlack};
       border-radius: ${t.borderRadius.base};
       padding: ${t.space[2]};
       position: absolute;
-      bottom: 100%;
-      left: calc(50% - ${t.space[5]});
+      bottom: calc(100% + 8px);
+
+      left: 50%;
+      transform: translateX(-50%);
+
       visibility: hidden;
       opacity: 0;
       transition: ${t.tranitions.normal};
@@ -50,10 +55,10 @@ export const Tooltip = styled(TooltipBase)(
         border-top: solid ${t.colors.nearBlack} 8px;
         border-radius: ${t.borderRadius.base};
         bottom: -8px;
+        left: 50%;
         content: ' ';
         height: 0;
         width: 0;
-        left: 50%;
         margin-left: -8px;
         position: absolute;
       }

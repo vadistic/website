@@ -54,8 +54,6 @@ export const Box = styled.div<BoxProps>(
       display: flex;
       flex-wrap: wrap;
 
-      /* risky but handy default */
-      width: 100%;
     `,
   marginTop,
   marginBottom,

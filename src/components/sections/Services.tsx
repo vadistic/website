@@ -11,8 +11,6 @@ import realizationSvg from '../../data/img/illustration-realization.svg'
 import logos from '../../data/img/logos'
 import { Tooltip } from '../Tooltip'
 
-// TODO: Add icons from figma
-
 const List = styled.ul`
   list-style: none;
   padding: 0;
@@ -131,7 +129,6 @@ export const ServicesSection: React.SFC = () => (
               noMargin
               columns={[4, 6, 8, 10, 12]}
               justifyItems="center"
-              F
             >
               {[...logos.design, ...logos.developement].map((logo, i) => (
                 <Grid.Item spanColumns={1}>
