@@ -109,7 +109,7 @@ export const textVariantStyles = ({
     `,
     h4: css`
       ${textHeadingStyles({ theme })};
-      ${verticalMargin(t.lineHeights.normal, 0)};
+      ${verticalMargin(t.lineHeights.normal)};
       font-size: ${t.fontSizes[2]};
       font-weight: ${t.fontWeights.light};
       color: ${{

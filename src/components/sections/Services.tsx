@@ -41,6 +41,7 @@ const Figure = styled.figure(
       object {
         filter: grayscale(100%);
         width: ${t.space[5]};
+        transition: ${t.tranitions.normal};
 
         /* This makes links work over object svg */
         pointer-events: none;
@@ -126,7 +127,12 @@ export const ServicesSection: React.SFC = () => (
         <Grid.Item left={[1, 2]} spanColumns={[12, 10]}>
           <Box mt={4}>
             <Text variant="h4">Prefered stack</Text>
-            <Grid.Container noMargin columns={[4, 6, 8, 10, 12]}>
+            <Grid.Container
+              noMargin
+              columns={[4, 6, 8, 10, 12]}
+              justifyItems="center"
+              F
+            >
               {[...logos.design, ...logos.developement].map((logo, i) => (
                 <Grid.Item spanColumns={1}>
                   <Tooltip content={logo.caption}>

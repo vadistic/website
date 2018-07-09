@@ -15,8 +15,12 @@ const TooltipBase: React.SFC<TooltipProps> = ({
   children,
 }) => (
   <div className={className}>
-    <aside>
-      <Text variant="small">{content}</Text>
+    <aside className="tooltip">
+      {typeof content === 'string' ? (
+        <Text variant="small">{content}</Text>
+      ) : (
+        content
+      )}
     </aside>
     {children}
   </div>
@@ -26,66 +30,40 @@ export const Tooltip = styled(TooltipBase)(
   ({ theme: t }) => css`
     position: relative;
 
-    aside {
+    .tooltip {
       z-index: 100;
-      width: 100px;
+      width: ${t.space[6]};
       background: ${t.colors.nearBlack};
       border-radius: ${t.borderRadius.base};
       padding: ${t.space[2]};
       position: absolute;
       bottom: 100%;
+      left: calc(50% - ${t.space[5]});
       visibility: hidden;
-    }
+      opacity: 0;
+      transition: ${t.tranitions.normal};
+      box-shadow: ${t.shadows.base};
 
-    &:hover {
-      aside {
-        visibility: visible;
+      &::after {
+        border-left: solid transparent 8px;
+        border-right: solid transparent 8px;
+        border-top: solid ${t.colors.nearBlack} 8px;
+        border-radius: ${t.borderRadius.base};
+        bottom: -8px;
+        content: ' ';
+        height: 0;
+        width: 0;
+        left: 50%;
+        margin-left: -8px;
+        position: absolute;
       }
     }
 
-    &:hover {
-      visibility: visible;
-    }
-
-    a.tooltips {
-      position: relative;
-      display: inline;
-    }
-
-    a.tooltips span {
-      position: absolute;
-      width: 140px;
-      color: #ffffff;
-      background: #000000;
-      height: 30px;
-      line-height: 30px;
-      text-align: center;
-      visibility: hidden;
-      border-radius: 6px;
-      box-shadow: 0px 0px 10px #800000;
-    }
-
-    a.tooltips span:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 100%;
-      margin-top: -8px;
-      width: 0;
-      height: 0;
-      border-left: 8px solid #000000;
-      border-top: 8px solid transparent;
-      border-bottom: 8px solid transparent;
-    }
-
-    a:hover.tooltips span {
-      visibility: visible;
-      opacity: 0.8;
-      right: 100%;
-      top: 50%;
-      margin-top: -15px;
-      margin-right: 15px;
-      z-index: 999;
+    :hover {
+      .tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
     }
   `
 )
