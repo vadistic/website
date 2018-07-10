@@ -1,20 +1,18 @@
 import * as React from 'react'
 import { css } from 'react-emotion'
 
-import { Box, Card, Grid, Mode, Text } from '..'
+import { Box, Grid, Mode, Text, Tile } from '..'
 import { styled } from '../../styles'
-
-import illustrations from '../../../data/img/illustrations'
-
-import logos from '../../../data/img/logos'
 import { Tooltip } from '../Tooltip'
+
+import data from '../../../data/data'
 
 const List = styled.ul`
   list-style: none;
   padding: 0;
 `
 
-const HoverableCard = styled(Card)(
+const HoverableTile = styled(Tile)(
   ({ theme: t }) =>
     css`
       border: ${t.borderWidths.base} solid transparent;
@@ -25,6 +23,29 @@ const HoverableCard = styled(Card)(
         box-shadow: ${t.shadows.lg};
       }
     `
+)
+
+interface ServiceItemProps {
+  svg: string
+  title: string
+  description: string
+  list: string[]
+}
+
+const ServiceItem: React.SFC<ServiceItemProps> = ({
+  svg,
+  title,
+  description,
+  list,
+}) => (
+  <HoverableTile>
+    <object data={svg} type="image/svg+xml" />
+    <Text variant="h4">{title}</Text>
+    <Text variant="p">{description}</Text>
+    <Text variant="h5">
+      <List>{list.map((item, i) => <li key={i}>{item}</li>)}</List>
+    </Text>
+  </HoverableTile>
 )
 
 const Figure = styled.figure(
@@ -51,27 +72,24 @@ const Figure = styled.figure(
     `
 )
 
-interface ServiceItemProps {
+interface TechItemProps {
   svg: string
   title: string
-  description: string
-  list: string[]
+  caption: string
+  url: string
 }
 
-const ServiceItem: React.SFC<ServiceItemProps> = ({
-  svg,
-  title,
-  description,
-  list,
-}) => (
-  <HoverableCard>
-    <object data={svg} type="image/svg+xml" />
-    <Text variant="h4">{title}</Text>
-    <Text variant="p">{description}</Text>
-    <Text variant="h5">
-      <List>{list.map((item, i) => <li key={i}>{item}</li>)}</List>
-    </Text>
-  </HoverableCard>
+const TechItem: React.SFC<TechItemProps> = ({ svg, caption, title, url }) => (
+  <Tooltip content={caption}>
+    <a href={url} target="__blank">
+      <Figure>
+        <object data={svg} type="image/svg+xml" />
+        <figcaption>
+          <Text variant="small">{title}</Text>
+        </figcaption>
+      </Figure>
+    </a>
+  </Tooltip>
 )
 
 export const ServicesSection: React.SFC = () => (
@@ -85,24 +103,15 @@ export const ServicesSection: React.SFC = () => (
         </Grid.Item>
         <Grid.Item left={[1, 2]} spanColumns={[12, 10]}>
           <Grid.Container columns={[1, 2, 2, 3, 3]} noMargin>
-            <ServiceItem
-              svg={illustrations.design}
-              title="Design"
-              description="Lorem pixum dolor amet"
-              list={['User Interfaces', 'Branding', 'Print']}
-            />
-            <ServiceItem
-              svg={illustrations.development}
-              title="Developement"
-              description="Lorem pixum dolor amet"
-              list={['Static Websites', 'Web Apps', 'Design Systems']}
-            />
-            <ServiceItem
-              svg={illustrations.realization}
-              title="Realization"
-              description="Lorem pixum dolor amet"
-              list={['Project Management', 'Product & UX', 'Tech Recruitment']}
-            />
+            {data.services.serviceItems.map((item, i) => (
+              <ServiceItem
+                key={i}
+                svg={item.svg}
+                title={item.title}
+                description={item.description}
+                list={item.list}
+              />
+            ))}
           </Grid.Container>
         </Grid.Item>
         <Grid.Item left={[1, 2]} spanColumns={[12, 10]}>
@@ -113,24 +122,16 @@ export const ServicesSection: React.SFC = () => (
               columns={[4, 6, 8, 10, 12]}
               justifyItems="center"
             >
-              {[...logos.design, ...logos.developement].map((logo, i) => (
-                <Grid.Item spanColumns={1}>
-                  <Tooltip content={logo.caption}>
-                    <a href={logo.url} target="__blank">
-                      <Figure>
-                        <object
-                          key={i}
-                          data={logo.svg}
-                          type="image/svg+xml"
-                          name="test"
-                        />
-                        <figcaption>
-                          <Text variant="small">{logo.title}</Text>
-                        </figcaption>
-                      </Figure>
-                    </a>
-                  </Tooltip>
-                </Grid.Item>
+              {[
+                ...data.services.techItems.design,
+                ...data.services.techItems.developement,
+              ].map((logo, i) => (
+                <TechItem
+                  title={logo.title}
+                  caption={logo.caption}
+                  svg={logo.svg}
+                  url={logo.url}
+                />
               ))}
             </Grid.Container>
           </Box>
