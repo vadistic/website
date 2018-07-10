@@ -7,15 +7,15 @@ import * as Grid from './Grid'
 export { Grid }
 
 export * from './Text'
-export * from './Box'
+export * from './Box/index'
 export * from './Tile'
 export * from './Tooltip'
 
 export * from './Card'
-export * from './Button'
+export * from './Button/index'
 export * from './Navigation'
 export * from './Logo'
-export * from './Image'
+export * from './Image/index'
 
-export * from './layouts'
-export * from './sections'
+export * from './layouts/index'
+export * from './sections/index'

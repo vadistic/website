@@ -28,7 +28,7 @@ import {
   textAlign,
   Width,
   width,
-} from '../../styles'
+} from '../../styles/index'
 
 export interface BoxProps
   extends MarginTop,
@@ -52,8 +52,7 @@ export const Box = styled.div<BoxProps>(
     flex &&
     css`
       display: flex;
-      flex-wrap: wrap;
-
+      flex-flow: row wrap;
     `,
   marginTop,
   marginBottom,

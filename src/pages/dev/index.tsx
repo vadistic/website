@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import * as React from 'react'
 
-import { Box, Grid, PageLayout, Text } from '../../components'
+import { Box, Grid, PageLayout, Text } from '../../components/index'
 
 const DevPage: React.SFC<{}> = () => (
   <PageLayout>

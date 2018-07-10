@@ -1,7 +1,7 @@
 import Link from 'gatsby-link'
 import React from 'react'
 import { css } from 'react-emotion'
-import { styled } from '../styles'
+import { styled } from '../styles/index'
 import { Logo } from './Logo'
 import { textUiStyles } from './Text'
 

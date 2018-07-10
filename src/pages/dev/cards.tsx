@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Box, Card, Grid, Mode, PageLayout, Text, Typography } from '../../components'
+import { Box, Card, Grid, Mode, PageLayout, Text, Typography } from '../../components/index'
 
 const CardsPage = () => (
   <PageLayout>
@@ -21,7 +21,7 @@ const CardsPage = () => (
       </Card>
     </Grid.Section>
     <Mode mode={{ color: 'dark' }}>
-      <Grid.Section altBackground>
+      <Grid.Section>
         <Text variant="h2">Dark + Color mode</Text>
         <Card>
           <Typography>

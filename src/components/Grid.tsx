@@ -20,7 +20,7 @@ import {
   ResponsiveStyle,
   ResponsiveStyleValue,
   styled,
-} from '../styles'
+} from '../styles/index'
 
 type GridTemplateColumns = ResponsiveStyle<
   'gridTemplateColumns',

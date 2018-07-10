@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { css } from 'react-emotion'
-import { styled } from '../styles'
+import { styled } from '../styles/index'
 
 export interface LogoProps {
   className?: string

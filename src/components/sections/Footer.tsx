@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Box, Grid, Logo, Mode, Text } from '..'
+import { Box, Grid, Logo, Mode, Text } from '../index'
 
 // TODO: Add grid gap
 

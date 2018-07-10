@@ -1,7 +1,7 @@
 import { css } from 'react-emotion'
 
-import { styled } from '../styles'
-import { Box } from './Box';
+import { styled } from '../styles/index'
+import { Box } from './Box/index';
 
 export interface TileProps {
 }

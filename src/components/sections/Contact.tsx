@@ -3,7 +3,7 @@ import * as React from 'react'
 import { Box, Button, Grid, Mode, Text, Tooltip } from '..'
 
 import { css } from 'react-emotion'
-import { styled } from '../../styles'
+import { styled } from '../../styles/index'
 
 import icons from '../../../data/img/icons'
 import config from '../../../data/SiteConfig'
@@ -35,9 +35,9 @@ const SocialIconBase: React.SFC<SocialIconProps> = ({
   caption,
   className,
 }) => (
-  <Tooltip content={caption} short>
-    <a href={url} className={className} target="__blank">
-      <Icon iconName={iconName} />
+  <Tooltip content={caption} short className={className}>
+    <a href={url} target="__blank">
+      <Icon iconName={iconName} variant="round" />
     </a>
   </Tooltip>
 )
@@ -45,7 +45,10 @@ const SocialIconBase: React.SFC<SocialIconProps> = ({
 const SocialIcon = styled(SocialIconBase)(
   ({ theme: t }) =>
     css`
-      margin: 0 ${t.space[1]};
+      a {
+        display: block;
+        margin: 0 ${t.space[1]};
+      }
 
       object {
         pointer-events: none;
@@ -90,8 +93,9 @@ export const ContactSection: React.SFC = () => (
           spanColumns={[12, 6, 4]}
           alignItems="center"
         >
-          {config.userLinks.map(item => (
+          {config.userLinks.map((item, i) => (
             <SocialIcon
+              key={i}
               caption={item.caption}
               iconName={item.iconName as SocialIconProps['iconName']}
               variant="round"

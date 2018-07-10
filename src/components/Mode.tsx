@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'emotion-theming'
 import * as React from 'react'
-import { Theme } from '../styles'
+import { Theme } from '../styles/index'
 
 export interface Mode {
   color: 'light' | 'dark' | 'color'

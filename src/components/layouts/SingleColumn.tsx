@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Box, Grid } from '..'
+import { Box, Grid } from '../index'
 
 export const SingleColumnLayout: React.SFC = ({ children }) => (
   <Grid.Section gradientBg="white">

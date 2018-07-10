@@ -1,13 +1,13 @@
 import { graphql } from 'gatsby';
 import * as React from 'react'
 
-import { AboutSection, ContactSection, FooterSection, HeroSection, PageLayout, ProcessSection, ServicesSection } from '../components'
+import { AboutSection, ContactSection, FooterSection, HeroSection, PageLayout, ProcessSection, ServicesSection } from '../components/index'
 
 export const pageQuery = graphql`
   query indexQuery {
-    file(relativePath: { eq: "img/profile-photo.png" }) {
+    file(relativePath: { eq: "img/profile-photo.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 256) {
+        fluid(maxWidth: 512) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }

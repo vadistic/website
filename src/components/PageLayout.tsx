@@ -3,7 +3,7 @@ import emotionNormalize from 'emotion-normalize'
 import { ThemeProvider } from 'emotion-theming'
 import * as React from 'react'
 
-import { theme } from '../styles'
+import { theme } from '../styles/index'
 import '../styles/main.css'
 
 // tslint:disable-next-line:no-unused-expression

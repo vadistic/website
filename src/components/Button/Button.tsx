@@ -1,7 +1,7 @@
 import { css } from 'react-emotion'
 
-import { textVariantStyles } from '..'
 import { styled, verticalMargin } from '../../styles'
+import { textVariantStyles } from '../index'
 
 interface ButtonProps {
   variant?: 'primary' | 'ghost' | 'text'

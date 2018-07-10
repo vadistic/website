@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Grid, PageLayout, Text } from '../../components'
+import { Grid, PageLayout, Text } from '../../components/index'
 
 const TypographyPage = () => (
   <PageLayout>

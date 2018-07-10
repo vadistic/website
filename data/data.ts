@@ -1,5 +1,5 @@
-import illustrations from './img/illustrations'
-import logos from './img/logos'
+import illustrations from './img/illustrations/index'
+import logos from './img/logos/index'
 import config from './SiteConfig'
 
 const data = {
@@ -9,12 +9,13 @@ const data = {
       'Front-end developer & designer with passion for bleeding-edge digital products',
   },
   about: {
-    annotation: `Hello, I'm Jakub`,
-    headline: `I'm front-end developer and designer based in Tricity, Poland`,
-    text:
-      'The packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove.',
+    name: `Jakub Wadas`,
+    title: `Front-end Developer & Designer`,
+    description:
+      'I focus on bridging the gap between design and implementation — combining design experience, fluency in bleeding-edge tech and ability to deliver buisness solutions',
   },
   services: {
+    annotation: 'Skill Spectrum',
     serviceItems: [
       {
         svg: illustrations.design,
@@ -35,7 +36,19 @@ const data = {
         list: ['Project Management', 'Product & UX', 'Tech Recruitment'],
       },
     ],
+  },
+  tech: {
+    annotation: 'Prefered Stack',
     techItems: logos,
+  },
+  process: {
+    annotation: 'Process',
+    procesItems: [
+      {
+        title: '',
+        description: '',
+      },
+    ],
   },
   lorem: {
     title: `Sint pitchfork ramps nostrud normcore`,

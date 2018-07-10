@@ -14,7 +14,8 @@
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguideist build",
     "format": "prettier --write 'src/**/*.js'",
-    "gql-types": "gql-gen --schema http://localhost:8000/___graphql --template typescript --out ./src/types/graphql-types.ts",
+    "gql-gen": "gql-gen --schema http://localhost:8000/___graphql --template typescript --out ./src/types/graphql-types.ts",
+    "svgr-gen": "svgr src/components/svgs -d src/components/svgs/svgr --template src/components/svgs/template.js --ext tsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -48,6 +49,7 @@
     "recompose": "^0.27.1"
   },
   "devDependencies": {
+    "@svgr/cli": "^2.1.0",
     "@types/ramda": "^0.25.34",
     "@types/react": "latest",
     "@types/react-dom": "latest",

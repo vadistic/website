@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import '../styles/blog.css'
 
-import { Grid, Mode, PageLayout, Typography } from '../components'
+import { Grid, Mode, PageLayout, Typography } from '../components/index'
 
 const BlogPostTemplate: React.SFC<any> = ({ data }) => {
   const post = data.markdownRemark

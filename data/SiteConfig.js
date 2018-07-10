@@ -13,8 +13,6 @@ module.exports = {
   userName: 'Jakub Wadas', // Username to display in the author segment.
   userLocation: 'Tricity, Poland', // User location to display in the author segment.
   userAvatar: 'img/profile-photo.png', // User avatar to display in the author segment.
-  userDescription:
-    'I focus on bridging the gap between design and implementation - combining design experience, fluency in bleeding-edge tech and ability to deliver buisness solutions.', // User description to display in the author segment.
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   userLinks: [
     {

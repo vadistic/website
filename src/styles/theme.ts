@@ -123,7 +123,7 @@ export const theme = {
   borderRadius: {
     none: '0',
     base: '.125rem',
-    full: '9999px',
+    round: '9999px',
   },
 
   /* Shadows */

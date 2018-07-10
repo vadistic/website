@@ -12,7 +12,7 @@ import {
   PageLayout,
   SingleColumnLayout,
   Text,
-} from '../../components'
+} from '../../components/index'
 
 import mockData from '../../../data/data'
 

@@ -4,7 +4,7 @@ import * as React from 'react'
 
 import '../styles/blog.css'
 
-import { Grid, PageLayout, Text, Typography } from '../components'
+import { Grid, PageLayout, Text, Typography } from '../components/index'
 
 export interface BlogPageProps {
   data: {

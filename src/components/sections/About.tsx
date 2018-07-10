@@ -1,13 +1,23 @@
 import Img, { GatsbyImageProps } from 'gatsby-image'
 import * as React from 'react'
+import { css } from 'react-emotion'
 
-import { Box, Grid, Mode, Text } from '..'
+import { Box, Grid, Mode, Text } from '../index'
 
-// TODO: Add icons from figma
+import data from '../../../data/data'
+import { styled } from '../../styles/index'
 
 export interface AboutSectionProps {
   profileImage: GatsbyImageProps
 }
+
+const ImgBox = styled(Box)(
+  ({ theme: t }) => css`
+    border-radius: ${t.borderRadius.round};
+    box-shadow: ${t.shadows.base};
+    overflow: hidden;
+  `
+)
 
 export const AboutSection: React.SFC<AboutSectionProps> = ({
   profileImage,
@@ -17,22 +27,20 @@ export const AboutSection: React.SFC<AboutSectionProps> = ({
       <Grid.Container alignItems="center">
         <Grid.Item left={[3]} spanColumns={[4]}>
           <Box w="100%" flex alignItems="center">
-            <Box width={6}>
+            <ImgBox width={6}>
               <Img fluid={profileImage} />
-            </Box>
-            <Box width={2 / 3} ml={2}>
-              <Text variant="h4">Jakub Wadas</Text>
-              <Text variant="p">Front-end Developer & Designer</Text>
+            </ImgBox>
+            <Box ml={3}>
+              <Text variant="h4" noMargin>
+                {data.about.name}
+              </Text>
+              <Text variant="p">{data.about.title}</Text>
             </Box>
           </Box>
         </Grid.Item>
         <Grid.Item left={[8]} spanColumns={[4]}>
           <Box>
-            <Text variant="blockquote">
-              I focus on bridging the gap between design and implementation -
-              combining design experience, fluency in bleeding-edge tech and
-              ability to deliver buisness solutions.
-            </Text>
+            <Text variant="blockquote">{data.about.description}</Text>
           </Box>
         </Grid.Item>
       </Grid.Container>

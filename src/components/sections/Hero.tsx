@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Box, Grid, Mode, Text } from '..'
+import { Box, Grid, Mode, Text } from '../index'
 
 // TODO: Prepare Hero Img.
 // TODO: Add social Icons

@@ -1,8 +1,8 @@
 import * as R from 'ramda'
 import * as React from 'react'
 
-import { Grid, Mode, PageLayout } from '../../components'
-import { styled } from '../../styles'
+import { Grid, Mode, PageLayout } from '../../components/index'
+import { styled } from '../../styles/index'
 
 const Placeholder = styled('div')`
   background: #ccc;
