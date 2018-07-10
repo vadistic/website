@@ -14,7 +14,7 @@ import {
   Text,
 } from '../../components'
 
-import { data as mockData } from '../../data/data'
+import { data as mockData } from '../../../data/data'
 
 interface LayoutsPageProps {
   data: any

@@ -3,8 +3,8 @@ import * as React from 'react'
 import { Box, Button, Grid, Mode, Text, Tooltip } from '..'
 
 import { css } from 'react-emotion'
-import icons from '../../data/img/icons'
-import { mq, styled } from '../../styles'
+import icons from '../../../data/img/icons'
+import { styled } from '../../styles'
 
 interface SocialIconProps {
   name: keyof typeof icons
@@ -79,36 +79,41 @@ export const ContactSection: React.SFC = () => (
         >
           {[
             {
-              icon: 'mail',
+              iconName: 'mail',
+              label: 'Mail',
               content: 'jakub.wadas@outlook.com',
-              href: 'mailto:jakub.wadas@outlook.com',
+              url: 'mailto:jakub.wadas@outlook.com',
             },
             {
-              icon: 'skype',
+              iconName: 'skype',
+              label: 'Skype',
               content: 'check',
-              href: 'skype:jakub.wadas',
+              url: 'skype:jakub.wadas',
             },
             {
-              icon: 'linkedin',
+              iconName: 'linkedin',
+              label: 'LinkedIn',
               content: 'jakubwadas',
-              href: 'https://www.linkedin.com/in/jakubwadas',
+              url: 'https://www.linkedin.com/in/jakubwadas',
             },
             {
-              icon: 'behance',
+              iconName: 'behance',
+              label: 'Behance',
               content: 'vadistic',
-              href: 'https://behance.net/vadistic',
+              url: 'https://behance.net/vadistic',
             },
             {
-              icon: 'github',
+              iconName: 'github',
+              label: 'GitHub',
               content: 'vadistic',
-              href: 'https://github.com/vadistic',
+              url: 'https://github.com/vadistic',
             },
           ].map(item => (
             <Tooltip content={item.content} short>
               <SocialIcon
-                name={item.icon as SocialIconProps['name']}
+                name={item.iconName as SocialIconProps['name']}
                 variant="round"
-                href={item.href}
+                href={item.url}
               />
             </Tooltip>
           ))}

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "public",
-    "rootDir": "src",
+    "rootDirs": ["src", "data", "content"],
     "module": "esnext",
     "target": "esnext",
     "lib": ["es2015", "es2016", "es2017", "dom"],

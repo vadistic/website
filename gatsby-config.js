@@ -2,9 +2,24 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+const config = require('./data/SiteConfig')
+
+const URL = require('url').URL
+
 module.exports = {
   siteMetadata: {
     title: 'Vadistic - Front-end developement & Design by Jakub Wadas',
+    siteUrl: new URL(config.pathPrefix, config.siteUrl).href,
+    rssMetadata: {
+      site_url: new URL(config.pathPrefix, config.siteUrl).href,
+      feed_url: new URL(config.pathPrefix, config.siteUrl, config.siteRss).href,
+      title: config.siteTitle,
+      description: config.siteDescription,
+      image_url: new URL(config.pathPrefix, config.siteUrl, config.siteLogo)
+        .href,
+      author: config.userName,
+      copyright: config.copyright,
+    },
   },
   plugins: [
     {
@@ -54,7 +69,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/data/`,
+        path: `${__dirname}/data/`,
         name: 'data',
       },
     },

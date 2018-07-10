@@ -4,11 +4,9 @@ import { css } from 'react-emotion'
 import { Box, Card, Grid, Mode, Text } from '..'
 import { styled } from '../../styles'
 
-import designSvg from '../../data/img/illustration-design.svg'
-import developmentSvg from '../../data/img/illustration-development.svg'
-import realizationSvg from '../../data/img/illustration-realization.svg'
+import illustrations from '../../../data/img/illustrations'
 
-import logos from '../../data/img/logos'
+import logos from '../../../data/img/logos'
 import { Tooltip } from '../Tooltip'
 
 const List = styled.ul`
@@ -88,38 +86,23 @@ export const ServicesSection: React.SFC = () => (
         <Grid.Item left={[1, 2]} spanColumns={[12, 10]}>
           <Grid.Container columns={[1, 2, 2, 3, 3]} noMargin>
             <ServiceItem
-              svg={designSvg}
+              svg={illustrations.design}
               title="Design"
               description="Lorem pixum dolor amet"
               list={['User Interfaces', 'Branding', 'Print']}
             />
-
-            <HoverableCard>
-              <object data={developmentSvg} type="image/svg+xml" />
-
-              <Text variant="h4">Developement</Text>
-              <Text variant="p">Lorem pixum dolor amet</Text>
-              <Text variant="h5">
-                <List>
-                  <li>Static Websites</li>
-                  <li>Web Apps</li>
-                  <li>Design Systems</li>
-                </List>
-              </Text>
-            </HoverableCard>
-            <HoverableCard>
-              <object data={realizationSvg} type="image/svg+xml" />
-
-              <Text variant="h4">Realization</Text>
-              <Text variant="p">Lorem pixum dolor amet</Text>
-              <Text variant="h5">
-                <List>
-                  <li>Project Management</li>
-                  <li>Product & UX</li>
-                  <li>Tech Recruitment</li>
-                </List>
-              </Text>
-            </HoverableCard>
+            <ServiceItem
+              svg={illustrations.development}
+              title="Developement"
+              description="Lorem pixum dolor amet"
+              list={['Static Websites', 'Web Apps', 'Design Systems']}
+            />
+            <ServiceItem
+              svg={illustrations.realization}
+              title="Realization"
+              description="Lorem pixum dolor amet"
+              list={['Project Management', 'Product & UX', 'Tech Recruitment']}
+            />
           </Grid.Container>
         </Grid.Item>
         <Grid.Item left={[1, 2]} spanColumns={[12, 10]}>
