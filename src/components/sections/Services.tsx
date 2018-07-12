@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { css } from 'react-emotion'
 
-import { Box, Grid, Logo, Mode, Text, Tile } from '..'
+import { Box, Grid, Logo, Mode, Text, Tile, IllustrationSm } from '..'
 import { styled } from '../../styles'
 import { Tooltip } from '../Tooltip'
 
@@ -38,17 +38,19 @@ const ServiceItem: React.SFC<ServiceItemProps> = ({
   title,
   description,
   list,
-}) => (
-  <Tile>
-    {svgName}
-    <Text variant="h4">{title}</Text>
-    <Text variant="p">{description}</Text>
-    <Text variant="h5">
-      <List>{list.map((item, i) => <li key={i}>{item}</li>)}</List>
-    </Text>
-  </Tile>
-)
-
+}) => {
+  const Illustration = IllustrationSm[svgName]
+  return (
+    <Tile>
+      <Illustration />
+      <Text variant="h4">{title}</Text>
+      <Text variant="p">{description}</Text>
+      <Text variant="h5">
+        <List>{list.map((item, i) => <li key={i}>{item}</li>)}</List>
+      </Text>
+    </Tile>
+  )
+}
 interface TechItemProps {
   svgName: string
   title: string

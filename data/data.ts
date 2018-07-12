@@ -163,6 +163,9 @@ const data = {
       },
     ],
   },
+  footer: {
+    copyright: `Copyright © 2018 Jakub Wadas`
+  },
   lorem: {
     title: `Sint pitchfork ramps nostrud normcore`,
     headline: `Sint pitchfork ramps nostrud normcore snackwave ut, meggings selfies`,
