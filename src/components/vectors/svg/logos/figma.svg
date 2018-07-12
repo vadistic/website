@@ -1,0 +1,11 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="logos/figma">
+<g id="figma">
+<path id="path0 fill" d="M11.5 21.3333C17.848 21.3333 23 16.5547 23 10.6667V0H11.5C5.152 0 0 4.77867 0 10.6667C0 16.5547 5.152 21.3333 11.5 21.3333Z" transform="translate(11 42.6667)" fill="#0ACF83"/>
+<path id="path1 fill" d="M0 10.6667C0 4.77867 5.152 0 11.5 0H23V21.3333H11.5C5.152 21.3333 0 16.5547 0 10.6667Z" transform="translate(11 21.3333)" fill="#A259FF"/>
+<path id="path1 fill 1" d="M0 10.6667C0 4.77867 5.152 0 11.5 0H23V21.3333H11.5C5.152 21.3333 0 16.5547 0 10.6667Z" transform="translate(11)" fill="#F24E1E"/>
+<path id="path2 fill" d="M0 0H11.5C17.848 0 23 4.77867 23 10.6667C23 16.5547 17.848 21.3333 11.5 21.3333H0V0Z" transform="translate(34)" fill="#FF7262"/>
+<path id="path3 fill" d="M23 10.6667C23 16.5547 17.848 21.3333 11.5 21.3333C5.152 21.3333 0 16.5547 0 10.6667C0 4.77867 5.152 0 11.5 0C17.848 0 23 4.77867 23 10.6667Z" transform="translate(34 21.3333)" fill="#1ABCFE"/>
+</g>
+</g>
+</svg>

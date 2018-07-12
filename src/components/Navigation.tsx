@@ -2,7 +2,6 @@ import Link from 'gatsby-link'
 import React from 'react'
 import { css } from 'react-emotion'
 import { styled } from '../styles/index'
-import { Logo } from './Logo'
 import { textUiStyles } from './Text'
 
 interface NavProps {
@@ -69,7 +68,7 @@ FixedNav.displayName = 'FixedNav'
 
 export const Brand: React.SFC<NavProps> = ({ className }) => (
   <Link to="/" className={className}>
-    <Logo />
+    {/* <Logo /> */}
   </Link>
 )
 

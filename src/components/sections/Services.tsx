@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { css } from 'react-emotion'
 
+import { Box, Grid, Logo, Mode, Text, Tile } from '..'
 import { styled } from '../../styles'
-import { Box, Grid, Mode, Text, Tile } from '../index'
 import { Tooltip } from '../Tooltip'
 
 import data from '../../../data/data'
@@ -27,7 +27,7 @@ const HoverableTile = styled(Tile)(
 )
 
 interface ServiceItemProps {
-  svg: string
+  svg: React.SFC
   title: string
   description: string
   list: string[]
@@ -40,7 +40,7 @@ const ServiceItem: React.SFC<ServiceItemProps> = ({
   list,
 }) => (
   <Tile>
-    <object data={svg} type="image/svg+xml" />
+    {svg}
     <Text variant="h4">{title}</Text>
     <Text variant="p">{description}</Text>
     <Text variant="h5">
@@ -50,7 +50,7 @@ const ServiceItem: React.SFC<ServiceItemProps> = ({
 )
 
 interface TechItemProps {
-  svg: string
+  svgName: string
   title: string
   caption: string
   url: string
@@ -58,23 +58,26 @@ interface TechItemProps {
 }
 
 const TechItemBase: React.SFC<TechItemProps> = ({
-  svg,
+  svgName,
   caption,
   title,
   url,
   className,
-}) => (
-  <Tooltip content={caption} className={className}>
-    <a href={url} target="__blank">
-      <figure>
-        <object data={svg} type="image/svg+xml" />
-        <figcaption>
-          <Text variant="small">{title}</Text>
-        </figcaption>
-      </figure>
-    </a>
-  </Tooltip>
-)
+}) => {
+  const TechLogo = Logo[svgName]
+  return (
+    <Tooltip content={caption} className={className} >
+      <a href={url} target="__blank">
+        <figure>
+          <TechLogo transform="scale(0.5)" viewBox="0 0 64 64" />
+          <figcaption>
+            <Text variant="small">{title}</Text>
+          </figcaption>
+        </figure>
+      </a>
+    </Tooltip>
+  )
+}
 
 const TechItem = styled(TechItemBase)(
   ({ theme: t }) =>
@@ -85,17 +88,11 @@ const TechItem = styled(TechItemBase)(
         margin: 0;
       }
 
-      object {
+      svg {
         filter: grayscale(100%);
-        width: ${t.space[5]};
         transition: ${t.tranitions.normal};
 
-        /* This makes links work over object svgs */
-        pointer-events: none;
-      }
-
-      &:hover {
-        object {
+        &:hover {
           filter: none;
         }
       }
@@ -140,7 +137,7 @@ export const ServicesSection: React.SFC = () => (
                   key={i}
                   title={logo.title}
                   caption={logo.caption}
-                  svg={logo.svg}
+                  svgName={logo.svgName}
                   url={logo.url}
                 />
               ))}

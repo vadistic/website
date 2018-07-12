@@ -15,7 +15,7 @@
     "styleguide:build": "styleguideist build",
     "format": "prettier --write 'src/**/*.js'",
     "gql-gen": "gql-gen --schema http://localhost:8000/___graphql --template typescript --out ./src/types/graphql-types.ts",
-    "svgr-gen": "svgr src/components/svgs -d src/components/svgs/svgr --template src/components/svgs/template.js --ext tsx",
+    "svgr-gen": "svgr src/components/vectors/svg -d src/components/vectors --template src/components/vectors/template.js --ext tsx --title-prop",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

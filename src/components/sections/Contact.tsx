@@ -5,54 +5,40 @@ import { Box, Button, Grid, Mode, Text, Tooltip } from '..'
 import { css } from 'react-emotion'
 import { styled } from '../../styles/index'
 
-import icons from '../../../data/img/icons'
+import { IconBasic, IconRound } from '..'
 import config from '../../../data/SiteConfig'
 
-interface IconProps {
-  iconName: keyof typeof icons
-  variant?: 'basic' | 'round'
-  className?: string
-}
-
-const Icon: React.SFC<IconProps> = ({
-  iconName,
-  variant = 'basic',
-  className,
-}) => {
-  const data = icons[iconName][variant]
-  return <object type="image/svg+xml" data={data} />
-}
-
-interface SocialIconProps extends IconProps {
-  url?: string
+interface SocialIconProps {
+  url: string
   caption: string
+  iconName: string
+  className?: string
 }
 
 const SocialIconBase: React.SFC<SocialIconProps> = ({
   iconName,
-  variant = 'basic',
   url,
   caption,
   className,
-}) => (
-  <Tooltip content={caption} short className={className}>
-    <a href={url} target="__blank">
-      <Icon iconName={iconName} variant="round" />
-    </a>
-  </Tooltip>
-)
+}) => {
+  const Icon = IconRound[iconName]
+  return (
+    <Tooltip content={caption} short className={className}>
+      <a href={url} target="__blank">
+        <Icon />
+      </a>
+    </Tooltip>
+  )
+}
 
 const SocialIcon = styled(SocialIconBase)(
   ({ theme: t }) =>
     css`
       a {
-        display: block;
         margin: 0 ${t.space[1]};
       }
 
-      object {
-        pointer-events: none;
-      }
+
     `
 )
 
@@ -79,11 +65,11 @@ export const ContactSection: React.SFC = () => (
         <Grid.Item left={[1, 2, 8]} spanColumns={[12, 6, 4]}>
           <Box mt={[4, , 0]}>
             <Box flex alignItems="center">
-              <Icon iconName="name" />
+              <IconBasic.Name />
               <Text variant="span">{config.userName}</Text>
             </Box>
             <Box flex alignItems="center">
-              <Icon iconName="location" />
+              <IconBasic.Location />
               <Text variant="span">{config.userLocation}</Text>
             </Box>
           </Box>
@@ -97,8 +83,7 @@ export const ContactSection: React.SFC = () => (
             <SocialIcon
               key={i}
               caption={item.caption}
-              iconName={item.iconName as SocialIconProps['iconName']}
-              variant="round"
+              iconName={item.iconName}
               url={item.url}
             />
           ))}

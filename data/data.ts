@@ -1,7 +1,3 @@
-import illustrations from './img/illustrations/index'
-import logos from './img/logos/index'
-import config from './SiteConfig'
-
 const data = {
   hero: {
     title: 'I’m Jakub Wadas',
@@ -18,19 +14,19 @@ const data = {
     annotation: 'Skill Spectrum',
     serviceItems: [
       {
-        svg: illustrations.design,
+        svgName: 'Design',
         title: `Design`,
         description: 'Lorem pixum dolor amet',
         list: ['User Interfaces', 'Branding', 'Print'],
       },
       {
-        svg: illustrations.development,
+        svgName: 'Development',
         title: `Development`,
         description: 'Lorem pixum dolor amet',
         list: ['Static Websites', 'Web Apps', 'Design Systems'],
       },
       {
-        svg: illustrations.realization,
+        svgName: 'Realization',
         title: `Realization`,
         description: 'Lorem pixum dolor amet',
         list: ['Project Management', 'Product & UX', 'Tech Recruitment'],
@@ -39,7 +35,96 @@ const data = {
   },
   tech: {
     annotation: 'Prefered Stack',
-    techItems: logos,
+    techItems: {
+      design: [
+        {
+          svgName: 'Figma',
+          title: 'Figma',
+          caption: 'Lorem pixum dolor amet',
+          url: 'https://www.figma.com',
+        },
+        {
+          svgName: 'CreativeCloud',
+          title: 'Adobe CC',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          svgName: 'Photoshop',
+          title: 'Photoshop',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          svgName: 'Illustrator',
+          title: 'Illustrator',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          svgName: 'Indesign',
+          title: 'InDesign',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+      ],
+      developement: [
+        {
+          svgName: 'Javascript',
+          title: 'JavaScript',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          svgName: 'Typescript',
+          title: 'TypeScript',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          svgName: 'ReactJs',
+          title: 'React',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          svgName: 'Gatsby',
+          title: 'Gatsby',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          svgName: 'Graphql',
+          title: 'GraphQL',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          svgName: 'Prisma',
+          title: 'Prisma',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          svgName: 'Emotion',
+          title: 'Emotion',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          svgName: 'Webpack',
+          title: 'Webpack',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          svgName: 'Jest',
+          title: 'Jest',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+      ],
+    },
   },
   process: {
     annotation: 'Process',

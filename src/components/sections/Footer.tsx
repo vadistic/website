@@ -9,7 +9,7 @@ export const FooterSection: React.SFC = () => (
     <Grid.Section background="black">
       <Grid.Container>
         <Grid.Item left={[2]} spanColumns={[10]}>
-          <Logo />
+         {/*  <Logo /> */}
         </Grid.Item>
         <Grid.Item left={[2]} spanColumns={[10]}>
           <Box mt={5}>

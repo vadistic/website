@@ -16,31 +16,31 @@ module.exports = {
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   userLinks: [
     {
-      iconName: 'mail',
+      iconName: 'Mail',
       label: 'Mail',
       caption: 'jakub.wadas@outlook.com',
       url: 'mailto:jakub.wadas@outlook.com',
     },
     {
-      iconName: 'skype',
+      iconName: 'Skype',
       label: 'Skype',
       caption: 'check',
       url: 'skype:jakub.wadas',
     },
     {
-      iconName: 'linkedin',
+      iconName: 'Linkedin',
       label: 'LinkedIn',
       caption: 'jakubwadas',
       url: 'https://www.linkedin.com/in/jakubwadas',
     },
     {
-      iconName: 'behance',
+      iconName: 'Behance',
       label: 'Behance',
       caption: 'vadistic',
       url: 'https://behance.net/vadistic',
     },
     {
-      iconName: 'github',
+      iconName: 'Github',
       label: 'GitHub',
       caption: 'vadistic',
       url: 'https://github.com/vadistic',
