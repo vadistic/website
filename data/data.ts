@@ -40,31 +40,31 @@ const data = {
         {
           svgName: 'Figma',
           title: 'Figma',
-          caption: 'Lorem pixum dolor amet',
+          caption: 'colaborative user interface design tool',
           url: 'https://www.figma.com',
         },
         {
           svgName: 'CreativeCloud',
           title: 'Adobe CC',
-          caption: 'Lorem pixum dolor amet',
+          caption: 'software and services for creatives from Adobe',
           url: '#',
         },
         {
           svgName: 'Photoshop',
           title: 'Photoshop',
-          caption: 'Lorem pixum dolor amet',
+          caption: 'photo, image, and design editing tool',
           url: '#',
         },
         {
           svgName: 'Illustrator',
           title: 'Illustrator',
-          caption: 'Lorem pixum dolor amet',
+          caption: 'vector graphic design software',
           url: '#',
         },
         {
           svgName: 'Indesign',
           title: 'InDesign',
-          caption: 'Lorem pixum dolor amet',
+          caption: 'Desktop publishing software',
           url: '#',
         },
       ],
@@ -108,7 +108,7 @@ const data = {
         {
           svgName: 'Emotion',
           title: 'Emotion',
-          caption: 'Lorem pixum dolor amet',
+          caption: 'performant and flexible CSS-in-JS library',
           url: '#',
         },
         {

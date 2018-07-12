@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { css } from 'react-emotion'
 
-import { Box, Grid, Logo, Mode, Text, Tile, IllustrationSm } from '..'
+import { Box, Grid, IllustrationSm, Logo, Mode, Text, Tile } from '..'
 import { styled } from '../../styles'
 import { Tooltip } from '../Tooltip'
 
@@ -68,16 +68,18 @@ const TechItemBase: React.SFC<TechItemProps> = ({
 }) => {
   const TechLogo = Logo[svgName]
   return (
-    <Tooltip content={caption} className={className}>
-      <a href={url} target="__blank">
-        <figure>
-          <TechLogo title={svgName} />
-          <figcaption>
-            <Text variant="small">{title}</Text>
-          </figcaption>
-        </figure>
-      </a>
-    </Tooltip>
+    <Box w={5}>
+      <Tooltip content={caption} className={className}>
+        <a href={url} target="__blank">
+          <figure>
+            <TechLogo title={svgName} />
+            <figcaption>
+              <Text variant="small">{title}</Text>
+            </figcaption>
+          </figure>
+        </a>
+      </Tooltip>
+    </Box>
   )
 }
 
@@ -125,11 +127,11 @@ export const ServicesSection: React.SFC = () => (
           </Grid.Container>
         </Grid.Item>
         <Grid.Item left={[1, 2]} spanColumns={[12, 10]}>
-          <Box mt={4}>
+          <Box mt={4} width="100%">
             <Text variant="h4">{data.tech.annotation}</Text>
             <Grid.Container
               noMargin
-              columns={[4, 6, 8, 10, 12]}
+              columns={'repeat( auto-fit, minmax(5rem, 1fr) )'}
               justifyItems="center"
             >
               {[

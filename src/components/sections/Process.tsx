@@ -18,8 +18,8 @@ export const ProcessSection: React.SFC<ProcessSectionProps> = ({
         <Grid.Item left={[1, 2]} spanColumns={[12, 10]}>
           <Text variant="annotation">{data.process.annotation}</Text>
         </Grid.Item>
-        <Grid.Item left={[1, 2]} spanColumns={[1, 6]}>
-          <Grid.Container columns={[1, , 2]} noMargin>
+        <Grid.Item left={[1, 2]} spanColumns={[12, 10, 10, 6]}>
+          <Grid.Container columns={[1, 2, 3, 2]} noMargin>
             {data.process.procesItems.map((item, i) => (
               <Box key={i}>
                 <Text variant="h5">
@@ -30,7 +30,7 @@ export const ProcessSection: React.SFC<ProcessSectionProps> = ({
             ))}
           </Grid.Container>
         </Grid.Item>
-        <Grid.Item spanColumns={[4]}>
+        <Grid.Item left={[1, 2, , 8]} spanColumns={[12, 10, , , 4]}>
           <Box width="100%" height="100%">
             <Img fluid={processImage} />
           </Box>

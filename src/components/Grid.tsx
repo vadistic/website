@@ -69,7 +69,6 @@ export const Container = styled.div<GridContainerProps>(
   ({ theme: t }) => css`
     display: grid;
     width: 100%;
-    grid-auto-flow: row;
     min-height: fit-content;
     grid-template-columns: repeat(${t.grid.columns}, 1fr);
     max-width: 1600px;

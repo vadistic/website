@@ -16,7 +16,7 @@ const TooltipBase: React.SFC<TooltipProps> = ({
   children,
 }) => (
   <div className={className}>
-    <aside className="tooltip">
+    <aside className="tooltip" unselectable>
       {typeof content === 'string' ? (
         <Text variant="small">{content}</Text>
       ) : (
