@@ -9,15 +9,17 @@ import {
   background,
   GradientBackground,
   gradientBackground,
-  justifyItems,
+  Height,
+  height,
   JustifyItems,
+  justifyItems,
   justifySelf,
   JustifySelf,
-  minHeight,
   MinHeight,
+  minHeight,
   mq,
-  responsiveStyle,
   ResponsiveStyle,
+  responsiveStyle,
   ResponsiveStyleValue,
   styled,
 } from '../styles/index'
@@ -100,12 +102,8 @@ export const BackgroundContainer = styled.div<GridContainerProps>(
   `,
   ({ theme: t }) =>
     mq({
-      gridTemplateColumns: R.zip(t.grid.margin, t.grid.gap).map(
-        ([m, g]) => `calc(${m} - ${g}) repeat(12, 1fr) calc(${m} - ${g})`
-      ),
-      gridTemplateRows: R.zip(t.grid.spacer, t.grid.gap).map(
-        ([s, g]) => `calc(${s} - ${g}) auto calc(${s} - ${g})`
-      ),
+      gridTemplateColumns: t.grid.margin.map(m => `${m} repeat(12, 1fr) ${m}`),
+      gridTemplateRows: t.grid.spacer.map(s => `${s} auto ${s}`),
     }),
   background,
   gradientBackground,
@@ -200,7 +198,8 @@ export const Item = styled.div<GridItemProps>(
 export interface GridSectionProps
   extends Background,
     GradientBackground,
-    MinHeight {}
+    MinHeight,
+    Height {}
 
 // TODO: add smth like `flatBg` props and use gradient bg as default
 
@@ -217,5 +216,6 @@ export const Section = styled.section<GridSectionProps>(
     }),
   background,
   gradientBackground,
-  minHeight
+  minHeight,
+  height
 )

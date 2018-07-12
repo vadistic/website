@@ -11,6 +11,7 @@ module.exports = {
   googleAnalyticsID: '', // GA tracking ID.
   postDefaultCategoryID: 'Tech', // Default category for posts.
   userName: 'Jakub Wadas', // Username to display in the author segment.
+  userMail: 'jakub.wadas@outlook.com',
   userLocation: 'Tricity, Poland', // User location to display in the author segment.
   userAvatar: 'img/profile-photo.png', // User avatar to display in the author segment.
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
@@ -24,8 +25,8 @@ module.exports = {
     {
       iconName: 'Skype',
       label: 'Skype',
-      caption: 'check',
-      url: 'skype:jakub.wadas',
+      caption: 'vadistic',
+      url: 'skype:vadistic?chat',
     },
     {
       iconName: 'Linkedin',

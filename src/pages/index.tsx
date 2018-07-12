@@ -13,6 +13,13 @@ import {
 
 export const pageQuery = graphql`
   query indexQuery {
+    heroImage: file(relativePath: { eq: "img/hero-photo-alt.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
     aboutImage: file(relativePath: { eq: "img/profile-photo.png" }) {
       childImageSharp {
         fluid(maxWidth: 512) {
@@ -20,7 +27,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    placeholderImage: file(relativePath: { eq: "img/placeholder-photo.png" }) {
+    processImage: file(relativePath: { eq: "img/placeholder-photo.png" }) {
       childImageSharp {
         fluid(maxWidth: 1024) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -32,11 +39,11 @@ export const pageQuery = graphql`
 
 const IndexPage: React.SFC<any> = ({ data }) => (
   <PageLayout>
-    <HeroSection />
+    <HeroSection heroImage={data.heroImage.childImageSharp.fluid}/>
     <AboutSection aboutImage={data.aboutImage.childImageSharp.fluid} />
     <ServicesSection />
     <ProcessSection
-      processImage={data.placeholderImage.childImageSharp.fluid}
+      processImage={data.processImage.childImageSharp.fluid}
     />
     <ContactSection />
     <FooterSection />

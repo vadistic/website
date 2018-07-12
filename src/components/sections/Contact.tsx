@@ -37,8 +37,6 @@ const SocialIcon = styled(SocialIconBase)(
       a {
         margin: 0 ${t.space[1]};
       }
-
-
     `
 )
 
@@ -54,7 +52,12 @@ export const ContactSection: React.SFC = () => (
         <Grid.Item left={[1, 2]} spanColumns={[12, 10, 6]} spanRows={2}>
           <Box>
             <Text variant="h4">
-              Feel free to say<Button>Hello</Button>
+              Feel free to say<a
+                href={`mailto:${config.userMail}?subject="Hello"`}
+                target="__blank"
+              >
+                <Button>Hello</Button>
+              </a>
             </Text>
             <Text variant="p">
               I’m open to new projects and would gladly take part in realisation

@@ -15,6 +15,8 @@ export const Button = styled.button<ButtonProps>(
     padding: ${t.space[1]} ${t.space[3]} ${t.space[0]} ${t.space[3]};
     transition: 0.25s ease;
     border-radius: ${t.borderRadius.base};
+    cursor: pointer;
+
     &:focus {
       outline: 0;
     }
