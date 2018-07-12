@@ -1,15 +1,25 @@
 import * as React from 'react'
+import { css } from 'react-emotion'
 
-import { Box, Grid, Logo, Mode, Text } from '../index'
+import { Box, Brand, Grid, Mode, Text } from '..'
+import { styled } from '../../styles'
 
-// TODO: Add grid gap
+import BrandSvg from '../vectors/brand/LogoHorizontal'
+
+const FooterBrand = styled(BrandSvg)(
+  ({ theme: t }) => css`
+    path {
+      fill: ${t.fontColors.headingInverted};
+    }
+  `
+)
 
 export const FooterSection: React.SFC = () => (
   <Mode mode={{ color: 'dark' }}>
     <Grid.Section background="black">
       <Grid.Container>
         <Grid.Item left={[2]} spanColumns={[10]}>
-         {/*  <Logo /> */}
+          <FooterBrand />
         </Grid.Item>
         <Grid.Item left={[2]} spanColumns={[10]}>
           <Box mt={5}>

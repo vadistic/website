@@ -130,8 +130,36 @@ const data = {
     annotation: 'Process',
     procesItems: [
       {
-        title: '',
-        description: '',
+        title: 'Research',
+        description: 'Lorem pixum dolor amet',
+      },
+      {
+        title: 'Research',
+        description: 'Lorem pixum dolor amet',
+      },
+      {
+        title: 'Research',
+        description: 'Lorem pixum dolor amet',
+      },
+      {
+        title: 'Research',
+        description: 'Lorem pixum dolor amet',
+      },
+      {
+        title: 'Research',
+        description: 'Lorem pixum dolor amet',
+      },
+      {
+        title: 'Research',
+        description: 'Lorem pixum dolor amet',
+      },
+      {
+        title: 'Research',
+        description: 'Lorem pixum dolor amet',
+      },
+      {
+        title: 'Research',
+        description: 'Lorem pixum dolor amet',
       },
     ],
   },

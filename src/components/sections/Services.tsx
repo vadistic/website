@@ -27,20 +27,20 @@ const HoverableTile = styled(Tile)(
 )
 
 interface ServiceItemProps {
-  svg: React.SFC
+  svgName: string
   title: string
   description: string
   list: string[]
 }
 
 const ServiceItem: React.SFC<ServiceItemProps> = ({
-  svg,
+  svgName,
   title,
   description,
   list,
 }) => (
   <Tile>
-    {svg}
+    {svgName}
     <Text variant="h4">{title}</Text>
     <Text variant="p">{description}</Text>
     <Text variant="h5">
@@ -66,10 +66,10 @@ const TechItemBase: React.SFC<TechItemProps> = ({
 }) => {
   const TechLogo = Logo[svgName]
   return (
-    <Tooltip content={caption} className={className} >
+    <Tooltip content={caption} className={className}>
       <a href={url} target="__blank">
         <figure>
-          <TechLogo transform="scale(0.5)" viewBox="0 0 64 64" />
+          <TechLogo title={svgName} />
           <figcaption>
             <Text variant="small">{title}</Text>
           </figcaption>
@@ -84,15 +84,16 @@ const TechItem = styled(TechItemBase)(
     css`
       figure {
         text-align: center;
-        line-height: 0;
         margin: 0;
       }
 
       svg {
         filter: grayscale(100%);
         transition: ${t.tranitions.normal};
+      }
 
-        &:hover {
+      &:hover {
+        svg {
           filter: none;
         }
       }
@@ -113,7 +114,7 @@ export const ServicesSection: React.SFC = () => (
             {data.services.serviceItems.map((item, i) => (
               <ServiceItem
                 key={i}
-                svg={item.svg}
+                svgName={item.svgName}
                 title={item.title}
                 description={item.description}
                 list={item.list}

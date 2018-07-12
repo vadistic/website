@@ -8,7 +8,7 @@ import data from '../../../data/data'
 import { styled } from '../../styles/index'
 
 export interface AboutSectionProps {
-  profileImage: GatsbyImageProps
+  aboutImage: GatsbyImageProps
 }
 
 const ImgBox = styled(Box)(
@@ -20,7 +20,7 @@ const ImgBox = styled(Box)(
 )
 
 export const AboutSection: React.SFC<AboutSectionProps> = ({
-  profileImage,
+  aboutImage,
 }) => (
   <Mode mode={{ color: 'light' }}>
     <Grid.Section background="nearWhite">
@@ -28,7 +28,7 @@ export const AboutSection: React.SFC<AboutSectionProps> = ({
         <Grid.Item left={[3]} spanColumns={[4]}>
           <Box w="100%" flex alignItems="center">
             <ImgBox width={6}>
-              <Img fluid={profileImage} />
+              <Img fluid={aboutImage} />
             </ImgBox>
             <Box ml={3}>
               <Text variant="h4" noMargin>

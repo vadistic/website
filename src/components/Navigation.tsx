@@ -66,26 +66,8 @@ export const NavLinks = styled(NavLinksBase)(
 
 FixedNav.displayName = 'FixedNav'
 
-export const Brand: React.SFC<NavProps> = ({ className }) => (
-  <Link to="/" className={className}>
-    {/* <Logo /> */}
-  </Link>
-)
-
-export const FixedBrand = styled(Brand)(
-  ({ theme: t }) => css`
-    position: fixed;
-    bottom: ${t.space[0]};
-    transform: rotate(-90deg);
-    transform-origin: 0 0;
-    mix-blend-mode: difference;
-    margin: 0 ${t.space[2]};
-  `
-)
-
 const TopNavBase: React.SFC<NavProps> = ({ className }) => (
   <nav className={className}>
-    <Brand />
     <NavLinks />
   </nav>
 )
