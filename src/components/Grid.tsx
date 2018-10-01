@@ -1,4 +1,3 @@
-import * as R from 'ramda'
 import { css } from 'react-emotion'
 import {
   AlignItems,

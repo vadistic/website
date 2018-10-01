@@ -2,7 +2,7 @@ import * as React from 'react'
 import { css } from 'react-emotion'
 
 import { Text } from '.'
-import { styled } from '../styles'
+import { media, mq, styled } from '../styles'
 
 export interface TooltipProps {
   className?: string
@@ -16,7 +16,7 @@ const TooltipBase: React.SFC<TooltipProps> = ({
   children,
 }) => (
   <div className={className}>
-    <aside className="tooltip" unselectable>
+    <aside className="tooltip">
       {typeof content === 'string' ? (
         <Text variant="small">{content}</Text>
       ) : (
@@ -66,8 +66,19 @@ export const Tooltip = styled(TooltipBase)<TooltipProps>(
 
     :hover {
       .tooltip {
+        /* hidden on sm sizes because hardly fits */
         visibility: visible;
         opacity: 1;
+      }
+    }
+
+    /* hidden on sm sizes because hardly fits */
+    @media (max-width: ${t.breakpoints.sm}) {
+      :hover {
+        .tooltip {
+          visibility: hidden;
+          opacity: 1;
+        }
       }
     }
   `

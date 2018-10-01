@@ -17,7 +17,7 @@ export const verticalMargin = (top: string | 0, bottom?: string | 0) =>
 
 export type BasicCSSValues = number | string | undefined
 
-/** type that also accept array of values */
+/** type for arrayable prop values */
 export type Arrayable<T> = T | T[]
 
 /** make val an array if not array */
@@ -38,5 +38,6 @@ export const toUnit = (unit: 'px' | 'em' | 'rem') => (val: number | string) =>
 export const getProp = (prop: string | number | symbol) => (obj: object) =>
   obj.hasOwnProperty(prop) ? obj[prop] : undefined
 
-export const themeGet = (key: string, theme: {}) => (val: any) =>
+/** get value from theme under specified key or return value */
+export const getThemeVal = (key: string, theme: {}) => (val: any) =>
   (theme[key] && theme[key][val]) || val

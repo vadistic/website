@@ -38,7 +38,6 @@ declare module 'facepaint' {
     [selector: string]: NestedObjStyles | ArrayableCSSProperties
   }
 
-  // TODO: How the hell this union allows to mix selectors & prop in one style object?
   type ObjStyles = ArrayableCSSProperties | NestedObjStyles
 
   export type Mq = (...objStyles: Array<ObjStyles>) => string

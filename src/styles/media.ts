@@ -15,7 +15,7 @@ export type CreateMedia = (
 
 const mediaTemplate = (bp: string, val: string) => `
   @media (min-width: ${bp}) {
-    ${val};
+    ${val}
   }
 `
 
@@ -25,7 +25,7 @@ export const createMedia: CreateMedia = mqMap =>
     // use em in breakpoints to work properly cross-browser and support users
     // changing their browsers font-size: https://zellwk.com/blog/media-query-units/
     acc[label] = (...args: any[]) => css`
-      ${mediaTemplate(toUnit('em')(mqMap[label]), css(...args))};
+      ${mediaTemplate(mqMap[label], css(...args))};
     `
     return acc
   }, {})

@@ -2,7 +2,7 @@ import * as CSS from 'csstype'
 
 import { createMq } from './media'
 import { Theme } from './theme'
-import { arr, Arrayable, getProp, themeGet, toUnit } from './utils'
+import { arr, Arrayable, getProp, getThemeVal, toUnit } from './utils'
 
 // Types for fake overload of cssProperty
 interface DefinedCSSProperty {
@@ -56,7 +56,7 @@ export const responsiveStyle = ({
   const propVal = getProp(prop)(p) || (alias && getProp(alias)(p))
   if (propVal) {
     const val = arr(propVal)
-      .map(key && p.theme ? themeGet(key, p.theme) : n => n)
+      .map(key && p.theme ? getThemeVal(key, p.theme) : n => n)
       .map(getter ? getter : n => n)
       .map(addUnit ? toUnit(addUnit) : n => n)
     return createMq((p.theme && p.theme.breakpoints) || defaultBreakpoints)({
