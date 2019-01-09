@@ -11,12 +11,19 @@
     "frontend"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tylergreulich/gatsby-typescript-mdx-prismjs-starter"
+  },
   "scripts": {
     "dev": "gatsby develop",
     "build": "gatsby build",
     "format": "prettier --write './src/*/**.{js,ts,tsx}'",
     "lint": "tslint src/*/**.{ts,tsx}",
     "lint:fix": "tslint --fix src/*/**.{ts,tsx}",
+    "schema": "yarn apollo schema:download --endpoint='http://localhost:8000/___graphql' src/types/schema.json",
+    "codegen": "yarn apollo codegen:generate --target='typescript' --tagName='graphql' --queries='./src/**/*.tsx' --schema='./src/types/schema.json' generated",
+    "codegen:clean": "rm -rf src/**/generated",
     "test": "jest"
   },
   "dependencies": {
@@ -51,7 +58,7 @@
     "@types/jest": "^23.3.12",
     "@types/react-helmet": "^5.0.8",
     "@types/styled-components": "^4.1.5",
-    "apollo": "^2.1.9",
+    "apollo": "1.9.2",
     "jest": "^23.6.0",
     "jest-dom": "^3.0.0",
     "loader-utils": "^1.2.3",
@@ -62,9 +69,8 @@
     "tslint-react": "^3.6.0",
     "typescript": "^3.2.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tylergreulich/gatsby-typescript-mdx-prismjs-starter"
+  "resolutions": {
+    "graphql": "0.13.2"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./jest.setup.js",

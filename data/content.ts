@@ -1,8 +1,7 @@
 const data = {
   hero: {
     title: 'I’m Jakub Wadas',
-    heading:
-      'Front-end developer & designer with passion for bleeding-edge digital products',
+    heading: 'Front-end developer & designer with passion for bleeding-edge digital products',
   },
   about: {
     name: `Jakub Wadas`,
@@ -164,11 +163,10 @@ const data = {
     ],
   },
   footer: {
-    copyright: `Copyright © 2018 Jakub Wadas`
+    copyright: `Copyright © 2018 Jakub Wadas`,
   },
   lorem: {
-    title: `Sint pitchfork ramps nostrud normcore`,
-    headline: `Sint pitchfork ramps nostrud normcore snackwave ut, meggings selfies`,
+    heading: `Sint pitchfork ramps nostrud normcore snackwave ut, meggings selfies`,
     paragraph: `Ex activated charcoal banjo selfies, deserunt four loko vice narwhal polaroid. Aliquip listicle you probably haven't heard of them everyday carry, hoodie sint 3 wolf moon magna austin deserunt dolore labore. Four dollar toast before they sold out quis, crucifix drinking vinegar kogi green juice ullamco asymmetrical. Id mixtape taxidermy flannel pariatur, nulla biodiesel shabby chic ugh craft beer street art et helvetica listicle aliquip.`,
   },
 }

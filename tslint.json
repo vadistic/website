@@ -5,6 +5,7 @@
   "rules": {
     "arrow-parens": false,
     "interface-name": false,
+    "no-empty-interface": false,
     "member-access": false,
     "no-console": false,
     "no-submodule-imports": false,
@@ -14,6 +15,7 @@
     "quotemark": [true, "single", "jsx-double"],
     "trailing-comma": true,
     "jsx-no-lambda": false,
+    "jsx-boolean-value": [true, "never"],
     "variable-name": [
       true,
       "ban-keywords",

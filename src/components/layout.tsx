@@ -38,9 +38,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => (
             <html lang="en" />
           </Helmet>
           <Grommet theme={theme}>
-            <Heading>Heading</Heading>
-            <Box background={{ color: 'brand', dark: true }}>Some box?</Box>
-            <div>{children}</div>
+            {children}
           </Grommet>
         </>
       )
