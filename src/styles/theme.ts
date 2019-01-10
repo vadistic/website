@@ -62,7 +62,9 @@ Object.keys(statusColors).forEach(color => {
 })
 
 export const theme = {
-  globals: { colors },
+  globals: {
+    colors,
+  },
 }
 
 export type Theme = typeof theme
