@@ -1,4 +1,8 @@
-const data = {
+import designSvg from './svg/design-alt.svg'
+import developmentSvg from './svg/development-alt.svg'
+import realisationSvg from './svg/realisation-alt.svg'
+
+export const content = {
   hero: {
     title: 'I’m Jakub Wadas',
     heading: 'Front-end developer & designer with passion for bleeding-edge digital products',
@@ -13,20 +17,20 @@ const data = {
     annotation: 'Skill Spectrum',
     serviceItems: [
       {
-        svgName: 'Design',
+        svg: designSvg,
         title: `Design`,
         description: 'Lorem pixum dolor amet',
         list: ['User Interfaces', 'Branding', 'Print'],
       },
       {
-        svgName: 'Development',
+        svg: developmentSvg,
         title: `Development`,
         description: 'Lorem pixum dolor amet',
         list: ['Static Websites', 'Web Apps', 'Design Systems'],
       },
       {
-        svgName: 'Realization',
-        title: `Realization`,
+        svg: realisationSvg,
+        title: `Realisation`,
         description: 'Lorem pixum dolor amet',
         list: ['Project Management', 'Product & UX', 'Tech Recruitment'],
       },
@@ -170,5 +174,3 @@ const data = {
     paragraph: `Ex activated charcoal banjo selfies, deserunt four loko vice narwhal polaroid. Aliquip listicle you probably haven't heard of them everyday carry, hoodie sint 3 wolf moon magna austin deserunt dolore labore. Four dollar toast before they sold out quis, crucifix drinking vinegar kogi green juice ullamco asymmetrical. Id mixtape taxidermy flannel pariatur, nulla biodiesel shabby chic ugh craft beer street art et helvetica listicle aliquip.`,
   },
 }
-
-export default data

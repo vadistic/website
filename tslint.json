@@ -4,7 +4,7 @@
   "jsRules": {},
   "rules": {
     "arrow-parens": false,
-    "interface-name": false,
+    "interface-name": [true, "always-prefix"],
     "no-empty-interface": false,
     "member-access": false,
     "no-console": false,

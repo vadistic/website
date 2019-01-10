@@ -1,7 +1,7 @@
-import { base, grommet } from 'grommet/themes'
+// @ts-ignore
 import { generate } from 'grommet/themes/base'
-
-import { deepFreeze, deepMerge } from 'grommet/utils'
+// @ts-ignore
+import { deepMerge } from 'grommet/utils'
 
 import { rgba } from 'polished'
 
@@ -75,6 +75,7 @@ export const theme = deepMerge(generate(baseSize), {
     colors,
     font: {
       family: 'Rubik, sans-serif',
+      weight: 300,
     },
   },
 })

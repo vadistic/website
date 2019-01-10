@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "paths": { "*": ["types/*"] },
     "allowJs": true,
     "target": "es6",
     "module": "commonjs",
@@ -24,5 +25,5 @@
     "plugins": []
   },
   "exclude": ["node_modules", "dist", "public", ".cache"],
-  "include": ["./src/**/*.tsx", "./src/**/*.ts"]
+  "include": ["src", "types", "data"]
 }
