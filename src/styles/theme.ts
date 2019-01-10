@@ -1,3 +1,8 @@
+import { base, grommet } from 'grommet/themes'
+import { generate } from 'grommet/themes/base'
+
+import { deepFreeze, deepMerge } from 'grommet/utils'
+
 import { rgba } from 'polished'
 
 export interface StringIndexedObj {
@@ -30,13 +35,15 @@ const colors: StringIndexedObj = {
     light: rgba(0, 0, 0, 0.33),
   },
   brand: brandColor,
+  background: '#FFFFFF',
+  backgroundAlt: '#AAAAAA',
   control: {
     dark: 'accent-1',
     light: 'brand',
   },
   focus: focusColor,
   placeholder: '#AAAAAA',
-  selected: 'brand',
+  selected: brandColor,
   text: {
     dark: '#f8f8f8',
     light: '#444444',
@@ -61,11 +68,16 @@ Object.keys(statusColors).forEach(color => {
   colors[`status-${color}`] = statusColors[color]
 })
 
-export const theme = {
-  globals: {
+const baseSize = 24
+
+export const theme = deepMerge(generate(baseSize), {
+  global: {
     colors,
+    font: {
+      family: 'Rubik, sans-serif',
+    },
   },
-}
+})
 
 export type Theme = typeof theme
 

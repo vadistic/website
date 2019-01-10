@@ -1,8 +1,6 @@
 import { Box, Grid, Paragraph, Text } from 'grommet'
 import * as React from 'react'
 
-import Img from 'gatsby-image'
-
 import { graphql, StaticQuery } from 'gatsby'
 import content from '../../../data/content'
 import { DeepNonNullable } from '../../utils'
@@ -30,20 +28,20 @@ export const ProfileAvatar = () => (
 )
 
 export const AboutSection = () => (
-  <Grid gap="medium" columns={['1/2', '1/2']} alignContent="center">
+  <Grid as="section" gap="medium" columns={['1/2', '1/2']} alignContent="center">
     <Box direction="row">
-      <Box>
-        <ProfileAvatar />
-      </Box>
+      <ProfileAvatar />
       <Box alignSelf="center" margin={{ left: 'medium' }}>
-        <Text size="xlarge">{content.about.name}</Text>
+        <Text size="xlarge" color="text">
+          {content.about.name}
+        </Text>
         <Text>{content.about.title}</Text>
       </Box>
     </Box>
     <Box alignSelf="center">
-      <Paragraph color="text">
-        <blockquote>{content.about.description}</blockquote>
-      </Paragraph>
+      <blockquote>
+        <Paragraph>{content.about.description}</Paragraph>
+      </blockquote>
     </Box>
   </Grid>
 )
