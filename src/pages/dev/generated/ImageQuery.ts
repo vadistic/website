@@ -6,14 +6,11 @@
 // ====================================================
 
 export interface ImageQuery_image_childImageSharp_fluid {
+  base64: string | null;
   aspectRatio: number | null;
   src: string | null;
   srcSet: string | null;
   sizes: string | null;
-  base64: string | null;
-  tracedSVG: string | null;
-  srcWebp: string | null;
-  srcSetWebp: string | null;
 }
 
 export interface ImageQuery_image_childImageSharp {

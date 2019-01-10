@@ -6,19 +6,6 @@ import Img from 'gatsby-image'
 
 import Layout from '../../components/layout'
 
-export const imageFragments = graphql`
-  fragment FluidImage on ImageSharpFluid {
-    aspectRatio
-    src
-    srcSet
-    sizes
-    base64
-    tracedSVG
-    srcWebp
-    srcSetWebp
-  }
-`
-
 const Image = () => (
   <StaticQuery
     query={graphql`
