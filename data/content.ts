@@ -1,6 +1,22 @@
-import designSvg from './svg/design-alt.svg'
-import developmentSvg from './svg/development-alt.svg'
-import realisationSvg from './svg/realisation-alt.svg'
+import { ReactComponent as DesignSvg } from '../assets/illustrations/design-alt.svg'
+import { ReactComponent as DevelopmentSvg } from '../assets/illustrations/development-alt.svg'
+import { ReactComponent as RealisationSvg } from '../assets/illustrations/realisation-alt.svg'
+
+import { ReactComponent as CreativeCloudLogo } from '../assets/logos/creative-cloud.svg'
+import { ReactComponent as EmotionLogo } from '../assets/logos/emotion.svg'
+import { ReactComponent as FigmaLogo } from '../assets/logos/figma.svg'
+import { ReactComponent as GatsbyLogo } from '../assets/logos/gatsby.svg'
+import { ReactComponent as GraphqlLogo } from '../assets/logos/graphql.svg'
+import { ReactComponent as IllustratorLogo } from '../assets/logos/illustrator.svg'
+import { ReactComponent as IndesignLogo } from '../assets/logos/indesign.svg'
+import { ReactComponent as JavascriptLogo } from '../assets/logos/javascript.svg'
+import { ReactComponent as JestLogo } from '../assets/logos/jest.svg'
+import { ReactComponent as NodeLogo } from '../assets/logos/node.svg'
+import { ReactComponent as PhotoshopLogo } from '../assets/logos/photoshop.svg'
+import { ReactComponent as PrismaLogo } from '../assets/logos/prisma.svg'
+import { ReactComponent as ReactLogo } from '../assets/logos/react-js.svg'
+import { ReactComponent as TypescriptLogo } from '../assets/logos/typescript.svg'
+import { ReactComponent as WebpackLogo } from '../assets/logos/webpack.svg'
 
 export const content = {
   hero: {
@@ -15,57 +31,74 @@ export const content = {
   },
   services: {
     annotation: 'Skill Spectrum',
-    serviceItems: [
+    items: [
       {
-        svg: designSvg,
+        Svg: DesignSvg,
         title: `Design`,
         description: 'Lorem pixum dolor amet',
-        list: ['User Interfaces', 'Branding', 'Print'],
+        details: [
+          { label: 'User Interfaces', value: 60 },
+          { label: 'Branding', value: 80 },
+          { label: 'Print', value: 40 },
+        ],
       },
       {
-        svg: developmentSvg,
+        Svg: DevelopmentSvg,
         title: `Development`,
         description: 'Lorem pixum dolor amet',
-        list: ['Static Websites', 'Web Apps', 'Design Systems'],
+        details: [
+          { label: 'Static Websites', value: 80 },
+          { label: 'Web Apps', value: 80 },
+          { label: 'Design Systems', value: 60 },
+        ],
       },
       {
-        svg: realisationSvg,
+        Svg: RealisationSvg,
         title: `Realisation`,
         description: 'Lorem pixum dolor amet',
-        list: ['Project Management', 'Product & UX', 'Tech Recruitment'],
+        details: [
+          { label: 'Project Management', value: 60 },
+          { label: 'Product & UX', value: 40 },
+          { label: 'Tech Recruitment', value: 80 },
+        ],
       },
     ],
   },
   tech: {
     annotation: 'Prefered Stack',
+    after: `Rather than only sticking to few favourites -\
+      It's better to grab just the right tool for the job. \
+      Beeing already familiar to countless of cool \
+      libraries, tools & services\
+      I'm flexible with adopting yet one another.`,
     techItems: {
       design: [
         {
-          svgName: 'Figma',
+          Logo: FigmaLogo,
           title: 'Figma',
           caption: 'colaborative user interface design tool',
           url: 'https://www.figma.com',
         },
         {
-          svgName: 'CreativeCloud',
+          Logo: CreativeCloudLogo,
           title: 'Adobe CC',
           caption: 'software and services for creatives from Adobe',
           url: '#',
         },
         {
-          svgName: 'Photoshop',
+          Logo: PhotoshopLogo,
           title: 'Photoshop',
           caption: 'photo, image, and design editing tool',
           url: '#',
         },
         {
-          svgName: 'Illustrator',
+          Logo: IllustratorLogo,
           title: 'Illustrator',
           caption: 'vector graphic design software',
           url: '#',
         },
         {
-          svgName: 'Indesign',
+          Logo: IndesignLogo,
           title: 'InDesign',
           caption: 'Desktop publishing software',
           url: '#',
@@ -73,55 +106,61 @@ export const content = {
       ],
       developement: [
         {
-          svgName: 'Javascript',
+          Logo: JavascriptLogo,
           title: 'JavaScript',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
         {
-          svgName: 'Typescript',
+          Logo: TypescriptLogo,
           title: 'TypeScript',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
         {
-          svgName: 'ReactJs',
-          title: 'React',
-          caption: 'Lorem pixum dolor amet',
-          url: '#',
-        },
-        {
-          svgName: 'Gatsby',
-          title: 'Gatsby',
-          caption: 'Lorem pixum dolor amet',
-          url: '#',
-        },
-        {
-          svgName: 'Graphql',
+          Logo: GraphqlLogo,
           title: 'GraphQL',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
         {
-          svgName: 'Prisma',
+          Logo: NodeLogo,
+          title: 'NodeJS',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          Logo: ReactLogo,
+          title: 'React',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          Logo: GatsbyLogo,
+          title: 'Gatsby',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          Logo: PrismaLogo,
           title: 'Prisma',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
         {
-          svgName: 'Emotion',
+          Logo: EmotionLogo,
           title: 'Emotion',
           caption: 'performant and flexible CSS-in-JS library',
           url: '#',
         },
         {
-          svgName: 'Webpack',
+          Logo: WebpackLogo,
           title: 'Webpack',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
         {
-          svgName: 'Jest',
+          Logo: JestLogo,
           title: 'Jest',
           caption: 'Lorem pixum dolor amet',
           url: '#',

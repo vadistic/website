@@ -1,13 +1,8 @@
 // @ts-ignore
-import { generate } from 'grommet/themes/base'
-// @ts-ignore
-import { deepMerge } from 'grommet/utils'
-
 import { rgba } from 'polished'
-
-export interface StringIndexedObj {
-  [key: string]: string | StringIndexedObj
-}
+import { deepMerge } from '../utils'
+import { StringIndexed } from '../utils'
+import { generate } from './generate'
 
 // https://github.com/grommet/grommet/blob/master/src/js/themes/base.js
 
@@ -15,7 +10,7 @@ const brandColor = '#6534FF'
 const accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58']
 const neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D']
 
-const statusColors: StringIndexedObj = {
+const statusColors = {
   critical: '#FF4040',
   error: '#FF4040',
   warning: '#FFAA15',
@@ -23,11 +18,12 @@ const statusColors: StringIndexedObj = {
   unknown: '#CCCCCC',
   disabled: '#CCCCCC',
 }
+
 const darkColors = ['#333333', '#555555', '#777777', '#999999', '#999999', '#999999']
 const lightColors = ['#F8F8F8', '#F2F2F2', '#EDEDED', '#DADADA', '#DADADA', '#DADADA']
 const focusColor = accentColors[0]
 
-const colors: StringIndexedObj = {
+const colors = {
   active: rgba(221, 221, 221, 0.5),
   black: '#000000',
   border: {
@@ -55,17 +51,20 @@ const colors: StringIndexedObj = {
   white: '#FFFFFF',
 }
 
-const colorArray = (array: string[], prefix: string) =>
+const colorArray = (array: string[], prefix: string) => {
   array.forEach((color, index) => {
-    colors[`${prefix}-${index + 1}`] = color
+    ;(colors as StringIndexed<typeof colors>)[`${prefix}-${index + 1}`] = color
   })
+}
 
 colorArray(accentColors, 'accent')
 colorArray(darkColors, 'dark')
 colorArray(lightColors, 'light')
 colorArray(neutralColors, 'neutral')
 Object.keys(statusColors).forEach(color => {
-  colors[`status-${color}`] = statusColors[color]
+  ;(colors as StringIndexed<typeof colors>)[`status-${color}`] = (statusColors as StringIndexed<
+    typeof statusColors
+  >)[color]
 })
 
 const baseSize = 24
@@ -82,6 +81,6 @@ export const theme = deepMerge(generate(baseSize), {
 
 export type Theme = typeof theme
 
-export interface ThemeProps {
+export interface IThemeProps {
   theme: Theme
 }

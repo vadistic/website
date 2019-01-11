@@ -14,6 +14,17 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-offline',
     {
+      resolve: 'gatsby-plugin-svgr',
+      options: {
+        prettier: true, // use prettier to format JS code output (default)
+        svgo: true, // use svgo to optimize SVGs (default)
+        svgoConfig: {
+          removeViewBox: false, // remove viewBox even when doing so is possible (default)
+          cleanupIDs: true, // remove unused IDs and minify remaining IDs (default)
+        },
+      },
+    },
+    {
       resolve: `gatsby-mdx`,
       options: {
         decks: [],
@@ -47,18 +58,9 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/data/images`,
+        path: `${__dirname}/assets`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: '/data/svg/',
-        },
-      },
-    },
-
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {

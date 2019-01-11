@@ -5,7 +5,7 @@
 // GraphQL query operation: ImageQuery
 // ====================================================
 
-export interface ImageQuery_image_childImageSharp_fluid {
+export interface ImageQuery_file_childImageSharp_fluid {
   base64: string | null;
   aspectRatio: number | null;
   src: string | null;
@@ -13,17 +13,17 @@ export interface ImageQuery_image_childImageSharp_fluid {
   sizes: string | null;
 }
 
-export interface ImageQuery_image_childImageSharp {
-  fluid: ImageQuery_image_childImageSharp_fluid | null;
+export interface ImageQuery_file_childImageSharp {
+  fluid: ImageQuery_file_childImageSharp_fluid | null;
 }
 
-export interface ImageQuery_image {
+export interface ImageQuery_file {
   /**
    * The child of this node of type imageSharp
    */
-  childImageSharp: ImageQuery_image_childImageSharp | null;
+  childImageSharp: ImageQuery_file_childImageSharp | null;
 }
 
 export interface ImageQuery {
-  image: ImageQuery_image | null;
+  file: ImageQuery_file | null;
 }

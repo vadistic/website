@@ -13,9 +13,9 @@ export const ProfileAvatar = () => (
   <StaticQuery
     query={graphql`
       query ProfileImageQuery {
-        image: file(relativePath: { eq: "profile.png" }) {
+        file(relativePath: { eq: "images/profile.png" }) {
           childImageSharp {
-            fixed(width: 192, height: 192, toFormat: JPG) {
+            fixed(width: 192, height: 192) {
               ...FixedImage
             }
           }
@@ -24,7 +24,7 @@ export const ProfileAvatar = () => (
     `}
   >
     {(data: DeepNonNullable<ProfileImageQuery>) => (
-      <Avatar fixed={data.image.childImageSharp.fixed} />
+      <Avatar fixed={data.file.childImageSharp.fixed} />
     )}
   </StaticQuery>
 )

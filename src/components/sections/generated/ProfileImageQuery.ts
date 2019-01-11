@@ -5,7 +5,7 @@
 // GraphQL query operation: ProfileImageQuery
 // ====================================================
 
-export interface ProfileImageQuery_image_childImageSharp_fixed {
+export interface ProfileImageQuery_file_childImageSharp_fixed {
   base64: string | null;
   width: number | null;
   height: number | null;
@@ -13,17 +13,17 @@ export interface ProfileImageQuery_image_childImageSharp_fixed {
   srcSet: string | null;
 }
 
-export interface ProfileImageQuery_image_childImageSharp {
-  fixed: ProfileImageQuery_image_childImageSharp_fixed | null;
+export interface ProfileImageQuery_file_childImageSharp {
+  fixed: ProfileImageQuery_file_childImageSharp_fixed | null;
 }
 
-export interface ProfileImageQuery_image {
+export interface ProfileImageQuery_file {
   /**
    * The child of this node of type imageSharp
    */
-  childImageSharp: ProfileImageQuery_image_childImageSharp | null;
+  childImageSharp: ProfileImageQuery_file_childImageSharp | null;
 }
 
 export interface ProfileImageQuery {
-  image: ProfileImageQuery_image | null;
+  file: ProfileImageQuery_file | null;
 }
