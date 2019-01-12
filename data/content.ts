@@ -3,20 +3,25 @@ import { ReactComponent as DevelopmentSvg } from '../assets/illustrations/develo
 import { ReactComponent as RealisationSvg } from '../assets/illustrations/realisation-alt.svg'
 
 import { ReactComponent as CreativeCloudLogo } from '../assets/logos/creative-cloud.svg'
-import { ReactComponent as EmotionLogo } from '../assets/logos/emotion.svg'
 import { ReactComponent as FigmaLogo } from '../assets/logos/figma.svg'
-import { ReactComponent as GatsbyLogo } from '../assets/logos/gatsby.svg'
-import { ReactComponent as GraphqlLogo } from '../assets/logos/graphql.svg'
 import { ReactComponent as IllustratorLogo } from '../assets/logos/illustrator.svg'
 import { ReactComponent as IndesignLogo } from '../assets/logos/indesign.svg'
+import { ReactComponent as PhotoshopLogo } from '../assets/logos/photoshop.svg'
+
+import { ReactComponent as EmotionLogo } from '../assets/logos/emotion.svg'
+import { ReactComponent as GatsbyLogo } from '../assets/logos/gatsby.svg'
+import { ReactComponent as GraphqlLogo } from '../assets/logos/graphql.svg'
 import { ReactComponent as JavascriptLogo } from '../assets/logos/javascript.svg'
 import { ReactComponent as JestLogo } from '../assets/logos/jest.svg'
-import { ReactComponent as NodeLogo } from '../assets/logos/node.svg'
-import { ReactComponent as PhotoshopLogo } from '../assets/logos/photoshop.svg'
-import { ReactComponent as PrismaLogo } from '../assets/logos/prisma.svg'
 import { ReactComponent as ReactLogo } from '../assets/logos/react-js.svg'
 import { ReactComponent as TypescriptLogo } from '../assets/logos/typescript.svg'
 import { ReactComponent as WebpackLogo } from '../assets/logos/webpack.svg'
+
+import { ReactComponent as AwsLogo } from '../assets/logos/aws.svg'
+import { ReactComponent as DockerLogo } from '../assets/logos/docker.svg'
+import { ReactComponent as NetlifyLogo } from '../assets/logos/netlify.svg'
+import { ReactComponent as NodeLogo } from '../assets/logos/node.svg'
+import { ReactComponent as PrismaLogo } from '../assets/logos/prisma.svg'
 
 export const content = {
   hero: {
@@ -74,94 +79,116 @@ export const content = {
     techItems: {
       design: [
         {
-          Logo: FigmaLogo,
+          logo: FigmaLogo,
           title: 'Figma',
           caption: 'colaborative user interface design tool',
           url: 'https://www.figma.com',
         },
         {
-          Logo: CreativeCloudLogo,
+          logo: CreativeCloudLogo,
           title: 'Adobe CC',
           caption: 'software and services for creatives from Adobe',
           url: '#',
         },
         {
-          Logo: PhotoshopLogo,
+          logo: PhotoshopLogo,
           title: 'Photoshop',
           caption: 'photo, image, and design editing tool',
           url: '#',
         },
         {
-          Logo: IllustratorLogo,
+          logo: IllustratorLogo,
           title: 'Illustrator',
           caption: 'vector graphic design software',
           url: '#',
         },
         {
-          Logo: IndesignLogo,
+          logo: IndesignLogo,
           title: 'InDesign',
           caption: 'Desktop publishing software',
           url: '#',
         },
       ],
-      developement: [
+      frontend: [
         {
-          Logo: JavascriptLogo,
+          logo: JavascriptLogo,
           title: 'JavaScript',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
         {
-          Logo: TypescriptLogo,
+          logo: TypescriptLogo,
           title: 'TypeScript',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
         {
-          Logo: GraphqlLogo,
+          logo: GraphqlLogo,
           title: 'GraphQL',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
+
         {
-          Logo: NodeLogo,
-          title: 'NodeJS',
-          caption: 'Lorem pixum dolor amet',
-          url: '#',
-        },
-        {
-          Logo: ReactLogo,
+          logo: ReactLogo,
           title: 'React',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
         {
-          Logo: GatsbyLogo,
+          logo: GatsbyLogo,
           title: 'Gatsby',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
+
         {
-          Logo: PrismaLogo,
-          title: 'Prisma',
-          caption: 'Lorem pixum dolor amet',
-          url: '#',
-        },
-        {
-          Logo: EmotionLogo,
+          logo: EmotionLogo,
           title: 'Emotion',
           caption: 'performant and flexible CSS-in-JS library',
           url: '#',
         },
         {
-          Logo: WebpackLogo,
+          logo: WebpackLogo,
           title: 'Webpack',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
         {
-          Logo: JestLogo,
+          logo: JestLogo,
           title: 'Jest',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+      ],
+      backend: [
+        {
+          logo: NodeLogo,
+          title: 'NodeJS',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          logo: PrismaLogo,
+          title: 'Prisma',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          logo: DockerLogo,
+          title: 'Docker',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          logo: AwsLogo,
+          title: 'AWS',
+          caption: 'Lorem pixum dolor amet',
+          url: '#',
+        },
+        {
+          logo: NetlifyLogo,
+          title: 'Netlify',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },

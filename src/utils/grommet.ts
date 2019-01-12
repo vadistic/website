@@ -10,7 +10,12 @@ export type DeepReadonly<T> = {
 }
 export type DeepFreeze = <T>(a: T) => DeepReadonly<T>
 
-export const deepMerge = <A, B>(a: A, b: B) => grommetDeepMerge(a, b) as A & B
+export interface IDeepMerge {
+  <T extends object, S extends object>(target: T, source: S): T & S
+  <T extends object, S extends object[]>(target: T, ...sources: S): T & S[number]
+}
+
+export const deepMerge = grommetDeepMerge as IDeepMerge
 export const deepFreeze = grommetDeepFreeze as DeepFreeze
 
 export type NormalizeColor = (color: string, theme: object, required?: boolean) => string

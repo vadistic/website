@@ -1,6 +1,7 @@
-/*
-https://github.com/grommet/grommet/blob/master/src/js/themes/base.js
-*/
+// https://github.com/grommet/grommet/blob/master/src/js/themes/base.js
+
+import { rgba } from 'polished'
+import { css } from 'styled-components'
 
 import {
   Actions,
@@ -18,32 +19,28 @@ import {
   Volume,
   VolumeLow,
 } from 'grommet-icons'
-// @ts-ignore
-import { base as grommetIconBase } from 'grommet-icons/themes'
-import { rgba } from 'polished'
-import { css } from 'styled-components'
-import { deepMerge, normalizeColor, StringIndexed } from '../utils'
 
-const iconBase = grommetIconBase as {
+import { deepFreeze, deepMerge, normalizeColor } from '../utils'
+
+const iconBase = {
   global: {
     colors: {
-      icon: string
-    }
-  }
+      icon: '#666666',
+    },
+  },
   icon: {
     size: {
-      small: string
-      medium: string
-      large: string
-      xlarge: string
-    }
-  }
+      small: '12px',
+      medium: '24px',
+      large: '48px',
+      xlarge: '96px',
+    },
+  },
 }
 
 const brandColor = '#7D4CDB'
 const accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58']
 const neutralColors = ['#00873D', '#3D138D', '#00739D', '#A2423D']
-
 const statusColors = {
   critical: '#FF4040',
   error: '#FF4040',
@@ -82,21 +79,51 @@ const colors = {
   white: '#FFFFFF',
 }
 
-const colorArray = (array: string[], prefix: string) => {
+const colorArray = (array: string[], prefix: string) =>
   array.forEach((color, index) => {
-    ;(colors as StringIndexed<typeof colors>)[`${prefix}-${index + 1}`] = color
+    // @ts-ignore
+    colors[`${prefix}-${index + 1}`] = color
   })
-}
 
 colorArray(accentColors, 'accent')
 colorArray(darkColors, 'dark')
 colorArray(lightColors, 'light')
 colorArray(neutralColors, 'neutral')
 Object.keys(statusColors).forEach(color => {
-  ;(colors as StringIndexed<typeof colors>)[`status-${color}`] = (statusColors as StringIndexed<
-    typeof statusColors
-  >)[color]
+  // @ts-ignore
+  colors[`status-${color}`] = statusColors[color]
 })
+
+// type to add types from above mutations
+type Colors = typeof colors & {
+  'accent-1': string
+  'accent-2': string
+  'accent-3': string
+  'accent-4': string
+  'neutral-1': string
+  'neutral-2': string
+  'neutral-3': string
+  'neutral-4': string
+  'dark-1': string
+  'dark-2': string
+  'dark-3': string
+  'dark-4': string
+  'dark-5': string
+  'dark-6': string
+  'light-1': string
+  'light-2': string
+  'light-3': string
+  'light-4': string
+  'light-5': string
+  'light-6': string
+  'status-critical': string
+  'status-error': string
+  'status-warning': string
+  'status-ok': string
+  'status-unknown': string
+  'status-disabled': string
+}
+
 export const generate = (baseSpacing = 24, scale = 6) => {
   // 24
   const baseFontSize = baseSpacing * 0.75 // 18
@@ -169,7 +196,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
         tablet: 'medium',
         computer: 'large',
       },
-      colors,
+      colors: colors as Colors,
       control: {
         border: {
           width: '1px',
@@ -778,7 +805,7 @@ export const generate = (baseSpacing = 24, scale = 6) => {
     },
   })
 
-  return result
+  return deepFreeze(result)
 }
 
 export const base = generate(24)
