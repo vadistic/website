@@ -1,22 +1,23 @@
 import { graphql, StaticQuery } from 'gatsby'
-import { Box, Grid, Paragraph, Text } from 'grommet'
 import * as React from 'react'
 
 import { content } from '../../../data/content'
 import { DeepNonNullable } from '../../utils'
-import { Avatar } from '../avatar'
+import { Avatar, IAvatarProps } from '../avatar'
+import { Blockquote } from '../blockquote'
+import { Box, Grid, Text } from '../grommet'
 import { ResponsiveContext } from '../responsive-context'
 import { Section } from '../section'
 import { ProfileImageQuery } from './generated/ProfileImageQuery'
 
-export const ProfileAvatar = () => (
+export const ProfileAvatar: React.SFC<IAvatarProps> = props => (
   <StaticQuery
     query={graphql`
       query ProfileImageQuery {
         file(relativePath: { eq: "images/profile.png" }) {
           childImageSharp {
-            fixed(width: 192, height: 192) {
-              ...FixedImage
+            fluid(maxWidth: 192, maxHeight: 192) {
+              ...FluidImage
             }
           }
         }
@@ -24,7 +25,7 @@ export const ProfileAvatar = () => (
     `}
   >
     {(data: DeepNonNullable<ProfileImageQuery>) => (
-      <Avatar fixed={data.file.childImageSharp.fixed} />
+      <Avatar fluid={data.file.childImageSharp.fluid} {...props} />
     )}
   </StaticQuery>
 )
@@ -34,14 +35,17 @@ export const AboutSection = () => (
     {media => {
       console.log('media', media)
       return (
-        <Section>
+        <Section pad="medium">
           <Grid
             gap="medium"
             columns={media === 'small' ? 'large' : ['1/2', '1/2']}
             alignContent="center"
           >
             <Box direction="row">
-              <ProfileAvatar />
+              <ProfileAvatar
+                width={media === 'small' ? 'xsmall' : 'small'}
+                height={media === 'small' ? 'xsmall' : 'small'}
+              />
               <Box alignSelf="center" margin={{ left: 'medium' }}>
                 <Text size="xlarge" color="text">
                   {content.about.name}
@@ -50,9 +54,7 @@ export const AboutSection = () => (
               </Box>
             </Box>
             <Box alignSelf="center">
-              <blockquote>
-                <Paragraph>{content.about.description}</Paragraph>
-              </blockquote>
+              <Blockquote>{content.about.description}</Blockquote>
             </Box>
           </Grid>
         </Section>

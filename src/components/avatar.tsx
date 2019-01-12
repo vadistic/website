@@ -1,15 +1,15 @@
 import Img from 'gatsby-image'
-import { Box } from 'grommet'
 import * as React from 'react'
 
 import { DeepNonNullable } from '../utils'
-import { FixedImage } from './generated'
+import { FluidImage } from './generated'
+import { Box, BoxProps } from './grommet'
 
-export interface AvatarProps {
-  fixed: DeepNonNullable<FixedImage>
+export interface IAvatarProps extends BoxProps {
+  fluid?: DeepNonNullable<FluidImage>
 }
 
-export const Avatar: React.SFC<AvatarProps> = ({ fixed, ...rest }) => (
+export const Avatar: React.SFC<IAvatarProps> = ({ fluid, ...rest }) => (
   <Box
     height="small"
     width="small"
@@ -19,6 +19,6 @@ export const Avatar: React.SFC<AvatarProps> = ({ fixed, ...rest }) => (
     flex={false}
     {...rest}
   >
-    <Img fixed={fixed} />
+    <Img fluid={fluid} />
   </Box>
 )

@@ -19,8 +19,9 @@ export const theme = deepMerge(generate(baseSize, scale), {
     },
     colors: {
       brand: brandColor,
+      'brand-alt': '#4122A3',
       background: '#FFFFFF',
-      backgroundAlt: '#EEEEEE',
+      'background-alt': '#EEEEEE',
       selected: brandColor,
       text: {
         dark: '#f8f8f8',
