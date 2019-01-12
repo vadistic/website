@@ -1,45 +1,19 @@
-import { Box, Grid, Paragraph, Text } from 'grommet'
 import * as React from 'react'
+
 import { content } from '../../../data/content'
-import styled from '../../styles/styled-components'
+import styled, { css } from '../../styles/styled-components'
+import { Box, Grid, Paragraph, Text } from '../grommet'
 import { Section } from '../section'
+import { TooltipHost } from '../tooltip'
 
-export interface ITechItemProps {
-  Logo: React.ComponentType<any>
-  title: string
-  href: string
-  description: string
-}
-
-export const TooltipBase: React.SFC<any> = ({ children, className }) => (
-  <Box className={className}>
-    <Text>{children}</Text>
-  </Box>
-)
-
-export const Tooltip = styled(TooltipBase).attrs({
-  size: 'small',
-})`
-  position: absolute;
-  visibility: hidden;
-`
-
-export const TechIconBox = styled.div`
+export const Filter = styled.div`
   filter: grayscale();
-  transition: all ${p => p.theme.global.animation.duration};
-
-  /* Tooltip */
-  position: relative;
+  transition: all ${p => p.theme.global.animation.medium};
 
   &:hover {
-    ${Tooltip} {
-      visibility: visible;
-    }
-  }
-
-  &:hover {
+    transition: all ${p => p.theme.global.animation.medium};
     filter: none;
-    background: ${p => p.theme.global.colors.backgroundAlt};
+    background-color: ${p => p.theme.global.colors.backgroundAlt};
   }
 `
 
@@ -53,15 +27,30 @@ export const PlainAnchor = styled.a`
   }
 `
 
-export const TechItem: React.SFC<ITechItemProps> = ({ Logo: Icon, title, href, description }) => (
+export interface ITechItemProps {
+  Icon: React.ComponentType<any>
+  title: string
+  href: string
+  description: string
+}
+
+const iconStyles = css`
+  width: 100%;
+  height: auto;
+`
+
+export const TechItem: React.SFC<ITechItemProps> = ({ Icon, title, href, description }) => (
   <PlainAnchor href={href} target="_blank">
-    <TechIconBox>
-      <Tooltip>{description}</Tooltip>
-      <Icon viewBox="0 0 32 32" width="100%" height="auto" />
-      <Text margin={{ top: 'small' }} size="small" textAlign="center">
-        {title}
-      </Text>
-    </TechIconBox>
+    <TooltipHost render={<Text>{description}</Text>}>
+      <Filter>
+        <Box className="abc" pad="small">
+          <Icon viewBox="0 0 32 32" width="100%" height="100%" className={iconStyles} />
+          <Text margin={{ top: 'small' }} size="small" textAlign="center">
+            {title}
+          </Text>
+        </Box>
+      </Filter>
+    </TooltipHost>
   </PlainAnchor>
 )
 
@@ -72,7 +61,7 @@ export const TechSection = () => (
         {group.map(item => (
           <TechItem
             title={item.title}
-            Logo={item.logo}
+            Icon={item.logo}
             href={item.url}
             description={item.caption}
           />

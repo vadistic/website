@@ -1,5 +1,5 @@
-import { Box, Grid, Meter, Paragraph, Text } from 'grommet'
 import * as React from 'react'
+import { Box, Grid, Meter, Paragraph, Text } from '../grommet'
 
 import { Card, Section } from '..'
 import { content } from '../../../data/content'
@@ -12,18 +12,18 @@ export const ServicesList = styled.ul`
 
 export const ServicesSection = () => (
   <Section title={content.services.annotation}>
-    <Grid columns={'medium'} gap="medium">
-      {content.services.items.map(card => (
+    <Grid columns={{ size: 'medium', count: 'fill' }} gap="medium">
+      {content.services.items.map(({ Svg, title, description, details }) => (
         <Card>
-          <Box margin={{ vertical: 'medium' }}>
-            <card.Svg viewBox="0 0 352 270" width="small" height="auto" />
+          <Box margin={{ vertical: 'medium' }} width="50%">
+            <Svg viewBox="0 0 352 270" width="100%" height="100%" />
           </Box>
           <Text size="large" color="brand">
-            {card.title}
+            {title}
           </Text>
-          <Paragraph>{card.description}</Paragraph>
+          <Paragraph>{description}</Paragraph>
           <ServicesList>
-            {card.details.map(({ label, value }) => (
+            {details.map(({ label, value }) => (
               <li>
                 <Box margin={{ bottom: 'small' }}>
                   <Text weight="bold">{label}</Text>
