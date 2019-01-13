@@ -28,7 +28,6 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => (
     render={({ site }) => {
       const { title, description, keywords } = site.siteMetadata
 
-      console.log(theme)
       return (
         <>
           <Helmet

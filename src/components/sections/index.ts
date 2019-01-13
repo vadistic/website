@@ -1,3 +1,7 @@
+export * from './hero'
 export * from './about'
 export * from './services'
 export * from './tech'
+export * from './benefits'
+export * from './contact'
+export * from './footer'
