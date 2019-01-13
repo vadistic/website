@@ -1,32 +1,32 @@
 import { RouterProps } from '@reach/router'
-import React from 'react'
-
 import { graphql, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
+import React from 'react'
 
-import Layout from '../../components/layout'
+import { Layout } from '../../components/layout'
+import { Idx } from '../../utils'
+import { ImagePageQuery } from './generated'
 
 const Image = () => (
-  <StaticQuery
-    query={graphql`
-      query ImageQuery {
-        file(relativePath: { eq: "images/placeholder.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 600, toFormat: JPG) {
-              ...FluidImage
-            }
-          }
-        }
-      }
-    `}
-    render={data => <Img fluid={data.file.childImageSharp.fluid} />}
-  />
+  <StaticQuery<Idx<ImagePageQuery>> query={IMAGE_PAGE_QUERY}>
+    {data => <Img fluid={data.file.childImageSharp.fluid} />}
+  </StaticQuery>
 )
 
-const ImagePage: React.SFC<RouterProps> = ({ location }) => (
+export const ImagePage: React.SFC<RouterProps> = ({ location }) => (
   <Layout location={location}>
     <Image />
   </Layout>
 )
 
-export default ImagePage
+export const IMAGE_PAGE_QUERY = graphql`
+  query ImagePageQuery {
+    file(relativePath: { eq: "images/placeholder.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 600, toFormat: JPG) {
+          ...FluidImage
+        }
+      }
+    }
+  }
+`

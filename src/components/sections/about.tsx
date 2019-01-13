@@ -2,7 +2,7 @@ import { graphql, StaticQuery } from 'gatsby'
 import React, { useContext } from 'react'
 
 import { content } from '../../../data/content'
-import { DeepNonNullable } from '../../utils'
+import { Idx } from '../../utils'
 import { Avatar } from '../avatar'
 import { Blockquote } from '../blockquote'
 import { Box, Grid, ResponsiveContext, Text } from '../grommet'
@@ -13,7 +13,7 @@ export const AboutSection = () => {
   const media = useContext(ResponsiveContext)
 
   return (
-    <StaticQuery<DeepNonNullable<AboutSectionQuery>> query={ABOUT_SECTION_QUERY}>
+    <StaticQuery<Idx<AboutSectionQuery>> query={ABOUT_SECTION_QUERY}>
       {({ profileImage }) => (
         <Section pad="medium">
           <Grid

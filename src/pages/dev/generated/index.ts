@@ -1,2 +1,1 @@
-export * from './FluidImage'
-export * from './ImageQuery'
+export * from './ImagePageQuery'

@@ -25,6 +25,6 @@
     "forceConsistentCasingInFileNames": true,
     "plugins": []
   },
-  "include": ["src", "types", "data"],
+  "include": ["src/**/*", "types/**/*", "data/**/*"],
   "exclude": ["node_modules", "dist", "public", ".cache"]
 }

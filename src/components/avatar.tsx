@@ -1,12 +1,12 @@
 import Img from 'gatsby-image'
 import React from 'react'
 
-import { DeepNonNullable } from '../utils'
+import { Idx } from '../utils'
 import { FluidImage } from './generated'
 import { Box, BoxProps } from './grommet'
 
 export interface AvatarProps extends BoxProps {
-  fluid?: DeepNonNullable<FluidImage>
+  fluid?: Idx<FluidImage>
 }
 
 export const Avatar: React.SFC<AvatarProps> = ({ fluid, ...rest }) => (

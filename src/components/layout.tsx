@@ -11,21 +11,9 @@ import '../styles/fonts.css'
 
 type LayoutProps = React.ReactNode & RouterProps
 
-const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            # change siteMetaData in 'gatsby-config.js'
-            title
-            description
-            keywords
-          }
-        }
-      }
-    `}
-    render={({ site }) => {
+export const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => (
+  <StaticQuery query={LAYOUT_QUERY}>
+    {({ site }) => {
       const { title, description, keywords } = site.siteMetadata
 
       return (
@@ -45,7 +33,18 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => (
         </>
       )
     }}
-  />
+  </StaticQuery>
 )
 
-export default Layout
+export const LAYOUT_QUERY = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        # change siteMetaData in 'gatsby-config.js'
+        title
+        description
+        keywords
+      }
+    }
+  }
+`

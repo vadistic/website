@@ -1,7 +1,7 @@
 import { RouterProps } from '@reach/router'
 import React from 'react'
 
-import Layout from './layout'
+import { Layout } from './layout'
 
 type PostLayoutProps = RouterProps & {
   data: any

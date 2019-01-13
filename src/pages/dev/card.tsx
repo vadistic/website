@@ -3,7 +3,7 @@ import { Box, BoxProps, Button, ButtonProps, Heading, Paragraph } from 'grommet'
 import React from 'react'
 
 import { content } from '../../../data/content'
-import Layout from '../../components/layout'
+import { Layout } from '../../components/layout'
 
 export interface Card extends BoxProps {
   heading?: string
@@ -32,12 +32,10 @@ const Card = ({ heading, paragraph, photo, buttons, ...rest }: Card) => (
   </Box>
 )
 
-const CardPage: React.SFC<RouterProps> = ({ location }) => (
+export const CardPage: React.SFC<RouterProps> = ({ location }) => (
   <Layout location={location}>
     <Card buttons={[{ label: 'Button' }]} />
     <Card />
     <Card />
   </Layout>
 )
-
-export default CardPage

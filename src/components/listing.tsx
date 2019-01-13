@@ -2,7 +2,7 @@ import { graphql, Link, StaticQuery } from 'gatsby'
 import React from 'react'
 
 import styled from '../styles/styled-components'
-import { DeepNonNullable } from '../utils'
+import { Idx } from '../utils'
 import { ListingQuery } from './generated/ListingQuery'
 
 const Post = styled.article`
@@ -33,7 +33,7 @@ const Post = styled.article`
 
 const Listing = () => (
   <StaticQuery query={LISTING_QUERY}>
-    {({ allMdx }: DeepNonNullable<ListingQuery>) =>
+    {({ allMdx }: Idx<ListingQuery>) =>
       allMdx.edges.map(({ node }) => {
         const { path, title, date } = node.frontmatter
         return (
