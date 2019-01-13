@@ -1,7 +1,7 @@
-import * as React from 'react'
+import React from 'react'
 
 import { content } from '../../../data/content'
-import styled /*  */ from '../../styles/styled-components'
+import styled from '../../styles/styled-components'
 import { Box, Grid, Paragraph, Text } from '../grommet'
 import { Section } from '../section'
 import { TooltipHost } from '../tooltip'
@@ -27,14 +27,14 @@ const PlainAnchor = styled.a`
   }
 `
 
-export interface ITechItemProps {
+export interface TechItemProps {
   Icon: React.ComponentType<any>
   title: string
   href: string
   description: string
 }
 
-export const TechItem: React.SFC<ITechItemProps> = ({ Icon, title, href, description }) => (
+export const TechItem: React.SFC<TechItemProps> = ({ Icon, title, href, description }) => (
   <PlainAnchor href={href} target="_blank">
     <TooltipHost render={<Text>{description}</Text>}>
       <Filter>

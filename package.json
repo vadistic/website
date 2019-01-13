@@ -60,6 +60,8 @@
     "@mdx-js/mdx": "^0.16.6",
     "@mdx-js/tag": "^0.16.6",
     "@types/jest": "^23.3.12",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
     "@types/react-helmet": "^5.0.8",
     "@types/styled-components": "^4.1.5",
     "apollo": "1.9.2",

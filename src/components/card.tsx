@@ -1,8 +1,16 @@
 import { Box, BoxProps } from 'grommet'
-import * as React from 'react'
+import React from 'react'
 
-export interface ICardProps extends BoxProps {}
+export interface CardProps extends BoxProps {}
 
-export const Card: React.SFC<ICardProps> = ({ ...rest }) => (
-  <Box pad="medium" elevation="small" round="small" flex align="start" {...rest} />
+export const Card: React.SFC<CardProps> = ({ ...rest }) => (
+  <Box
+    animation="zoomIn"
+    pad="medium"
+    elevation="small"
+    round="small"
+    flex
+    align="start"
+    {...rest}
+  />
 )

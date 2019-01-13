@@ -1,13 +1,9 @@
-import * as React from 'react'
+import React from 'react'
 
 import styled from '../styles/styled-components'
-import { Box } from './grommet'
+import { Box, SharedProps } from './grommet'
 
-interface IInlineStyleProp {
-  style: object
-}
-
-const TooltipBase: React.SFC<IInlineStyleProp> = ({ children, ...rest }) => (
+const TooltipBase: React.SFC<SharedProps> = ({ children, ...rest }) => (
   <Box background="dark-1" pad="small" width="small" {...rest}>
     {children}
   </Box>
@@ -32,11 +28,11 @@ const TooltipHostBase = styled.div`
   }
 `
 
-export interface ITooltipHostProps {
+export interface TooltipHostProps {
   render: JSX.Element
 }
 
-export const TooltipHost: React.SFC<ITooltipHostProps> = ({ children, render, ...rest }) => {
+export const TooltipHost: React.SFC<TooltipHostProps> = ({ children, render, ...rest }) => {
   const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 })
 
   const onMouseMove: React.MouseEventHandler = event => {

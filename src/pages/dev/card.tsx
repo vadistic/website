@@ -1,18 +1,18 @@
 import { RouterProps } from '@reach/router'
 import { Box, BoxProps, Button, ButtonProps, Heading, Paragraph } from 'grommet'
-import * as React from 'react'
+import React from 'react'
 
 import { content } from '../../../data/content'
 import Layout from '../../components/layout'
 
-export interface ICard extends BoxProps {
+export interface Card extends BoxProps {
   heading?: string
   paragraph?: string
   photo?: string
   buttons?: Array<ButtonProps & JSX.IntrinsicElements['button']>
 }
 
-const Card = ({ heading, paragraph, photo, buttons, ...rest }: ICard) => (
+const Card = ({ heading, paragraph, photo, buttons, ...rest }: Card) => (
   <Box
     pad={{ horizontal: 'medium', vertical: 'large' }}
     elevation="small"

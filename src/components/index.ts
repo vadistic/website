@@ -6,6 +6,6 @@ export * from './card'
 export * from './tooltip'
 export * from './blockquote'
 
-export * from './listing'
+export * from './sections'
 
-export * from './responsive-context'
+export * from './listing'

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import styled, { css } from '../styles/styled-components'
 import { Paragraph, ParagraphProps } from './grommet'

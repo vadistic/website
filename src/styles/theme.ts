@@ -38,6 +38,6 @@ export const theme = deepMerge(generate(baseSize, scale), {
 
 export type Theme = typeof theme
 
-export interface IThemeProps {
+export interface ThemeProps {
   theme: Theme
 }

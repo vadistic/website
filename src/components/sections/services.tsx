@@ -1,9 +1,9 @@
-import * as React from 'react'
-import { Box, Grid, Meter, Paragraph, Text } from '../grommet'
+import React from 'react'
 
 import { Card, Section } from '..'
 import { content } from '../../../data/content'
 import styled from '../../styles/styled-components'
+import { Box, Grid, Meter, Paragraph, Text } from '../grommet'
 
 export const ServicesList = styled.ul`
   list-style: none;

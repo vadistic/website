@@ -4,9 +4,9 @@
   "jsRules": {},
   "rules": {
     "arrow-parens": false,
-    "interface-name": [true, "always-prefix"],
+    "interface-name": [true, "never-prefix"],
     "no-empty-interface": false,
-    "member-access": false,
+    "member-access": [true, "no-public"],
     "no-console": false,
     "no-submodule-imports": false,
     "object-literal-sort-keys": false,

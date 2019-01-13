@@ -1,8 +1,9 @@
 import { graphql, Link, StaticQuery } from 'gatsby'
-import * as React from 'react'
+import React from 'react'
 
-import { PostsQueryData } from '../interfaces/PostsQuery.interface'
 import styled from '../styles/styled-components'
+import { DeepNonNullable } from '../utils'
+import { ListingQuery } from './generated/ListingQuery'
 
 const Post = styled.article`
   box-shadow: 0 0.3rem 1rem rgba(25, 17, 34, 0.05);
@@ -26,17 +27,15 @@ const Post = styled.article`
   .read-more {
     font-size: 0.8rem;
     text-decoration: underline;
-    color: ${props => props.theme.globals.colors.brand};
+    color: ${props => props.theme.global.colors.brand};
   }
 `
 
 const Listing = () => (
-  <StaticQuery
-    query={LISTING_QUERY}
-    render={({ allMdx }: PostsQueryData) =>
-      allMdx.edges!.map(({ node }) => {
+  <StaticQuery query={LISTING_QUERY}>
+    {({ allMdx }: DeepNonNullable<ListingQuery>) =>
+      allMdx.edges.map(({ node }) => {
         const { path, title, date } = node.frontmatter
-
         return (
           <Post key={path}>
             <Link to={`/posts${path}`}>
@@ -51,11 +50,11 @@ const Listing = () => (
         )
       })
     }
-  />
+  </StaticQuery>
 )
 
 const LISTING_QUERY = graphql`
-  query LISTING_QUERY {
+  query ListingQuery {
     allMdx(limit: 10, sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {

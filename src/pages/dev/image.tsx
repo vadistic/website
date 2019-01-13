@@ -1,5 +1,5 @@
 import { RouterProps } from '@reach/router'
-import * as React from 'react'
+import React from 'react'
 
 import { graphql, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'

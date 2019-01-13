@@ -1,10 +1,11 @@
 import { RouterProps } from '@reach/router'
-import * as React from 'react'
+import React from 'react'
 
-import { PostQueryData } from '../interfaces/PostQuery.interface'
 import Layout from './layout'
 
-type PostLayoutProps = PostQueryData & RouterProps
+type PostLayoutProps = RouterProps & {
+  data: any
+}
 
 const PostLayout: React.FunctionComponent<PostLayoutProps> = ({ data, ...props }) => {
   if (data) {

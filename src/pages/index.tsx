@@ -1,5 +1,5 @@
 import { RouterProps } from '@reach/router'
-import * as React from 'react'
+import React from 'react'
 
 import Layout from '../components/layout'
 import { AboutSection, ServicesSection, TechSection } from '../components/sections'

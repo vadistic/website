@@ -1,10 +1,9 @@
 import { RouterProps } from '@reach/router'
 import { graphql, StaticQuery } from 'gatsby'
-import { Grommet, ThemeContext } from 'grommet'
-import * as React from 'react'
+import React from 'react'
 import Helmet from 'react-helmet'
+import { Grommet } from './grommet'
 
-import { LayoutQueryData } from '../interfaces/LayoutQuery.interface'
 import { theme } from '../styles'
 
 // fonts loaded via css hoping for pararell js & font download
@@ -26,7 +25,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => (
         }
       }
     `}
-    render={({ site }: LayoutQueryData) => {
+    render={({ site }) => {
       const { title, description, keywords } = site.siteMetadata
 
       console.log(theme)
