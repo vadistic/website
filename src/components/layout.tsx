@@ -5,14 +5,23 @@ import Helmet from 'react-helmet'
 import { Grommet } from './grommet'
 
 import { theme } from '../styles'
+import styled from '../styles/styled-components'
+import { Idx } from '../utils'
+import { LayoutQuery } from './generated'
 
 // fonts loaded via css hoping for pararell js & font download
 import '../styles/fonts.css'
 
-type LayoutProps = React.ReactNode & RouterProps
+const LayoutWrapper = styled.div`
+  max-width: ${p => p.theme.global.breakpoints.large.value}px;
+
+  margin: auto;
+`
+
+export type LayoutProps = React.ReactNode & RouterProps
 
 export const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => (
-  <StaticQuery query={LAYOUT_QUERY}>
+  <StaticQuery<Idx<LayoutQuery>> query={LAYOUT_QUERY}>
     {({ site }) => {
       const { title, description, keywords } = site.siteMetadata
 
@@ -28,7 +37,7 @@ export const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => (
             <html lang="en" />
           </Helmet>
           <Grommet theme={theme} plain={false}>
-            {children}
+            <LayoutWrapper>{children}</LayoutWrapper>
           </Grommet>
         </>
       )
@@ -37,7 +46,7 @@ export const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => (
 )
 
 export const LAYOUT_QUERY = graphql`
-  query SiteTitleQuery {
+  query LayoutQuery {
     site {
       siteMetadata {
         # change siteMetaData in 'gatsby-config.js'

@@ -2,19 +2,19 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: SiteTitleQuery
+// GraphQL query operation: LayoutQuery
 // ====================================================
 
-export interface SiteTitleQuery_site_siteMetadata {
+export interface LayoutQuery_site_siteMetadata {
   title: string | null;
   description: string | null;
   keywords: string | null;
 }
 
-export interface SiteTitleQuery_site {
-  siteMetadata: SiteTitleQuery_site_siteMetadata | null;
+export interface LayoutQuery_site {
+  siteMetadata: LayoutQuery_site_siteMetadata | null;
 }
 
-export interface SiteTitleQuery {
-  site: SiteTitleQuery_site | null;
+export interface LayoutQuery {
+  site: LayoutQuery_site | null;
 }

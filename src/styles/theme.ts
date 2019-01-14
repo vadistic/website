@@ -5,10 +5,10 @@ import { generate } from './base'
 
 const brandColor = '#6534FF'
 
-const baseSize = 24
+const baseSpacing = 24
 const scale = 8
 
-export const theme = deepMerge(generate(baseSize, scale), {
+export const theme = deepMerge(generate(baseSpacing, scale), {
   global: {
     animation: {
       duration: '1s',
@@ -32,6 +32,18 @@ export const theme = deepMerge(generate(baseSize, scale), {
     font: {
       family: 'Rubik, sans-serif',
       weight: 300,
+    },
+    breakpoints: {
+      small: {
+        value: baseSpacing * 32, // 768
+      },
+      medium: {
+        value: baseSpacing * 48, // 1152
+      },
+      large: {
+        value: baseSpacing * 64, // 1536
+      },
+      xlarge: {},
     },
   },
 })

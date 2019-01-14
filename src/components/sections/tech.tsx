@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { content } from '../../../data/content'
+import { mediaContext as useMedia } from '../../styles'
 import styled from '../../styles/styled-components'
 import { Box, Grid, Paragraph, Text } from '../grommet'
 import { Section } from '../section'
@@ -38,11 +39,11 @@ export const TechItem: React.SFC<TechItemProps> = ({ Icon, title, href, descript
   <PlainAnchor href={href} target="_blank">
     <TooltipHost render={<Text>{description}</Text>}>
       <Filter>
-        <Box pad={{ vertical: '24px' }}>
-          <Box pad={{ horizontal: '24px' }}>
+        <Box align="center" pad={{ vertical: 'medium' }}>
+          <Box width="50%">
             <Icon viewBox="0 0 32 32" width="100%" height="100%" />
           </Box>
-          <Text margin={{ top: 'small' }} size="small" textAlign="center">
+          <Text margin={{ top: 'xsmall' }} size="small" textAlign="center">
             {title}
           </Text>
         </Box>
@@ -51,21 +52,29 @@ export const TechItem: React.SFC<TechItemProps> = ({ Icon, title, href, descript
   </PlainAnchor>
 )
 
-export const TechSection = () => (
-  <Section title={content.tech.annotation}>
-    {Object.values(content.tech.techItems).map(group => (
-      <Grid columns={{ count: 'fill', size: '96px' }}>
-        {group.map(item => (
-          <TechItem
-            title={item.title}
-            Icon={item.logo}
-            href={item.url}
-            description={item.caption}
-          />
-        ))}
-      </Grid>
-    ))}
+export const TechSection = () => {
+  const media = useMedia()
 
-    <Paragraph>{content.tech.after}</Paragraph>
-  </Section>
-)
+  return (
+    <Section title={content.tech.annotation}>
+      <Grid
+        columns={{
+          count: 'fill',
+          size: media.max('medium') ? 'xsmall' : 'small',
+        }}
+      >
+        {Object.values(content.tech.techGroup).map(group =>
+          group.map(item => (
+            <TechItem
+              title={item.title}
+              Icon={item.logo}
+              href={item.url}
+              description={item.caption}
+            />
+          ))
+        )}
+      </Grid>
+      <Paragraph>{content.tech.after}</Paragraph>
+    </Section>
+  )
+}

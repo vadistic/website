@@ -74,7 +74,7 @@ export const content = {
     after: `I love this tech, but it's vital to choose the right tool for the job. \
       Beeing already familiar to myriad of cool libraries, tools & services\
       I'm flexible with adopting yet one another.`,
-    techItems: {
+    techGroup: {
       design: [
         {
           logo: FigmaLogo,

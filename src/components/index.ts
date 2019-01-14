@@ -1,3 +1,5 @@
+export * from './grommet'
+
 export * from './layout'
 export * from './avatar'
 export * from './image'

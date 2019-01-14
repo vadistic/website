@@ -1,44 +1,39 @@
 import { graphql, StaticQuery } from 'gatsby'
-import React, { useContext } from 'react'
+import React from 'react'
 
 import { content } from '../../../data/content'
+import { mediaContext as useMedia } from '../../styles'
 import { Idx } from '../../utils'
 import { Avatar } from '../avatar'
 import { Blockquote } from '../blockquote'
-import { Box, Grid, ResponsiveContext, Text } from '../grommet'
+import { Box, Text } from '../grommet'
 import { Section } from '../section'
 import { AboutSectionQuery } from './generated/AboutSectionQuery'
 
 export const AboutSection = () => {
-  const media = useContext(ResponsiveContext)
+  const media = useMedia()
 
   return (
     <StaticQuery<Idx<AboutSectionQuery>> query={ABOUT_SECTION_QUERY}>
       {({ profileImage }) => (
-        <Section pad="medium">
-          <Grid
-            gap="medium"
-            columns={media === 'small' ? 'large' : ['1/2', '1/2']}
-            alignContent="center"
-          >
-            <Box direction="row">
-              <Avatar
-                width={media === 'small' ? 'xsmall' : 'small'}
-                height={media === 'small' ? 'xsmall' : 'small'}
-                fluid={profileImage.childImageSharp.fluid}
-              />
-              <Box alignSelf="center" margin={{ left: 'medium' }}>
-                <Text size="xlarge" color="text">
+        <Section align="center">
+          {media.min('large') && (
+            <Box direction="row" align="center">
+              <Box>
+                <Text size="xlarge" color="text" textAlign="end">
                   {content.about.name}
                 </Text>
-                <Text>{content.about.title}</Text>
+                <Text textAlign="end">{content.about.title}</Text>
               </Box>
-            </Box>
-
-            <Box alignSelf="center">
+              <Avatar
+                width={media.max('small') ? 'xsmall' : 'small'}
+                height={media.max('small') ? 'xsmall' : 'small'}
+                fluid={profileImage.childImageSharp.fluid}
+                margin="medium"
+              />
               <Blockquote>{content.about.description}</Blockquote>
             </Box>
-          </Grid>
+          )}
         </Section>
       )}
     </StaticQuery>

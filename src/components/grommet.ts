@@ -18,6 +18,7 @@ import {
   ResponsiveContext as _ResponsiveContext,
   Text as _Text,
   TextProps as _TextProps,
+  ThemeContext as _ThemeContext,
 } from 'grommet'
 
 import { Theme } from '../styles'
@@ -56,3 +57,5 @@ export const Meter = _Meter as React.ComponentType<MeterProps>
 
 export type ResponsiveValue = keyof Theme['global']['breakpoints']
 export const ResponsiveContext = _ResponsiveContext as React.Context<ResponsiveValue>
+
+export const ThemeContext = _ThemeContext as React.Context<Theme>
