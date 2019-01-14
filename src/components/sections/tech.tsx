@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { content } from '../../../data/content'
-import { mediaContext as useMedia } from '../../styles'
+import { mediaContext as useMedia, plainAnchorStyles } from '../../styles'
 import styled from '../../styles/styled-components'
 import { Box, Grid, Paragraph, Text } from '../grommet'
 import { Section } from '../section'
@@ -18,40 +18,6 @@ const Filter = styled.div`
   }
 `
 
-const PlainAnchor = styled.a`
-  text-decoration: inherit;
-  color: inherit;
-
-  &:hover {
-    text-decoration: inherit;
-    color: inherit;
-  }
-`
-
-export interface TechItemProps {
-  Icon: React.ComponentType<any>
-  title: string
-  href: string
-  description: string
-}
-
-export const TechItem: React.SFC<TechItemProps> = ({ Icon, title, href, description }) => (
-  <PlainAnchor href={href} target="_blank">
-    <TooltipHost render={<Text>{description}</Text>}>
-      <Filter>
-        <Box align="center" pad={{ vertical: 'medium' }}>
-          <Box width="50%">
-            <Icon viewBox="0 0 32 32" width="100%" height="100%" />
-          </Box>
-          <Text margin={{ top: 'xsmall' }} size="small" textAlign="center">
-            {title}
-          </Text>
-        </Box>
-      </Filter>
-    </TooltipHost>
-  </PlainAnchor>
-)
-
 export const TechSection = () => {
   const media = useMedia()
 
@@ -65,12 +31,20 @@ export const TechSection = () => {
       >
         {Object.values(content.tech.techGroup).map(group =>
           group.map(item => (
-            <TechItem
-              title={item.title}
-              Icon={item.logo}
-              href={item.url}
-              description={item.caption}
-            />
+            <a href={item.url} target="_blank" css={plainAnchorStyles}>
+              <TooltipHost render={<Text>{item.caption}</Text>}>
+                <Filter>
+                  <Box align="center" pad={{ vertical: 'medium' }}>
+                    <Box width="50%">
+                      <item.Logo viewBox="0 0 32 32" width="100%" height="100%" />
+                    </Box>
+                    <Text margin={{ top: 'xsmall' }} size="small" textAlign="center">
+                      {item.title}
+                    </Text>
+                  </Box>
+                </Filter>
+              </TooltipHost>
+            </a>
           ))
         )}
       </Grid>

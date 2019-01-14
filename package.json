@@ -19,7 +19,7 @@
     "dev": "gatsby develop",
     "build": "gatsby build",
     "format:all": "prettier --write -l --no-color './{src,types,data}/**/*.{js,ts,tsx,mdx}'",
-    "format:staged": "pretty-quick",
+    "format:staged": "pretty-quick --staged",
     "lint:tslint": "tslint src/**/*.{ts,tsx}",
     "lint:type": "tsc --noEmit",
     "lint": "yarn lint:tslint && yarn lint:type",

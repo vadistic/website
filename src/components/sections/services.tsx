@@ -2,13 +2,8 @@ import React from 'react'
 
 import { Card, Section } from '..'
 import { content } from '../../../data/content'
-import styled from '../../styles/styled-components'
+import { plainListStyles } from '../../styles'
 import { Box, Grid, Meter, Paragraph, Text } from '../grommet'
-
-export const ServicesList = styled.ul`
-  list-style: none;
-  padding: 0;
-`
 
 export const ServicesSection = () => (
   <Section title={content.services.annotation}>
@@ -22,7 +17,7 @@ export const ServicesSection = () => (
             {title}
           </Text>
           <Paragraph>{description}</Paragraph>
-          <ServicesList>
+          <ul css={plainListStyles}>
             {details.map(({ label, value }) => (
               <li>
                 <Box margin={{ bottom: 'small' }}>
@@ -37,7 +32,7 @@ export const ServicesSection = () => (
                 </Box>
               </li>
             ))}
-          </ServicesList>
+          </ul>
         </Card>
       ))}
     </Grid>

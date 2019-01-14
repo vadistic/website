@@ -1,4 +1,4 @@
-import { StaticQuery, StaticQueryProps } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import React from 'react'
 
 export {

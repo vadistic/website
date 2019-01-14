@@ -77,31 +77,31 @@ export const content = {
     techGroup: {
       design: [
         {
-          logo: FigmaLogo,
+          Logo: FigmaLogo,
           title: 'Figma',
           caption: 'colaborative user interface design tool',
           url: 'https://www.figma.com',
         },
         {
-          logo: CreativeCloudLogo,
+          Logo: CreativeCloudLogo,
           title: 'Adobe CC',
           caption: 'software and services for creatives from Adobe',
           url: '#',
         },
         {
-          logo: PhotoshopLogo,
+          Logo: PhotoshopLogo,
           title: 'Photoshop',
           caption: 'photo, image, and design editing tool',
           url: '#',
         },
         {
-          logo: IllustratorLogo,
+          Logo: IllustratorLogo,
           title: 'Illustrator',
           caption: 'vector graphic design software',
           url: '#',
         },
         {
-          logo: IndesignLogo,
+          Logo: IndesignLogo,
           title: 'InDesign',
           caption: 'Desktop publishing software',
           url: '#',
@@ -109,51 +109,51 @@ export const content = {
       ],
       frontend: [
         {
-          logo: JavascriptLogo,
+          Logo: JavascriptLogo,
           title: 'JavaScript',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
         {
-          logo: TypescriptLogo,
+          Logo: TypescriptLogo,
           title: 'TypeScript',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
         {
-          logo: GraphqlLogo,
+          Logo: GraphqlLogo,
           title: 'GraphQL',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
 
         {
-          logo: ReactLogo,
+          Logo: ReactLogo,
           title: 'React',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
         {
-          logo: GatsbyLogo,
+          Logo: GatsbyLogo,
           title: 'Gatsby',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
 
         {
-          logo: EmotionLogo,
+          Logo: EmotionLogo,
           title: 'Emotion',
           caption: 'performant and flexible CSS-in-JS library',
           url: '#',
         },
         {
-          logo: WebpackLogo,
+          Logo: WebpackLogo,
           title: 'Webpack',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
         {
-          logo: JestLogo,
+          Logo: JestLogo,
           title: 'Jest',
           caption: 'Lorem pixum dolor amet',
           url: '#',
@@ -161,31 +161,31 @@ export const content = {
       ],
       backend: [
         {
-          logo: NodeLogo,
+          Logo: NodeLogo,
           title: 'NodeJS',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
         {
-          logo: PrismaLogo,
+          Logo: PrismaLogo,
           title: 'Prisma',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
         {
-          logo: DockerLogo,
+          Logo: DockerLogo,
           title: 'Docker',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
         {
-          logo: AwsLogo,
+          Logo: AwsLogo,
           title: 'AWS',
           caption: 'Lorem pixum dolor amet',
           url: '#',
         },
         {
-          logo: NetlifyLogo,
+          Logo: NetlifyLogo,
           title: 'Netlify',
           caption: 'Lorem pixum dolor amet',
           url: '#',
@@ -198,7 +198,7 @@ export const content = {
     procesItems: [
       {
         title: 'Research',
-        description: 'Lorem pixum dolor amet',
+        description: 'Lorem pixum dolor amet. Lorem pixum dolor amet.',
       },
       {
         title: 'Research',

@@ -22,10 +22,8 @@ import {
 } from 'grommet'
 
 import { Theme } from '../styles'
-import { css } from '../styles/styled-components'
 
 export interface SharedProps {
-  css?: ReturnType<typeof css>
   style?: React.CSSProperties
 }
 

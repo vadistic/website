@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 export const imageFragments = graphql`
   fragment FixedImage on ImageSharpFixed {
@@ -17,3 +18,4 @@ export const imageFragments = graphql`
     sizes
   }
 `
+export { Img }

@@ -1,6 +1,6 @@
-import Img from 'gatsby-image'
 import React from 'react'
 
+import { Img } from '.'
 import { Idx } from '../utils'
 import { FluidImage } from './generated'
 import { Box, BoxProps } from './grommet'

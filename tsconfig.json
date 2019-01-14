@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "paths": { "gatsby": ["./types/gatsby.d.ts"] },
-    "allowJs": true,
+    // gatsby types override
+    "paths": { "gatsby": ["types/gatsby.d.ts"] },
+    "allowJs": false,
     "target": "es6",
     "module": "commonjs",
     "lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
