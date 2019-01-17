@@ -56,4 +56,10 @@ export const Meter = _Meter as React.ComponentType<MeterProps>
 export type ResponsiveValue = keyof Theme['global']['breakpoints']
 export const ResponsiveContext = _ResponsiveContext as React.Context<ResponsiveValue>
 
-export const ThemeContext = _ThemeContext as React.Context<Theme>
+export interface ThemeContextI extends React.Context<Theme> {
+  Extend: React.ComponentType<{ value: Theme }>
+}
+
+// TODO: delete after next grommet update
+// @ts-ignore
+export const ThemeContext: ThemeContextI = _ThemeContext

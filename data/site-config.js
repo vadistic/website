@@ -14,8 +14,6 @@ module.exports = {
   // author
   name: 'Jakub Wadas', // Username to display in the author segment.
   mail: 'jakub.wadas@outlook.com',
-  location: 'Tricity, Poland', // User location to display in the author segment.
-  avatar: 'img/profile-photo.png', // User avatar to display in the author segment.
   links: [
     {
       iconName: 'Mail',

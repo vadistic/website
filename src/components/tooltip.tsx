@@ -1,7 +1,8 @@
+import { Box } from 'grommet'
 import React from 'react'
 
 import styled from '../styles/styled-components'
-import { Box, SharedProps } from './grommet'
+import { SharedProps } from '../utils'
 
 const TooltipBase: React.SFC<SharedProps> = ({ children, ...rest }) => (
   <Box background="dark-1" pad="small" width="small" {...rest}>

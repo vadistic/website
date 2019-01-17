@@ -1,13 +1,11 @@
 import { graphql, StaticQuery } from 'gatsby'
 import React from 'react'
 
-import { content } from '../../../data/content'
-import { mediaContext as useMedia } from '../../styles'
-import { Idx } from '../../utils'
-import { Avatar } from '../avatar'
-import { Blockquote } from '../blockquote'
-import { Box, Text } from '../grommet'
-import { Section } from '../section'
+import { content } from '../../data/content'
+import { Avatar, Blockquote, Section } from '../components'
+import { Box, Grid, Text } from '../components/grommet'
+import { useMedia } from '../styles'
+import { Idx } from '../utils'
 import { AboutSectionQuery } from './generated/AboutSectionQuery'
 
 export const AboutSection = () => {
@@ -17,23 +15,24 @@ export const AboutSection = () => {
     <StaticQuery<Idx<AboutSectionQuery>> query={ABOUT_SECTION_QUERY}>
       {({ profileImage }) => (
         <Section align="center">
-          {media.min('large') && (
+          <Grid columns={['flex', 'flex']}>
             <Box direction="row" align="center">
-              <Box>
-                <Text size="xlarge" color="text" textAlign="end">
+              <Avatar
+                width={media('small') ? 'xsmall' : 'small'}
+                height={media('small') ? 'xsmall' : 'small'}
+                fluid={profileImage.childImageSharp.fluid}
+              />
+              <Box margin="small">
+                <Text size="xlarge" color="text">
                   {content.about.name}
                 </Text>
-                <Text textAlign="end">{content.about.title}</Text>
+                <Text>{content.about.title}</Text>
               </Box>
-              <Avatar
-                width={media.max('small') ? 'xsmall' : 'small'}
-                height={media.max('small') ? 'xsmall' : 'small'}
-                fluid={profileImage.childImageSharp.fluid}
-                margin="medium"
-              />
+            </Box>
+            <Box justify="center">
               <Blockquote>{content.about.description}</Blockquote>
             </Box>
-          )}
+          </Grid>
         </Section>
       )}
     </StaticQuery>

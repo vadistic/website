@@ -3,15 +3,15 @@
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "jsRules": {},
   "rules": {
+    "no-console": false,
+    "ordered-imports": true,
+    "no-submodule-imports": false,
     "arrow-parens": false,
+    "only-arrow-functions": true,
     "interface-name": [true, "never-prefix"],
     "no-empty-interface": false,
     "member-access": [true, "no-public"],
-    "no-console": false,
-    "no-submodule-imports": false,
     "object-literal-sort-keys": false,
-    "only-arrow-functions": true,
-    "ordered-imports": true,
     "quotemark": [true, "single", "jsx-double"],
     "trailing-comma": true,
     "jsx-no-lambda": false,
@@ -23,6 +23,5 @@
       "allow-pascal-case",
       "allow-leading-underscore"
     ]
-  },
-  "rulesDirectory": []
+  }
 }

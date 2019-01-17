@@ -10,6 +10,7 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-typescript',
     'gatsby-transformer-remark',
+    `gatsby-transformer-yaml`,
     'gatsby-image',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-offline',
@@ -52,6 +53,13 @@ module.exports = {
         name: 'posts',
         path: `${__dirname}/data/posts`,
         ignore: ['**/.tsx*'],
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: `${__dirname}/data/pages`,
       },
     },
     {

@@ -1,9 +1,9 @@
+import { Box, BoxProps } from 'grommet'
 import React from 'react'
 
 import { Img } from '.'
 import { Idx } from '../utils'
 import { FluidImage } from './generated'
-import { Box, BoxProps } from './grommet'
 
 export interface AvatarProps extends BoxProps {
   fluid?: Idx<FluidImage>

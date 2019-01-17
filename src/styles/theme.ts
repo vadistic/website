@@ -1,5 +1,3 @@
-// @ts-ignore
-import { rgba } from 'polished'
 import { deepMerge } from '../utils'
 import { generate } from './base'
 
@@ -10,6 +8,7 @@ const scale = 8
 
 export const theme = deepMerge(generate(baseSpacing, scale), {
   global: {
+    spacingValue: baseSpacing,
     animation: {
       duration: '1s',
       medium: '0.5s ease',
@@ -35,15 +34,17 @@ export const theme = deepMerge(generate(baseSpacing, scale), {
     },
     breakpoints: {
       small: {
-        value: baseSpacing * 32, // 768
+        value: baseSpacing * 32, // 0 - 768
       },
       medium: {
-        value: baseSpacing * 48, // 1152
+        value: baseSpacing * 48, // 0 - 1152
       },
       large: {
-        value: baseSpacing * 64, // 1536
+        value: baseSpacing * 64, // 0 - 1536
       },
-      xlarge: {},
+      xlarge: {
+        value: 9999, // 0 - 1536
+      },
     },
   },
 })

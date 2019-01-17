@@ -7,7 +7,8 @@
     "module": "commonjs",
     "lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
     "sourceMap": true,
-    "outDir": "./dist",
+    "baseUrl": ".",
+    "outDir": "./public",
     "jsx": "react",
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -22,9 +23,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
-    "baseUrl": ".",
-    "forceConsistentCasingInFileNames": true,
-    "plugins": []
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src/**/*", "types/**/*", "data/**/*"],
   "exclude": ["node_modules", "dist", "public", ".cache"]

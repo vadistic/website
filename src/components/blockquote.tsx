@@ -22,8 +22,10 @@ const BlockquoteBase = styled.blockquote(
   `
 )
 
-export const Blockquote: React.SFC<ParagraphProps> = props => (
-  <BlockquoteBase>
-    <Paragraph {...props} />
-  </BlockquoteBase>
-)
+export const Blockquote: React.FunctionComponent<ParagraphProps> = props => {
+  return (
+    <BlockquoteBase>
+      <Paragraph {...props} />
+    </BlockquoteBase>
+  )
+}

@@ -1,3 +1,2 @@
 export * from './theme'
-export * from './use-media'
-export * from './plain'
+export * from './media'

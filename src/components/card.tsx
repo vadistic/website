@@ -11,6 +11,7 @@ export const Card: React.SFC<CardProps> = ({ ...rest }) => (
     round="small"
     flex
     align="start"
+    background="white"
     {...rest}
   />
 )

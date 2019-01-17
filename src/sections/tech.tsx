@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { content } from '../../../data/content'
-import { mediaContext as useMedia, plainAnchorStyles } from '../../styles'
-import styled from '../../styles/styled-components'
-import { Box, Grid, Paragraph, Text } from '../grommet'
-import { Section } from '../section'
-import { TooltipHost } from '../tooltip'
+import { content } from '../../data/content'
+import { PlainAnchor, Section, TooltipHost } from '../components'
+import { Box, Grid, Paragraph, Text } from '../components/grommet'
+
+import { useMedia } from '../styles'
+import styled from '../styles/styled-components'
 
 const Filter = styled.div`
   filter: grayscale();
@@ -14,24 +14,24 @@ const Filter = styled.div`
   &:hover {
     transition: all ${p => p.theme.global.animation.medium};
     filter: none;
-    background-color: ${p => p.theme.global.colors['background-alt']};
+    background-color: ${p => p.theme.global.colors.active};
   }
 `
 
 export const TechSection = () => {
-  const media = useMedia()
+  const mediaMax = useMedia()
 
   return (
     <Section title={content.tech.annotation}>
       <Grid
         columns={{
           count: 'fill',
-          size: media.max('medium') ? 'xsmall' : 'small',
+          size: mediaMax('large') ? 'xsmall' : 'small',
         }}
       >
         {Object.values(content.tech.techGroup).map(group =>
           group.map(item => (
-            <a href={item.url} target="_blank" css={plainAnchorStyles}>
+            <PlainAnchor href={item.url} target="_blank">
               <TooltipHost render={<Text>{item.caption}</Text>}>
                 <Filter>
                   <Box align="center" pad={{ vertical: 'medium' }}>
@@ -44,7 +44,7 @@ export const TechSection = () => {
                   </Box>
                 </Filter>
               </TooltipHost>
-            </a>
+            </PlainAnchor>
           ))
         )}
       </Grid>
