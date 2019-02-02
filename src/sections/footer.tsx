@@ -1,9 +1,8 @@
+import { Box, Text } from 'grommet'
 import React from 'react'
-
-import { Gatsby as GatsbyLogo, React as ReactLogo } from '../../assets/logos'
-import { content } from '../../data/content'
+import { Logos } from '../assets'
 import { PlainAnchor, Section } from '../components'
-import { Box, Text } from '../components/grommet'
+import { content } from '../content'
 
 export const FooterSection: React.SFC = ({}) => (
   <Section>
@@ -15,9 +14,9 @@ export const FooterSection: React.SFC = ({}) => (
         {content.footer.copyright}
         {' | '}
         {'Blazing fast thanks to '}
-        <GatsbyLogo viewBox="0 0 32 32" width="1em" height="1em" />
+        <Logos.Gatsby viewBox="0 0 32 32" width="1em" height="1em" />
         {' & '}
-        <ReactLogo viewBox="0 0 32 32" width="1em" height="1em" />
+        <Logos.React viewBox="0 0 32 32" width="1em" height="1em" />
         {' | '}
         {'Photography by '}
         <PlainAnchor target="_blank" href="https://unsplash.com/">

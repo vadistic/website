@@ -1,9 +1,7 @@
+import { Box, Grid, Paragraph, Text } from 'grommet'
 import React from 'react'
-
-import { content } from '../../data/content'
 import { PlainAnchor, Section, TooltipHost } from '../components'
-import { Box, Grid, Paragraph, Text } from '../components/grommet'
-
+import { content } from '../content'
 import { useMedia } from '../styles'
 import styled from '../styles/styled-components'
 
@@ -19,14 +17,13 @@ const Filter = styled.div`
 `
 
 export const TechSection = () => {
-  const mediaMax = useMedia()
-
+  const media = useMedia()
   return (
     <Section title={content.tech.annotation}>
       <Grid
         columns={{
           count: 'fill',
-          size: mediaMax('large') ? 'xsmall' : 'small',
+          size: media({ max: 'large' }) ? 'xsmall' : 'small',
         }}
       >
         {Object.values(content.tech.techGroup).map(group =>
@@ -45,7 +42,7 @@ export const TechSection = () => {
                 </Filter>
               </TooltipHost>
             </PlainAnchor>
-          ))
+          )),
         )}
       </Grid>
       <Paragraph>{content.tech.after}</Paragraph>

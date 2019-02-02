@@ -1,7 +1,4 @@
-// @ts-ignore
-import React from 'react'
-import { ThemeProps } from '../styles'
-import styled, { css } from '../styles/styled-components'
+import { css, styled, ThemeProps } from '../styles'
 
 export const plainListStyles = css`
   list-style: none;

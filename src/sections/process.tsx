@@ -1,13 +1,11 @@
 import { graphql, StaticQuery } from 'gatsby'
+import { Box, Grid, Heading, Paragraph } from 'grommet'
 import React from 'react'
-
-import { content } from '../../data/content'
 import { Img, Section } from '../components'
-import { Box, Grid, Heading, Paragraph } from '../components/grommet'
-
+import { content } from '../content'
+import { ProcessSectionQuery } from '../generated'
 import { useMedia } from '../styles'
 import { Idx } from '../utils'
-import { ProcessSectionQuery } from './generated'
 
 export interface ProcessSectionProps {}
 
@@ -19,7 +17,7 @@ export const ProcessSection: React.FunctionComponent<ProcessSectionProps> = () =
         <Section title={content.process.annotation}>
           <Grid
             fill="horizontal"
-            columns={{ count: 'fit', size: media('small') ? 'small' : 'medium' }}
+            columns={{ count: 'fit', size: media({ max: 'small' }) ? 'small' : 'medium' }}
             rows={['flex', 'flex', 'flex']}
             gap="medium"
           >
@@ -41,7 +39,7 @@ export const ProcessSection: React.FunctionComponent<ProcessSectionProps> = () =
   )
 }
 
-export const PROCESS_SECTION_QUERY = graphql`
+const PROCESS_SECTION_QUERY = graphql`
   query ProcessSectionQuery {
     image: file(relativePath: { eq: "images/placeholder.png" }) {
       childImageSharp {

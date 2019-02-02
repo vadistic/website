@@ -7,5 +7,3 @@ export * from './tooltip'
 export * from './blockquote'
 export * from './plain'
 export * from './section'
-
-export * from './listing'

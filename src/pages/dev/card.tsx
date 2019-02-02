@@ -1,9 +1,8 @@
 import { RouterProps } from '@reach/router'
 import { Box, BoxProps, Button, ButtonProps, Heading, Paragraph } from 'grommet'
 import React from 'react'
-
-import { content } from '../../../data/content'
 import { Layout } from '../../components/layout'
+import { content } from '../../content'
 
 export interface Card extends BoxProps {
   heading?: string

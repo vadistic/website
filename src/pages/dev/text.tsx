@@ -1,9 +1,8 @@
 import { RouterProps } from '@reach/router'
 import { Heading, Paragraph } from 'grommet'
 import React from 'react'
-
-import { content } from '../../../data/content'
 import { Layout } from '../../components/layout'
+import { content } from '../../content'
 
 const TextPage: React.SFC<RouterProps> = ({ location }) => (
   <Layout location={location}>

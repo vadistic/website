@@ -1,8 +1,7 @@
+import { Box, Grid, Meter, Paragraph, Text } from 'grommet'
 import React from 'react'
-
-import { content } from '../../data/content'
 import { Card, PlainUl, Section } from '../components'
-import { Box, Grid, Meter, Paragraph, Text } from '../components/grommet'
+import { content } from '../content'
 
 export const ServicesSection = () => {
   return (

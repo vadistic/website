@@ -1,8 +1,7 @@
 import { RouterProps } from '@reach/router'
+import { Box } from 'grommet'
 import React from 'react'
-
 import { gradientBackground, Layout } from '../components'
-import { Box } from '../components/grommet'
 import {
   AboutSection,
   ContactSection,
@@ -11,11 +10,9 @@ import {
   ServicesSection,
   TechSection,
 } from '../sections'
-import { MediaIndicator } from '../utils/media-indicator'
 
 const IndexPage: React.SFC<RouterProps> = ({ location }) => (
   <Layout location={location}>
-    <MediaIndicator />
     <AboutSection />
     <Box css={gradientBackground}>
       <ServicesSection />

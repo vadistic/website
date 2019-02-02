@@ -1,13 +1,12 @@
 import { graphql, StaticQuery } from 'gatsby'
+import { Box, Text } from 'grommet'
 import React from 'react'
-
-import { Round as IconsRound } from '../../assets/icons'
-import { content } from '../../data/content'
+import { Round as IconsRound } from '../assets/icons'
 import { Avatar, Section } from '../components'
-import { Box, Text } from '../components/grommet'
+import { content } from '../content'
+import { ContactSectionQuery } from '../generated'
 import { useMedia } from '../styles'
 import { Idx } from '../utils'
-import { ContactSectionQuery } from './generated'
 
 export const ContactSection: React.SFC = () => {
   const media = useMedia()
@@ -17,8 +16,8 @@ export const ContactSection: React.SFC = () => {
         <Section>
           <Box direction="row" align="center">
             <Avatar
-              width={media('small') ? 'xsmall' : 'small'}
-              height={media('small') ? 'xsmall' : 'small'}
+              width={media({ max: 'small' }) ? 'xsmall' : 'small'}
+              height={media({ max: 'small' }) ? 'xsmall' : 'small'}
               fluid={profileImage.childImageSharp.fluid}
             />
             <Box margin="small">
@@ -37,7 +36,7 @@ export const ContactSection: React.SFC = () => {
   )
 }
 
-export const CONTACT_SECTION_QUERY = graphql`
+const CONTACT_SECTION_QUERY = graphql`
   query ContactSectionQuery {
     profileImage: file(relativePath: { eq: "images/profile.png" }) {
       childImageSharp {

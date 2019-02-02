@@ -1,16 +1,11 @@
 import { RouterProps } from '@reach/router'
 import { graphql, StaticQuery } from 'gatsby'
+import { Grommet } from 'grommet'
 import React from 'react'
 import Helmet from 'react-helmet'
-
-import { theme } from '../styles'
-import styled from '../styles/styled-components'
+import { LayoutQuery } from '../generated'
+import { styled, theme } from '../styles'
 import { Idx } from '../utils'
-import { LayoutQuery } from './generated'
-import { Grommet } from './grommet'
-
-// fonts loaded via css hoping for pararell js & font download
-import '../styles/fonts.css'
 
 const LayoutWrapper = styled.div`
   margin: 0;
@@ -43,7 +38,7 @@ export const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => (
   </StaticQuery>
 )
 
-export const LAYOUT_QUERY = graphql`
+const LAYOUT_QUERY = graphql`
   query LayoutQuery {
     site {
       siteMetadata {

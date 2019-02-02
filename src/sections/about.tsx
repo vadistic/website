@@ -1,16 +1,14 @@
 import { graphql, StaticQuery } from 'gatsby'
+import { Box, Grid, Text } from 'grommet'
 import React from 'react'
-
-import { content } from '../../data/content'
 import { Avatar, Blockquote, Section } from '../components'
-import { Box, Grid, Text } from '../components/grommet'
+import { content } from '../content'
+import { AboutSectionQuery } from '../generated'
 import { useMedia } from '../styles'
 import { Idx } from '../utils'
-import { AboutSectionQuery } from './generated/AboutSectionQuery'
 
 export const AboutSection = () => {
   const media = useMedia()
-
   return (
     <StaticQuery<Idx<AboutSectionQuery>> query={ABOUT_SECTION_QUERY}>
       {({ profileImage }) => (
@@ -18,8 +16,8 @@ export const AboutSection = () => {
           <Grid columns={['flex', 'flex']}>
             <Box direction="row" align="center">
               <Avatar
-                width={media('small') ? 'xsmall' : 'small'}
-                height={media('small') ? 'xsmall' : 'small'}
+                width={media({ max: 'small' }) ? 'xsmall' : 'small'}
+                height={media({ max: 'small' }) ? 'xsmall' : 'small'}
                 fluid={profileImage.childImageSharp.fluid}
               />
               <Box margin="small">
@@ -39,7 +37,7 @@ export const AboutSection = () => {
   )
 }
 
-export const ABOUT_SECTION_QUERY = graphql`
+const ABOUT_SECTION_QUERY = graphql`
   query AboutSectionQuery {
     profileImage: file(relativePath: { eq: "images/profile.png" }) {
       childImageSharp {

@@ -1,7 +1,6 @@
+import { Paragraph, ParagraphProps } from 'grommet'
 import React from 'react'
-
-import styled, { css } from '../styles/styled-components'
-import { Paragraph, ParagraphProps } from './grommet'
+import { css, styled } from '../styles'
 
 const BlockquoteBase = styled.blockquote(
   ({ theme }) => css`
@@ -19,7 +18,7 @@ const BlockquoteBase = styled.blockquote(
         ${theme.global.colors['brand-alt']}
       )
       1 100%;
-  `
+  `,
 )
 
 export const Blockquote: React.FunctionComponent<ParagraphProps> = props => {

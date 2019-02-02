@@ -2,13 +2,10 @@ import { RouterProps } from '@reach/router'
 import { graphql, StaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import React from 'react'
-
 import { Layout } from '../../components/layout'
-import { Idx } from '../../utils'
-import { ImagePageQuery } from './generated'
 
 const Image = () => (
-  <StaticQuery<Idx<ImagePageQuery>> query={IMAGE_PAGE_QUERY}>
+  <StaticQuery<any> query={IMAGE_PAGE_QUERY}>
     {data => <Img fluid={data.file.childImageSharp.fluid} />}
   </StaticQuery>
 )
