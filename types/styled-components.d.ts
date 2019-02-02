@@ -1,6 +1,4 @@
-import React from 'react'
-import { ThemedCssFunction, FlattenInterpolation } from 'styled-components'
-
+import { FlattenInterpolation, ThemedCssFunction } from 'styled-components'
 import { Theme } from '../src/styles'
 
 declare module 'react' {
