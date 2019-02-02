@@ -1,5 +1,11 @@
-import { deepMerge } from '../utils'
-import { generate } from './base'
+import {
+  ResponsiveContext as _ResponsiveContext,
+  ResponsiveContextI,
+  ThemeContext as _ThemeContext,
+  ThemeContextI,
+} from 'grommet'
+import { generate } from 'grommet/themes'
+import { deepMerge } from 'grommet/utils'
 
 const brandColor = '#6534FF'
 
@@ -54,3 +60,7 @@ export type Theme = typeof theme
 export interface ThemeProps {
   theme: Theme
 }
+
+export const ThemeContext = _ThemeContext as ThemeContextI<Theme>
+export type ResponsiveValue = keyof Theme['global']['breakpoints']
+export const ResponsiveContext = _ResponsiveContext as ResponsiveContextI<ResponsiveValue>

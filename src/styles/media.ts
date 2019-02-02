@@ -1,26 +1,43 @@
 import { useContext } from 'react'
-import { ResponsiveContext, ResponsiveValue, ThemeContext } from '../components/grommet'
-import { css } from './styled-components'
-import { ThemeProps } from './theme'
+import { css, ResponsiveContext, ResponsiveValue, theme } from '../styles'
 
-// pasing whole css fn to make sure preprocessing works
-export const media = (breakpoint: ResponsiveValue) => (styles: ReturnType<typeof css>) => ({
-  theme: {
-    global: { breakpoints },
-  },
-}: ThemeProps) =>
-  css`
-    @media (max-width: ${breakpoints[breakpoint].value}px) {
-      ${styles}
-    }
-  `
+const mediaTemplate = (breakpoint: ResponsiveValue) => (styles: ReturnType<typeof css>) => css`
+  @media (min-width: ${theme.global.breakpoints[breakpoint].value / 16}em) {
+    ${styles}
+  }
+`
+export type Media = { [K in ResponsiveValue]: ReturnType<typeof mediaTemplate> }
+
+export const media = (Object.keys(theme.global.breakpoints) as ResponsiveValue[]).reduce(
+  (acc, label) => ({ ...acc, [label]: mediaTemplate(label) }),
+  {} as Media,
+)
+
+export interface UseMedia {
+  min?: ResponsiveValue
+  max?: ResponsiveValue
+  only?: ResponsiveValue
+}
 
 export const useMedia = () => {
-  const breakpoint = useContext(ResponsiveContext)
-  const theme = useContext(ThemeContext)
+  const currentBreakpoint = useContext(ResponsiveContext)
+  const breakpoints = Object.keys(theme.global.breakpoints)
+  const currentBpIndex = breakpoints.findIndex(val => val === currentBreakpoint)
 
-  const breakpoints = Object.keys(theme.global.breakpoints) as ResponsiveValue[]
+  const handle = ({ min, max, only }: UseMedia) => {
+    if (only) {
+      return only === currentBreakpoint
+    }
 
-  return (target: ResponsiveValue) =>
-    breakpoints.findIndex(val => val === breakpoint) <= breakpoints.findIndex(val => val === target)
+    const targetBpIndex = breakpoints.findIndex(val => val === (min || max))
+
+    if (min) {
+      return currentBpIndex >= targetBpIndex
+    }
+
+    if (max) {
+      return currentBpIndex <= targetBpIndex
+    }
+  }
+  return handle
 }
