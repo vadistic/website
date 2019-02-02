@@ -1,30 +1,27 @@
 {
   "compilerOptions": {
-    // gatsby types override
-    "paths": { "gatsby": ["types/gatsby.d.ts"] },
-    "allowJs": false,
     "target": "es6",
-    "module": "commonjs",
-    "lib": ["dom", "es6", "es2017", "esnext.asynciterable"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "sourceMap": true,
     "baseUrl": ".",
     "outDir": "./public",
     "jsx": "react",
+    // module
+    "module": "esnext",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "removeComments": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "allowJs": false,
+    // strict
+    "strict": true,
+    "noUnusedLocals": false, //dev
     "skipLibCheck": true,
+    //lint
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*", "types/**/*", "data/**/*"],
-  "exclude": ["node_modules", "dist", "public", ".cache"]
+  "include": ["src", "types"],
+  "exclude": ["node_modules", "public", ".cache"]
 }

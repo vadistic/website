@@ -1,7 +1,6 @@
 {
   "defaultSeverity": "error",
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
-  "jsRules": {},
   "rules": {
     "no-console": false,
     "ordered-imports": true,
@@ -23,5 +22,8 @@
       "allow-pascal-case",
       "allow-leading-underscore"
     ]
+  },
+  "linterOptions": {
+    "exclude": ["src/generated/**", "node_modules/**"]
   }
 }
