@@ -1,5 +1,5 @@
-import * as Illustrations from '../assets/illustrations'
-import * as Logos from '../assets/logos'
+import * as Illustrations from './assets/illustrations'
+import * as Logos from './assets/logos'
 
 export const content = {
   hero: {
