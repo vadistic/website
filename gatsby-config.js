@@ -1,7 +1,7 @@
-const path = require('path')
-
-const siteConfig = require('./site-config')
 require('./scripts/env-config').configure()
+
+const path = require('path')
+const siteConfig = require('./site-config')
 
 module.exports = {
   siteMetadata: {
@@ -17,6 +17,9 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-offline',
     {
+      resolve: 'gatsby-mdx',
+    },
+    {
       resolve: 'gatsby-plugin-svgr',
       options: {
         prettier: true, // use prettier to format JS code output (default)
@@ -27,13 +30,20 @@ module.exports = {
         },
       },
     },
-    'gatsby-mdx',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
         path: path.resolve('./src/posts/'),
-        ignore: ['**/.tsx*'],
+        ignore: ['**/.{ts,tsx}*'],
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'sections',
+        path: path.resolve('./src/sections/'),
+        ignore: ['**/.{ts,tsx}*'],
       },
     },
     {
