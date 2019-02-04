@@ -1,34 +1,16 @@
 import { Box } from 'grommet'
-import React from 'react'
-import { styled } from '../styles'
+import React, { useLayoutEffect, useState } from 'react'
+import { css, styled } from '../styles'
 
-interface TooltipBaseProps {
-  style: React.CSSProperties
-}
-
-const TooltipBase: React.FC<TooltipBaseProps> = ({ children, ...rest }) => (
+const TooltipBase: React.FC = ({ children, ...rest }) => (
   <Box background="dark-1" pad="small" width="small" {...rest}>
     {children}
   </Box>
 )
 
-const Tooltip = styled(TooltipBase)`
+const tooltipWrapperStyles = css`
   position: absolute;
   z-index: 100;
-  transform: translateY(-100%);
-  visibility: hidden;
-  opacity: 0;
-
-  transition: opacity ${props => props.theme.global.animation.medium};
-`
-
-const TooltipHostBase = styled.div`
-  &:hover {
-    ${Tooltip} {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
 `
 
 export interface TooltipHostProps {
@@ -36,18 +18,34 @@ export interface TooltipHostProps {
 }
 
 export const TooltipHost: React.FC<TooltipHostProps> = ({ children, render, ...rest }) => {
-  const [mousePosition, setMousePosition] = React.useState({ x: 0, y: 0 })
+  const [shouldRender, setRender] = useState(false)
 
   const onMouseMove: React.MouseEventHandler = event => {
-    setMousePosition({ x: event.pageX, y: event.pageY })
+    if (ref.current) {
+      // offset to el height
+      const offsetY = -ref.current.clientHeight
+      ref.current.style.top = event.clientY + offsetY + 'px'
+      // ofset width proportionally to mouse distance from left edge^^
+      // TODO: be normal and set it to smth sane
+      const offsetX = (-ref.current.clientWidth * event.clientX) / window.innerWidth
+      ref.current.style.left = event.clientX + offsetX + 'px'
+    }
   }
 
+  const ref = React.createRef<HTMLDivElement>()
+
   return (
-    <TooltipHostBase onMouseMove={onMouseMove}>
-      <Tooltip style={{ top: mousePosition.y, left: mousePosition.x }} {...rest}>
-        {render}
-      </Tooltip>
+    <div
+      onMouseMove={onMouseMove}
+      onMouseEnter={() => setRender(true)}
+      onMouseLeave={() => setRender(false)}
+    >
+      {shouldRender && (
+        <div css={tooltipWrapperStyles} ref={ref}>
+          <TooltipBase {...rest}>{render}</TooltipBase>
+        </div>
+      )}
       {children}
-    </TooltipHostBase>
+    </div>
   )
 }
