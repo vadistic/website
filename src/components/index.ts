@@ -1,4 +1,4 @@
-export * from './avatar'
+export * from './persona'
 export * from './image'
 export * from './section'
 export * from './card'

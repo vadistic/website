@@ -1,17 +1,22 @@
-import { Grid, Heading, Text } from 'grommet'
+import { Box, Grid, Heading, Text } from 'grommet'
 import { mdx } from 'mdx.macro'
 import React from 'react'
-import { Section } from '../components'
-import { MDXOverrider } from '../templates'
+import { Spacer } from '../components'
 
 export const FooterSection: React.FC = () => (
-  <Section>
-    <Grid margin={{ vertical: 'large' }}>
-      <Heading level="3">.vadistic</Heading>
-    </Grid>
-    <FooterMdx />
-  </Section>
+  <Box as="footer" background="black">
+    <Spacer>
+      <Grid margin={{ vertical: 'large' }}>
+        <Heading level="3">.vadistic</Heading>
+      </Grid>
+      <FooterMdx />
+    </Spacer>
+  </Box>
 )
+
+/*
+ * CONTENT
+ */
 
 const FooterMdx = mdx`
 

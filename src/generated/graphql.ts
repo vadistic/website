@@ -2,44 +2,10 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: AboutSectionQuery
+// GraphQL query operation: PersonaQuery
 // ====================================================
 
-export interface AboutSectionQuery_mdx_frontmatter_about {
-  __typename: "about_2";
-  name: string | null;
-  headline: string | null;
-}
-
-export interface AboutSectionQuery_mdx_frontmatter {
-  __typename: "frontmatter_2";
-  title: string | null;
-  path: string | null;
-  about: AboutSectionQuery_mdx_frontmatter_about | null;
-}
-
-export interface AboutSectionQuery_mdx {
-  __typename: "Mdx";
-  /**
-   * The id of this node.
-   */
-  id: string;
-  tableOfContents: any | null;
-  frontmatter: AboutSectionQuery_mdx_frontmatter | null;
-}
-
-export interface AboutSectionQuery {
-  mdx: AboutSectionQuery_mdx | null;
-}
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL query operation: ContactSectionQuery
-// ====================================================
-
-export interface ContactSectionQuery_profileImage_childImageSharp_fluid {
+export interface PersonaQuery_image_childImageSharp_fluid {
   __typename: "ImageSharpFluid";
   base64: string | null;
   aspectRatio: number | null;
@@ -48,121 +14,21 @@ export interface ContactSectionQuery_profileImage_childImageSharp_fluid {
   sizes: string | null;
 }
 
-export interface ContactSectionQuery_profileImage_childImageSharp {
+export interface PersonaQuery_image_childImageSharp {
   __typename: "ImageSharp";
-  fluid: ContactSectionQuery_profileImage_childImageSharp_fluid | null;
+  fluid: PersonaQuery_image_childImageSharp_fluid | null;
 }
 
-export interface ContactSectionQuery_profileImage {
+export interface PersonaQuery_image {
   __typename: "File";
   /**
    * The child of this node of type imageSharp
    */
-  childImageSharp: ContactSectionQuery_profileImage_childImageSharp | null;
+  childImageSharp: PersonaQuery_image_childImageSharp | null;
 }
 
-export interface ContactSectionQuery {
-  profileImage: ContactSectionQuery_profileImage | null;
-}
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL query operation: FooterSectionQuery
-// ====================================================
-
-export interface FooterSectionQuery_mdx_frontmatter {
-  __typename: "frontmatter_2";
-  title: string | null;
-}
-
-export interface FooterSectionQuery_mdx_code {
-  __typename: "MDXCodeMdx";
-  body: string | null;
-}
-
-export interface FooterSectionQuery_mdx {
-  __typename: "Mdx";
-  /**
-   * The id of this node.
-   */
-  id: string;
-  tableOfContents: any | null;
-  frontmatter: FooterSectionQuery_mdx_frontmatter | null;
-  code: FooterSectionQuery_mdx_code | null;
-}
-
-export interface FooterSectionQuery {
-  mdx: FooterSectionQuery_mdx | null;
-}
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL query operation: ProcessSectionQuery
-// ====================================================
-
-export interface ProcessSectionQuery_mdx_frontmatter_process_items {
-  __typename: "items_4";
-  heading: string | null;
-  body: string | null;
-}
-
-export interface ProcessSectionQuery_mdx_frontmatter_process {
-  __typename: "process_2";
-  items: (ProcessSectionQuery_mdx_frontmatter_process_items | null)[] | null;
-}
-
-export interface ProcessSectionQuery_mdx_frontmatter {
-  __typename: "frontmatter_2";
-  title: string | null;
-  path: string | null;
-  process: ProcessSectionQuery_mdx_frontmatter_process | null;
-}
-
-export interface ProcessSectionQuery_mdx_code {
-  __typename: "MDXCodeMdx";
-  body: string | null;
-}
-
-export interface ProcessSectionQuery_mdx {
-  __typename: "Mdx";
-  /**
-   * The id of this node.
-   */
-  id: string;
-  tableOfContents: any | null;
-  frontmatter: ProcessSectionQuery_mdx_frontmatter | null;
-  code: ProcessSectionQuery_mdx_code | null;
-}
-
-export interface ProcessSectionQuery_image_childImageSharp_fluid {
-  __typename: "ImageSharpFluid";
-  base64: string | null;
-  aspectRatio: number | null;
-  src: string | null;
-  srcSet: string | null;
-  sizes: string | null;
-}
-
-export interface ProcessSectionQuery_image_childImageSharp {
-  __typename: "ImageSharp";
-  fluid: ProcessSectionQuery_image_childImageSharp_fluid | null;
-}
-
-export interface ProcessSectionQuery_image {
-  __typename: "File";
-  /**
-   * The child of this node of type imageSharp
-   */
-  childImageSharp: ProcessSectionQuery_image_childImageSharp | null;
-}
-
-export interface ProcessSectionQuery {
-  mdx: ProcessSectionQuery_mdx | null;
-  image: ProcessSectionQuery_image | null;
+export interface PersonaQuery {
+  image: PersonaQuery_image | null;
 }
 
 /* tslint:disable */

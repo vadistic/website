@@ -53,6 +53,12 @@ export const theme = deepMerge(generate(baseSpacing, scale), {
       },
     },
   },
+  anchor: {
+    color: {
+      ligh: 'brand',
+      dark: 'brand',
+    },
+  },
 })
 
 export type Theme = typeof theme

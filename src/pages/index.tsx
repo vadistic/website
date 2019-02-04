@@ -10,21 +10,20 @@ import {
   TechSection,
 } from '../sections'
 import { BenefitsSection } from '../sections/benefits'
+import { HeroSection } from '../sections/hero'
 import { PageTemplate } from '../templates'
 
 const IndexPage: React.FC = () => (
   <PageTemplate pageType={PageType.Home}>
-    <AboutSection />
+    <HeroSection />
+    <ContactSection />
     <Box css={gradientBackground}>
       <ServicesSection />
       <TechSection />
     </Box>
     <ProcessSection />
     <BenefitsSection />
-    <ContactSection />
-    <Box background="black">
-      <FooterSection />
-    </Box>
+    <FooterSection />
   </PageTemplate>
 )
 

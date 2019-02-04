@@ -7,8 +7,8 @@ export const Card: React.FC<CardProps> = ({ ...rest }) => (
   <Box
     animation="zoomIn"
     pad="medium"
-    elevation="small"
-    round="small"
+    elevation="xsmall"
+    round="xsmall"
     flex
     align="start"
     background="white"

@@ -1,21 +1,26 @@
 import { Box } from 'grommet'
 import { mdx } from 'mdx.macro'
 import React from 'react'
-import { Section } from '../components'
+import { SectionTitle, Spacer } from '../components'
 
 export interface BenefitsSectionProps {}
 
 export const BenefitsSection: React.FC<BenefitsSectionProps> = ({}) => (
-  <Section>
-    <Box width="medium">
-      <BenefitsMdx />
-    </Box>
-  </Section>
+  <section>
+    <Spacer>
+      <SectionTitle title={sectionTitle} />
+      <Box>
+        <BenefitsMdx />
+      </Box>
+    </Spacer>
+  </section>
 )
 
 /*
  * CONTENT
  */
+
+const sectionTitle = `Vision`
 
 const BenefitsMdx = mdx`
 
