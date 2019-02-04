@@ -2,89 +2,34 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: LayoutQuery
-// ====================================================
-
-export interface LayoutQuery_site_siteMetadata {
-  __typename: "siteMetadata_2";
-  title: string | null;
-  description: string | null;
-  keywords: string | null;
-}
-
-export interface LayoutQuery_site {
-  __typename: "Site";
-  siteMetadata: LayoutQuery_site_siteMetadata | null;
-}
-
-export interface LayoutQuery {
-  site: LayoutQuery_site | null;
-}
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL query operation: ImagePageQuery
-// ====================================================
-
-export interface ImagePageQuery_file_childImageSharp_fluid {
-  __typename: "ImageSharpFluid";
-  base64: string | null;
-  aspectRatio: number | null;
-  src: string | null;
-  srcSet: string | null;
-  sizes: string | null;
-}
-
-export interface ImagePageQuery_file_childImageSharp {
-  __typename: "ImageSharp";
-  fluid: ImagePageQuery_file_childImageSharp_fluid | null;
-}
-
-export interface ImagePageQuery_file {
-  __typename: "File";
-  /**
-   * The child of this node of type imageSharp
-   */
-  childImageSharp: ImagePageQuery_file_childImageSharp | null;
-}
-
-export interface ImagePageQuery {
-  file: ImagePageQuery_file | null;
-}
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
 // GraphQL query operation: AboutSectionQuery
 // ====================================================
 
-export interface AboutSectionQuery_profileImage_childImageSharp_fluid {
-  __typename: "ImageSharpFluid";
-  base64: string | null;
-  aspectRatio: number | null;
-  src: string | null;
-  srcSet: string | null;
-  sizes: string | null;
+export interface AboutSectionQuery_mdx_frontmatter_about {
+  __typename: "about_2";
+  name: string | null;
+  headline: string | null;
 }
 
-export interface AboutSectionQuery_profileImage_childImageSharp {
-  __typename: "ImageSharp";
-  fluid: AboutSectionQuery_profileImage_childImageSharp_fluid | null;
+export interface AboutSectionQuery_mdx_frontmatter {
+  __typename: "frontmatter_2";
+  title: string | null;
+  path: string | null;
+  about: AboutSectionQuery_mdx_frontmatter_about | null;
 }
 
-export interface AboutSectionQuery_profileImage {
-  __typename: "File";
+export interface AboutSectionQuery_mdx {
+  __typename: "Mdx";
   /**
-   * The child of this node of type imageSharp
+   * The id of this node.
    */
-  childImageSharp: AboutSectionQuery_profileImage_childImageSharp | null;
+  id: string;
+  tableOfContents: any | null;
+  frontmatter: AboutSectionQuery_mdx_frontmatter | null;
 }
 
 export interface AboutSectionQuery {
-  profileImage: AboutSectionQuery_profileImage | null;
+  mdx: AboutSectionQuery_mdx | null;
 }
 
 /* tslint:disable */
@@ -124,8 +69,74 @@ export interface ContactSectionQuery {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL query operation: FooterSectionQuery
+// ====================================================
+
+export interface FooterSectionQuery_mdx_frontmatter {
+  __typename: "frontmatter_2";
+  title: string | null;
+}
+
+export interface FooterSectionQuery_mdx_code {
+  __typename: "MDXCodeMdx";
+  body: string | null;
+}
+
+export interface FooterSectionQuery_mdx {
+  __typename: "Mdx";
+  /**
+   * The id of this node.
+   */
+  id: string;
+  tableOfContents: any | null;
+  frontmatter: FooterSectionQuery_mdx_frontmatter | null;
+  code: FooterSectionQuery_mdx_code | null;
+}
+
+export interface FooterSectionQuery {
+  mdx: FooterSectionQuery_mdx | null;
+}
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: ProcessSectionQuery
 // ====================================================
+
+export interface ProcessSectionQuery_mdx_frontmatter_process_items {
+  __typename: "items_4";
+  heading: string | null;
+  body: string | null;
+}
+
+export interface ProcessSectionQuery_mdx_frontmatter_process {
+  __typename: "process_2";
+  items: (ProcessSectionQuery_mdx_frontmatter_process_items | null)[] | null;
+}
+
+export interface ProcessSectionQuery_mdx_frontmatter {
+  __typename: "frontmatter_2";
+  title: string | null;
+  path: string | null;
+  process: ProcessSectionQuery_mdx_frontmatter_process | null;
+}
+
+export interface ProcessSectionQuery_mdx_code {
+  __typename: "MDXCodeMdx";
+  body: string | null;
+}
+
+export interface ProcessSectionQuery_mdx {
+  __typename: "Mdx";
+  /**
+   * The id of this node.
+   */
+  id: string;
+  tableOfContents: any | null;
+  frontmatter: ProcessSectionQuery_mdx_frontmatter | null;
+  code: ProcessSectionQuery_mdx_code | null;
+}
 
 export interface ProcessSectionQuery_image_childImageSharp_fluid {
   __typename: "ImageSharpFluid";
@@ -150,6 +161,7 @@ export interface ProcessSectionQuery_image {
 }
 
 export interface ProcessSectionQuery {
+  mdx: ProcessSectionQuery_mdx | null;
   image: ProcessSectionQuery_image | null;
 }
 
@@ -157,32 +169,60 @@ export interface ProcessSectionQuery {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL fragment: FixedImage
+// GraphQL query operation: LayoutQuery
 // ====================================================
 
-export interface FixedImage {
-  __typename: "ImageSharpFixed";
-  base64: string | null;
-  width: number | null;
-  height: number | null;
-  src: string | null;
-  srcSet: string | null;
+export interface LayoutQuery_site_siteMetadata {
+  __typename: "siteMetadata_2";
+  title: string | null;
+  description: string | null;
+  keywords: string | null;
+}
+
+export interface LayoutQuery_site {
+  __typename: "Site";
+  siteMetadata: LayoutQuery_site_siteMetadata | null;
+}
+
+export interface LayoutQuery {
+  site: LayoutQuery_site | null;
 }
 
 /* tslint:disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL fragment: FluidImage
+// GraphQL query operation: PostLayoutQuery
 // ====================================================
 
-export interface FluidImage {
-  __typename: "ImageSharpFluid";
-  base64: string | null;
-  aspectRatio: number | null;
-  src: string | null;
-  srcSet: string | null;
-  sizes: string | null;
+export interface PostLayoutQuery_mdx_frontmatter {
+  __typename: "frontmatter_2";
+  title: string | null;
+  path: string | null;
+  date: any | null;
+}
+
+export interface PostLayoutQuery_mdx_code {
+  __typename: "MDXCodeMdx";
+  body: string | null;
+}
+
+export interface PostLayoutQuery_mdx {
+  __typename: "Mdx";
+  /**
+   * The id of this node.
+   */
+  id: string;
+  frontmatter: PostLayoutQuery_mdx_frontmatter | null;
+  code: PostLayoutQuery_mdx_code | null;
+}
+
+export interface PostLayoutQuery {
+  mdx: PostLayoutQuery_mdx | null;
+}
+
+export interface PostLayoutQueryVariables {
+  id: string;
 }
 
 /* tslint:disable */

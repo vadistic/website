@@ -1,52 +1,60 @@
-import { graphql, StaticQuery } from 'gatsby'
-import { Box, Grid, Heading, Paragraph } from 'grommet'
+import { Box, Grid } from 'grommet'
+import { mdx } from 'mdx.macro'
 import React from 'react'
-import { Img, Section } from '../components'
-import { content } from '../content'
-import { ProcessSectionQuery } from '../generated'
+import { Section } from '../components'
 import { useMedia } from '../styles'
-import { Idx } from '../utils'
 
 export interface ProcessSectionProps {}
 
 export const ProcessSection: React.FunctionComponent<ProcessSectionProps> = () => {
-  const media = useMedia()
+  const { resp } = useMedia()
   return (
-    <StaticQuery<Idx<ProcessSectionQuery>> query={PROCESS_SECTION_QUERY}>
-      {data => (
-        <Section title={content.process.annotation}>
-          <Grid
-            fill="horizontal"
-            columns={{ count: 'fit', size: media({ max: 'small' }) ? 'small' : 'medium' }}
-            rows={['flex', 'flex', 'flex']}
-            gap="medium"
-          >
-            {content.process.procesItems.map((item, i) => (
-              <div>
-                <Heading size="small">
-                  {i + 1}/ {item.title}
-                </Heading>
-                <Paragraph>{item.description}</Paragraph>
-              </div>
-            ))}
-          </Grid>
-          <Box gridArea="image">
-            <Img fluid={data.image.childImageSharp.fluid} />
+    <Section title={sectionTitle}>
+      <Grid columns={{ size: 'medium', count: 'fit' }} gap="medium">
+        {processMdxItems.map(MdxItem => (
+          <Box>
+            <MdxItem />
           </Box>
-        </Section>
-      )}
-    </StaticQuery>
+        ))}
+      </Grid>
+    </Section>
   )
 }
 
-const PROCESS_SECTION_QUERY = graphql`
-  query ProcessSectionQuery {
-    image: file(relativePath: { eq: "images/placeholder.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 1200) {
-          ...FluidImage
-        }
-      }
-    }
-  }
+/*
+ * CONTENT
+ */
+
+const sectionTitle = 'Process'
+
+const ProcessMdxItem1 = mdx`
+### Research first
+Lorem pixum dolor amet. Lorem pixum dolor amet.
+Lorem pixum dolor amet. Lorem pixum dolor amet. Lorem pixum dolor amet.
 `
+
+const ProcessMdxItem2 = mdx`
+### Another step
+
+Lorem pixum dolor amet.
+Lorem pixum dolor amet. Lorem pixum dolor amet.
+Lorem pixum dolor amet. Lorem pixum dolor amet.
+`
+
+const ProcessMdxItem3 = mdx`
+### Almost done
+
+Lorem pixum dolor amet.
+Lorem pixum dolor amet. Lorem pixum dolor amet.
+Lorem pixum dolor amet. Lorem pixum dolor amet.
+`
+
+const ProcessMdxItem4 = mdx`
+### Final placeholder!
+
+Lorem pixum dolor amet.
+Lorem pixum dolor amet. Lorem pixum dolor amet.
+Lorem pixum dolor amet. Lorem pixum dolor amet.
+`
+
+const processMdxItems = [ProcessMdxItem1, ProcessMdxItem2, ProcessMdxItem3, ProcessMdxItem4]

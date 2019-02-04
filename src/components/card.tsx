@@ -3,7 +3,7 @@ import React from 'react'
 
 export interface CardProps extends BoxProps {}
 
-export const Card: React.SFC<CardProps> = ({ ...rest }) => (
+export const Card: React.FC<CardProps> = ({ ...rest }) => (
   <Box
     animation="zoomIn"
     pad="medium"

@@ -1,14 +1,14 @@
 import { Box, BoxProps } from 'grommet'
 import React from 'react'
-import { Img } from '.'
-import { FluidImage } from '../generated'
+import { Image } from '.'
+import { GatsbyImageSharpFluid } from '../generated'
 import { Idx } from '../utils'
 
 export interface AvatarProps extends BoxProps {
-  fluid?: Idx<FluidImage>
+  fluid?: Idx<GatsbyImageSharpFluid>
 }
 
-export const Avatar: React.SFC<AvatarProps> = ({ fluid, ...rest }) => (
+export const Avatar: React.FC<AvatarProps> = ({ fluid, ...rest }) => (
   <Box
     height="small"
     width="small"
@@ -19,6 +19,6 @@ export const Avatar: React.SFC<AvatarProps> = ({ fluid, ...rest }) => (
     flex={false}
     {...rest}
   >
-    <Img fluid={fluid} />
+    <Image fluid={fluid} />
   </Box>
 )

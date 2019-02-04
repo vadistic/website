@@ -2,10 +2,14 @@ import { Paragraph, ParagraphProps } from 'grommet'
 import React from 'react'
 import { css, styled } from '../styles'
 
-const BlockquoteBase = styled.blockquote(
+export const Blockquote = styled.blockquote(
   ({ theme }) => css`
     margin: 0;
     padding-left: 1em;
+
+    /* to disable child paragraph margin colapsing */
+    display: flex;
+    flex-direction: column;
 
     color: ${theme.global.colors['dark-4']};
     font-style: italic;
@@ -20,11 +24,3 @@ const BlockquoteBase = styled.blockquote(
       1 100%;
   `,
 )
-
-export const Blockquote: React.FunctionComponent<ParagraphProps> = props => {
-  return (
-    <BlockquoteBase>
-      <Paragraph {...props} />
-    </BlockquoteBase>
-  )
-}

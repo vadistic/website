@@ -9,21 +9,24 @@ export interface SectionProps extends BoxProps {
 
 const sectionStyles = ({ theme }: ThemeProps) => css`
   padding: ${theme.global.edgeSize.medium} ${theme.global.edgeSize.small};
-  margin: 0;
 
-  ${media.small(css`
-    padding: ${theme.global.edgeSize.large} ${theme.global.edgeSize.medium};
+  ${media.medium(css`
+    padding: ${theme.global.edgeSize.xlarge} ${theme.global.edgeSize.medium};
   `)}
 
-  ${media.large(css`
+  ${media.xlarge(css`
     width: ${theme.global.breakpoints.large.value}px;
     margin: auto;
   `)}
 `
 
-export const Section: React.SFC<SectionProps> = ({ title, children, ...rest }) => (
-  <Box as="section" css={sectionStyles} {...rest}>
-    {title && <Heading size="medium">{title}</Heading>}
-    {children}
-  </Box>
+export const Section: React.FC<SectionProps> = ({ title, children, ...rest }) => (
+  <section css={sectionStyles}>
+    {title && (
+      <Heading level="2" size="large">
+        {title}
+      </Heading>
+    )}
+    <Box {...rest}>{children}</Box>
+  </section>
 )

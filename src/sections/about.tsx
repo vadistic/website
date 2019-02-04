@@ -1,50 +1,30 @@
-import { graphql, StaticQuery } from 'gatsby'
-import { Box, Grid, Text } from 'grommet'
+import { Box, Grid, Heading } from 'grommet'
+import { mdx } from 'mdx.macro'
 import React from 'react'
-import { Avatar, Blockquote, Section } from '../components'
-import { content } from '../content'
-import { AboutSectionQuery } from '../generated'
-import { useMedia } from '../styles'
-import { Idx } from '../utils'
+import { Section } from '../components'
+import { MDXOverrider } from '../templates'
 
 export const AboutSection = () => {
-  const media = useMedia()
   return (
-    <StaticQuery<Idx<AboutSectionQuery>> query={ABOUT_SECTION_QUERY}>
-      {({ profileImage }) => (
-        <Section align="center">
-          <Grid columns={['flex', 'flex']}>
-            <Box direction="row" align="center">
-              <Avatar
-                width={media({ max: 'small' }) ? 'xsmall' : 'small'}
-                height={media({ max: 'small' }) ? 'xsmall' : 'small'}
-                fluid={profileImage.childImageSharp.fluid}
-              />
-              <Box margin="small">
-                <Text size="xlarge" color="text">
-                  {content.about.name}
-                </Text>
-                <Text>{content.about.title}</Text>
-              </Box>
-            </Box>
-            <Box justify="center">
-              <Blockquote>{content.about.description}</Blockquote>
-            </Box>
-          </Grid>
-        </Section>
-      )}
-    </StaticQuery>
+    <Section>
+      <Heading color="brand">{sectionTitle}</Heading>
+      <MDXOverrider components={{ p: { size: 'xlarge' } }}>
+        <AboutMdx />
+      </MDXOverrider>
+    </Section>
   )
 }
 
-const ABOUT_SECTION_QUERY = graphql`
-  query AboutSectionQuery {
-    profileImage: file(relativePath: { eq: "images/profile.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 192, maxHeight: 192) {
-          ...FluidImage
-        }
-      }
-    }
-  }
+/*
+ * CONTENT
+ */
+
+const sectionTitle = 'Hello'
+
+const AboutMdx = mdx`
+
+I focus on bridging the gap between design and implementation —
+combining design experience, fluency in bleeding-edge tech,
+and ability to deliver buisness solutions
+
 `

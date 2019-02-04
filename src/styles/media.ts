@@ -2,59 +2,74 @@ import { useContext } from 'react'
 import { css, ResponsiveContext, ResponsiveValue, theme } from '../styles'
 import { NonUndefined } from '../utils'
 
-const mediaTemplate = (breakpoint: ResponsiveValue) => (styles: ReturnType<typeof css>) => css`
-  @media (min-width: ${theme.global.breakpoints[breakpoint].value / 16}em) {
-    ${styles}
-  }
-`
+const bpKeys = Object.keys(theme.global.breakpoints) as ResponsiveValue[]
+
+const getBpIndex = (bp: ResponsiveValue) => bpKeys.findIndex(val => val === bp)
+
+const mediaTemplate = (breakpoint: ResponsiveValue) => (styles: ReturnType<typeof css>) => {
+  const bpIndex = getBpIndex(breakpoint)
+  // get value of n-1 breakpoint (breakpoint medium should be from min-width: small etc.)
+  const width = bpIndex === 0 ? 0 : theme.global.breakpoints[bpKeys[bpIndex - 1]].value
+
+  return css`
+    @media (min-width: ${width}px) {
+      ${styles}
+    }
+  `
+}
+
 export type Media = { [K in ResponsiveValue]: ReturnType<typeof mediaTemplate> }
 
-export const media = (Object.keys(theme.global.breakpoints) as ResponsiveValue[]).reduce(
+export const media = bpKeys.reduce(
   (acc, label) => ({ ...acc, [label]: mediaTemplate(label) }),
   {} as Media,
 )
 
-export interface CondMedia {
+export interface CondMediaOptions {
   min?: ResponsiveValue
   max?: ResponsiveValue
   only?: ResponsiveValue
 }
 
-type ResponsiveProps<T> = { [K in ResponsiveValue]?: T } & { fb: T }
+type ResponsiveProps<T> = { [K in ResponsiveValue]?: T } & {
+  // make first bp required
+  small: T
+}
 
 export const useMedia = () => {
-  const currentBreakpoint = useContext(ResponsiveContext)
-  const breakpoints = Object.keys(theme.global.breakpoints) as ResponsiveValue[]
-  const currentBpIndex = breakpoints.findIndex(val => val === currentBreakpoint)
+  const currentBp = useContext(ResponsiveContext)
+  const currentBpIndex = getBpIndex(currentBp)
 
-  const cond = ({ min, max, only }: CondMedia) => {
+  const cond = ({ min, max, only }: CondMediaOptions) => {
     if (only) {
-      return only === currentBreakpoint
+      return only === currentBp
     }
 
-    const targetBpIndex = breakpoints.findIndex(val => val === (min || max))
-
     if (min) {
-      return currentBpIndex >= targetBpIndex
+      return currentBpIndex >= getBpIndex(min)
     }
 
     if (max) {
-      return currentBpIndex <= targetBpIndex
+      return currentBpIndex <= getBpIndex(max)
     }
+
+    // it's a noop
+    return false
   }
 
   const resp = <T>(prop: ResponsiveProps<T>) => {
-    if (currentBreakpoint in prop) {
-      return prop[currentBreakpoint] as NonUndefined<T>
+    if (currentBp in prop) {
+      return prop[currentBp] as NonUndefined<T>
     }
 
     // find last specified breakpoint, going from mobile first
-    const last = breakpoints
+    const last = bpKeys
       .slice(0, currentBpIndex)
-      .filter(el => Object.keys(prop).includes(el))
+      .filter(bp => Object.keys(prop).includes(bp))
       .pop()
 
-    return last ? (prop[last] as NonUndefined<T>) : prop.fb
+    // last & prop[last] would never be undefined
+    return prop[last as ResponsiveValue] as NonUndefined<T>
   }
 
   return { cond, resp }

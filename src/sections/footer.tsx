@@ -1,28 +1,22 @@
-import { Box, Text } from 'grommet'
+import { Grid, Heading, Text } from 'grommet'
+import { mdx } from 'mdx.macro'
 import React from 'react'
-import { Logos } from '../assets'
-import { PlainAnchor, Section } from '../components'
-import { content } from '../content'
+import { Section } from '../components'
+import { MDXOverrider } from '../templates'
 
-export const FooterSection: React.SFC = ({}) => (
+export const FooterSection: React.FC = () => (
   <Section>
-    <Box margin={{ vertical: 'large' }}>
-      <Text size="large">.vadistic</Text>
-    </Box>
-    <Box>
-      <Text size="xsmall">
-        {content.footer.copyright}
-        {' | '}
-        {'Blazing fast thanks to '}
-        <Logos.Gatsby viewBox="0 0 32 32" width="1em" height="1em" />
-        {' & '}
-        <Logos.React viewBox="0 0 32 32" width="1em" height="1em" />
-        {' | '}
-        {'Photography by '}
-        <PlainAnchor target="_blank" href="https://unsplash.com/">
-          Unsplash
-        </PlainAnchor>
-      </Text>
-    </Box>
+    <Grid margin={{ vertical: 'large' }}>
+      <Heading level="3">.vadistic</Heading>
+    </Grid>
+    <FooterMdx />
   </Section>
 )
+
+const FooterMdx = mdx`
+
+Blazing Fast thanks to [react](https://reactjs.org) & [gatsby](https://gatsbyjs.org)
+
+Photography by [unsplash](https://unsplash.com)
+
+`
