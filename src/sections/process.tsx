@@ -71,7 +71,7 @@ const ProcessMdxItem6 = mdx`
 ### Almost, finish
 
 The hard truth is that most projects never finish entirely.
-There always could be another iteration, improvements or linked idea to follow so I'm ready to do it!
+There always could be another iteration, improvements or linked idea to follow — so I'm ready to do it!
 
 `
 

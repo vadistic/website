@@ -43,8 +43,8 @@ export const ContactSection: React.FC = () => {
 const sectionTitle = 'Contact'
 
 const ContactMdx = mdx`
-  I'm always glad to hear about cool things.
-  If you think I could help - just drop me a message 🤞
+  I'm always glad to hear about cool stuff.
+  Have something I could help with - just drop me a message 🤞
 `
 
 const contactDetails = {

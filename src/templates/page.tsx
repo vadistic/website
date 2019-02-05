@@ -23,7 +23,7 @@ export const PageTemplate: React.FC<PageTemplateProps> = ({
             title={title}
             meta={[
               { name: 'description', content: description },
-              { name: 'keywords', content: keywords || 'keywords' },
+              { name: 'keywords', content: keywords },
             ]}
           >
             <html lang="en" />

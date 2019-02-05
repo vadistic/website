@@ -18,6 +18,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
+    "serve": "serve public",
     "format:all": "prettier --write -l --no-color './{src,types}/**/*.{js,ts,tsx,md,mdx}'",
     "format": "pretty-quick --staged",
     "lint": "tslint -p tsconfig.json",
@@ -75,6 +76,7 @@
     "prettier": "^1.16.4",
     "pretty-quick": "^1.8.1",
     "react-testing-library": "^5.4.4",
+    "serve": "^10.1.1",
     "tslint": "^5.12.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^3.6.0",
