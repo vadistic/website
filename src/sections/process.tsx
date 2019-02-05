@@ -2,14 +2,19 @@ import { Box, Grid } from 'grommet'
 import { mdx } from 'mdx.macro'
 import React from 'react'
 import { Section, SectionTitle } from '../components'
+import { useMedia } from '../styles'
 
 export interface ProcessSectionProps {}
 
 export const ProcessSection: React.FunctionComponent<ProcessSectionProps> = () => {
+  const { cond } = useMedia()
   return (
     <Section id="process">
       <SectionTitle>{sectionTitle}</SectionTitle>
-      <Grid columns={{ size: 'medium', count: 'fit' }} gap="medium">
+      <Grid
+        columns={{ size: cond({ only: 'small' }) ? 'auto' : 'medium', count: 'fit' }}
+        gap="medium"
+      >
         {processMdxItems.map(MdxItem => (
           <Box>
             <MdxItem />

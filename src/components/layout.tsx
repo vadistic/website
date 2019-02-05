@@ -9,6 +9,7 @@ export enum PageType {
 
 const LayoutWrapper = styled.div`
   margin: 0;
+  overflow: hidden;
 `
 
 export interface LayoutProps {

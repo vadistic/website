@@ -18,30 +18,43 @@ const HireButton: React.FC = () => (
         navigate('#contact')
       }}
     >
-      For Hire!
+      For Hire
     </Button>
   </Box>
+)
+
+const VisionSubSection: React.FC = () => (
+  <MDXPropsProvider
+    components={{ p: { size: 'large' }, h1: { size: 'xlarge' }, h3: { size: 'xlarge' } }}
+  >
+    <VisionMdx />
+  </MDXPropsProvider>
 )
 
 export const HeroSection = () => {
   const { cond } = useMedia()
   const height = cond({ min: 'xlarge' }) ? '50rem' : '100vh'
   return (
-    <Section height={height} id="hero">
-      <Stack anchor="bottom-right" fill>
-        <Box justify="center" height="full">
-          <MDXPropsProvider
-            components={{ p: { size: 'large' }, h1: { size: 'xlarge' }, h3: { size: 'xlarge' } }}
-          >
+    <>
+      <Section height={height} id="hero">
+        <Stack anchor="bottom-right" fill>
+          <Box justify="center" height="full">
             <HeroMdx />
-          </MDXPropsProvider>
-          <HireButton />
-        </Box>
-        <Box direction="row">
-          <SocialLinks links={contactLinks} basic />
-        </Box>
-      </Stack>
-    </Section>
+            {cond({ min: 'medium' }) && <VisionSubSection />}
+            <HireButton />
+          </Box>
+          <Box direction="row" wrap>
+            <SocialLinks links={contactLinks} basic />
+          </Box>
+        </Stack>
+      </Section>
+
+      {cond({ only: 'small' }) && (
+        <Section id="vision">
+          <VisionSubSection />
+        </Section>
+      )}
+    </>
   )
 }
 
@@ -50,9 +63,13 @@ export const HeroSection = () => {
  */
 
 const HeroMdx = mdx`
-# Hello, I'm Jakub
-###  Frontend Developer & Designer 👨‍💻👨‍🎨👨‍💼
+# Hello, <br/> I'm Jakub
+###  Frontend Developer & Designer 👨‍💻👨‍🎨
 
+
+`
+
+const VisionMdx = mdx`
 > I focus on bridging the gap between idea and implementation —
 combining design experience, fluency in bleeding-edge tech,
 and ability to deliver business solutions.

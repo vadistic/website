@@ -21,13 +21,16 @@ export const Section: React.FC<BoxProps & SectionProps> = ({
 
   const maxWidth = cond({ min: 'xlarge' }) ? theme.global.breakpoints.large.value + 'px' : 'full'
 
+  const isSmall = cond({ only: 'small' })
+
   const innerBg = bgFull ? undefined : background
   const outerBg = bgFull ? background : undefined
 
-  const innerPad = noPad ? undefined : 'large'
+  const innerPad = noPad ? undefined : isSmall ? 'medium' : 'large'
+  const outerPad = isSmall ? 'medium' : 'large'
 
   return (
-    <Box as="section" pad={'large'} height={height} background={outerBg} align="center">
+    <Box as="section" pad={outerPad} height={height} background={outerBg} align="center">
       <Box pad={innerPad} width={maxWidth} height="full" background={innerBg} {...rest} />
     </Box>
   )

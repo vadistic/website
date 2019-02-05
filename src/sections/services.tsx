@@ -3,19 +3,24 @@ import { mdx } from 'mdx.macro'
 import React from 'react'
 import { Illustrations } from '../assets'
 import { Card, PlainUl, Section, SectionTitle } from '../components'
+import { useMedia } from '../styles'
 
 export const ServicesSection = () => {
+  const { cond } = useMedia()
   return (
     <Section id="services">
       <SectionTitle>{sectionTitle}</SectionTitle>
       <Box margin={{ bottom: 'medium' }}>
         <ServicesMdx />
       </Box>
-      <Grid columns={{ size: 'medium', count: 'fill' }} gap="large">
+      <Grid
+        columns={{ size: cond({ only: 'small' }) ? 'auto' : 'medium', count: 'fit' }}
+        gap="large"
+      >
         {servicesItems.map(({ Svg, title, description, details }) => (
           <Card>
             <Box margin={{ vertical: 'medium' }} width="50%">
-              <Svg viewBox="0 0 352 270" width="100%" height="100%" />
+              <Svg width="100%" height="100%" />
             </Box>
             <Heading level="3" color="brand">
               {title}
