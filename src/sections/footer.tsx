@@ -1,27 +1,33 @@
-import { Box, Grid, Heading, Text } from 'grommet'
+import { Box, Text } from 'grommet'
 import { mdx } from 'mdx.macro'
 import React from 'react'
-import { Spacer } from '../components'
+import { Logo, Section } from '../components'
+import { MDXOverrider } from '../templates'
 
 export const FooterSection: React.FC = () => (
-  <Box as="footer" background="black">
-    <Spacer>
-      <Grid margin={{ vertical: 'large' }}>
-        <Heading level="3">.vadistic</Heading>
-      </Grid>
-      <FooterMdx />
-    </Spacer>
-  </Box>
+  <Section background="black" bgFull id="footer">
+    <Box margin={{ bottom: 'large' }}>
+      <Logo />
+    </Box>
+    <Box margin={{ vertical: 'small' }}>
+      <MDXOverrider components={{ p: props => <Text {...props} /> }}>
+        <CreditsMdx />
+      </MDXOverrider>
+    </Box>
+    <Box margin={{ top: 'small' }}>
+      <Text>{copyright}</Text>
+    </Box>
+  </Section>
 )
 
 /*
  * CONTENT
  */
 
-const FooterMdx = mdx`
+const CreditsMdx = mdx`
 
-Blazing Fast thanks to [react](https://reactjs.org) & [gatsby](https://gatsbyjs.org)
-
-Photography by [unsplash](https://unsplash.com)
+Blazing Fast thanks to [react](https://reactjs.org) & [gatsby](https://gatsbyjs.org) | Sleek thanks to [grommet](https://github.com/grommet/grommet)
 
 `
+
+const copyright = `© 2019 Jakub Wadas`

@@ -1,5 +1,5 @@
-import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
 
-// TODO: Image preset
+// It's because I hape default exports
+// Also, TODO: Image preset
 export { Image }

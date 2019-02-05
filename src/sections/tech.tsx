@@ -2,10 +2,9 @@ import { Box, Grid, Text } from 'grommet'
 import { mdx } from 'mdx.macro'
 import React from 'react'
 import { Logos } from '../assets'
-import { PlainAnchor, SectionTitle, Spacer, TooltipHost } from '../components'
+import { PlainAnchor, Section, SectionTitle, TooltipHost } from '../components'
 import { useMedia } from '../styles'
 import styled from '../styles/styled-components'
-import { MDXOverrider } from '../templates'
 
 const Filter = styled.div`
   filter: grayscale();
@@ -21,39 +20,37 @@ const Filter = styled.div`
 export const TechSection = () => {
   const { resp } = useMedia()
   return (
-    <section>
-      <Spacer>
-        <SectionTitle title={sectionTitle} />
-        <MDXOverrider components={{ p: { size: 'large' } }}>
-          <TechMdx />
-        </MDXOverrider>
-        <Grid
-          columns={{
-            count: 'fill',
-            size: resp({ small: 'xsmall', medium: 'small' }),
-          }}
-        >
-          {Object.values(techItems).map(group =>
-            group.map(item => (
-              <PlainAnchor href={item.url} target="_blank">
-                <TooltipHost render={<Text>{item.caption}</Text>}>
-                  <Filter>
-                    <Box align="center" pad={{ vertical: 'medium' }}>
-                      <Box width="50%">
-                        <item.Logo viewBox="0 0 32 32" width="100%" height="100%" />
-                      </Box>
-                      <Text margin={{ top: 'small' }} textAlign="center">
-                        {item.title}
-                      </Text>
+    <Section id="tech">
+      <SectionTitle>{sectionTitle}</SectionTitle>
+      <Box margin={{ bottom: 'medium' }}>
+        <TechMdx />
+      </Box>
+      <Grid
+        columns={{
+          count: 'fill',
+          size: resp({ small: 'xsmall', medium: 'small' }),
+        }}
+      >
+        {Object.values(techItems).map(group =>
+          group.map(item => (
+            <PlainAnchor href={item.url} target="_blank">
+              <TooltipHost render={<Text>{item.caption}</Text>}>
+                <Filter>
+                  <Box align="center" pad={{ vertical: 'medium' }}>
+                    <Box width="50%">
+                      <item.Logo viewBox="0 0 32 32" width="100%" height="100%" />
                     </Box>
-                  </Filter>
-                </TooltipHost>
-              </PlainAnchor>
-            )),
-          )}
-        </Grid>
-      </Spacer>
-    </section>
+                    <Text margin={{ top: 'small' }} textAlign="center">
+                      {item.title}
+                    </Text>
+                  </Box>
+                </Filter>
+              </TooltipHost>
+            </PlainAnchor>
+          )),
+        )}
+      </Grid>
+    </Section>
   )
 }
 
@@ -61,13 +58,13 @@ export const TechSection = () => {
  * CONTENT
  */
 
-const sectionTitle = 'Prefered stack'
+const sectionTitle = 'Prefered stack 🎉'
 
 const TechMdx = mdx`
 
 Yet it's vital to choose the right tool for the job.
 Beeing already familiar to myriad of cool libraries, tools & services
-I'm quite flexible with adopting yet one another.
+I'm quite flexible with adopting yet one another
 
 `
 

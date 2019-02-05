@@ -1,44 +1,46 @@
 import { Box, Grid, Heading, Meter, Paragraph, Text } from 'grommet'
+import { mdx } from 'mdx.macro'
 import React from 'react'
 import { Illustrations } from '../assets'
-import { Card, PlainUl, SectionTitle, Spacer } from '../components'
+import { Card, PlainUl, Section, SectionTitle } from '../components'
 
 export const ServicesSection = () => {
   return (
-    <section>
-      <Spacer>
-        <SectionTitle title={sectionTitle} />
-        <Grid columns={{ size: 'medium', count: 'fill' }} gap="medium">
-          {servicesItems.map(({ Svg, title, description, details }) => (
-            <Card>
-              <Box margin={{ vertical: 'medium' }} width="50%">
-                <Svg viewBox="0 0 352 270" width="100%" height="100%" />
-              </Box>
-              <Heading level="3" color="brand">
-                {title}
-              </Heading>
-              <Paragraph>{description}</Paragraph>
-              <PlainUl>
-                {details.map(({ label, value }) => (
-                  <li>
-                    <Box margin={{ bottom: 'small' }}>
-                      <Text weight="bold">{label}</Text>
-                      <Meter
-                        type="bar"
-                        round
-                        thickness="small"
-                        alignSelf="start"
-                        values={[{ color: 'brand', value, label }]}
-                      />
-                    </Box>
-                  </li>
-                ))}
-              </PlainUl>
-            </Card>
-          ))}
-        </Grid>
-      </Spacer>
-    </section>
+    <Section id="services">
+      <SectionTitle>{sectionTitle}</SectionTitle>
+      <Box margin={{ bottom: 'medium' }}>
+        <ServicesMdx />
+      </Box>
+      <Grid columns={{ size: 'medium', count: 'fill' }} gap="large">
+        {servicesItems.map(({ Svg, title, description, details }) => (
+          <Card>
+            <Box margin={{ vertical: 'medium' }} width="50%">
+              <Svg viewBox="0 0 352 270" width="100%" height="100%" />
+            </Box>
+            <Heading level="3" color="brand">
+              {title}
+            </Heading>
+            <Paragraph>{description}</Paragraph>
+            <PlainUl>
+              {details.map(({ label, value }) => (
+                <li>
+                  <Box margin={{ bottom: 'small' }}>
+                    <Text weight="bold">{label}</Text>
+                    <Meter
+                      type="bar"
+                      round
+                      thickness="small"
+                      alignSelf="start"
+                      values={[{ color: 'brand', value, label }]}
+                    />
+                  </Box>
+                </li>
+              ))}
+            </PlainUl>
+          </Card>
+        ))}
+      </Grid>
+    </Section>
   )
 }
 
@@ -48,11 +50,15 @@ export const ServicesSection = () => {
 
 const sectionTitle = `Skill spectrum`
 
+const ServicesMdx = mdx`
+I'm one man start-up team. Extended Full Stack. Jack of all trades, but pretty confident in those.
+`
+
 const servicesItems = [
   {
     Svg: Illustrations.DesignAlt,
     title: `Design`,
-    description: 'Lorem pixum dolor amet',
+    description: 'Experienced with print, fluent with tools, and a true desire for quality',
     details: [
       { label: 'User Interfaces', value: 60 },
       { label: 'Branding', value: 80 },
@@ -62,7 +68,7 @@ const servicesItems = [
   {
     Svg: Illustrations.DevelopmentAlt,
     title: `Development`,
-    description: 'Lorem pixum dolor amet',
+    description: 'Technical background and knowledgeable about hacking modern apps',
     details: [
       { label: 'Static Websites', value: 80 },
       { label: 'Web Apps', value: 80 },
@@ -72,7 +78,7 @@ const servicesItems = [
   {
     Svg: Illustrations.RealisationAlt,
     title: `Realisation`,
-    description: 'Lorem pixum dolor amet',
+    description: 'Startup experience in making things happen',
     details: [
       { label: 'Project Management', value: 60 },
       { label: 'Product & UX', value: 40 },

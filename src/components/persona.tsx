@@ -24,17 +24,34 @@ export const Avatar: React.FC<AvatarProps> = ({ fluid, ...rest }) => (
   </Box>
 )
 
-export interface PersonaProps {
+export interface SocialLinksProps {
+  links: Array<{
+    Round: React.ComponentType
+    Basic: React.ComponentType
+    title: string
+    url: string
+  }>
+  basic?: boolean
+}
+
+export const SocialLinks: React.FC<SocialLinksProps> = ({ links, basic }) => (
+  <>
+    {links.map(icon => (
+      <Box pad="xsmall">
+        <PlainAnchor target="_blank" href={icon.url} title={icon.title}>
+          {basic ? <icon.Basic /> : <icon.Round />}
+        </PlainAnchor>
+      </Box>
+    ))}
+  </>
+)
+
+export interface PersonaProps extends SocialLinksProps {
   direction: 'horizontal' | 'vertical'
   details: {
     name: string
     headline: string
   }
-  links: Array<{
-    Icon: React.ComponentType
-    title: string
-    url: string
-  }>
 }
 
 export const Persona: React.FC<PersonaProps> = ({ direction, details, links }) => (
@@ -42,7 +59,7 @@ export const Persona: React.FC<PersonaProps> = ({ direction, details, links }) =
     {({ image }) => {
       if (direction === 'horizontal') {
         return (
-          <Box direction="row" align="center" justify="center">
+          <Box direction="row">
             <Avatar width="small" height="small" fluid={image.childImageSharp.fluid} />
             <Box margin={{ top: 'large', horizontal: 'medium' }}>
               <Text size="xlarge" color="text">
@@ -50,13 +67,7 @@ export const Persona: React.FC<PersonaProps> = ({ direction, details, links }) =
               </Text>
               <Text>{details.headline}</Text>
               <Box direction="row" margin={{ vertical: 'small' }}>
-                {links.map(link => (
-                  <Box pad="xsmall">
-                    <PlainAnchor target="_blank" href={link.url} title={link.title}>
-                      <link.Icon />
-                    </PlainAnchor>
-                  </Box>
-                ))}
+                <SocialLinks links={links} />
               </Box>
             </Box>
           </Box>
@@ -77,13 +88,7 @@ export const Persona: React.FC<PersonaProps> = ({ direction, details, links }) =
             </Text>
             <Text textAlign="center">{details.headline}</Text>
             <Box direction="row" margin={{ vertical: 'small' }} justify="center">
-              {links.map(item => (
-                <Box pad="xsmall">
-                  <PlainAnchor target="_blank" href={item.url} title={item.title}>
-                    <item.Icon />
-                  </PlainAnchor>
-                </Box>
-              ))}
+              <SocialLinks links={links} />
             </Box>
           </Box>
         )

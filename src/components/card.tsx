@@ -9,8 +9,6 @@ export const Card: React.FC<CardProps> = ({ ...rest }) => (
     pad="medium"
     elevation="xsmall"
     round="xsmall"
-    flex
-    align="start"
     background="white"
     {...rest}
   />

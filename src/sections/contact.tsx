@@ -1,34 +1,81 @@
+import { Grid } from 'grommet'
+import { mdx } from 'mdx.macro'
 import React from 'react'
 import { Icons } from '../assets'
-import { Persona, Spacer } from '../components'
+import { Persona, Section, SectionTitle } from '../components'
 import { useMedia } from '../styles'
+import { MDXPropsProvider } from '../templates'
 
 export const ContactSection: React.FC = () => {
   const { cond } = useMedia()
 
   return (
-    <section>
-      <Spacer>
-        {cond({ max: 'medium' }) && (
+    <Section background="background-alt" bgFull id="contact">
+      <SectionTitle>{sectionTitle}</SectionTitle>
+
+      {cond({ max: 'medium' }) && (
+        <Grid columns={['flex']} justify="center" align="center" gap="medium">
           <Persona links={contactLinks} details={contactDetails} direction="vertical" />
-        )}
-        {cond({ min: 'large' }) && (
+
+          <MDXPropsProvider components={{ p: { textAlign: 'center' } }}>
+            <ContactMdx />
+          </MDXPropsProvider>
+        </Grid>
+      )}
+
+      {cond({ min: 'large' }) && (
+        <Grid columns={['flex', 'flex']} align="center" gap="medium">
           <Persona links={contactLinks} details={contactDetails} direction="horizontal" />
-        )}
-      </Spacer>
-    </section>
+
+          <MDXPropsProvider components={{ p: { size: 'large' } }}>
+            <ContactMdx />
+          </MDXPropsProvider>
+        </Grid>
+      )}
+    </Section>
   )
 }
+
+/*
+ * CONTENT
+ */
+
+const sectionTitle = 'Contact'
+
+const ContactMdx = mdx`
+  I'm always glad to hear about cool things.
+  If you think I could help - just drop me a message 🤞
+`
 
 const contactDetails = {
   name: 'Jakub Wadas',
   headline: 'Front-end Developer & Designer',
 }
 
-const contactLinks = [
-  { Icon: Icons.Round.Github, title: `Github`, url: `https://github.com/vadistic` },
-  { Icon: Icons.Round.Linkedin, title: `LinkedIn`, url: `https://www.linkedin.com/in/jakubwadas` },
-  { Icon: Icons.Round.Behance, title: `Behance`, url: `https://www.behance.net/vadistic` },
-  { Icon: Icons.Round.Skype, title: `Skype`, url: `skype:vadistic` },
-  { Icon: Icons.Round.Mail, title: `Main`, url: `mailto:vadistic@gmail.com` },
+export const contactLinks = [
+  {
+    Basic: Icons.Basic.Github,
+    Round: Icons.Round.Github,
+    title: `Github`,
+    url: `https://github.com/vadistic`,
+  },
+  {
+    Basic: Icons.Basic.Linkedin,
+    Round: Icons.Round.Linkedin,
+    title: `LinkedIn`,
+    url: `https://www.linkedin.com/in/jakubwadas`,
+  },
+  {
+    Basic: Icons.Basic.Behance,
+    Round: Icons.Round.Behance,
+    title: `Behance`,
+    url: `https://www.behance.net/vadistic`,
+  },
+  { Round: Icons.Round.Skype, Basic: Icons.Basic.Skype, title: `Skype`, url: `skype:vadistic` },
+  {
+    Basic: Icons.Basic.Mail,
+    Round: Icons.Round.Mail,
+    title: `Main`,
+    url: `mailto:jakub.wadas@outlook.com`,
+  },
 ]

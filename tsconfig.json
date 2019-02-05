@@ -17,7 +17,7 @@
     "allowJs": false,
     // strict
     "strict": true,
-    "noUnusedLocals": false, //dev
+    "noUnusedLocals": true,
     "skipLibCheck": true,
     //lint
     "forceConsistentCasingInFileNames": true

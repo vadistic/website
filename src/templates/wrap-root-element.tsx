@@ -26,18 +26,18 @@ const components: Components = {
   h6: props => <Heading {...props} level="6" />,
 }
 
-export interface MDXOverriderProps {
+export interface MDXPropsProviderProps {
   components: {
     p?: ParagraphProps
     h1?: HeadingProps
   }
 }
 
-interface Overrides {
+interface MDXProps {
   [index: string]: (props: any) => React.ReactElement<any>
 }
 
-const MDXOverriderBase: React.FC<MDXOverriderProps & InjectedMDXScopeProps> = memo(
+const MDXPropsProviderBase: React.FC<MDXPropsProviderProps & InjectedMDXScopeProps> = memo(
   ({ scope, components: componentProps, ...rest }) => {
     const overrides = Object.entries(componentProps).reduce(
       (acc, [key, val]) => {
@@ -46,12 +46,19 @@ const MDXOverriderBase: React.FC<MDXOverriderProps & InjectedMDXScopeProps> = me
         }
         return acc
       },
-      {} as Overrides,
+      {} as MDXProps,
     )
 
     return <MDXProvider scope={scope} components={{ ...components, ...overrides }} {...rest} />
   },
 )
+
+export const MDXPropsProvider = withMDXScope(MDXPropsProviderBase)
+
+const MDXOverriderBase: React.FC<MDXProviderProps & InjectedMDXScopeProps> = ({
+  components: overrides,
+  ...rest
+}) => <MDXProvider components={{ ...components, ...overrides }} {...rest} />
 
 export const MDXOverrider = withMDXScope(MDXOverriderBase)
 

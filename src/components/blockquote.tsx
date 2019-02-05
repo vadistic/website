@@ -1,5 +1,3 @@
-import { Paragraph, ParagraphProps } from 'grommet'
-import React from 'react'
 import { css, styled } from '../styles'
 
 export const Blockquote = styled.blockquote(
@@ -15,7 +13,7 @@ export const Blockquote = styled.blockquote(
     font-style: italic;
 
     border-left-style: solid;
-    border-width: 3px;
+    border-width: 0.2em;
     border-image: linear-gradient(
         to bottom,
         ${theme.global.colors.brand},

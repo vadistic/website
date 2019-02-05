@@ -1,60 +1,47 @@
-import { Box, Grid, Heading } from 'grommet'
+import { Box, Button, Stack } from 'grommet'
 import { mdx } from 'mdx.macro'
 import React from 'react'
-import { Pattern } from '../assets'
-import { Spacer } from '../components'
-import { css, ThemeProps, useMedia } from '../styles'
-import { MDXOverrider } from '../templates'
+import { Section, SocialLinks } from '../components'
+import { useMedia } from '../styles'
+import { MDXPropsProvider } from '../templates'
 
-const patternStyles = ({ theme }: ThemeProps) => css`
-  width: 100%;
-  height: 75%;
+// TODO: maybe from site config?
+import { navigate } from 'gatsby'
+import { contactLinks } from './contact'
 
-  #chevrons,
-  #chevrons-parts {
-    path {
-      fill: ${theme.global.colors.brand};
-    }
-  }
-
-  #dots {
-    path {
-      fill: ${theme.global.colors['dark-1']};
-    }
-  }
-
-  #dots-parts {
-    path {
-      display: none;
-    }
-  }
-`
-
-const helloStyles = css`
-  font-size: 180px;
-  margin: 0;
-`
+const HireButton: React.FC = () => (
+  <Box width="small" margin={{ vertical: 'xlarge' }} justify="end">
+    <Button
+      primary
+      plain={false}
+      onClick={() => {
+        navigate('#contact')
+      }}
+    >
+      For Hire!
+    </Button>
+  </Box>
+)
 
 export const HeroSection = () => {
-  const { resp } = useMedia()
+  const { cond } = useMedia()
+  const height = cond({ min: 'xlarge' }) ? '50rem' : '100vh'
   return (
-    <Box as="header" height="100vh">
-      <Spacer>
-        <Pattern css={patternStyles} preserveAspectRatio="xMidYMid slice" />
-        <Grid
-          columns={{ size: 'auto', count: resp({ small: 1, large: 2 }) }}
-          align="center"
-          gap="large"
-        >
-          <Heading level="2" css={helloStyles}>
-            {sectionTitle}
-          </Heading>
-          <MDXOverrider components={{ p: { size: 'xlarge', margin: { vertical: 'large' } } }}>
-            <AboutMdx />
-          </MDXOverrider>
-        </Grid>
-      </Spacer>
-    </Box>
+    <Section height={height} id="hero">
+      <Stack anchor="bottom-right" fill>
+        <Box justify="center" height="full">
+          <MDXPropsProvider
+            components={{ p: { size: 'large' }, h1: { size: 'xlarge' }, h3: { size: 'xlarge' } }}
+          >
+            <HeroMdx />
+          </MDXPropsProvider>
+          <HireButton />
+        </Box>
+        <Box direction="row">
+          <SocialLinks links={contactLinks} basic />
+        </Box>
+      </Stack>
+    </Section>
   )
 }
 
@@ -62,11 +49,11 @@ export const HeroSection = () => {
  * CONTENT
  */
 
-const sectionTitle = 'Hello'
+const HeroMdx = mdx`
+# Hello, I'm Jakub
+###  Frontend Developer & Designer 👨‍💻👨‍🎨👨‍💼
 
-const AboutMdx = mdx`
-
-I'm bridging the gap between idea and implementation -
+> I focus on bridging the gap between idea and implementation —
 combining design experience, fluency in bleeding-edge tech,
-and focus on delivering business solutions.
+and ability to deliver business solutions.
 `
