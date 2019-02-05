@@ -1,10 +1,12 @@
 module.exports = {
   // site
   title: '.vadistic - Design & Development by Jakub Wadas',
+  shortTitle: '.vadistic',
   logo: '', // Logo used for SEO and manifest.
   url: 'https://vadistic.netlify.com', // Domain of your website without pathPrefix.
   description: 'Design & Development by Jakub Wadas', // Website description used for RSS feeds/meta description tag.
   keywords: 'developer, designer, react, typescipt, frontend',
+  icon: 'src/assets/icon.png',
 
   rss: '', // Path to the RSS file.
   fbAppID: '', // FB Application ID for using app insights

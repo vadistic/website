@@ -32,8 +32,22 @@ const VisionSubSection: React.FC = () => (
 )
 
 export const HeroSection = () => {
-  const { cond } = useMedia()
-  const height = cond({ min: 'xlarge' }) ? '50rem' : '100vh'
+  const { resp, cond } = useMedia()
+
+  // for gatsby ssr builds
+  let mobileBarHeight = 0
+  if (typeof window !== 'undefined') {
+    mobileBarHeight =
+      Math.max(window.document.documentElement.clientHeight, window.innerHeight) -
+      window.innerHeight
+  }
+
+  const height = resp({
+    small: `calc(100vh - ${mobileBarHeight}px)`,
+    medium: '100vh',
+    xlarge: '50rem',
+  })
+
   return (
     <>
       <Section height={height} id="hero">

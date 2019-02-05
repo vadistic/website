@@ -17,6 +17,19 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-offline',
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: siteConfig.title,
+        short_name: siteConfig.shortTitle,
+        start_url: `/`,
+        background_color: siteConfig.backgroundColor,
+        theme_color: siteConfig.brandColor,
+        display: `browser`,
+        icon: siteConfig.icons,
+        include_favicon: true,
+      },
+    },
+    {
       resolve: 'gatsby-mdx',
     },
     {
