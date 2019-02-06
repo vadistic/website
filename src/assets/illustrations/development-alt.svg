@@ -1,35 +1,63 @@
 <svg width="352" height="271" viewBox="0 0 352 271" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="352" height="271" rx="2" fill="#F5F5F5"/>
-<rect x="75.8155" y="54.1998" width="32.4923" height="10.84" rx="2" fill="#6534FF"/>
-<rect x="75.8155" y="162.6" width="21.6615" height="10.84" rx="2" fill="#6534FF"/>
-<rect x="75.8155" y="140.92" width="32.4923" height="10.84" rx="2" fill="#6534FF"/>
-<rect x="86.6462" y="97.5602" width="32.4923" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="140.8" y="119.24" width="32.4923" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="151.631" y="75.88" width="32.4923" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="151.631" y="184.28" width="32.4923" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="86.6462" y="75.88" width="54.1538" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="129.969" y="97.5602" width="54.1538" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="86.6462" y="119.24" width="43.3231" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="86.6462" y="184.28" width="54.1538" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="75.8155" y="205.96" width="21.6615" height="10.84" rx="2" fill="#6534FF"/>
-<rect x="64.9846" y="32.52" width="21.6615" height="10.84" rx="2" fill="#6534FF"/>
-<rect x="64.9846" y="227.64" width="21.6615" height="10.84" rx="2" fill="#6534FF"/>
-<line x1="54.5077" y1="238.48" x2="54.5077" y2="32.52" stroke="#DDDDDD" stroke-width="2"/>
-<rect x="32.4923" y="32.5201" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="32.4924" y="54.1999" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="32.4924" y="75.8801" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="32.4924" y="97.5602" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="32.4924" y="119.24" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="32.4924" y="140.92" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="32.4924" y="161.245" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="32.4924" y="184.28" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="32.4924" y="205.96" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="32.4924" y="227.64" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
-<rect x="227.446" y="32.52" width="90.7077" height="205.96" rx="2" fill="#DDDDDD"/>
-<rect x="238.277" y="43.36" width="43.3231" height="10.84" rx="2" fill="#FFFAFA"/>
-<rect x="238.277" y="65.04" width="54.1538" height="10.84" rx="2" fill="#FFFAFA"/>
-<path d="M240.053 93.624L244.049 90.408V89.004L240.113 85.812L239.165 87.036L242.525 89.64V89.784L239.153 92.412L240.053 93.624ZM251.115 93.9H245.235V95.28H251.115V93.9Z" fill="#FFFAFA"/>
-<path d="M251.874 212.793C251.094 212.013 251.094 210.747 251.874 209.966L272.062 189.761C272.843 188.979 274.111 188.979 274.892 189.761L280.188 195.061C280.968 195.842 280.968 197.108 280.188 197.888L259.999 218.094C259.218 218.876 257.951 218.876 257.17 218.094L251.874 212.793Z" fill="#6534FF"/>
-<path d="M272.402 196.154C266.587 190.333 266.587 180.896 272.402 175.075C276.351 171.43 281.792 170.027 286.913 171.177C288.295 171.488 288.634 173.175 287.633 174.176L279.478 182.339C279.103 182.714 278.892 183.223 278.892 183.753V187.7C278.892 188.804 279.788 189.7 280.892 189.7H284.91C285.394 189.7 285.863 189.524 286.227 189.204L294.477 181.98C295.483 181.099 297.056 181.442 297.373 182.741C298.541 187.524 297.112 192.658 293.462 196.154C287.647 201.974 278.218 201.974 272.402 196.154Z" fill="#FFFAFA"/>
-<path d="M259.938 212.735C261.434 212.735 262.646 211.522 262.646 210.025C262.646 208.528 261.434 207.315 259.938 207.315C258.443 207.315 257.231 208.528 257.231 210.025C257.231 211.522 258.443 212.735 259.938 212.735Z" fill="white"/>
+<g id="illustrations/development-alt">
+<g id="code-editor">
+<g id="neutral">
+<g id="code">
+<rect id="Rectangle" x="86.6462" y="97.5602" width="32.4923" height="10.84" rx="2" fill="#DDDDDD"/>
+<rect id="Rectangle_2" x="140.8" y="119.24" width="32.4923" height="10.84" rx="2" fill="#DDDDDD"/>
+<rect id="Rectangle_3" x="151.631" y="75.88" width="32.4923" height="10.84" rx="2" fill="#DDDDDD"/>
+<rect id="Rectangle_4" x="151.631" y="184.28" width="32.4923" height="10.84" rx="2" fill="#DDDDDD"/>
+<rect id="Rectangle_5" x="86.6462" y="75.88" width="54.1538" height="10.84" rx="2" fill="#DDDDDD"/>
+<rect id="Rectangle_6" x="129.969" y="97.5602" width="54.1538" height="10.84" rx="2" fill="#DDDDDD"/>
+<rect id="Rectangle_7" x="86.6462" y="119.24" width="43.3231" height="10.84" rx="2" fill="#DDDDDD"/>
+<rect id="Rectangle_8" x="86.6462" y="184.28" width="54.1538" height="10.84" rx="2" fill="#DDDDDD"/>
+</g>
+<g id="divider">
+<line id="Line" x1="54.5077" y1="238.48" x2="54.5077" y2="32.52" stroke="#DDDDDD" stroke-width="2"/>
+</g>
+<g id="rows">
+<rect id="Rectangle 2" x="32.4923" y="32.5201" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
+<rect id="Rectangle 2.1" x="32.4924" y="54.1999" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
+<rect id="Rectangle 2.2" x="32.4924" y="75.8801" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
+<rect id="Rectangle 2.3" x="32.4924" y="97.5602" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
+<rect id="Rectangle 2.4" x="32.4924" y="119.24" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
+<rect id="Rectangle 2.5" x="32.4924" y="140.92" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
+<rect id="Rectangle 2.6" x="32.4924" y="161.245" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
+<rect id="Rectangle 2.7" x="32.4924" y="184.28" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
+<rect id="Rectangle 2.8" x="32.4924" y="205.96" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
+<rect id="Rectangle 2.9" x="32.4924" y="227.64" width="16.2462" height="10.84" rx="2" fill="#DDDDDD"/>
+</g>
+</g>
+<g id="brand">
+<rect id="Rectangle_9" x="75.8155" y="54.1998" width="32.4923" height="10.84" rx="2" fill="#6534FF"/>
+<rect id="Rectangle_10" x="75.8155" y="162.6" width="21.6615" height="10.84" rx="2" fill="#6534FF"/>
+<rect id="Rectangle_11" x="75.8155" y="140.92" width="32.4923" height="10.84" rx="2" fill="#6534FF"/>
+<rect id="Rectangle_12" x="75.8155" y="205.96" width="21.6615" height="10.84" rx="2" fill="#6534FF"/>
+<rect id="Rectangle_13" x="64.9846" y="32.52" width="21.6615" height="10.84" rx="2" fill="#6534FF"/>
+<rect id="Rectangle_14" x="64.9846" y="227.64" width="21.6615" height="10.84" rx="2" fill="#6534FF"/>
+</g>
+</g>
+<g id="terminal">
+<g id="neutral_2">
+<rect id="Rectangle 2_2" x="227.446" y="32.52" width="90.7077" height="205.96" rx="2" fill="#DDDDDD"/>
+</g>
+<g id="accent">
+<rect id="Rectangle_15" x="238.277" y="43.36" width="43.3231" height="10.84" rx="2" fill="#FFFAFA"/>
+<rect id="Rectangle_16" x="238.277" y="65.04" width="54.1538" height="10.84" rx="2" fill="#FFFAFA"/>
+<g id="&#62;_">
+<path d="M240.053 93.624L244.049 90.408V89.004L240.113 85.812L239.165 87.036L242.525 89.64V89.784L239.153 92.412L240.053 93.624Z" fill="#FFFAFA"/>
+<path d="M251.115 93.9H245.235V95.28H251.115V93.9Z" fill="#FFFAFA"/>
+</g>
+</g>
+</g>
+<g id="icon">
+<g id="brand_2">
+<path id="Shape" d="M251.874 212.793C251.094 212.013 251.094 210.747 251.874 209.966L272.062 189.761C272.843 188.979 274.111 188.979 274.892 189.761L280.188 195.061C280.968 195.842 280.968 197.108 280.188 197.888L259.999 218.094C259.218 218.876 257.951 218.876 257.17 218.094L251.874 212.793Z" fill="#6534FF"/>
+</g>
+<g id="accent_2">
+<path id="Shape_2" d="M272.402 196.154C266.587 190.333 266.587 180.896 272.402 175.075C276.351 171.43 281.792 170.027 286.913 171.177C288.295 171.488 288.634 173.175 287.633 174.176L279.478 182.339C279.103 182.714 278.892 183.223 278.892 183.753V187.7C278.892 188.804 279.788 189.7 280.892 189.7H284.91C285.394 189.7 285.863 189.524 286.227 189.204L294.477 181.98C295.483 181.099 297.056 181.442 297.373 182.741C298.541 187.524 297.112 192.658 293.462 196.154C287.647 201.974 278.218 201.974 272.402 196.154Z" fill="#FFFAFA"/>
+<path id="Oval" d="M259.938 212.735C261.434 212.735 262.646 211.522 262.646 210.025C262.646 208.528 261.434 207.315 259.938 207.315C258.443 207.315 257.231 208.528 257.231 210.025C257.231 211.522 258.443 212.735 259.938 212.735Z" fill="white"/>
+</g>
+</g>
+</g>
 </svg>
