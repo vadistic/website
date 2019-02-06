@@ -40,11 +40,11 @@ export const ContactSection: React.FC = () => {
  * CONTENT
  */
 
-const sectionTitle = 'Contact'
+const sectionTitle = 'Contact ⚡'
 
 const ContactMdx = mdx`
   I'm always glad to hear about cool stuff.
-  Have something I could help with - just drop me a message 🤞
+  If you have something I could help with - just drop me a message.
 `
 
 const contactDetails = {

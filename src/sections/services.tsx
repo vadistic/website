@@ -53,10 +53,10 @@ export const ServicesSection = () => {
  * CONTENT
  */
 
-const sectionTitle = `Skill spectrum`
+const sectionTitle = `Skill spectrum 👨‍🎨👨‍💻👨‍💼`
 
 const ServicesMdx = mdx`
-I'm one man start-up team. Extended Full Stack. Jack of all trades, but pretty confident in those.
+One man start-up team. Extended Full Stack. Jack of all trades, but pretty confident in those.
 `
 
 const servicesItems = [

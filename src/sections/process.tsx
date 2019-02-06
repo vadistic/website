@@ -29,20 +29,22 @@ export const ProcessSection: React.FunctionComponent<ProcessSectionProps> = () =
  * CONTENT
  */
 
-const sectionTitle = 'Process'
+const sectionTitle = 'Process 📝'
 
 const ProcessMdxItem1 = mdx`
 ### Research first
 
-Ok, the first point was easy. And googling is half of the job anyways.
+Ok, the first point was easy. Research is important and googling is half of the job anyways.
 
 `
 
 const ProcessMdxItem2 = mdx`
 ### Get on the same side
 
-(And this point is always difficult.) _It's essential_ to do deep needs evaluation and only then agree on project scope.
-It's fair, it's reasonable, and everybody can get the most bang for the buck.
+_And this point is tricky_
+
+It's essential to do deep needs evaluation and then agree on the project scope.
+Clear communication is the key to victory.
 
 `
 
@@ -51,7 +53,7 @@ const ProcessMdxItem3 = mdx`
 
 Yes, I can code it, but it's way faster to produce some mockups.
 And even faster to just draw it.
-Of course, agile, but it won't hurt to try understanding features right from the start.
+Agile, but it won't hurt to try getting it right, from the start.
 And let's explore great ideas before timeline brings us back to earth...
 
 `
@@ -67,16 +69,18 @@ avoid crunching issues that do not add any end value. Also, who would like to wo
 const ProcessMdxItem5 = mdx`
 ### C.O.D.E
 
-During Continous Orchestration of Development Endeavour, with honest hard work (and coffee)
-the project will magically start to function to bring happiness to all stakeholders.
+_Continous Orchestration of Development Endeavours(?)_
+
+With honest hard work (and coffee)
+the project will magically start to appear and bring happiness to all stakeholders.
 
 `
 
 const ProcessMdxItem6 = mdx`
-### Almost, finish
+### Finish, almost
 
-The hard truth is that most projects never finish entirely.
-There always could be another iteration, improvements or linked idea to follow — so I'm ready to do it!
+The truth is that most projects can never finish entirely.
+There always could be another iteration, improvements or linked idea to follow — well, so I'm ready to do it!
 
 `
 

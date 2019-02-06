@@ -1,12 +1,12 @@
-import { Box, Button, Stack } from 'grommet'
+import { navigate } from 'gatsby'
+import { Box, Button, Paragraph, Stack } from 'grommet'
 import { mdx } from 'mdx.macro'
 import React from 'react'
-import { Section, SocialLinks } from '../components'
+import { Blockquote, Section, SocialLinks } from '../components'
 import { useMedia } from '../styles'
-import { MDXPropsProvider } from '../templates'
+import { MDXOverrider, MDXPropsProvider } from '../templates'
 
 // TODO: maybe from site config?
-import { navigate } from 'gatsby'
 import { contactLinks } from './contact'
 
 const HireButton: React.FC = () => (
@@ -23,14 +23,6 @@ const HireButton: React.FC = () => (
   </Box>
 )
 
-const VisionSubSection: React.FC = () => (
-  <MDXPropsProvider
-    components={{ p: { size: 'large' }, h1: { size: 'xlarge' }, h3: { size: 'xlarge' } }}
-  >
-    <VisionMdx />
-  </MDXPropsProvider>
-)
-
 export const HeroSection = () => {
   const { resp, cond } = useMedia()
 
@@ -41,13 +33,17 @@ export const HeroSection = () => {
     xlarge: '50rem',
   })
 
-  return (
-    <>
+  if (cond({ min: 'medium' })) {
+    return (
       <Section height={height} id="hero">
-        <Stack anchor="bottom-right" fill>
+        <Stack anchor="bottom-left" fill>
           <Box justify="center" height="full">
-            <HeroMdx />
-            {cond({ min: 'medium' }) && <VisionSubSection />}
+            <MDXPropsProvider
+              components={{ p: { size: 'large' }, h1: { size: 'large' }, h3: { color: 'brand' } }}
+            >
+              <HeroMdx />
+              <VisionMdx />
+            </MDXPropsProvider>
             <HireButton />
           </Box>
           <Box direction="row" wrap>
@@ -55,14 +51,35 @@ export const HeroSection = () => {
           </Box>
         </Stack>
       </Section>
+    )
+  }
 
-      {cond({ only: 'small' }) && (
-        <Section id="vision">
-          <VisionSubSection />
+  if (cond({ only: 'small' })) {
+    return (
+      <>
+        <Section height={height} id="hero">
+          <Stack anchor="bottom-left" fill>
+            <Box justify="center" height="full">
+              <MDXOverrider components={{ h3: props => <Paragraph {...props} /> }}>
+                <HeroMdx />
+              </MDXOverrider>
+              <HireButton />
+            </Box>
+            <Box direction="row" wrap>
+              <SocialLinks links={contactLinks} basic />
+            </Box>
+          </Stack>
         </Section>
-      )}
-    </>
-  )
+        <Section id="vision">
+          <MDXOverrider components={{ p: ({ ref, ...rest }) => <Blockquote {...rest} /> }}>
+            <VisionMdx />
+          </MDXOverrider>
+        </Section>
+      </>
+    )
+  }
+
+  return null
 }
 
 /*
@@ -71,13 +88,13 @@ export const HeroSection = () => {
 
 const HeroMdx = mdx`
 # Hello, <br/> I'm Jakub
-###  Frontend Developer & Designer 👨‍💻👨‍🎨
+###  Frontend Developer & Designer
 
 
 `
 
 const VisionMdx = mdx`
-> I focus on bridging the gap between idea and implementation —
+I focus on bridging the gap between idea and implementation —
 combining design experience, fluency in bleeding-edge tech,
 and ability to deliver business solutions.
 `

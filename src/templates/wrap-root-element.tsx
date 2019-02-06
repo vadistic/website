@@ -30,6 +30,11 @@ export interface MDXPropsProviderProps {
   components: {
     p?: ParagraphProps
     h1?: HeadingProps
+    h2?: HeadingProps
+    h3?: HeadingProps
+    h4?: HeadingProps
+    h5?: HeadingProps
+    h6?: HeadingProps
   }
 }
 
