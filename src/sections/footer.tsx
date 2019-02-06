@@ -1,8 +1,7 @@
 import { Box, Text } from 'grommet'
 import { mdx } from 'mdx.macro'
 import React from 'react'
-import { Logo, Section } from '../components'
-import { MDXOverrider } from '../templates'
+import { Logo, MDXOverrider, Section } from '../components'
 
 export const FooterSection: React.FC = () => (
   <Section background="black" bgFull id="footer">

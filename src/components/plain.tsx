@@ -1,3 +1,4 @@
+import { normalizeColor } from 'grommet/utils'
 import { css, styled, ThemeProps } from '../styles'
 
 export const plainListStyles = css`
@@ -27,10 +28,9 @@ export const PlainOl = styled.ol`
   ${plainListStyles}
 `
 
-export const gradientBackground = ({
-  theme: {
-    global: { colors },
-  },
-}: ThemeProps) => css`
-  background-image: linear-gradient(${colors.background}, ${colors['background-alt']});
+export const gradientBackgroundStyles = ({ theme }: ThemeProps) => css`
+  background-image: linear-gradient(
+    ${normalizeColor('background', theme)},
+    ${normalizeColor('background-alt', theme)}
+  );
 `

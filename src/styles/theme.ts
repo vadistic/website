@@ -26,9 +26,19 @@ export const theme = deepMerge(generate(baseSpacing, scale), {
     colors: {
       brand: brandColor,
       'brand-alt': '#4122A3',
-      background: '#FFFFFF',
-      'background-alt': '#EEEEEE',
+      background: {
+        light: '#FFFFFF',
+        dark: '#000000',
+      },
+      'background-alt': {
+        light: '#EEEEEE',
+        dark: '#222222',
+      },
       selected: brandColor,
+      'accent-1': brandColor,
+      'accent-2': brandColor,
+      'accent-3': brandColor,
+      'accent-4': brandColor,
       text: {
         dark: '#f8f8f8',
         light: '#444444',
@@ -52,12 +62,6 @@ export const theme = deepMerge(generate(baseSpacing, scale), {
       xlarge: {
         value: 9999, // 0 - 1536
       },
-    },
-  },
-  anchor: {
-    color: {
-      ligh: 'brand',
-      dark: 'brand',
     },
   },
 })

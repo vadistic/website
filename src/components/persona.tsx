@@ -1,8 +1,10 @@
 import { graphql, StaticQuery } from 'gatsby'
 import { Box, BoxProps, Text } from 'grommet'
+import { normalizeColor } from 'grommet/utils'
 import React from 'react'
 import { Image, PlainAnchor } from '../components'
 import { GatsbyImageSharpFluid, PersonaQuery } from '../generated'
+import { css, ThemeProps } from '../styles'
 import { Idx } from '../utils'
 
 export interface AvatarProps extends BoxProps {
@@ -14,7 +16,7 @@ export const Avatar: React.FC<AvatarProps> = ({ fluid, ...rest }) => (
     height="small"
     width="small"
     round="full"
-    elevation="medium"
+    elevation="xsmall"
     overflow="hidden"
     animation="zoomIn"
     flex={false}
@@ -34,10 +36,18 @@ export interface SocialLinksProps {
   basic?: boolean
 }
 
+const socialLinksStyles = ({ theme }: ThemeProps) => css`
+  svg {
+    path {
+      fill: ${normalizeColor('text', theme, true)};
+    }
+  }
+`
+
 export const SocialLinks: React.FC<SocialLinksProps> = ({ links, basic }) => (
   <>
     {links.map(icon => (
-      <Box pad="xsmall">
+      <Box pad="xsmall" css={socialLinksStyles}>
         <PlainAnchor target="_blank" href={icon.url} title={icon.title}>
           {basic ? <icon.Basic /> : <icon.Round />}
         </PlainAnchor>

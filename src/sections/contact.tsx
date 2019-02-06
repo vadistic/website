@@ -2,9 +2,8 @@ import { Grid } from 'grommet'
 import { mdx } from 'mdx.macro'
 import React from 'react'
 import { Icons } from '../assets'
-import { Persona, Section, SectionTitle } from '../components'
+import { MDXPropsProvider, Persona, Section, SectionTitle } from '../components'
 import { useMedia } from '../styles'
-import { MDXPropsProvider } from '../templates'
 
 export const ContactSection: React.FC = () => {
   const { cond } = useMedia()

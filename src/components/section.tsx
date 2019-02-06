@@ -37,5 +37,5 @@ export const Section: React.FC<BoxProps & SectionProps> = ({
 }
 
 export const SectionTitle: React.FC = props => (
-  <Heading level="2" size="large" margin={{ bottom: 'medium' }} {...props} />
+  <Heading level="2" size="large" margin={{ bottom: 'large' }} {...props} />
 )

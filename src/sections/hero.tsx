@@ -1,27 +1,45 @@
 import { navigate } from 'gatsby'
-import { Box, Button, Paragraph, Stack } from 'grommet'
+import { Box, Button, Grid, Paragraph, Stack } from 'grommet'
+import { Paint } from 'grommet-icons'
+import { Heading } from 'grommet/components/Heading'
 import { mdx } from 'mdx.macro'
-import React from 'react'
-import { Blockquote, Section, SocialLinks } from '../components'
+import React, { useContext } from 'react'
+import { Blockquote, MDXOverrider, MDXPropsProvider, Section, SocialLinks } from '../components'
 import { useMedia } from '../styles'
-import { MDXOverrider, MDXPropsProvider } from '../templates'
-
-// TODO: maybe from site config?
+import { StateContext } from '../templates'
 import { contactLinks } from './contact'
 
-const HireButton: React.FC = () => (
-  <Box width="small" margin={{ vertical: 'xlarge' }} justify="end">
-    <Button
-      primary
-      plain={false}
-      onClick={() => {
-        navigate('#contact')
-      }}
-    >
-      For Hire
-    </Button>
-  </Box>
+const HireButton: React.FC = props => (
+  <Button
+    label="For Hire"
+    primary
+    plain={false}
+    onClick={() => {
+      navigate('#contact')
+    }}
+    {...props}
+  />
 )
+
+const ThemeModeButton: React.FC = props => {
+  const [globalState, setGlobalState] = useContext(StateContext)
+
+  const isDark = globalState.themeMode === 'dark'
+
+  const toggleThemeMode = () => {
+    setGlobalState({ themeMode: isDark ? 'light' : 'dark' })
+  }
+
+  return (
+    <Button
+      onClick={toggleThemeMode}
+      icon={<Paint />}
+      label={isDark ? `Light mode` : `Dark mode`}
+      plain
+      {...props}
+    />
+  )
+}
 
 export const HeroSection = () => {
   const { resp, cond } = useMedia()
@@ -36,20 +54,21 @@ export const HeroSection = () => {
   if (cond({ min: 'medium' })) {
     return (
       <Section height={height} id="hero">
-        <Stack anchor="bottom-left" fill>
-          <Box justify="center" height="full">
-            <MDXPropsProvider
-              components={{ p: { size: 'large' }, h1: { size: 'large' }, h3: { color: 'brand' } }}
-            >
-              <HeroMdx />
-              <VisionMdx />
-            </MDXPropsProvider>
+        <Box direction="row" wrap justify="end">
+          <SocialLinks links={contactLinks} basic />
+        </Box>
+        <Box justify="center" height="full">
+          <MDXPropsProvider
+            components={{ p: { size: 'large' }, h1: { size: 'large' }, h3: { color: 'brand' } }}
+          >
+            <HeroMdx />
+            <VisionMdx />
+          </MDXPropsProvider>
+          <Grid columns={['small', 'small']} gap="medium" margin={{ top: 'medium' }}>
             <HireButton />
-          </Box>
-          <Box direction="row" wrap>
-            <SocialLinks links={contactLinks} basic />
-          </Box>
-        </Stack>
+            <ThemeModeButton />
+          </Grid>
+        </Box>
       </Section>
     )
   }
@@ -60,10 +79,18 @@ export const HeroSection = () => {
         <Section height={height} id="hero">
           <Stack anchor="bottom-left" fill>
             <Box justify="center" height="full">
-              <MDXOverrider components={{ h3: props => <Paragraph {...props} /> }}>
+              <MDXOverrider
+                components={{
+                  h3: props => <Paragraph {...props} />,
+                  h1: props => <Heading size="large" {...props} />,
+                }}
+              >
                 <HeroMdx />
               </MDXOverrider>
-              <HireButton />
+              <Grid columns={['small']} gap="medium" margin={{ top: 'large' }}>
+                <HireButton />
+                <ThemeModeButton />
+              </Grid>
             </Box>
             <Box direction="row" wrap>
               <SocialLinks links={contactLinks} basic />

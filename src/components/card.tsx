@@ -9,7 +9,7 @@ export const Card: React.FC<CardProps> = ({ ...rest }) => (
     pad="medium"
     elevation="xsmall"
     round="xsmall"
-    background="white"
+    background={{ light: 'white', dark: 'background-alt' }}
     {...rest}
   />
 )

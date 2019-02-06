@@ -1,9 +1,66 @@
 import { Box, Grid, Heading, Meter, Paragraph, Text } from 'grommet'
+import { normalizeColor } from 'grommet/utils'
 import { mdx } from 'mdx.macro'
 import React from 'react'
 import { Illustrations } from '../assets'
 import { Card, PlainUl, Section, SectionTitle } from '../components'
-import { useMedia } from '../styles'
+import { css, ThemeProps, useMedia } from '../styles'
+import { ElementType } from '../utils'
+
+interface ServiceCardProps {
+  item: ElementType<typeof servicesItems>
+}
+
+const serviceCardStyles = ({ theme }: ThemeProps) => css`
+  .illustration {
+    #brand a {
+      fill: ${normalizeColor('brand', theme)};
+    }
+
+    #neutral *,
+    #neutral_2 * {
+      fill: ${normalizeColor('background-alt', theme)};
+    }
+
+    #accent * {
+      fill: ${theme.global.colors.white};
+    }
+  }
+`
+
+const ServiceCard: React.FC<ServiceCardProps> = ({
+  item: { Svg, title, description, details },
+}) => (
+  <Card css={serviceCardStyles}>
+    <Box
+      margin={{ vertical: 'medium' }}
+      width="50%"
+      background={{ light: 'light-1', dark: 'dark-2' }}
+    >
+      <Svg className="illustration" width="100%" height="100%" />
+    </Box>
+    <Heading level="3" color="brand">
+      {title}
+    </Heading>
+    <Paragraph>{description}</Paragraph>
+    <PlainUl>
+      {details.map(({ label, value }) => (
+        <li>
+          <Box margin={{ bottom: 'small' }}>
+            <Text weight="bold">{label}</Text>
+            <Meter
+              type="bar"
+              round
+              thickness="small"
+              alignSelf="start"
+              values={[{ color: 'brand', value, label }]}
+            />
+          </Box>
+        </li>
+      ))}
+    </PlainUl>
+  </Card>
+)
 
 export const ServicesSection = () => {
   const { cond } = useMedia()
@@ -17,32 +74,8 @@ export const ServicesSection = () => {
         columns={{ size: cond({ only: 'small' }) ? 'auto' : 'medium', count: 'fit' }}
         gap="large"
       >
-        {servicesItems.map(({ Svg, title, description, details }) => (
-          <Card>
-            <Box margin={{ vertical: 'medium' }} width="50%">
-              <Svg width="100%" height="100%" />
-            </Box>
-            <Heading level="3" color="brand">
-              {title}
-            </Heading>
-            <Paragraph>{description}</Paragraph>
-            <PlainUl>
-              {details.map(({ label, value }) => (
-                <li>
-                  <Box margin={{ bottom: 'small' }}>
-                    <Text weight="bold">{label}</Text>
-                    <Meter
-                      type="bar"
-                      round
-                      thickness="small"
-                      alignSelf="start"
-                      values={[{ color: 'brand', value, label }]}
-                    />
-                  </Box>
-                </li>
-              ))}
-            </PlainUl>
-          </Card>
+        {servicesItems.map(item => (
+          <ServiceCard item={item} />
         ))}
       </Grid>
     </Section>

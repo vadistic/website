@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { css } from '../styles'
 
 const TooltipBase: React.FC = ({ children, ...rest }) => (
-  <Box background="dark-1" pad="small" width="small" {...rest}>
+  <Box background={{ light: 'dark-1', dark: 'brand' }} pad="small" width="small" {...rest}>
     {children}
   </Box>
 )
