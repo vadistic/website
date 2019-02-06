@@ -1,4 +1,4 @@
-import 'typeface-merriweather'
+import 'typeface-rubik'
 
 import wrap from './src/templates/wrap-root-element'
 
