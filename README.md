@@ -4,10 +4,10 @@
 
 - TypeScript
 - React (with hooks)
-- Gatsby
-- Grommet (with too many plugins)
+- Gatsby (with too many plugins)
+- Grommet
 - styled-components
-- Mdx
+- (inline) Mdx
 - Svgr
 - Netlify
 
@@ -18,5 +18,5 @@
 - `useMedia` hook
 - Custom svgs
 - Blank white hero, that somehow looks OK
-- Super-obtrusive tool-tips
+- Nice tool-tips
 - Blog ready (if I'll ever write something)
