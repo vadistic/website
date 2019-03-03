@@ -23,4 +23,6 @@ declare module 'gatsby' {
   export const graphql: (query: TemplateStringsArray) => void
 
   export { Link, GatsbyLinkProps, navigate, push, replace, withPrefix }
+
+  export const useStaticQuery: <TData = object | null>(query: any) => TData
 }
