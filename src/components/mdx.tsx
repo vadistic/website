@@ -1,5 +1,5 @@
 import { MDXProvider, MDXProviderProps } from '@mdx-js/tag'
-import { InjectedMDXScopeProps, withMDXScope } from 'gatsby-mdx/context'
+import { InjectedMDXScopeProps, useMDXScope } from 'gatsby-plugin-mdx/context'
 import { Anchor, Heading, HeadingProps, Paragraph, ParagraphProps } from 'grommet'
 import React, { memo } from 'react'
 import { Blockquote } from '../components'
@@ -35,7 +35,7 @@ interface MDXProps {
   [index: string]: (props: any) => React.ReactElement<any>
 }
 
-const MDXPropsProviderBase: React.FC<MDXPropsProviderProps & InjectedMDXScopeProps> = memo(
+export const MDXScopeBase: React.FC<MDXPropsProviderProps & InjectedMDXScopeProps> = memo(
   ({ scope, components: componentProps, ...rest }) => {
     const overrides = Object.entries(componentProps).reduce(
       (acc, [key, val]) => {
@@ -51,11 +51,10 @@ const MDXPropsProviderBase: React.FC<MDXPropsProviderProps & InjectedMDXScopePro
   },
 )
 
-export const MDXPropsProvider = withMDXScope(MDXPropsProviderBase)
-
-const MDXOverriderBase: React.FC<MDXProviderProps & InjectedMDXScopeProps> = ({
+export const MDXOverriderBase: React.FC<MDXProviderProps & InjectedMDXScopeProps> = ({
   components: overrides,
   ...rest
 }) => <MDXProvider components={{ ...mdxComponents, ...overrides }} {...rest} />
 
-export const MDXOverrider = withMDXScope(MDXOverriderBase)
+export const useMDXProps = () => useMDXScope(MDXScopeBase)
+export const useMDXOverride = () => useMDXScope(MDXOverriderBase)

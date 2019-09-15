@@ -45,7 +45,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     <Paragraph>{description}</Paragraph>
     <PlainUl>
       {details.map(({ label, value }) => (
-        <li>
+        <li key={label}>
           <Box margin={{ bottom: 'small' }}>
             <Text weight="bold">{label}</Text>
             <Meter
@@ -74,8 +74,8 @@ export const ServicesSection = () => {
         columns={{ size: cond({ only: 'small' }) ? 'auto' : 'medium', count: 'fit' }}
         gap="large"
       >
-        {servicesItems.map(item => (
-          <ServiceCard item={item} />
+        {servicesItems.map((item, i) => (
+          <ServiceCard item={item} key={i} />
         ))}
       </Grid>
     </Section>

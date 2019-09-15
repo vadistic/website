@@ -2,11 +2,12 @@ import { Grid } from 'grommet'
 import { mdx } from 'mdx.macro'
 import React from 'react'
 import { Icons } from '../assets'
-import { MDXPropsProvider, Persona, Section, SectionTitle } from '../components'
+import { Persona, Section, SectionTitle, useMDXProps } from '../components'
 import { useMedia } from '../styles'
 
 export const ContactSection: React.FC = () => {
   const { cond } = useMedia()
+  const MDXProps = useMDXProps()
 
   return (
     <Section background="background-alt" bgFull id="contact">
@@ -16,9 +17,9 @@ export const ContactSection: React.FC = () => {
         <Grid columns={['flex']} justify="center" align="center" gap="medium">
           <Persona links={contactLinks} details={contactDetails} direction="vertical" />
 
-          <MDXPropsProvider components={{ p: { textAlign: 'center' } }}>
+          <MDXProps components={{ p: { textAlign: 'center' } }}>
             <ContactMdx />
-          </MDXPropsProvider>
+          </MDXProps>
         </Grid>
       )}
 
@@ -26,9 +27,9 @@ export const ContactSection: React.FC = () => {
         <Grid columns={['flex', 'flex']} align="center" gap="medium">
           <Persona links={contactLinks} details={contactDetails} direction="horizontal" />
 
-          <MDXPropsProvider components={{ p: { size: 'large' } }}>
+          <MDXProps components={{ p: { size: 'large' } }}>
             <ContactMdx />
-          </MDXPropsProvider>
+          </MDXProps>
         </Grid>
       )}
     </Section>
@@ -39,7 +40,7 @@ export const ContactSection: React.FC = () => {
  * CONTENT
  */
 
-const sectionTitle = 'Contact ⚡'
+const sectionTitle = 'Contact 📝'
 
 const ContactMdx = mdx`
   I'm always glad to hear about cool stuff.

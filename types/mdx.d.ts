@@ -1,7 +1,6 @@
 declare module '@mdx-js/tag' {
   import React from 'react'
 
-  // TODO: make list https://github.com/ChristopherBiscardi/gatsby-mdx/tree/master/packages/gatsby-mdx#mdxprovider
   interface MDXProviderProps {
     components?: {
       [K in keyof JSX.IntrinsicElements]?: (props: JSX.IntrinsicElements[K]) => React.ReactElement
@@ -21,7 +20,7 @@ declare module 'mdx-utils' {
   const preToCodeBlock: (props: JSX.IntrinsicAttributes['pre']) => JSX.IntrinsicAttributes['code']
 }
 
-declare module 'gatsby-mdx' {
+declare module 'gatsby-plugin-mdx' {
   import React from 'react'
 
   interface MDXRendererProps {
@@ -34,12 +33,12 @@ declare module 'gatsby-mdx' {
   const MDXRenderer: React.ComponentType<MDXRendererProps>
 }
 
-declare module 'gatsby-mdx/context' {
+declare module 'gatsby-plugin-mdx/context' {
   interface InjectedMDXScopeProps {
     scope: object
   }
 
-  const withMDXScope: <T>(
+  const useMDXScope: <T>(
     component: React.ComponentType<T & InjectedMDXScopeProps>,
   ) => React.ComponentType<T>
 }

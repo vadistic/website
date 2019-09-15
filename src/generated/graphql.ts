@@ -1,4 +1,5 @@
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -21,9 +22,6 @@ export interface PersonaQuery_image_childImageSharp {
 
 export interface PersonaQuery_image {
   __typename: "File";
-  /**
-   * The child of this node of type imageSharp
-   */
   childImageSharp: PersonaQuery_image_childImageSharp | null;
 }
 
@@ -32,6 +30,7 @@ export interface PersonaQuery {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -39,7 +38,7 @@ export interface PersonaQuery {
 // ====================================================
 
 export interface LayoutQuery_site_siteMetadata {
-  __typename: "siteMetadata_2";
+  __typename: "SiteSiteMetadata";
   title: string | null;
   description: string | null;
   keywords: string | null;
@@ -55,6 +54,7 @@ export interface LayoutQuery {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -62,25 +62,17 @@ export interface LayoutQuery {
 // ====================================================
 
 export interface PostLayoutQuery_mdx_frontmatter {
-  __typename: "frontmatter_2";
-  title: string | null;
+  __typename: "MdxFrontmatter";
+  title: string;
   path: string | null;
   date: any | null;
 }
 
-export interface PostLayoutQuery_mdx_code {
-  __typename: "MDXCodeMdx";
-  body: string | null;
-}
-
 export interface PostLayoutQuery_mdx {
   __typename: "Mdx";
-  /**
-   * The id of this node.
-   */
   id: string;
   frontmatter: PostLayoutQuery_mdx_frontmatter | null;
-  code: PostLayoutQuery_mdx_code | null;
+  body: string;
 }
 
 export interface PostLayoutQuery {
@@ -92,6 +84,7 @@ export interface PostLayoutQueryVariables {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -108,6 +101,7 @@ export interface GatsbyImageSharpFixed {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -124,6 +118,7 @@ export interface GatsbyImageSharpFixed_tracedSVG {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -142,6 +137,7 @@ export interface GatsbyImageSharpFixed_withWebp {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -160,6 +156,7 @@ export interface GatsbyImageSharpFixed_withWebp_tracedSVG {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -175,6 +172,7 @@ export interface GatsbyImageSharpFixed_noBase64 {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -192,6 +190,7 @@ export interface GatsbyImageSharpFixed_withWebp_noBase64 {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -208,6 +207,7 @@ export interface GatsbyImageSharpFluid {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -224,6 +224,7 @@ export interface GatsbyImageSharpFluid_tracedSVG {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -242,6 +243,7 @@ export interface GatsbyImageSharpFluid_withWebp {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -260,6 +262,7 @@ export interface GatsbyImageSharpFluid_withWebp_tracedSVG {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -275,6 +278,7 @@ export interface GatsbyImageSharpFluid_noBase64 {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -292,6 +296,7 @@ export interface GatsbyImageSharpFluid_withWebp_noBase64 {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -308,6 +313,7 @@ export interface GatsbyImageSharpResolutions {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -324,6 +330,7 @@ export interface GatsbyImageSharpResolutions_tracedSVG {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -342,6 +349,7 @@ export interface GatsbyImageSharpResolutions_withWebp {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -360,6 +368,7 @@ export interface GatsbyImageSharpResolutions_withWebp_tracedSVG {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -375,6 +384,7 @@ export interface GatsbyImageSharpResolutions_noBase64 {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -392,6 +402,7 @@ export interface GatsbyImageSharpResolutions_withWebp_noBase64 {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -408,6 +419,7 @@ export interface GatsbyImageSharpSizes {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -424,6 +436,7 @@ export interface GatsbyImageSharpSizes_tracedSVG {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -442,6 +455,7 @@ export interface GatsbyImageSharpSizes_withWebp {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -460,6 +474,7 @@ export interface GatsbyImageSharpSizes_withWebp_tracedSVG {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -475,6 +490,7 @@ export interface GatsbyImageSharpSizes_noBase64 {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 // ====================================================
@@ -492,6 +508,7 @@ export interface GatsbyImageSharpSizes_withWebp_noBase64 {
 }
 
 /* tslint:disable */
+/* eslint-disable */
 // This file was automatically generated and should not be edited.
 
 //==============================================================

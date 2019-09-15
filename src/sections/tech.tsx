@@ -33,7 +33,7 @@ export const TechSection = () => {
       >
         {Object.values(techItems).map(group =>
           group.map(item => (
-            <PlainAnchor href={item.url} target="_blank">
+            <PlainAnchor href={item.url} target="_blank" key={item.title}>
               <TooltipHost render={<Text>{item.caption}</Text>}>
                 <Filter>
                   <Box align="center" pad={{ vertical: 'medium' }}>

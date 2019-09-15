@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-mdx'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
 import { Layout, PageType } from '../components/layout'
 
@@ -11,7 +11,7 @@ export const PostTemplate: React.FC<PostTemplate> = ({ data, children }) => {
   return (
     <Layout pageType={PageType.Post}>
       {children}
-      <MDXRenderer>{data.mdx.code.body}</MDXRenderer>
+      <MDXRenderer>{data.mdx.body}</MDXRenderer>
     </Layout>
   )
 }
@@ -25,9 +25,7 @@ export const POST_LAYOUT_QUERY = graphql`
         path
         date
       }
-      code {
-        body
-      }
+      body
     }
   }
 `

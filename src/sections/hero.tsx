@@ -4,7 +4,7 @@ import { Paint } from 'grommet-icons'
 import { Heading } from 'grommet/components/Heading'
 import { mdx } from 'mdx.macro'
 import React, { useContext } from 'react'
-import { Blockquote, MDXOverrider, MDXPropsProvider, Section, SocialLinks } from '../components'
+import { Blockquote, Section, SocialLinks, useMDXOverride, useMDXProps } from '../components'
 import { useMedia } from '../styles'
 import { StateContext } from '../templates'
 import { contactLinks } from './contact'
@@ -43,6 +43,8 @@ const ThemeModeButton: React.FC = props => {
 
 export const HeroSection = () => {
   const { resp, cond } = useMedia()
+  const MDXProps = useMDXProps()
+  const MDXOverride = useMDXOverride()
 
   const height = resp({
     // guessing chrome mobile bar height
@@ -58,12 +60,12 @@ export const HeroSection = () => {
           <SocialLinks links={contactLinks} basic />
         </Box>
         <Box justify="center" height="full">
-          <MDXPropsProvider
+          <MDXProps
             components={{ p: { size: 'large' }, h1: { size: 'large' }, h3: { color: 'brand' } }}
           >
             <HeroMdx />
             <VisionMdx />
-          </MDXPropsProvider>
+          </MDXProps>
           <Grid columns={['small', 'small']} gap="medium" margin={{ top: 'medium' }}>
             <HireButton />
             <ThemeModeButton />
@@ -79,14 +81,14 @@ export const HeroSection = () => {
         <Section height={height} id="hero">
           <Stack anchor="bottom-left" fill>
             <Box justify="center" height="full">
-              <MDXOverrider
+              <MDXOverride
                 components={{
                   h3: props => <Paragraph {...props} />,
                   h1: props => <Heading size="large" {...props} />,
                 }}
               >
                 <HeroMdx />
-              </MDXOverrider>
+              </MDXOverride>
               <Grid columns={['small']} gap="medium" margin={{ top: 'large' }}>
                 <HireButton />
                 <ThemeModeButton />
@@ -98,9 +100,9 @@ export const HeroSection = () => {
           </Stack>
         </Section>
         <Section id="vision">
-          <MDXOverrider components={{ p: ({ ref, ...rest }) => <Blockquote {...rest} /> }}>
+          <MDXOverride components={{ p: ({ ref, ...rest }) => <Blockquote {...rest} /> }}>
             <VisionMdx />
-          </MDXOverrider>
+          </MDXOverride>
         </Section>
       </>
     )

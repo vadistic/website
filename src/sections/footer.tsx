@@ -1,24 +1,27 @@
 import { Box, Text } from 'grommet'
 import { mdx } from 'mdx.macro'
 import React from 'react'
-import { Logo, MDXOverrider, Section } from '../components'
+import { Logo, Section, useMDXOverride } from '../components'
 
-export const FooterSection: React.FC = () => (
-  <Section background="black" bgFull id="footer">
-    <Box margin={{ bottom: 'large' }}>
-      <Logo />
-    </Box>
-    <Box margin={{ vertical: 'small' }}>
-      <MDXOverrider components={{ p: props => <Text {...props} /> }}>
-        <CreditsMdx />
-      </MDXOverrider>
-    </Box>
-    <Box margin={{ top: 'small' }}>
-      <Text>{copyright}</Text>
-    </Box>
-  </Section>
-)
+export const FooterSection: React.FC = () => {
+  const MDXOverride = useMDXOverride()
 
+  return (
+    <Section background="black" bgFull id="footer">
+      <Box margin={{ bottom: 'large' }}>
+        <Logo />
+      </Box>
+      <Box margin={{ vertical: 'small' }}>
+        <MDXOverride components={{ p: props => <Text {...props} /> }}>
+          <CreditsMdx />
+        </MDXOverride>
+      </Box>
+      <Box margin={{ top: 'small' }}>
+        <Text>{copyright}</Text>
+      </Box>
+    </Section>
+  )
+}
 /*
  * CONTENT
  */

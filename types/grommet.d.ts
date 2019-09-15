@@ -1,6 +1,5 @@
 import { AnchorProps, Button, ButtonProps, HeadingProps, MeterProps, ParagraphProps } from 'grommet'
 import React from 'react'
-import { Omit } from '../src/utils/types'
 
 declare module 'grommet' {
   interface ThemeContextI<ThemeValue = object> extends React.Context<ThemeValue> {

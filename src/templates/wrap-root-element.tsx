@@ -1,7 +1,6 @@
 import { MDXProvider } from '@mdx-js/tag'
-import { InjectedMDXScopeProps, withMDXScope } from 'gatsby-mdx/context'
 import { Grommet } from 'grommet'
-import React from 'react'
+import React, { useState } from 'react'
 import { mdxComponents } from '../components'
 import { theme } from '../styles'
 
@@ -20,23 +19,20 @@ interface WrapRootElementProps {
   element: any
 }
 
-const wrapRootElement: React.FC<WrapRootElementProps & InjectedMDXScopeProps> = ({
-  element,
-  scope,
-}) => {
-  const [globalState, setGlobalState] = React.useState(initalState)
+const Wrapper: React.FC = ({ children }) => {
+  const [globalState, setGlobalState] = useState(initalState)
 
   return (
-    <>
-      <StateContext.Provider value={[globalState, setGlobalState]}>
-        <Grommet theme={theme} full>
-          <MDXProvider scope={{ ...scope }} components={mdxComponents}>
-            {element}
-          </MDXProvider>
-        </Grommet>
-      </StateContext.Provider>
-    </>
+    <StateContext.Provider value={[globalState, setGlobalState]}>
+      <Grommet theme={theme} full>
+        <MDXProvider components={mdxComponents}>{children}</MDXProvider>
+      </Grommet>
+    </StateContext.Provider>
   )
 }
 
-export default withMDXScope(wrapRootElement)
+const wrapRootElement: React.FC<WrapRootElementProps> = ({ element }) => {
+  return <Wrapper>{element}</Wrapper>
+}
+
+export default wrapRootElement

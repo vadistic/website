@@ -4,8 +4,6 @@ export type ArgumentTypes<F> = F extends (...args: infer A) => any ? A : never
 
 export type NonUndefined<T> = T extends undefined ? never : T
 
-export type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
-
 export type NonNullableObjOrLit<T> = T extends object
   ? { [K in keyof T]: Idx<T[K]> }
   : NonNullable<T>

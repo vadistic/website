@@ -46,8 +46,8 @@ const socialLinksStyles = ({ theme }: ThemeProps) => css`
 
 export const SocialLinks: React.FC<SocialLinksProps> = ({ links, basic }) => (
   <>
-    {links.map(icon => (
-      <Box pad="xsmall" css={socialLinksStyles}>
+    {links.map((icon, i) => (
+      <Box pad="xsmall" css={socialLinksStyles} key={icon.title}>
         <PlainAnchor target="_blank" href={icon.url} title={icon.title}>
           {basic ? <icon.Basic /> : <icon.Round />}
         </PlainAnchor>

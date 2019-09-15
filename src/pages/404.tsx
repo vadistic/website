@@ -32,8 +32,6 @@ export default NotFoundPage
 
 const NotFoundMdx = mdx`
 
-You just hit the route that does not exist.
-
-It's kind of weird, since this webiste has only one page 😅
+You just hit the route that does not exist, somehow
 
 `
