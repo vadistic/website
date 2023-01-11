@@ -52,7 +52,7 @@
     "gatsby-plugin-svgr": "^2.0.2",
     "gatsby-plugin-typescript": "^2.1.7",
     "gatsby-source-filesystem": "^2.1.22",
-    "gatsby-transformer-remark": "^2.6.22",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.2.14",
     "graphql": "14.5.5",
     "grommet": "^2.7.8",
